@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "v.D_DERN_BILAN_TRAITE",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v.D_DERN_BILAN_TRAITE",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2018-06-30",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

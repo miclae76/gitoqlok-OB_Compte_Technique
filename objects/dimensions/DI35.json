@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI35",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CPT_DEPOSITAIRE_LIB"
+    ],
+    "qFieldLabels": [
+      "CPT_DEPOSITAIRE_LIB"
+    ],
+    "title": "CPT_DEPOSITAIRE_LIB"
+  },
+  "qMetaDef": {
+    "title": "CPT_DEPOSITAIRE_LIB",
+    "description": "",
+    "tags": [
+      "CH05",
+      "converter-auto-created"
+    ]
+  }
+}

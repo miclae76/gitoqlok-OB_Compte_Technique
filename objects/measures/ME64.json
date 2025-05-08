@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME64",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Revalo EUR",
+    "qDef": "sum({<B_REVAL={'O'}>} MT_OPE_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Revalo EUR",
+    "description": "",
+    "tags": [
+      "CH34",
+      "converter-auto-created"
+    ]
+  }
+}

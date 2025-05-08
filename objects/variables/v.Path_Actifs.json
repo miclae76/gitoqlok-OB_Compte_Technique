@@ -1,0 +1,18 @@
+{
+  "qInfo": {
+    "qId": "v.Path_Actifs",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v.Path_Actifs",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "lib://F_010_Outil_Bilan",
+  "tags": [
+    "converter-auto-created"
+  ],
+  "qIsScriptCreated": true
+}

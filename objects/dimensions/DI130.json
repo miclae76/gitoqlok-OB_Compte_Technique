@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI130",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=IF((CD_SOUS_TYPE_SUPPORT like 'TGPRO*' or CD_SOUS_TYPE_SUPPORT like 'TGET*' or CD_SOUS_TYPE_SUPPORT like 'TGARE*'),'Provisoire','Garanti')"
+    ],
+    "qFieldLabels": [
+      "Garanti/Provisoire"
+    ],
+    "title": "Garanti/Provisoire"
+  },
+  "qMetaDef": {
+    "title": "Garanti/Provisoire",
+    "description": "",
+    "tags": [
+      "CH91",
+      "CH93",
+      "converter-auto-created"
+    ]
+  }
+}

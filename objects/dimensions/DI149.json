@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI149",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_TG_UC"
+    ],
+    "qFieldLabels": [
+      "TX_TG_UC"
+    ],
+    "title": "TX_TG_UC"
+  },
+  "qMetaDef": {
+    "title": "TX_TG_UC",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

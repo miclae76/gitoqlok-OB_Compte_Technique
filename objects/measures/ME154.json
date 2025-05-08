@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME154",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "GBP",
+    "qDef": "sum({$*<$(s.GBP), $(s.TG),B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPERATION)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "GBP",
+    "description": "",
+    "tags": [
+      "CH91",
+      "CH93",
+      "converter-auto-created"
+    ]
+  }
+}

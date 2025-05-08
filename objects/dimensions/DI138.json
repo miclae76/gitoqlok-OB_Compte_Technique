@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI138",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_COM_EP"
+    ],
+    "qFieldLabels": [
+      "TX_COM_EP"
+    ],
+    "title": "TX_COM_EP"
+  },
+  "qMetaDef": {
+    "title": "TX_COM_EP",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

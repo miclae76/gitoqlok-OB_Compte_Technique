@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME147",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Montant Frais Devise Support",
+    "qDef": "sum({<CD_FLUX={'E*'}>}MT_OPERATION)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Montant Frais Devise Support",
+    "description": "",
+    "tags": [
+      "CH86",
+      "converter-auto-created"
+    ]
+  }
+}

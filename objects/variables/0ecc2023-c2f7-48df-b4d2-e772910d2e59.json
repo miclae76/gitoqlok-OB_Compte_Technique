@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "0ecc2023-c2f7-48df-b4d2-e772910d2e59",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_Dimension_CT",
+  "qComment": "Dimension Dynamique pour CT",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": []
+}

@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "3d07e1de-5c24-41d8-b8a1-7ab2cf03c9ec",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_corail",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#DB6261",
+  "qIsScriptCreated": true
+}

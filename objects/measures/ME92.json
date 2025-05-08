@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME92",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MT CSR (Euros)",
+    "qDef": "sum(MT_CSR_CPT_VU)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MT CSR (Euros)",
+    "description": "",
+    "tags": [
+      "CH52",
+      "CH85",
+      "converter-auto-created"
+    ]
+  }
+}

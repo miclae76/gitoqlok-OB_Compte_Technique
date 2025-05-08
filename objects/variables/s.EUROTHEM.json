@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "s.EUROTHEM",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.EUROTHEM",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_DEV_TIT={'EUR', 'BEF', 'LUF', 'FRF', 'DEM', 'NLG', 'ITL'}, CD_TYPE_SOUSC-={'REASS*'}, CLASSE={'EUROTHEM'}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

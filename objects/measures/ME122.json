@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME122",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Montant Prestations EUR",
+    "qDef": "sum( {$*<CD_FLUX={\"R*\", \"DC*\"}>} MT_BRUT_OPE_CPT) -sum( {<CD_FLUX={\"R*\", \"DC*\"}, CD_ISIN={'BCCSLF'}>}MT_BRUT_OPE_CPT) \n\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Montant Prestations EUR",
+    "description": "",
+    "tags": [
+      "CH68",
+      "CH70",
+      "converter-auto-created"
+    ]
+  }
+}

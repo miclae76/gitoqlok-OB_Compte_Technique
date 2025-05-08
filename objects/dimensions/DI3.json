@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI3",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "GROUPE_FLUX_1"
+    ],
+    "qFieldLabels": [
+      "GROUPE_FLUX_1"
+    ],
+    "title": "GROUPE_FLUX_1"
+  },
+  "qMetaDef": {
+    "title": "GROUPE_FLUX_1",
+    "description": "",
+    "tags": [
+      "CH02",
+      "CH38",
+      "CH66",
+      "CH75",
+      "CH90",
+      "converter-auto-created"
+    ]
+  }
+}

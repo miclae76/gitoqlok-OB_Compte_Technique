@@ -1,0 +1,32 @@
+///$tab 5_Corrections Manuelles
+Map_Correction_VL:
+Mapping
+LOAD '20180630'&CD_SUPPORT, num(VNI);
+LOAD * INLINE [
+    CD_SUPPORT, VNI
+    1765, "1137,01"
+    1773, "936,52"
+    1774, "942,14"
+    1787, "1430,46"
+    1790, "10407,15"
+    1805, "1424,45"
+    1809, "1077,3"
+    11003, "0,01"
+    11464, "957,5"
+];
+
+
+Map_MultiClass:
+Mapping
+LOAD [Code Portefeuille cible],
+	 [Code Portefeuille Source] 
+//     Banques,
+//     Libéllé, 
+//     [devise de VNI], 
+//     [Gestion Contrôle Valo], 
+//     Statut, 
+//     [Code Portefeuille cible]
+//     GAME, 
+//     PARTENAIRE
+FROM [lib://F_010_Outil_Bilan/Manual_Files/Table de correspondance Final MultiClass.xlsx]
+(ooxml, embedded labels, table is [1012]);

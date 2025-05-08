@@ -1,0 +1,32 @@
+{
+  "qInfo": {
+    "qId": "ME114",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "CHF",
+    "qDef": "sum({$*<$(s.CHF), $(s.TG), B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPERATION) + sum({$*<$(s.CHF), $(s.TG)>} MT_PROVISION)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "# ##0,00",
+      "qDec": ",",
+      "qThou": " "
+    },
+    "isCustomFormatted": false,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "CHF",
+    "description": "",
+    "tags": [
+      "CH66",
+      "CH90",
+      "converter-auto-created"
+    ]
+  }
+}

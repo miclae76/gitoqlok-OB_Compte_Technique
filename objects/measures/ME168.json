@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME168",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MNT_ACTIF",
+    "qDef": "sum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA*'}>} VAL_BOURSIERE)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MNT_ACTIF",
+    "description": "",
+    "tags": [
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

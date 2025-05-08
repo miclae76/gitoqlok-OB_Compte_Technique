@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "DI113",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "B_MANDAT_PS_ACTIF"
+    ],
+    "qFieldLabels": [
+      "B_MANDAT_PS_ACTIF"
+    ],
+    "title": "B_MANDAT_PS_ACTIF"
+  },
+  "qMetaDef": {
+    "title": "B_MANDAT_PS_ACTIF",
+    "description": "",
+    "tags": [
+      "CH78",
+      "CH79",
+      "CH80",
+      "converter-auto-created"
+    ]
+  }
+}

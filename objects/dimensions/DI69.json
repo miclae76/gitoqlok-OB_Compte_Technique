@@ -1,0 +1,32 @@
+{
+  "qInfo": {
+    "qId": "DI69",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_SYS_GESTION"
+    ],
+    "qFieldLabels": [
+      "CD_SYS_GESTION"
+    ],
+    "title": "CD_SYS_GESTION",
+    "coloring": {
+      "colorMapRef": "DI69",
+      "changeHash": "0.12629008716621015",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "CD_SYS_GESTION",
+    "description": "",
+    "tags": [
+      "CH37",
+      "CH41",
+      "CH77",
+      "CH81",
+      "converter-auto-created"
+    ]
+  }
+}

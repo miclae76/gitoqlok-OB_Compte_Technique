@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME35",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Marge EUR",
+    "qDef": "Column(1)-Column(2)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Marge EUR",
+    "description": "",
+    "tags": [
+      "CH11",
+      "converter-auto-created"
+    ]
+  }
+}

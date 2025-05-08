@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI43",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=date(D_BILAN)"
+    ],
+    "qFieldLabels": [
+      "D_VALEUR"
+    ],
+    "title": "D_VALEUR"
+  },
+  "qMetaDef": {
+    "title": "D_VALEUR",
+    "description": "",
+    "tags": [
+      "CH22",
+      "CH76",
+      "CH77",
+      "CH82",
+      "CH84",
+      "converter-auto-created"
+    ]
+  }
+}

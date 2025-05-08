@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME57",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Delta MNT_ACTIF vs. Base Actifs",
+    "qDef": "[MNT_ACTIF]-[Valeur Base Actif]",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Delta MNT_ACTIF vs. Base Actifs",
+    "description": "",
+    "tags": [
+      "CH31",
+      "converter-auto-created"
+    ]
+  }
+}

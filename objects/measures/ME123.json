@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME123",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Primes EUR",
+    "qDef": "sum( {$*<CD_FLUX={\"V*\"}>} MT_BRUT_OPE_CPT) -sum( {<CD_FLUX={\"V*\"}, CD_ISIN={'BCCSLF'}>}MT_BRUT_OPE_CPT) ",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Primes EUR",
+    "description": "",
+    "tags": [
+      "CH70",
+      "converter-auto-created"
+    ]
+  }
+}

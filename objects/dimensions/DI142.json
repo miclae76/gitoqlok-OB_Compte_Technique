@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI142",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_COM_EM"
+    ],
+    "qFieldLabels": [
+      "TX_COM_EM"
+    ],
+    "title": "TX_COM_EM"
+  },
+  "qMetaDef": {
+    "title": "TX_COM_EM",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

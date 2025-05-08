@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME169",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALM en DEV_TITRE",
+    "qDef": "=[MNT_ACTIF]-[MNT_PASSIF]",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "ALM en DEV_TITRE",
+    "description": "",
+    "tags": [
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

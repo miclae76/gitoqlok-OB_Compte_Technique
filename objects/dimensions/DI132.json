@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI132",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=IF((GROUPE_FLUX_2='Chargements sur encours' OR GROUPE_FLUX_2='Dotation Participation aux bénéfices') AND RETRAITEMENT_GAR_K_EXCLUS='NON','Frais non récupéré')"
+    ],
+    "qFieldLabels": [
+      "GROUPE_FLUX_2"
+    ],
+    "title": "GROUPE_FLUX_2"
+  },
+  "qMetaDef": {
+    "title": "GROUPE_FLUX_2",
+    "description": "",
+    "tags": [
+      "CH93",
+      "converter-auto-created"
+    ]
+  }
+}

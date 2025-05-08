@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME89",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Nombre Contrats - LMEA",
+    "qDef": "count( distinct {<CD_SYS_GESTION=-{'PAS'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_PRODUIT={'GA50_15', \"GA60_*\"}>+\r\n< NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_SYS_GESTION={'PAS'}, $(v_Exclusion_Age_LMEA) >}  NUM_CONTRAT)\n\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Nombre Contrats - LMEA",
+    "description": "",
+    "tags": [
+      "CH51",
+      "converter-auto-created"
+    ]
+  }
+}

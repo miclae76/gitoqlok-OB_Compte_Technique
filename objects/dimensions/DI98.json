@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI98",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(aggr(count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, aggr(only({1<TYPOPS={'VU','DC'}>} LIBGAR), NUM_CONTRAT), '')"
+    ],
+    "qFieldLabels": [
+      "Libellé Garantie"
+    ],
+    "title": "Libellé Garantie"
+  },
+  "qMetaDef": {
+    "title": "Libellé Garantie",
+    "description": "",
+    "tags": [
+      "CH53",
+      "converter-auto-created"
+    ]
+  }
+}

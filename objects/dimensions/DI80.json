@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI80",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_TYPE_DECES_VU"
+    ],
+    "qFieldLabels": [
+      "CD_TYPE_DECES_VU"
+    ],
+    "title": "CD_TYPE_DECES_VU"
+  },
+  "qMetaDef": {
+    "title": "CD_TYPE_DECES_VU",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

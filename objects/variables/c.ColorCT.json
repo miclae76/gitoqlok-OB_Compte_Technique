@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "c.ColorCT",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c.ColorCT",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "pick(match(only({1}GROUPE_FLUX_1), 'PM Ouverture', 'PM Clôture', 'Crédit', 'Débit'),  rgb(229, 245, 249),  rgb(229, 245, 249),  rgb(224, 243,219),  rgb(254, 232, 200)  )",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

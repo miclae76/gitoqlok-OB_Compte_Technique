@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI127",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "NB_PART_OPERATION"
+    ],
+    "qFieldLabels": [
+      "NB_PART_OPERATION"
+    ],
+    "title": "NB_PART_OPERATION"
+  },
+  "qMetaDef": {
+    "title": "NB_PART_OPERATION",
+    "description": "",
+    "tags": [
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

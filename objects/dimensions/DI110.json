@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI110",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(isnull(CD_TYPE_REVAL),'',CD_TYPE_REVAL)"
+    ],
+    "qFieldLabels": [
+      "TYPFRS"
+    ],
+    "title": "TYPFRS"
+  },
+  "qMetaDef": {
+    "title": "TYPFRS",
+    "description": "",
+    "tags": [
+      "CH78",
+      "converter-auto-created"
+    ]
+  }
+}

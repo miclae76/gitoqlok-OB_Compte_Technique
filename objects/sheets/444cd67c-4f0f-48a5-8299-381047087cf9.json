@@ -1,0 +1,283 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "444cd67c-4f0f-48a5-8299-381047087cf9",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Contrôles PM",
+      "description": ""
+    },
+    "rank": 2,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 30,
+    "rows": 15,
+    "cells": [
+      {
+        "name": "dXMbnH",
+        "type": "filterpane",
+        "col": 0,
+        "row": 0,
+        "colspan": 5,
+        "rowspan": 2,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 16.666666666666664,
+          "height": 13.333333333333334
+        }
+      },
+      {
+        "name": "fRqyFE",
+        "type": "sn-tabbed-container",
+        "col": 0,
+        "row": 2,
+        "colspan": 30,
+        "rowspan": 12,
+        "bounds": {
+          "y": 13.333333333333334,
+          "x": 0,
+          "width": 100,
+          "height": 80
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 15,
+    "gridResolution": "medium",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "dXMbnH",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "visualization": "filterpane",
+        "version": "0.19.2",
+        "qChildListDef": {
+          "qData": {}
+        }
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "45ff5c93-41d0-471d-ae5e-884fa6508b00",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qLibraryId": "DI51",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": []
+            },
+            "title": "D_BILAN",
+            "visualization": "listbox"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "fRqyFE",
+          "qType": "sn-tabbed-container"
+        },
+        "qMetaDef": {},
+        "objects": [
+          {
+            "childRefId": "pFFEcndZ",
+            "label": "Tableau CDG - Provisions",
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "YJCphyr",
+            "label": "Tableau Agregation PM",
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "XZJrXVm",
+            "label": "BDD Passif - FG + UC",
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "qLTpYhS",
+            "label": "BDD Passif - FG",
+            "condition": {
+              "qValueExpression": {}
+            }
+          }
+        ],
+        "showTitles": true,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": true,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "showTabs": true,
+        "useDropdown": false,
+        "useScrollButton": true,
+        "showIcons": false,
+        "orientation": "top",
+        "defaultTabId": "pFFEcndZ",
+        "visualization": "sn-tabbed-container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "childRefId": "/childRefId",
+            "showCondition": "/showCondition"
+          }
+        },
+        "components": [
+          {
+            "key": "tabs",
+            "background": {
+              "unselected": {
+                "color": {
+                  "index": -1,
+                  "color": "#f0e8e6",
+                  "alpha": 1
+                }
+              },
+              "selected": {
+                "color": {
+                  "index": -1,
+                  "color": "#49efff",
+                  "alpha": 1
+                }
+              }
+            },
+            "label": {
+              "fontFamily": "Roboto, sans-serif"
+            },
+            "indicator": {
+              "selected": {
+                "color": {
+                  "index": -1,
+                  "color": "#277f87",
+                  "alpha": 1
+                }
+              }
+            },
+            "width": {
+              "value": [
+                20,
+                20
+              ]
+            }
+          },
+          {
+            "key": "general",
+            "title": {
+              "main": {
+                "fontFamily": "Roboto, sans-serif"
+              },
+              "subTitle": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          }
+        ],
+        "fontsUsed": []
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "89ccf7c6-d24b-4372-bf6f-954efd5c56af",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH22",
+            "qMetaDef": {},
+            "childRefId": "pFFEcndZ"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "423005aa-4056-42d1-b850-7c1618828d04",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH77",
+            "qMetaDef": {},
+            "childRefId": "YJCphyr"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "91084f80-fd5f-4a9d-8a79-05f262807378",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH79",
+            "qMetaDef": {},
+            "childRefId": "XZJrXVm"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "afdc76fb-5a59-46bf-a90f-9a469231f4c0",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH80",
+            "qMetaDef": {},
+            "childRefId": "qLTpYhS"
+          },
+          "qChildren": []
+        }
+      ]
+    }
+  ]
+}

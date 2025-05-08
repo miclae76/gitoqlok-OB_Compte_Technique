@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME90",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MT CSR (Dev Contrat)",
+    "qDef": "sum(MT_CSR_VU)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MT CSR (Dev Contrat)",
+    "description": "",
+    "tags": [
+      "CH52",
+      "converter-auto-created"
+    ]
+  }
+}

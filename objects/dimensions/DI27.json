@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "DI27",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "PAYS_CAA"
+    ],
+    "qFieldLabels": [
+      "PAYS_CAA"
+    ],
+    "title": "PAYS_CAA"
+  },
+  "qMetaDef": {
+    "title": "PAYS_CAA",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH76",
+      "CH77",
+      "CH81",
+      "CH82",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

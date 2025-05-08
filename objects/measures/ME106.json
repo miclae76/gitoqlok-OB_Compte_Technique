@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME106",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Réass. acceptée",
+    "qDef": "sum({$*<$(s.REA_ACC), $(s.TG),B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPE_CPT) + sum({$*<$(s.REA_ACC), $(s.TG)>} MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Réass. acceptée",
+    "description": "",
+    "tags": [
+      "CH66",
+      "converter-auto-created"
+    ]
+  }
+}

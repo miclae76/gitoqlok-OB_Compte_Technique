@@ -1,0 +1,263 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "6a07b186-36e0-411d-b9b1-6d56dbcb8053",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Chargements et Marge",
+      "description": ""
+    },
+    "rank": 8,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 30,
+    "rows": 15,
+    "cells": [
+      {
+        "name": "CMCmTm",
+        "type": "sn-tabbed-container",
+        "col": 0,
+        "row": 7,
+        "colspan": 30,
+        "rowspan": 8,
+        "bounds": {
+          "y": 46.666666666666664,
+          "x": 0,
+          "width": 100,
+          "height": 53.333333333333336
+        }
+      },
+      {
+        "name": "mTWrT",
+        "type": "sn-pivot-table",
+        "col": 0,
+        "row": 3,
+        "colspan": 15,
+        "rowspan": 4,
+        "bounds": {
+          "y": 20,
+          "x": 0,
+          "width": 50,
+          "height": 26.666666666666668
+        }
+      },
+      {
+        "name": "tSPRpR",
+        "type": "barchart",
+        "col": 15,
+        "row": 3,
+        "colspan": 15,
+        "rowspan": 4,
+        "bounds": {
+          "y": 20,
+          "x": 50,
+          "width": 50,
+          "height": 26.666666666666668
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "medium",
+    "layoutOptions": {
+      "mobileLayout": "LIST",
+      "extendable": true,
+      "sheetMode": "RESPONSIVE"
+    },
+    "gridMode": "edit",
+    "height": 100
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "CMCmTm",
+          "qType": "sn-tabbed-container"
+        },
+        "qMetaDef": {},
+        "objects": [
+          {
+            "childRefId": "pMentCMy",
+            "label": "Montant Cv. EUR par mois",
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "QYPWmkB",
+            "label": "Marges de gestion par mois",
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "ppHpvkrJ",
+            "label": "Marges de gestion par partenaires",
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "sznvnTV",
+            "label": "Taux Globaux - Chargement Gestion",
+            "condition": {
+              "qValueExpression": {}
+            }
+          }
+        ],
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": true,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "showTabs": true,
+        "useDropdown": false,
+        "useScrollButton": true,
+        "showIcons": true,
+        "orientation": "top",
+        "defaultTabId": "pMentCMy",
+        "visualization": "sn-tabbed-container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "childRefId": "/childRefId",
+            "showCondition": "/showCondition"
+          }
+        },
+        "components": [
+          {
+            "key": "tabs",
+            "background": {
+              "unselected": {
+                "color": {
+                  "index": -1,
+                  "color": "#f0e8e6",
+                  "alpha": 1
+                }
+              },
+              "selected": {
+                "color": {
+                  "index": -1,
+                  "color": "#49efff",
+                  "alpha": 1
+                }
+              }
+            },
+            "label": {
+              "fontFamily": "Roboto, sans-serif"
+            },
+            "indicator": {
+              "selected": {
+                "color": {
+                  "index": -1,
+                  "color": "#277f87",
+                  "alpha": 1
+                }
+              }
+            },
+            "width": {
+              "value": [
+                20,
+                20
+              ]
+            }
+          },
+          {
+            "key": "general",
+            "title": {
+              "main": {
+                "fontFamily": "Roboto, sans-serif"
+              },
+              "subTitle": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          }
+        ],
+        "fontsUsed": []
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "1fb8434b-8ea5-48c8-a314-0261ec3c925d",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH40",
+            "qMetaDef": {},
+            "childRefId": "sznvnTV"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "54c84fea-ad5e-4b78-858a-fe8a33bbe77f",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH11",
+            "qMetaDef": {},
+            "childRefId": "pMentCMy"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "f1f7f03d-2b89-475b-a496-8c6d796725b2",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH64",
+            "qMetaDef": {},
+            "childRefId": "ppHpvkrJ"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "1b3f18f4-bdca-4360-afa4-44d6e6aa6926",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH61",
+            "qMetaDef": {},
+            "childRefId": "QYPWmkB"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "mTWrT",
+          "qType": "sn-pivot-table"
+        },
+        "qExtendsId": "CH63",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "tSPRpR",
+          "qType": "barchart"
+        },
+        "qExtendsId": "CH65",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    }
+  ]
+}

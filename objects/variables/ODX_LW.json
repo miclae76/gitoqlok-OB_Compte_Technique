@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "ODX_LW",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "ODX_LW",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "ODX_LW",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI93",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "OPTION_D_EFFET"
+    ],
+    "qFieldLabels": [
+      "D_EFFET"
+    ],
+    "title": "D_EFFET"
+  },
+  "qMetaDef": {
+    "title": "D_EFFET",
+    "description": "",
+    "tags": [
+      "CH52",
+      "converter-auto-created"
+    ]
+  }
+}

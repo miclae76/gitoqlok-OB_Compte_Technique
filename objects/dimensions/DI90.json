@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI90",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_OPTION_SOUSCRITE"
+    ],
+    "qFieldLabels": [
+      "CD_OPTION"
+    ],
+    "title": "CD_OPTION"
+  },
+  "qMetaDef": {
+    "title": "CD_OPTION",
+    "description": "",
+    "tags": [
+      "CH52",
+      "converter-auto-created"
+    ]
+  }
+}

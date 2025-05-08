@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME133",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM AG CV€",
+    "qDef": "sum({<CD_ISIN=-{'BCCSLF'},CD_DEV_TIT={'EUR'},CD_TYPE_SUPPORT_1=-{'UC'}>} MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "PM AG CV€",
+    "description": "",
+    "tags": [
+      "CH79",
+      "converter-auto-created"
+    ]
+  }
+}

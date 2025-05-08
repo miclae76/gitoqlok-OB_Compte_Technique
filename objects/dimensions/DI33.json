@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI33",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "D_VNI"
+    ],
+    "qFieldLabels": [
+      "Date VL"
+    ],
+    "title": "Date VL"
+  },
+  "qMetaDef": {
+    "title": "Date VL",
+    "description": "",
+    "tags": [
+      "CH04",
+      "converter-auto-created"
+    ]
+  }
+}

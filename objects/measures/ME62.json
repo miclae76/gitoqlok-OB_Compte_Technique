@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME62",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Gain PB  (Tx PROB)",
+    "qDef": "[Revalo PROBABLE]-[Revalo ESTIME]",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Gain PB  (Tx PROB)",
+    "description": "",
+    "tags": [
+      "CH33",
+      "converter-auto-created"
+    ]
+  }
+}

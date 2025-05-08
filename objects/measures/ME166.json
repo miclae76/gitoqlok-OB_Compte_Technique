@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME166",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "QTE_ACTIF",
+    "qDef": "sum({$*<PTF_FIC_OCP={\"*\"}>} NB_PARTS)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "QTE_ACTIF",
+    "description": "",
+    "tags": [
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME28",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Flux",
+    "qDef": "sum({<B_IMPACT_PM={'O'},  CD_FLUX=-{'PM*', 'KRCH'}>}MT_OPE_CPT)-\nsum({<B_IMPACT_PM={'O'},  CD_ISIN={'BCCSLF'} , CD_FLUX=-{'PM*', 'KRCH'}>}MT_OPE_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Flux",
+    "description": "",
+    "tags": [
+      "CH06",
+      "converter-auto-created"
+    ]
+  }
+}

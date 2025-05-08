@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI49",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=left(CD_FLUX, 2)"
+    ],
+    "qFieldLabels": [
+      "DEBOPE"
+    ],
+    "title": "DEBOPE"
+  },
+  "qMetaDef": {
+    "title": "DEBOPE",
+    "description": "",
+    "tags": [
+      "CH23",
+      "converter-auto-created"
+    ]
+  }
+}

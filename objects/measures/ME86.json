@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME86",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM EUR - Emission N",
+    "qDef": "//SUM( {<NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_PRODUIT=-{'GA50_15', 'GA60_*'}>} MT_PROVISION_CPT),\nSUM( {<CD_SYS_GESTION=-{'PAS'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, $(v_Exclusion_Age_LMEP), $(v_Exclusion_Support_LMEP), CONTRAT.D_EFFET={\">=$(=Makedate(Year(Max(D_BILAN))))\"}>} MT_PROVISION_CPT)\n//SUM( {<FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_PRODUIT={'GA50_15', 'GA60_*'}>+\n//<FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_SYS_GESTION={'PAS'}>}  MT_PROVISION_CPT)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "PM EUR - Emission N",
+    "description": "",
+    "tags": [
+      "CH48",
+      "converter-auto-created"
+    ]
+  }
+}

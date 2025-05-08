@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI41",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_FLUX"
+    ],
+    "qFieldLabels": [
+      "CD_FLUX"
+    ],
+    "title": "CD_FLUX"
+  },
+  "qMetaDef": {
+    "title": "CD_FLUX",
+    "description": "",
+    "tags": [
+      "CH11",
+      "CH23",
+      "CH29",
+      "CH35",
+      "CH75",
+      "converter-auto-created"
+    ]
+  }
+}

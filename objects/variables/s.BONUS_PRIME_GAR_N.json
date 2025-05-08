@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "s.BONUS_PRIME_GAR_N",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.BONUS_PRIME_GAR_N",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_SOUS_TYPE_SUPPORT={'TGPROO2324T*', 'TGPROO2425T*'}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

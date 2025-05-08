@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "v.Path_Actif",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v.Path_Actif",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "Chorus",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

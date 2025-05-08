@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI82",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if (FLAG_NC_VU= 1 or len(CD_TYPE_DECES_VU)=0, 'NC', AGE_EXACT_VU)"
+    ],
+    "qFieldLabels": [
+      "AGE_EXACT_VU"
+    ],
+    "title": "AGE_EXACT_VU"
+  },
+  "qMetaDef": {
+    "title": "AGE_EXACT_VU",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

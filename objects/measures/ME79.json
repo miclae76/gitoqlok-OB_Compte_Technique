@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME79",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM EUR",
+    "qDef": "sum( MT_PROVISION_CPT)-sum({<CD_ISIN={'BCCSLF'}>} MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "PM EUR",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "qInfo": {
+    "qId": "DI16",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "NOM_AGTCONSO"
+    ],
+    "qFieldLabels": [
+      "NOM_AGTCONSO"
+    ],
+    "title": "NOM_AGTCONSO"
+  },
+  "qMetaDef": {
+    "title": "NOM_AGTCONSO",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH35",
+      "CH60",
+      "CH64",
+      "CH70",
+      "CH76",
+      "CH82",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

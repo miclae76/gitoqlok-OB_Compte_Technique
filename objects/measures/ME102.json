@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME102",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "EUR_IND",
+    "qDef": "sum({$*<$(s.EUR_IND), $(s.TG), B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPE_CPT) + sum({<$(s.EUR_IND), $(s.TG)>} MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "EUR_IND",
+    "description": "",
+    "tags": [
+      "CH66",
+      "converter-auto-created"
+    ]
+  }
+}

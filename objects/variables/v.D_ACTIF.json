@@ -1,0 +1,18 @@
+{
+  "qInfo": {
+    "qId": "v.D_ACTIF",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v.D_ACTIF",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "45717",
+  "tags": [
+    "converter-auto-created"
+  ],
+  "qIsScriptCreated": true
+}

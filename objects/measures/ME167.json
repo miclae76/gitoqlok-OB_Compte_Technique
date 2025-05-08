@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME167",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALM en NB_PARTS",
+    "qDef": "=[QTE_ACTIF] - [QTE_PASSIF]",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "ALM en NB_PARTS",
+    "description": "",
+    "tags": [
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

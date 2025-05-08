@@ -1,0 +1,68 @@
+///$tab 45_Pos_Option
+OPTION_SOUSCRITE:
+LOAD [NUM_CONTRAT]
+      ,[CD_TYPE_OPTION]
+   //   ,[CD_OPTION] 		AS [NUMOTS]
+  //    ,[CD_SYS_GESTION]
+ //     ,[NUMOTS] AS CD_OPTION_SOUSCRITE
+ 	  ,[CD_SYS_GESTION]& '|' & [NUM_CONTRAT] & '|' & [CD_OPTION] AS %CLE_OPTION_SOUCRITE
+      ,[CD_OPTION] 		AS CD_OPTION_SOUSCRITE
+      ,Date([D_EFFET])		AS OPTION_D_EFFET
+      ,Date([D_FIN_EFFET])	AS OPTION_D_FIN_EFFET
+      ,[TX_CORR_RSQ]
+      ,[TX_FRAIS]
+      ,[TX_COM_LMEP]
+      ,[TX_COM_PAR]
+      ,[TX_COM_APP]
+      ,rangesum( [TX_COM_PAR],[TX_COM_APP]) AS [TX_COM]
+      ,[TYPOPS]
+      ,[TYPMAJ]
+     // ,[NUMPFL]
+ //     , ApplyMap('Map_OPTION_NUMGGL', trim("CD_SYS_GESTION") & '|' & trim("CD_OPTION") ) AS NUMGGL
+      ,[NUMGGL]
+      ,[D_FIN_GAR_VU]
+      ,[FLAG_GAR_ACTIVE]
+//      ,[CD_PRODUIT]
+//      ,[TYPCVA]
+//      ,MT_CSR		AS MT_CSR_VU
+//      ,MT_CDG		AS MT_CDG_VU
+//      ,MT_CSR_CPT	AS MT_CSR_CPT_VU
+//      ,MT_CDG_CPT	AS MT_CDG_CPT_VU
+//      ,Date(D_VALEUR_VU) AS D_VALEUR_VU
+//      ,[CD_DEV_CONTRAT] AS CD_DEV_CONTRAT_VU
+      ,[CD_TYPE_RSQ_VU];
+//      ,[DW_Batch]
+//      ,[DW_SourceCode]
+//      ,[DW_TimeStamp 
+SQL SELECT * FROM "TX_OB_$(v.Env)ARR".[dbo].[POSITION_OPTION_SOUSCRITE_H] 
+  WHERE '$(v.D_BILAN)' between D_DEB_VALIDITE AND D_FIN_VALIDITE 
+  AND '$(v.D_BILAN)' between D_EFFET AND D_FIN_EFFET
+  AND CD_SYS_GESTION <> 'GAME';
+
+
+CSR_CDG:
+LOAD 
+	D_BILAN					AS D_BILAN_VU,
+  	[CD_SYS_GESTION]& '|' & [NUM_CONTRAT] & '|' & [CD_OPTION] AS %CLE_OPTION_SOUCRITE
+  //	,NUMGGL
+    ,MT_CSR					AS MT_CSR_VU
+    ,MT_CDG					AS MT_CDG_VU
+    ,MT_CSR_CPT				AS MT_CSR_CPT_VU
+    ,MT_CDG_CPT				AS MT_CDG_CPT_VU
+    ,Date(D_CALCUL) 		AS D_CALCUL
+    ,[CD_DEV_CONTRAT] 		AS CD_DEV_CONTRAT_VU;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".[dbo]."FLUX_OPE_OPTION" 
+WHERE D_BILAN = '$(v.D_BILAN)' AND CD_NAT_OPERATION = 'CALCUL_VU' ;  
+
+DROP FIELDS CD_SYS_GESTION from OPTION_SOUSCRITE;
+
+// porting IAS/IFRS
+REF_GARANTIE:
+LOAD 
+    TYPGDC,
+    TAUTUN,
+    LIBGAR,
+    NUMGGL;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_GARANTIE";

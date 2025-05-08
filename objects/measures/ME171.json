@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME171",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Frais Admin - Mnt Suport",
+    "qDef": "sum({$*<CD_FLUX={'EG*','KRAH', 'EP*'}, CD_TYPE_MOUV={'R','E'}>} MT_OPERATION)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Frais Admin - Mnt Suport",
+    "description": "",
+    "tags": [
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

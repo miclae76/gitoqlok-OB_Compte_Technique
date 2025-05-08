@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI148",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_RACHAT"
+    ],
+    "qFieldLabels": [
+      "TX_RACHAT"
+    ],
+    "title": "TX_RACHAT"
+  },
+  "qMetaDef": {
+    "title": "TX_RACHAT",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

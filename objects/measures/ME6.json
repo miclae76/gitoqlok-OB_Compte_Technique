@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME6",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MONTANT",
+    "qDef": "sum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA'}>}MT_PROVISION)\n\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MONTANT",
+    "description": "",
+    "tags": [
+      "CH04",
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

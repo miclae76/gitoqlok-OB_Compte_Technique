@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME148",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Nbre Parts Frais",
+    "qDef": "sum({<CD_FLUX={'E*'}>} NB_PART_OPERATION)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Nbre Parts Frais",
+    "description": "",
+    "tags": [
+      "CH86",
+      "converter-auto-created"
+    ]
+  }
+}

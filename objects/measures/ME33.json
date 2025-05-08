@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME33",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Chargement EUR",
+    "qDef": "sum({<GROUPE_FRAIS_1={\"*\"}>} MT_OPE_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Chargement EUR",
+    "description": "",
+    "tags": [
+      "CH11",
+      "converter-auto-created"
+    ]
+  }
+}

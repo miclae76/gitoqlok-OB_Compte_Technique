@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI59",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=aggr(only({$*<CD_FLUX=-{'PC*', 'PG*'}>}left(CD_FLUX, 2)), CD_FLUX)"
+    ],
+    "qFieldLabels": [
+      "DEBOPE"
+    ],
+    "title": "DEBOPE"
+  },
+  "qMetaDef": {
+    "title": "DEBOPE",
+    "description": "",
+    "tags": [
+      "CH28",
+      "CH30",
+      "converter-auto-created"
+    ]
+  }
+}

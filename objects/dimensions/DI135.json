@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI135",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_FR_EG"
+    ],
+    "qFieldLabels": [
+      "TX_FR_EG"
+    ],
+    "title": "TX_FR_EG"
+  },
+  "qMetaDef": {
+    "title": "TX_FR_EG",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI117",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_REVAL_MIN"
+    ],
+    "qFieldLabels": [
+      "TX_REVAL_MIN"
+    ],
+    "title": "TX_REVAL_MIN"
+  },
+  "qMetaDef": {
+    "title": "TX_REVAL_MIN",
+    "description": "",
+    "tags": [
+      "CH80",
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME19",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "QTE_ACTIF",
+    "qDef": "sum({<TYPE_ACTIF={'UC'}>}NB_PARTS)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "QTE_ACTIF",
+    "description": "",
+    "tags": [
+      "CH05",
+      "converter-auto-created"
+    ]
+  }
+}

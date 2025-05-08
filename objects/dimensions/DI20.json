@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI20",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "D_EFFET"
+    ],
+    "qFieldLabels": [
+      "D_VALEUR"
+    ],
+    "title": "D_VALEUR"
+  },
+  "qMetaDef": {
+    "title": "D_VALEUR",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI11",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(CD_SYS_GESTION='POCUS' , if(wildmatch(CD_PRODUIT, '*PC*'), 'DE', 'FI') ,  CD_TYPE_SUPPORT_3 )"
+    ],
+    "qFieldLabels": [
+      "TYPE_TITRE"
+    ],
+    "title": "TYPE_TITRE"
+  },
+  "qMetaDef": {
+    "title": "TYPE_TITRE",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH76",
+      "CH77",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

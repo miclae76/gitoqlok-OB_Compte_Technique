@@ -1,0 +1,53 @@
+///$tab 20_Position_Support
+SET v.D_BILAN_N_1= '2024-12-31';
+
+Concatenate(FLUX_SUPPORT)
+LOAD 
+	if(Date(D_BILAN)=Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')), 'PMCLO', 
+		if(Date(D_BILAN)=Date(Date#('$(v.D_BILAN_N_1)', 'YYYY-MM-DD')) , 'PMOUV')) AS CD_FLUX,
+	'OUI' AS RETRAITEMENT_GAR_K_EXCLUS,
+	*;
+LOAD 
+	//"DW_Id",
+   Date(D_BILAN) AS D_BILAN,
+//    "NUM_CONTRAT",
+//    "CD_SUPPORT",
+   "CD_OPTION",
+    "CD_SYS_GESTION",
+    autonumber("CD_SYS_GESTION"&CD_OPTION, 'Option') AS CLE_OPTION,
+    "NB_PART_PROV",
+    
+    if (ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0) > 0, 
+    	"NB_PART_PROV" * ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0),
+    	"MT_PROVISION" )	 AS "MT_PROVISION",
+    	
+//    "MT_PROVISION" 	AS MT_OPERATION,
+
+    if (ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0) > 0, 
+    	"NB_PART_PROV" * ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0) * MT_PROVISION_CPT/MT_PROVISION,
+    	"MT_PROVISION_CPT" )	 AS "MT_PROVISION_CPT",
+    	
+//    "MT_PROVISION_CPT" AS MT_OPE_CPT,
+//    "MT_PM_MOYEN",
+//    "MT_PM_MOYEN_CPT",
+    "ID_CONTRAT",
+    "ID_OPTION" AS "ID_OPTION_PROFIL",
+    AutoNumber(CD_SYS_GESTION&NUM_CONTRAT&CD_OPTION&CD_SUPPORT) AS CLE_TAUX_,
+     AutoNumber(ID_CONTRAT&ID_OPTION) AS CLE_OPTION_SOUSCRITE_,
+     
+    "ID_SUPPORT",
+    'O' AS B_IMPACT_PM;
+//    "D_EFFET",
+//    "D_CURRENT_BILAN";
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type I Hash Key",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."POSITION_SUPPORT"
+where D_BILAN = '$(v.D_BILAN)' OR D_BILAN = '$(v.D_BILAN_N_1)';

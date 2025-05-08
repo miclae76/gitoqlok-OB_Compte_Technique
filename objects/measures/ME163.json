@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME163",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "GBP_cvEUR",
+    "qDef": "sum({$*<$(s.TG), $(s.GBP),B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>}MT_OPE_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "GBP_cvEUR",
+    "description": "",
+    "tags": [
+      "CH91",
+      "CH93",
+      "converter-auto-created"
+    ]
+  }
+}

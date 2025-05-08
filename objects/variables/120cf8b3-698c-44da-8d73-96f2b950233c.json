@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "120cf8b3-698c-44da-8d73-96f2b950233c",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_violet_70",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#AA8EC6",
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,116 @@
+///$tab 16_Flux_Prestations
+Concatenate(FLUX)
+LOAD 
+//	"DW_Id",
+//    "D_BILAN",
+    "NUM_PRESTATION",
+//    "NUM_PRESTATION" AS NUM_OPERATION,
+    autonumber("CD_SYS_GESTION"&"NUM_PRESTATION") AS CLE_OPERATION_,
+//    "CD_SYS_GESTION",
+//    "CD_SENS",
+//    "ID_PRODUIT",
+//    "ID_CONTRAT",
+//    "CD_TYPE_PREST",
+//    "D_EFFET",
+//    "D_VALORISATION",
+//    "D_SAISIE",
+//    "D_COMPTA",
+    "CD_DEV_OPERATION",
+    "MT_BRUT_PREST",
+    "MT_FRAIS_PREST",
+    "MT_PENALITE",
+    "MT_REDUCTION",
+    "MT_COM_LMEP",
+    "MT_COM_PAR",
+    "MT_COM_APP",
+    "MT_PRELEV_FISC",
+    "MT_AVAN_REMB",
+    "MT_NET_REGLE",
+    "MT_SPREAD",
+    "MT_BRUT_PREST_CPT",
+    "MT_FRAIS_PREST_CPT",
+    "MT_PENALITE_CPT",
+    "MT_REDUCTION_CPT",
+    "MT_COM_LMEP_CPT",
+//    "MT_COM_PAR_CPT",
+//    "MT_COM_APP_CPT",
+    "MT_PRELEV_FISC_CPT",
+    "MT_AVAN_REMB_CPT",
+    "MT_NET_REGLE_CPT",
+    "MT_SPREAD_CPT";
+//    "MT_CSR",
+//    "MT_CSR_CPT";
+//    "NUM_CONTRAT"
+//    "CD_PRODUIT",
+//    "CD_TYPE_MOUV",
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type I Hash Key",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."FLUX_PRESTATIONS"
+WHERE D_BILAN BETWEEN '$(v.D_OUVERTURE_BILAN)' AND '$(v.D_BILAN)';
+
+UNQUALIFY *;
+
+
+// Créer les flux virtuels CSR dans FLUX_OPE_SUPPORT
+map_dev_id_support_virtuel_cash:
+Mapping
+LOAD * INLINE [
+    F1, F2
+    AUD, 99999901
+    CAD, 99999902
+    CHF, 99999903
+    CNY, 99999904
+    EUR, 99999905
+    FRF, 99999906
+    GBP, 99999907
+    HKD, 99999908
+    NOK, 99999909
+    SEK, 99999910
+    SGD, 99999911
+    USD, 99999912
+    ZAR, 99999913
+];
+
+Concatenate(FLUX_SUPPORT)
+LOAD 
+    Date(D_BILAN) AS D_BILAN,
+
+    "CD_SYS_GESTION",
+    "CD_SENS",
+    "ID_CONTRAT",
+   // "ID_SUPPORT",
+   // "NUM_CONTRAT",
+    "CD_TYPE_MOUV",
+    //CD_DEV_OPERATION,
+    
+    ApplyMap('map_dev_id_support_virtuel_cash', CD_DEV_OPERATION) AS ID_SUPPORT,
+    
+    NUM_PRESTATION 			AS "NUM_OPERATION",
+    'CSR'					AS CD_FLUX,
+    'CSR_'&NUM_PRESTATION   AS "NUM_OPE_SUPPORT",
+    Date("D_EFFET") 		AS D_EFFET,
+    Date("D_COMPTA") 		AS D_COMPTA,
+    Date("D_VALORISATION") 	AS D_VALORISATION,
+    
+    "MT_CSR"  			AS MT_OPERATION,
+    "MT_CSR_CPT" 		AS "MT_OPE_CPT",  
+    "MT_CSR"  			AS "MT_FLUX_CAP",
+    "MT_CSR_CPT" 		AS "MT_FLUX_CAP_CPT",
+    "MT_CSR_CPT" 		AS "MT_BRUT_OPE_CPT",
+
+    
+    'N' AS "B_FRAIS",
+    'N' AS "B_IMPACT_PM",  //pas impact PM 
+    'N' AS "B_REVAL",
+    'N' AS "B_PREV_SOC";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."FLUX_PRESTATIONS"
+WHERE D_BILAN BETWEEN '$(v.D_OUVERTURE_BILAN)' AND '$(v.D_BILAN)' AND MT_CSR <> 0;

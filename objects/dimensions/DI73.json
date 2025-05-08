@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI73",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "MIN_D_NAI_ASSURE"
+    ],
+    "qFieldLabels": [
+      "MIN_D_NAI_ASSURE"
+    ],
+    "title": "MIN_D_NAI_ASSURE"
+  },
+  "qMetaDef": {
+    "title": "MIN_D_NAI_ASSURE",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

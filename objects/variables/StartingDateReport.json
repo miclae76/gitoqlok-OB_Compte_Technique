@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "StartingDateReport",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "StartingDateReport",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2018-12-31",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

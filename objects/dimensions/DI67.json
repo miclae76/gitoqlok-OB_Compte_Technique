@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI67",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_EVENEMENT"
+    ],
+    "qFieldLabels": [
+      "CD_EVENEMENT"
+    ],
+    "title": "CD_EVENEMENT"
+  },
+  "qMetaDef": {
+    "title": "CD_EVENEMENT",
+    "description": "",
+    "tags": [
+      "CH35",
+      "converter-auto-created"
+    ]
+  }
+}

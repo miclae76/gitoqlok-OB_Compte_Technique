@@ -1,0 +1,48 @@
+///$tab 12.1_Autres_Elts_Tech
+Concatenate(FLUX_SUPPORT)
+LOAD 
+//	"DW_Id",
+    Date(D_BILAN) AS D_BILAN,
+    "CD_SYS_GESTION",
+    "NUM_OPE_SUPPORT",
+    "ID_CONTRAT",
+    "ID_OPTION" AS "ID_OPTION_PROFIL",
+     AutoNumber(CD_SYS_GESTION&NUM_CONTRAT&CD_OPTION&CD_SUPPORT) AS CLE_TAUX_,
+     AutoNumber(ID_CONTRAT&ID_OPTION) AS CLE_OPTION_SOUSCRITE_,
+    "ID_SUPPORT",
+    "NUM_OPERATION",
+    autonumber("CD_SYS_GESTION"&"NUM_OPERATION") AS CLE_OPERATION_,
+    "CD_FLUX",
+    'OUI' AS RETRAITEMENT_GAR_K_EXCLUS,
+    Date("D_COMPTA") AS D_COMPTA,
+    "CD_SENS",
+    "MT_OPERATION",
+    "MT_OPE_CPT",
+    "MT_COMMISSION_PAR",
+    "MT_COMMISSION_APP",
+    "MT_COM_PAR_CPT",
+    "MT_COM_APP_CPT",
+//    "NUM_CONTRAT",
+    "CD_OPTION",
+    autonumber("CD_SYS_GESTION"&CD_OPTION, 'Option') AS CLE_OPTION,
+//    "CD_SUPPORT",
+//    "CD_TYPE_MOUV",
+    Date("D_EFFET") AS D_EFFET,
+    "B_IMPACT_PM",
+    'N' AS B_FRAIS,
+    'N' AS B_REVAL,
+    'N' AS B_PREV_SOC,
+    "TX_CHANGE",
+    'R' AS CD_TYPE_MOUV;
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current",
+//    "SCD Type I Hash Key";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."FLUX_AUTRES_ELEMENTS_TECHNIQUES"
+where D_BILAN BETWEEN '$(v.D_OUVERTURE_BILAN)' AND '$(v.D_BILAN)';

@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI122",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(match(NUMGGL, 1, 2, 3, 4)>0, D_BILAN,  if(D_BILAN = D_BILAN_VU, D_BILAN))"
+    ],
+    "qFieldLabels": [
+      "D_BILAN"
+    ],
+    "title": "D_BILAN"
+  },
+  "qMetaDef": {
+    "title": "D_BILAN",
+    "description": "",
+    "tags": [
+      "CH85",
+      "converter-auto-created"
+    ]
+  }
+}

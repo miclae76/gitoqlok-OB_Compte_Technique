@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "DI10",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_TYPE_SUPPORT_1"
+    ],
+    "qFieldLabels": [
+      "TYPSUP"
+    ],
+    "title": "TYPSUP"
+  },
+  "qMetaDef": {
+    "title": "TYPSUP",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH67",
+      "CH68",
+      "CH72",
+      "CH76",
+      "CH77",
+      "CH78",
+      "CH80",
+      "CH84",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

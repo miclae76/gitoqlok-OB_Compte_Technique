@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME100",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Tx UC",
+    "qDef": "=1-sum(rangesum(TX_TG_UC)*if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))/sum(if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))/100 \n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Tx UC",
+    "description": "",
+    "tags": [
+      "CH64",
+      "converter-auto-created"
+    ]
+  }
+}

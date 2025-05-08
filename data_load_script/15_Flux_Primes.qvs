@@ -1,0 +1,49 @@
+///$tab 15_Flux_Primes
+FLUX:
+LOAD
+//	"DW_Id",
+//    "D_BILAN",
+    "NUM_PRIME",
+//    "NUM_PRIME" AS NUM_OPERATION,
+    autonumber("CD_SYS_GESTION"&"NUM_PRIME") AS CLE_OPERATION_,
+//    "CD_SENS",
+//    "ID_PRODUIT",
+//    "ID_CONTRAT",
+//    "D_SAISIE",
+//    "D_VALORISATION",
+//    "D_EFFET",
+//    "D_COMPTA",
+//    "CD_TYPE_PRIME",
+    "CD_DEV_OPERATION",
+    "MT_VERSE",
+    "MT_TAXES",
+    "MT_FRAIS"		AS MT_FRAIS_PRIME,
+    "MT_COM_LMEP",
+    "MT_COM_PAR",
+    "MT_COM_APP",
+    "MT_SPREAD",
+    "MT_NET_INVEST",
+    "MT_VERSE_CPT",
+    "MT_TAXES_CPT",
+    "MT_FRAIS_CPT"	AS MT_FRAIS_CPT_PRIME,
+    "MT_COM_LMEP_CPT",
+//    "MT_COM_PAR_CPT",
+//    "MT_COM_APP_CPT",
+    "MT_NET_INVEST_CPT",
+    "MT_SPREAD_CPT";
+//    "CD_PRODUIT",
+//    "NUM_CONTRAT",
+//    "CD_TYPE_MOUV",
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type I Hash Key",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."FLUX_PRIMES"
+WHERE D_BILAN BETWEEN '$(v.D_OUVERTURE_BILAN)' AND '$(v.D_BILAN)';
+//-------- End Multiple Select Statements ------

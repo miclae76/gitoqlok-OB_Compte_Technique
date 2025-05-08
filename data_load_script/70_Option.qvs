@@ -1,0 +1,41 @@
+///$tab 70_Option
+OPTION:
+LOAD 
+////	"DW_Id",
+////    "D_BILAN",
+//    "ID_OPTION",
+////    "ID_PRODUIT",
+//    "CD_OPTION",
+    autonumber("CD_SYS_GESTION"&CD_OPTION, 'Option') AS CLE_OPTION,
+////    "CD_SYS_GESTION",
+//    "CD_PERIOD_REVAL",
+////    "CD_PRODUIT",
+//    "CD_TAB_MORT",
+//    "CD_TYPE_OPTION",
+////    "D_DEB_VALIDITE",
+////    "D_FIN_VALIDITE",
+////    "IND_ARBITR",
+////    "IND_FAC_OBLIG",
+////    "IND_INDEP_SUBOR",
+////    "IND_PRINC_COMP",
+////    "IND_RACHAT",
+////    "IND_RESIL",
+////    "IND_TRANSFER",
+////    "IS_CURRENT",
+    "LB_OPTION",
+//    "MT_MAX_CSR",
+    "NUM_OPTION";
+//    "TX_CORR_RSQ";
+////    "DW_Batch",
+////    "DW_SourceCode",
+////    "DW_TimeStamp";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_OPTION_H";
+
+// ajout dummy option -1
+Concatenate(OPTION)
+LOAD 
+	autonumber('TITAN'&-1, 'Option') AS CLE_OPTION,
+	'GESTION LIBRE' as LB_OPTION,
+	0 as NUM_OPTION
+	AutoGenerate 1;

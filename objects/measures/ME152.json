@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME152",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "EUR Milan Fds Rentes",
+    "qDef": "sum({$*<$(s.EUR_RENTE_DBR), CD_TYPE_SOUSC={'MILAN'}, $(s.TG),B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPE_CPT) + sum({$*<$(s.EUR_RENTE_DBR), CD_TYPE_SOUSC={'MILAN'}, $(s.TG)>} MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "EUR Milan Fds Rentes",
+    "description": "",
+    "tags": [
+      "CH90",
+      "converter-auto-created"
+    ]
+  }
+}

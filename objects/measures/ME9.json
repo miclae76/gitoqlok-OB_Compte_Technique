@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "ME9",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "QTE_ACTIF",
+    "qDef": "sum({$*<TYPE_ACTIF={'FID', 'FIC', 'FAS'}>}NB_PARTS)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "QTE_ACTIF",
+    "description": "",
+    "tags": [
+      "CH04",
+      "CH31",
+      "CH36",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME142",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM cv EUR",
+    "qDef": "rangesum(sum({<D_BILAN={'$(=Date(Max(D_BILAN)))'}>} IF(LEFT(CD_PRODUIT,3)='GA4' or NUM_CONTRAT='ME000708294000', MT_PROVISION_CPT)), sum({$*<CD_SYS_GESTION={'POCUS'}, CD_ETAT={'EN COURS'}>}MT_PROVISION_CPT))\r\n\n//\n//IF(LEFT(CD_PRODUIT,3)='GA4' or NUM_CONTRAT='ME000708294000',sum({<D_BILAN={'$(=Date(Max(D_BILAN)))'}>}MT_PROVISION_CPT),\n//if(CD_SYS_GESTION='POCUS',sum({$*<CD_SYS_GESTION={'POCUS'}, CD_ETAT={'EN COURS'}>}MT_PROVISION_CPT) ,0))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "PM cv EUR",
+    "description": "",
+    "tags": [
+      "CH83",
+      "converter-auto-created"
+    ]
+  }
+}

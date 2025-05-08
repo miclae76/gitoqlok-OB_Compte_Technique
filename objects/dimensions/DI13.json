@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI13",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_TYPE_SOUSC"
+    ],
+    "qFieldLabels": [
+      "TYP_CT"
+    ],
+    "title": "TYP_CT"
+  },
+  "qMetaDef": {
+    "title": "TYP_CT",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH76",
+      "CH77",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

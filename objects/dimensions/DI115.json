@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI115",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_NAT_SOUSC"
+    ],
+    "qFieldLabels": [
+      "CD_NAT_SOUSC"
+    ],
+    "title": "CD_NAT_SOUSC"
+  },
+  "qMetaDef": {
+    "title": "CD_NAT_SOUSC",
+    "description": "",
+    "tags": [
+      "CH79",
+      "converter-auto-created"
+    ]
+  }
+}

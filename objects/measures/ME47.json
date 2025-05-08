@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME47",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MT_FRAIS_EUR",
+    "qDef": "Rangesum(\n\t sum({<B_FRAIS={'O'}>} MT_OPE_CPT) \n\t,sum({<CD_FLUX={'ECAH'}>} MT_OPE_CPT)\n\t,sum({<B_IMPACT_PM={'N'}>}MT_OPE_CPT)\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MT_FRAIS_EUR",
+    "description": "",
+    "tags": [
+      "CH28",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI37",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "PTF"
+    ],
+    "qFieldLabels": [
+      "PTF"
+    ],
+    "title": "PTF"
+  },
+  "qMetaDef": {
+    "title": "PTF",
+    "description": "",
+    "tags": [
+      "CH05",
+      "CH06",
+      "CH31",
+      "CH86",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

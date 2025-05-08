@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI121",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(match(NUMGGL, 1, 2, 3, 4)>0, 'DC', 'VU')"
+    ],
+    "qFieldLabels": [
+      "Type Garantie"
+    ],
+    "title": "Type Garantie"
+  },
+  "qMetaDef": {
+    "title": "Type Garantie",
+    "description": "",
+    "tags": [
+      "CH85",
+      "converter-auto-created"
+    ]
+  }
+}

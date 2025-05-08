@@ -1,0 +1,74 @@
+{
+  "qInfo": {
+    "qId": "DI107",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=STOCK_OR_NEWB// if (YEAR(CONTRAT.D_EFFET)= YEAR(D_BILAN), 'NB', 'STOCK')"
+    ],
+    "qFieldLabels": [
+      "STOCK_OR_NEWB"
+    ],
+    "title": "STOCK_OR_NEWB",
+    "coloring": {
+      "colorMapRef": "DI107",
+      "changeHash": "0.7777004989453179",
+      "hasValueColors": true
+    }
+  },
+  "qMetaDef": {
+    "title": "STOCK_OR_NEWB",
+    "description": "",
+    "tags": [
+      "CH65",
+      "converter-auto-created"
+    ]
+  },
+  "_ColorMapModel": {
+    "qInfo": {
+      "qId": "ColorMapModel_DI107",
+      "qType": "ColorMap"
+    },
+    "qMeta": {
+      "title": "",
+      "description": "",
+      "createdDate": "2025-05-07T16:34:57.924Z",
+      "modifiedDate": "2025-05-07T16:34:57.924Z",
+      "published": false,
+      "publishTime": "1753-01-01T00:00:00.000Z",
+      "approved": false,
+      "qSize": -1,
+      "sourceObject": "",
+      "draftObject": ""
+    },
+    "colorMap": {
+      "colors": [
+        {
+          "value": "NEW B",
+          "baseColor": {
+            "color": "#ffaa55",
+            "index": 13
+          }
+        },
+        {
+          "value": "STOCK",
+          "baseColor": {
+            "color": "#736054",
+            "index": 1
+          }
+        }
+      ],
+      "nul": null,
+      "oth": null,
+      "pal": null,
+      "single": {
+        "color": "none",
+        "index": 0
+      },
+      "usePal": null,
+      "autoFill": true
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME129",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "VNI",
+    "qDef": "=if(sum({<CD_ISIN=-{'BCCSLF'}>} NB_PART_PROV)>0,\nif(WildMatch(CD_TYPE_SUPPORT,'FI','FA'),\nsum(  {<CD_ISIN=-{'BCCSLF'}>} MT_PROVISION) \n/\nsum({<CD_ISIN=-{'BCCSLF'}>} NB_PART_PROV)\n,\nif(WildMatch(CD_TYPE_SUPPORT,'TG','FG'),1,\nVNI)\n))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "VNI",
+    "description": "",
+    "tags": [
+      "CH76",
+      "converter-auto-created"
+    ]
+  }
+}

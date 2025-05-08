@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME124",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Collecte Nette EUR",
+    "qDef": "[Primes EUR]+[Prestations EUR]",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Collecte Nette EUR",
+    "description": "",
+    "tags": [
+      "CH70",
+      "converter-auto-created"
+    ]
+  }
+}

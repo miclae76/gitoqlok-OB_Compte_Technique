@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI147",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_PS"
+    ],
+    "qFieldLabels": [
+      "TX_PS"
+    ],
+    "title": "TX_PS"
+  },
+  "qMetaDef": {
+    "title": "TX_PS",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

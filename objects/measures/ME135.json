@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME135",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM UC CV€",
+    "qDef": "sum({$*<CD_SYS_GESTION={'TITAN', 'PAS'},CD_TYPE_SUPPORT_1={'UC'}>}MT_PROVISION_CPT)\r\n+sum({$*<CD_SYS_GESTION={'POCUS'}, CD_ETAT={'EN COURS'},CD_TYPE_SUPPORT_1={'UC'}>}MT_PROVISION_CPT) \n-sum({$*<CD_ISIN={'BCCSLF'},CD_TYPE_SUPPORT_1={'UC'}>} MT_PROVISION_CPT) ",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "PM UC CV€",
+    "description": "",
+    "tags": [
+      "CH79",
+      "converter-auto-created"
+    ]
+  }
+}

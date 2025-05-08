@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI126",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_TYPE_MOUV"
+    ],
+    "qFieldLabels": [
+      "CD_TYPE_MOUV"
+    ],
+    "title": "CD_TYPE_MOUV"
+  },
+  "qMetaDef": {
+    "title": "CD_TYPE_MOUV",
+    "description": "",
+    "tags": [
+      "CH86",
+      "converter-auto-created"
+    ]
+  }
+}

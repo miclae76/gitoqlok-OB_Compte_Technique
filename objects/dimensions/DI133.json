@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI133",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "PTF_FIC_OCP"
+    ],
+    "qFieldLabels": [
+      "PTF"
+    ],
+    "title": "PTF"
+  },
+  "qMetaDef": {
+    "title": "PTF",
+    "description": "",
+    "tags": [
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "ME39",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM CV€",
+    "qDef": "sum({$*<CD_SYS_GESTION={'TITAN', 'PAS'}>}MT_PROVISION_CPT)\r\n+sum({$*<CD_SYS_GESTION={'POCUS'}, CD_ETAT={'EN COURS'}>}MT_PROVISION_CPT) \n-sum({$*<CD_ISIN={'BCCSLF'}>} MT_PROVISION_CPT) \n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "PM CV€",
+    "description": "",
+    "tags": [
+      "CH22",
+      "CH76",
+      "CH77",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "vD_ACTIF",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vD_ACTIF",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "43344",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

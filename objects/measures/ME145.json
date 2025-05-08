@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME145",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM cv EUR",
+    "qDef": "=IF(LEFT(CD_PRODUIT,3)='GA4' or NUM_CONTRAT='ME000708294000',sum({<D_BILAN={'$(=Date(Max(D_BILAN)))'}>}MT_PROVISION_CPT),\nif(CD_SYS_GESTION='POCUS',+sum({$*<CD_SYS_GESTION={'POCUS'}, CD_ETAT={'EN COURS'}>}MT_PROVISION_CPT) ,0))\n\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "PM cv EUR",
+    "description": "",
+    "tags": [
+      "CH84",
+      "converter-auto-created"
+    ]
+  }
+}

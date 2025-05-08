@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI30",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(isnull(PTF_FIC_OCP), PTF)"
+    ],
+    "qFieldLabels": [
+      "Chorus"
+    ],
+    "title": "Chorus"
+  },
+  "qMetaDef": {
+    "title": "Chorus",
+    "description": "",
+    "tags": [
+      "CH04",
+      "converter-auto-created"
+    ]
+  }
+}

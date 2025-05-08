@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME117",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "FG Contre-valeur EUR",
+    "qDef": "sum({$*<$(s.TG),B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>}MT_OPE_CPT) + sum({$*<$(s.TG),B_IMPACT_PM={'O'}>}MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "FG Contre-valeur EUR",
+    "description": "",
+    "tags": [
+      "CH66",
+      "CH90",
+      "converter-auto-created"
+    ]
+  }
+}

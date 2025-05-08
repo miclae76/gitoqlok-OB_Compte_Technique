@@ -1,0 +1,32 @@
+{
+  "qInfo": {
+    "qId": "DI45",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "NUM_OPTION"
+    ],
+    "qFieldLabels": [
+      "NUMPFL"
+    ],
+    "title": "NUMPFL"
+  },
+  "qMetaDef": {
+    "title": "NUMPFL",
+    "description": "",
+    "tags": [
+      "CH22",
+      "CH33",
+      "CH34",
+      "CH76",
+      "CH77",
+      "CH78",
+      "CH80",
+      "CH82",
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

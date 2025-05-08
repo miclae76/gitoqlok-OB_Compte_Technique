@@ -1,0 +1,105 @@
+///$tab 40_Position_Contrat
+Map_Etablissement:
+Mapping
+LOAD 
+    "ID_ETABLISSEMENT",
+    "LB_ETABLISSEMENT";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_ETABLISSEMENT_H";
+
+
+Tmp_Contrat_Current:
+LOAD NUM_CONTRAT,
+	 CD_ETAT,
+	 D_ETAT,
+	 CD_ETABL,
+	 Applymap('Map_Etablissement', "ID_ETABLISSEMENT") AS ETABLISSEMENT;
+;
+SQL SELECT * 
+FROM "TX_OB_$(v.Env)ARR".dbo."POSITION_CONTRAT_SOUSCRIT_H" 
+WHERE D_BILAN = '$(v.D_BILAN)'
+;
+
+
+
+QUALIFY D_EFFET, D_TERME, D_SORTIE, ID_DEB_EFF_GARK, D_FIN_EFF_GARK;
+CONTRAT:
+LOAD 
+//	"DW_Id",
+//    "D_BILAN",
+    "ID_CONTRAT",
+//    "CD_SYS_GESTION",
+    "NUM_CONTRAT",
+    "CD_SYS_GESTION" & "NUM_CONTRAT" AS _CLE_AGE,
+    "NUM_CTR_FIRME",
+	IF(year("D_EFFET")<year(D_BILAN), 'STOCK', 'NEW B') AS STOCK_OR_NEWB,
+    Date("D_EFFET")	 AS D_EFFET,
+    Date("D_TERME")	 AS D_TERME,
+    Date("D_SORTIE") AS D_SORTIE,
+//    "CD_ETAT",
+//    "D_ETAT",
+//    "CD_FISC_SOUSC",
+    "CD_PAYS_FISC",				//Pays de résidence fiscale
+    UPPER("CD_TYPE_SOUSC") AS "CD_TYPE_SOUSC",
+    UPPER("CD_PAYS_SOUSC") AS CD_PAYS_SOUSC,			//Pays BCL (fichier xls CDG
+    UPPER("PAYS_CAA") AS PAYS_CAA,					//Pays CAA (fichier xls CDG)
+//    "CD_ETABL",
+    "D_DEB_EFF_GARK",
+    "D_FIN_EFF_GARK",
+    "CD_DEV_CONTRAT",
+    "B_MANDAT_PS_ACTIF",
+//    "CD_PROTOCOLE",
+//    "CD_PRODUIT",
+//    "D_DEB_VALIDITE",
+//    "D_FIN_VALIDITE",
+//    "IS_CURRENT",
+    "ID_PROTOCOLE",
+    "ID_PRODUIT",
+    Applymap('Map_Etablissement', "ID_ETABLISSEMENT") AS ETABLISSEMENT,
+    "ID_PARTENAIRE",
+    "ID_APPORTEUR";
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."POSITION_CONTRAT_SOUSCRIT_H"
+WHERE CD_SYS_GESTION <> 'GAME';
+
+LEFT JOIN (CONTRAT)
+LOAD * Resident Tmp_Contrat_Current;
+DROP Table Tmp_Contrat_Current;
+
+CONTRAT_AGE:
+LOAD 
+	//"DW_Id",
+  //  "D_BILAN",
+  	"CD_SYS_GESTION" & "NUM_CONTRAT" AS _CLE_AGE,
+    //"CD_SYS_GESTION",
+    //"NUM_CONTRAT",
+   // "ANNEE_EMI",
+   // "CD_PRODUIT",
+   // "CD_TYPE_PRODUIT",
+    "CD_TYPE_DECES",
+    CD_TYPE_DECES_TDENOU,
+    "CD_TYPE_DECES_ORIGINE",
+  //  "CD_LBL_TYPE_PRODUIT",
+   // "CD_ETAT",
+    Date("MIN_D_NAI_ASSURE") As MIN_D_NAI_ASSURE,
+    Date("MAX_D_NAI_ASSURE") AS MAX_D_NAI_ASSURE,
+    Date("MIN_D_NAI_SOUSCR") AS MIN_D_NAI_SOUSCR,
+    Date("MAX_D_NAI_SOUSCR") AS MAX_D_NAI_SOUSCR,
+    Date("D_NAI_REFERENCE") AS D_NAI_REFERENCE,
+    Date("D_NAI_REFERENCE_TDENOU") AS D_NAI_REFERENCE_TDENOU,
+    "FLAG_NC",
+    "AGE_EXACT",
+   	AGE_EXACT_TDENOU,
+    "CD_TYPE_DECES_VU",
+    Date("D_NAI_REFERENCE_VU") AS D_NAI_REFERENCE_VU,
+    "FLAG_NC_VU",
+    "AGE_EXACT_VU",
+    "FLAG_INCOHERENCE"; 
+    
+ //   "MT_PROVISION_CPT"
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."V_CONTRATS_CALCUL_AGE" 
+WHERE D_BILAN = '$(v.D_BILAN)';

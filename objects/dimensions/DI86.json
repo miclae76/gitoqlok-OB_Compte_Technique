@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI86",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=ValueList('LMEP', 'dont Emissions N', 'LMEA')"
+    ],
+    "qFieldLabels": [
+      "Périmètre"
+    ],
+    "title": "Périmètre"
+  },
+  "qMetaDef": {
+    "title": "Périmètre",
+    "description": "",
+    "tags": [
+      "CH42",
+      "CH45",
+      "converter-auto-created"
+    ]
+  }
+}

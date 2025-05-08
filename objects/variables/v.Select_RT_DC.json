@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "v.Select_RT_DC",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v.Select_RT_DC",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "FLAG_CONTRAT_CLOTURE={1}, CD_TYPE_SUPPORT={'TG'}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

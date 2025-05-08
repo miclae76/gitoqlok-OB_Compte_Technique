@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "affb6e48-708d-4704-8b7e-d42cf12d9f7d",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v.D_OUVERTURE_BILAN_Fmt",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "01/01/2025",
+  "qIsScriptCreated": true
+}

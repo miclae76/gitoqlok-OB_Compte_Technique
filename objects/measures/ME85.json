@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME85",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Nombre Contrats - LMEP",
+    "qDef": "count( distinct {<CD_SYS_GESTION=-{'PAS'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, $(v_Exclusion_Age_LMEP), $(v_Exclusion_Support_LMEP)>} NUM_CONTRAT)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Nombre Contrats - LMEP",
+    "description": "",
+    "tags": [
+      "CH47",
+      "converter-auto-created"
+    ]
+  }
+}

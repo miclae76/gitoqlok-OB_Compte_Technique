@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI15",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "AGTCONSO"
+    ],
+    "qFieldLabels": [
+      "AGTCONSO"
+    ],
+    "title": "AGTCONSO"
+  },
+  "qMetaDef": {
+    "title": "AGTCONSO",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH70",
+      "CH76",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

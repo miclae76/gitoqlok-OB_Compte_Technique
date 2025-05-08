@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME53",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "QTE_PASSIF",
+    "qDef": "//sum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', FA'}>}NB_PART_PROV)+sum({$*<CD_SOUS_TYPE_SUPPORT={'FAS'}>}NB_PART_PROV)\n\n\nsum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA*'}>}NB_PART_PROV)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "QTE_PASSIF",
+    "description": "",
+    "tags": [
+      "CH31",
+      "converter-auto-created"
+    ]
+  }
+}

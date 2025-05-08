@@ -1,0 +1,30 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "e47862b9-aa5d-4922-9f4e-39b28d7a461b",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Contrôles ALM",
+      "description": ""
+    },
+    "rank": 6,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    }
+  },
+  "qChildren": []
+}

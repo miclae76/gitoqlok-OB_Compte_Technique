@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI50",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=$(v_Classif_IFRS)"
+    ],
+    "qFieldLabels": [
+      "Classification IAS/IFRS"
+    ],
+    "title": "Classification IAS/IFRS"
+  },
+  "qMetaDef": {
+    "title": "Classification IAS/IFRS",
+    "description": "",
+    "tags": [
+      "CH23",
+      "CH27",
+      "CH28",
+      "CH29",
+      "CH30",
+      "converter-auto-created"
+    ]
+  }
+}

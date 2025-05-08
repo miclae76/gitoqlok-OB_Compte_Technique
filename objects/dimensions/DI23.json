@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI23",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_CHANGE"
+    ],
+    "qFieldLabels": [
+      "TXCHGE_TIT"
+    ],
+    "title": "TXCHGE_TIT"
+  },
+  "qMetaDef": {
+    "title": "TXCHGE_TIT",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

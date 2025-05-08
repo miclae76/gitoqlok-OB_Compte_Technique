@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI128",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "VNI"
+    ],
+    "qFieldLabels": [
+      "VNI"
+    ],
+    "title": "VNI"
+  },
+  "qMetaDef": {
+    "title": "VNI",
+    "description": "",
+    "tags": [
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

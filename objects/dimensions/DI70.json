@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI70",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=YEAR(CONTRAT.D_EFFET)"
+    ],
+    "qFieldLabels": [
+      "ANNEE_EMISSION"
+    ],
+    "title": "ANNEE_EMISSION"
+  },
+  "qMetaDef": {
+    "title": "ANNEE_EMISSION",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

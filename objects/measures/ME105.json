@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME105",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Bonus sur Prime (Gar. Nette)",
+    "qDef": "sum({$*<$(s.BONUS_PRIME_GAR_N), B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPE_CPT) + sum({$*<$(s.BONUS_PRIME_GAR_N)>} MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Bonus sur Prime (Gar. Nette)",
+    "description": "",
+    "tags": [
+      "CH66",
+      "converter-auto-created"
+    ]
+  }
+}

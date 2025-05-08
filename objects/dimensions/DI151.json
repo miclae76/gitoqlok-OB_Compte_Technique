@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI151",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_COND_BSP"
+    ],
+    "qFieldLabels": [
+      "TX_COND_BSP"
+    ],
+    "title": "TX_COND_BSP"
+  },
+  "qMetaDef": {
+    "title": "TX_COND_BSP",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

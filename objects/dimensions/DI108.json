@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "DI108",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "MARCHE_DIS"
+    ],
+    "qFieldLabels": [
+      "MARCHE_DIS"
+    ],
+    "title": "MARCHE_DIS"
+  },
+  "qMetaDef": {
+    "title": "MARCHE_DIS",
+    "description": "",
+    "tags": [
+      "CH67",
+      "CH68",
+      "CH72",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI32",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "LB_SUPPORT"
+    ],
+    "qFieldLabels": [
+      "LIBELLE"
+    ],
+    "title": "LIBELLE"
+  },
+  "qMetaDef": {
+    "title": "LIBELLE",
+    "description": "",
+    "tags": [
+      "CH04",
+      "CH36",
+      "CH80",
+      "CH82",
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

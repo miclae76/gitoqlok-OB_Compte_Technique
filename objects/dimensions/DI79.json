@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI79",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(FLAG_NC=1, 'NC' , AGE_EXACT_TDENOU)"
+    ],
+    "qFieldLabels": [
+      "AGE_EXACT_DENOU"
+    ],
+    "title": "AGE_EXACT_DENOU"
+  },
+  "qMetaDef": {
+    "title": "AGE_EXACT_DENOU",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI8",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "NUM_CTR_FIRME"
+    ],
+    "qFieldLabels": [
+      "NUMCO1"
+    ],
+    "title": "NUMCO1"
+  },
+  "qMetaDef": {
+    "title": "NUMCO1",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

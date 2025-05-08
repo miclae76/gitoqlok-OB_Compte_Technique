@@ -1,0 +1,33 @@
+{
+  "qInfo": {
+    "qId": "DI22",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_TYPCON"
+    ],
+    "qFieldLabels": [
+      "TypeContrat"
+    ],
+    "title": "TypeContrat"
+  },
+  "qMetaDef": {
+    "title": "TypeContrat",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH76",
+      "CH77",
+      "CH79",
+      "CH80",
+      "CH81",
+      "CH84",
+      "CH85",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

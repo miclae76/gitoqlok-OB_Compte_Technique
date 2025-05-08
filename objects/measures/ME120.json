@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME120",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "CHF_cvEUR",
+    "qDef": "sum({$*<$(s.TG), $(s.CHF),B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>}MT_OPE_CPT) + sum({$*<$(s.TG),$(s.CHF),B_IMPACT_PM={'O'}>}MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "CHF_cvEUR",
+    "description": "",
+    "tags": [
+      "CH66",
+      "CH90",
+      "converter-auto-created"
+    ]
+  }
+}

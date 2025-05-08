@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "v_Exclusion_Support_LMEA",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_Exclusion_Support_LMEA",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_SUPPORT=-{1475}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

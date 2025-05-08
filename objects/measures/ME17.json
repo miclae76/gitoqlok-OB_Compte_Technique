@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME17",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALM EUR",
+    "qDef": "MNT_ACTIF_EUR-MNT_PASSIF_EUR",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "ALM EUR",
+    "description": "",
+    "tags": [
+      "CH04",
+      "converter-auto-created"
+    ]
+  }
+}

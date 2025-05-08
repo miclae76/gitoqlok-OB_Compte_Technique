@@ -1,0 +1,33 @@
+{
+  "qInfo": {
+    "qId": "DI14",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_PRODUIT_CODA"
+    ],
+    "qFieldLabels": [
+      "CDE_PRDT"
+    ],
+    "title": "CDE_PRDT"
+  },
+  "qMetaDef": {
+    "title": "CDE_PRDT",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH53",
+      "CH76",
+      "CH77",
+      "CH80",
+      "CH81",
+      "CH82",
+      "CH85",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

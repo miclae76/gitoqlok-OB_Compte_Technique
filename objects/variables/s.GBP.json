@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "s.GBP",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.GBP",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_DEV_TIT={'GBP'}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

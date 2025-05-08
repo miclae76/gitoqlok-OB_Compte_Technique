@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME130",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Tx_Chgmt",
+    "qDef": "=TX_FR_EG+TX_FR_EP+TX_FR_EV+TX_FR_EM+TX_FR_ED+TX_FR_EO",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Tx_Chgmt",
+    "description": "",
+    "tags": [
+      "CH78",
+      "CH80",
+      "converter-auto-created"
+    ]
+  }
+}

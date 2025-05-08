@@ -1,0 +1,2539 @@
+[
+  {
+    "qName": "%CLE_OPTION_SOUCRITE",
+    "qTags": [
+      "$key",
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE",
+      "CSR_CDG"
+    ]
+  },
+  {
+    "qName": "AGE_EXACT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "AGE_EXACT_TDENOU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "AGE_EXACT_VU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "AGTCONSO",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "AGENT"
+    ]
+  },
+  {
+    "qName": "ANNEE",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CALENDRIER"
+    ]
+  },
+  {
+    "qName": "ARBITRABLE",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "B_FRAIS",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "B_IMPACT_PM",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "B_MANDAT_PS_ACTIF",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "B_PREV_SOC",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "B_REVAL",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_CANTON",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_DEV_CONTRAT",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "CD_DEV_CONTRAT_VU",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CSR_CDG"
+    ]
+  },
+  {
+    "qName": "CD_DEV_OPERATION",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "CD_DEV_TIT",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_ETABL",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "CD_ETAT",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "CD_EVENEMENT",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CD_EVENEMENTS_FLUX"
+    ]
+  },
+  {
+    "qName": "CD_FLUX",
+    "qTags": [
+      "$key",
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT",
+      "DEBIT_CREDIT",
+      "GRP_CHGT_MARGE",
+      "CD_EVENEMENTS_FLUX",
+      "$OFMap CD_FLUX"
+    ]
+  },
+  {
+    "qName": "CD_IFRS",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "CD_ISIN",
+    "qTags": [
+      "$keypart"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT",
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "CD_LOB_S2",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_NAT_SOUSC",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "CD_NIV_REVAL_FINAL",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "CD_OPTION",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_OPTION_SOUSCRITE",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "CD_PAYS_FISC",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "CD_PAYS_SOUSC",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "CD_PLACE_COTATION",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_PRODUIT",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "CD_PRODUIT_CODA",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "CD_PTF_CHORUS",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_RTECH",
+    "qTags": [
+      "$key",
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT",
+      "CLASSIF_RTECH"
+    ]
+  },
+  {
+    "qName": "CD_SENS",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_SOUS_TYPE_SUPPORT",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_SUPPORT",
+    "qTags": [],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_SYS_GESTION",
+    "qTags": [
+      "$key",
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "PARAM_EXEC_D_CUT_OFF",
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_TYPCON",
+    "qTags": [],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_DECES",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_DECES_ORIGINE",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_DECES_TDENOU",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_DECES_VU",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_FLUX",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "DEBIT_CREDIT"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_MOUV",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_OPTION",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_PERSONNE",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SOUSCRIPTEUR"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_PRODUIT",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_REVAL",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_RSQ_VU",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_SOUSC",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_SUPPORT",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_SUPPORT_1",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_SUPPORT_2",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CD_TYPE_SUPPORT_3",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CLASSE",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "CLE_OPERATION_",
+    "qTags": [
+      "$key",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FLUX",
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "CLE_OPTION",
+    "qTags": [
+      "$key",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT",
+      "OPTION"
+    ]
+  },
+  {
+    "qName": "CLE_OPTION_SOUSCRITE_",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "CLE_TAUX_",
+    "qTags": [
+      "$key",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "frais",
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "CODE VALEUR",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "CONTRAT.D_DEB_EFF_GARK",
+    "qTags": [],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "CONTRAT.D_EFFET",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "CONTRAT.D_FIN_EFF_GARK",
+    "qTags": [],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "CONTRAT.D_SORTIE",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "CONTRAT.D_TERME",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "CPTE_DEPOSITAIRE_LIB",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "DEVISE_PTF",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "DEVISE_VNI",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "D_BILAN",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date",
+      "$keypart"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT",
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "D_BILAN_VU",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "CSR_CDG"
+    ]
+  },
+  {
+    "qName": "D_CALCUL",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "CSR_CDG"
+    ]
+  },
+  {
+    "qName": "D_COMPTA",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "D_CUT_OFF",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "PARAM_EXEC_D_CUT_OFF"
+    ]
+  },
+  {
+    "qName": "D_CUT_OFF_N_1",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "PARAM_EXEC_D_CUT_OFF"
+    ]
+  },
+  {
+    "qName": "D_EFFET",
+    "qTags": [
+      "$key",
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "CALENDRIER",
+      "FLUX_SUPPORT",
+      "$OFMap D_EFFET"
+    ]
+  },
+  {
+    "qName": "D_ETAT",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "D_FIN_COM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "D_FIN_GAR_VU",
+    "qTags": [],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "D_NAI_REFERENCE",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "D_NAI_REFERENCE_TDENOU",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "D_NAI_REFERENCE_VU",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "D_VALORISATION",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "D_VNI",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "Date(\"D_EFFET\")",
+    "qTags": [],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "ETABLISSEMENT",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "FG_PROPOSE",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "FLAG_CONTRAT_CLOTURE",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "FLAG_GAR_ACTIVE",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "FLAG_INCOHERENCE",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "FLAG_NC",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "FLAG_NC_VU",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "GARANTIE_FG",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "GARANTIE_FG_PRODUIT",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "GROUPE_FLUX_1",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "DEBIT_CREDIT"
+    ]
+  },
+  {
+    "qName": "GROUPE_FLUX_2",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "DEBIT_CREDIT"
+    ]
+  },
+  {
+    "qName": "GROUPE_FLUX_2_CDG",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "DEBIT_CREDIT"
+    ]
+  },
+  {
+    "qName": "GROUPE_FRAIS_1",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "GRP_CHGT_MARGE"
+    ]
+  },
+  {
+    "qName": "GROUPE_MARGE_1",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "GRP_CHGT_MARGE"
+    ]
+  },
+  {
+    "qName": "ID_APPORTEUR",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "ID_CONTRAT",
+    "qTags": [
+      "$key",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT",
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "ID_OPTION_PROFIL",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "ID_PARTENAIRE",
+    "qTags": [
+      "$key",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT",
+      "AGENT"
+    ]
+  },
+  {
+    "qName": "ID_PRODUIT",
+    "qTags": [
+      "$key",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT",
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "ID_PROTOCOLE",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "ID_SUPPORT",
+    "qTags": [
+      "$key",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "SUPPORT",
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "LABEL_RTECH",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "CLASSIF_RTECH"
+    ]
+  },
+  {
+    "qName": "LB_FISC",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "LB_FLUX",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "DEBIT_CREDIT"
+    ]
+  },
+  {
+    "qName": "LB_OPTION",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "OPTION"
+    ]
+  },
+  {
+    "qName": "LB_PRODUIT",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "LB_SUPPORT",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "LIBGAR",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "REF_GARANTIE"
+    ]
+  },
+  {
+    "qName": "MARCHE_DIS",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "AGENT"
+    ]
+  },
+  {
+    "qName": "MAX_D_NAI_ASSURE",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "MAX_D_NAI_SOUSCR",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "MIN_D_NAI_ASSURE",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "MIN_D_NAI_SOUSCR",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CONTRAT_AGE"
+    ]
+  },
+  {
+    "qName": "MOIS",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "CALENDRIER"
+    ]
+  },
+  {
+    "qName": "MT_ACAV",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_ACAV_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_AVAN_REMB",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_AVAN_REMB_CPT",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_BRUT_OPE_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_BRUT_PREST",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_BRUT_PREST_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_CDG_CPT_VU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "CSR_CDG"
+    ]
+  },
+  {
+    "qName": "MT_CDG_VU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "CSR_CDG"
+    ]
+  },
+  {
+    "qName": "MT_COMMISSION_APP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_COMMISSION_PAR",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_COM_APP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_COM_APP_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_COM_LMEP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_COM_LMEP_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_COM_PAR",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_COM_PAR_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_CSR_CPT_VU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "CSR_CDG"
+    ]
+  },
+  {
+    "qName": "MT_CSR_VU",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "CSR_CDG"
+    ]
+  },
+  {
+    "qName": "MT_FLUX_CAP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_FLUX_CAP_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_FRAIS",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_FRAIS_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_FRAIS_CPT_PRIME",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_FRAIS_PREST",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_FRAIS_PREST_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_FRAIS_PRIME",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_NET_INVEST",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_NET_INVEST_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_NET_REGLE",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_NET_REGLE_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_OPERATION",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_OPE_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_PENALITE",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_PENALITE_CPT",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_PRELEV_FISC",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_PRELEV_FISC_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_PROVISION",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_PROVISION_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_REDUCTION",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_REDUCTION_CPT",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_SPREAD",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_SPREAD_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_SPREAD_TD",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_SPREAD_TR",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "MT_TAXES",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_TAXES_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_VERSE",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MT_VERSE_CPT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "MVT_RETRO",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CALENDRIER"
+    ]
+  },
+  {
+    "qName": "NB_PARTS",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "NB_PART_COMM_APP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "NB_PART_COMM_PAR",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "NB_PART_FLUX_CAP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "NB_PART_OPERATION",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "NB_PART_PROV",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "NOM_AGTCONSO",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "AGENT"
+    ]
+  },
+  {
+    "qName": "NOM_PARTENAIRE",
+    "qTags": [],
+    "qSrcTables": [
+      "AGENT"
+    ]
+  },
+  {
+    "qName": "NUMGGL",
+    "qTags": [
+      "$key",
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE",
+      "REF_GARANTIE",
+      "$OFMap NUMGGL"
+    ]
+  },
+  {
+    "qName": "NUM_CONTRAT",
+    "qTags": [
+      "$key",
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT",
+      "SOUSCRIPTEUR",
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "NUM_CTR_FIRME",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "NUM_OPERATION",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "NUM_OPE_SUPPORT",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "NUM_OPTION",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "OPTION"
+    ]
+  },
+  {
+    "qName": "NUM_PRESTATION",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "NUM_PRIME",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX"
+    ]
+  },
+  {
+    "qName": "OFFRE_FG",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "OPTION_D_EFFET",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "OPTION_D_FIN_EFFET",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "PAYS_CAA",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "PAYS_DIS",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "AGENT"
+    ]
+  },
+  {
+    "qName": "PORTEFEUILLE",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "PRODUIT.IND_GARANTI_K",
+    "qTags": [],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "PROVISION_FDG",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "PTF",
+    "qTags": [
+      "$keypart"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT",
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "PTF_ANCIEN",
+    "qTags": [
+      "$keypart"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT",
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "PTF_AVNI",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "PTF_DATASOURCE",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "PTF_FEXT",
+    "qTags": [],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "PTF_FIC_OCP",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "RACHETABLE",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "RETRAITEMENT_GAR_K_EXCLUS",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "STOCK_OR_NEWB",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT"
+    ]
+  },
+  {
+    "qName": "SUPPORT.D_DEB_EFF_GARK",
+    "qTags": [
+      "$numeric",
+      "$integer",
+      "$timestamp",
+      "$date"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "SUPPORT.D_FIN_EFF_GARK",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "SUPPORT.IND_GARANTI_K",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "SUPPORT"
+    ]
+  },
+  {
+    "qName": "TAUTUN",
+    "qTags": [],
+    "qSrcTables": [
+      "REF_GARANTIE"
+    ]
+  },
+  {
+    "qName": "TAUX_UC",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TAUX_UC_MOYEN",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TOTAL_REVAL_CPL",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TOTAL_REVAL_EST",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TOTAL_REVAL_PROB",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TOTAL_REVAL_SUP",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TRANSFERABLE",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "TRESORERIE",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "TRESORERIE_EUR",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "TRESORIE_DEV_COT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "TRI_FLUX_1_",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "DEBIT_CREDIT"
+    ]
+  },
+  {
+    "qName": "TRI_FLUX_2_",
+    "qTags": [],
+    "qSrcTables": [
+      "DEBIT_CREDIT"
+    ]
+  },
+  {
+    "qName": "TX_CHANGE",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "FLUX_SUPPORT"
+    ]
+  },
+  {
+    "qName": "TX_COM",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "TX_COM_APP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "TX_COM_ED",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_COM_EG",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_COM_EM",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_COM_EO",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_COM_EP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_COM_EV",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_COM_LMEP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "TX_COM_PAR",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "TX_COND",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_COND_BSP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_CORR_RSQ",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "TX_FRAIS",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "TX_FR_ED",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_FR_EG",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_FR_EM",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_FR_EO",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_FR_EP",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_FR_EV",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_PS",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_RACHAT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_REVAL_CPL",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_REVAL_EST",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_REVAL_MIN",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_REVAL_PROB",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_REVAL_SUP",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TX_TG_UC",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "frais"
+    ]
+  },
+  {
+    "qName": "TYPE_ACTIF",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "TYPE_PRODUIT",
+    "qTags": [
+      "$text"
+    ],
+    "qSrcTables": [
+      "PRODUIT"
+    ]
+  },
+  {
+    "qName": "TYPGDC",
+    "qTags": [],
+    "qSrcTables": [
+      "REF_GARANTIE"
+    ]
+  },
+  {
+    "qName": "TYPMAJ",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "TYPOPS",
+    "qTags": [
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "OPTION_SOUSCRITE"
+    ]
+  },
+  {
+    "qName": "VALID_FROM",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "GRP_CHGT_MARGE"
+    ]
+  },
+  {
+    "qName": "VALID_TO",
+    "qTags": [
+      "$numeric",
+      "$integer"
+    ],
+    "qSrcTables": [
+      "GRP_CHGT_MARGE"
+    ]
+  },
+  {
+    "qName": "VAL_ACTIF_NET",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "VAL_ACTIF_NET_EUR",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "VAL_BOURSIERE",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "VAL_BOURSIERE_DEV_COT",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "VAL_BOURSIERE_EUR",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "VNI",
+    "qTags": [
+      "$numeric"
+    ],
+    "qSrcTables": [
+      "ACTIF"
+    ]
+  },
+  {
+    "qName": "_CLE_AGE",
+    "qTags": [
+      "$key",
+      "$ascii",
+      "$text"
+    ],
+    "qSrcTables": [
+      "CONTRAT",
+      "CONTRAT_AGE"
+    ]
+  }
+]

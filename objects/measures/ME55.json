@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME55",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Valeur Base Actif",
+    "qDef": "sum({<TYPE_ACTIF={'FID', 'FIC', 'FAS'}>} VAL_ACTIF_NET)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Valeur Base Actif",
+    "description": "",
+    "tags": [
+      "CH31",
+      "converter-auto-created"
+    ]
+  }
+}

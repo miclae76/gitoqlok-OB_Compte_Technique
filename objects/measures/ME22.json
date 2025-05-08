@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME22",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MNT_ACTIF",
+    "qDef": "Sum({<TYPE_ACTIF={'UC'}>} VAL_BOURSIERE_DEV_COT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MNT_ACTIF",
+    "description": "",
+    "tags": [
+      "CH05",
+      "converter-auto-created"
+    ]
+  }
+}

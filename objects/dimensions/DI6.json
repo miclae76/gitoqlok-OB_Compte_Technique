@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI6",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "NUM_OPE_SUPPORT"
+    ],
+    "qFieldLabels": [
+      "NUM_OPE_SUPPORT"
+    ],
+    "title": "NUM_OPE_SUPPORT"
+  },
+  "qMetaDef": {
+    "title": "NUM_OPE_SUPPORT",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

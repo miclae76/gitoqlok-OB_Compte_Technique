@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "ME3",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "CV€ Net",
+    "qDef": "rangesum(\r\nsum({$*<B_IMPACT_PM={N}, NUM_OPE_SUPPORT={\"AJUST_*\"}, CD_SYS_GESTION={'POCUS'}>}MT_OPE_CPT),\nsum({$*<B_FRAIS={'N'}, B_REVAL={'N'},B_IMPACT_PM={O}, GROUPE_FLUX_1={'Débit', 'Crédit'}, CD_FLUX=-{'TDZO', 'TRZO'}>} MT_OPE_CPT),\n-sum({$*<B_FRAIS={'N'}, B_REVAL={'N'},B_IMPACT_PM={O}, GROUPE_FLUX_1={'Débit', 'Crédit'}, CD_FLUX=-{'TDZO', 'TRZO'}, CD_ISIN={'BCCSLF'}>} MT_OPE_CPT),\n-sum({$*<B_IMPACT_PM={O}, B_FRAIS={'N'}, B_REVAL={'N'},CD_FLUX=-{'TDZO', 'TRZO'}, CD_TYPE_FLUX={'DES'}>}MT_FRAIS_CPT),\nsum({$*<B_IMPACT_PM={O}, B_FRAIS={'N'}, B_REVAL={'N'},CD_FLUX=-{'TDZO', 'TRZO'}, CD_TYPE_FLUX={'DES'}, CD_ISIN={'BCCSLF'}>}MT_FRAIS_CPT),\nsum({$*<CD_FLUX={\"CSR*\"}>} MT_OPE_CPT)\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "CV€ Net",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

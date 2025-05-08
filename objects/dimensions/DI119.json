@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI119",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(aggr(count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, aggr(only({1<TYPOPS={'VU','DC'}>} TAUTUN), NUM_CONTRAT))/100"
+    ],
+    "qFieldLabels": [
+      "TX_TUNNEL"
+    ],
+    "title": "TX_TUNNEL"
+  },
+  "qMetaDef": {
+    "title": "TX_TUNNEL",
+    "description": "",
+    "tags": [
+      "CH83",
+      "converter-auto-created"
+    ]
+  }
+}

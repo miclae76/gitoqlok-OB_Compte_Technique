@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI96",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if((CD_SOUS_TYPE_SUPPORT='TGPRODBFR' OR CD_PRODUIT_CODA='GA392'),'RENTE',IF(aggr(count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, 'OUI', 'NON'))"
+    ],
+    "qFieldLabels": [
+      "Garantie"
+    ],
+    "title": "Garantie"
+  },
+  "qMetaDef": {
+    "title": "Garantie",
+    "description": "",
+    "tags": [
+      "CH53",
+      "converter-auto-created"
+    ]
+  }
+}

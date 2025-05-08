@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI56",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(aggr(count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, aggr(only({1<TYPOPS={'VU','DC'}>} TAUTUN), NUM_CONTRAT))"
+    ],
+    "qFieldLabels": [
+      "TAUTUN"
+    ],
+    "title": "TAUTUN"
+  },
+  "qMetaDef": {
+    "title": "TAUTUN",
+    "description": "",
+    "tags": [
+      "CH27",
+      "converter-auto-created"
+    ]
+  }
+}

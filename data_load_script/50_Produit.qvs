@@ -1,0 +1,46 @@
+///$tab 50_Produit
+Map_LIBFISC:
+Mapping
+LOAD * INLINE [
+    TYPFIS, LIBFIS
+    5, Prestations définies
+    1, Assurance-vie 
+    2, Capitalisation
+    3, Collectif
+    4, Réassurance acceptée
+];
+
+
+
+QUALIFY IND_GARANTI_K;
+PRODUIT:
+LOAD 
+	//"DW_Id",
+    //"D_BILAN",
+ 	"ID_PRODUIT",
+//    "CD_SYS_GESTION",
+    "CD_PRODUIT",
+    PurgeChar(CD_PRODUIT, '_') AS CD_PRODUIT_CODA,
+    subfield(CD_PRODUIT, '_', 1) AS CD_TYPCON,
+    "LB_PRODUIT",
+    "CD_IFRS",
+    "CD_TYPE_PRODUIT",
+    ApplyMap('Map_LIBFISC', CD_TYPE_PRODUIT, '?Unknown') AS LB_FISC,
+     ApplyMap('Map_LIBFISC', CD_TYPE_PRODUIT, '?') AS TYPE_PRODUIT,
+    "CD_NAT_SOUSC",
+    "FG_PROPOSE",
+    "GARANTIE_FG" AS GARANTIE_FG_PRODUIT,
+    "PORTEFEUILLE",
+    "RACHETABLE",
+    "ARBITRABLE",
+    "TRANSFERABLE",
+    "D_FIN_COM",
+    "IND_GARANTI_K";
+//    "D_DEB_VALIDITE",
+//    "D_FIN_VALIDITE",
+//    "IS_CURRENT",
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_PRODUIT_H";

@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI88",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(D_BILAN = D_BILAN_VU, D_BILAN)"
+    ],
+    "qFieldLabels": [
+      "D_BILAN"
+    ],
+    "title": "D_BILAN"
+  },
+  "qMetaDef": {
+    "title": "D_BILAN",
+    "description": "",
+    "tags": [
+      "CH52",
+      "CH81",
+      "converter-auto-created"
+    ]
+  }
+}

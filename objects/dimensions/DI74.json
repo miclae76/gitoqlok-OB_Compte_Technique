@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI74",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "MAX_D_NAI_ASSURE"
+    ],
+    "qFieldLabels": [
+      "MAX_D_NAI_ASSURE"
+    ],
+    "title": "MAX_D_NAI_ASSURE"
+  },
+  "qMetaDef": {
+    "title": "MAX_D_NAI_ASSURE",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

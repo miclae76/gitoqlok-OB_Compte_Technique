@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "1dcebc4f-a78d-44a9-ac9c-1e9821a694b2",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_kpi_rouge",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#E7004C",
+  "qIsScriptCreated": true
+}

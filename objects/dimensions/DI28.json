@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI28",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_SENS"
+    ],
+    "qFieldLabels": [
+      "CD_SENS"
+    ],
+    "title": "CD_SENS"
+  },
+  "qMetaDef": {
+    "title": "CD_SENS",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

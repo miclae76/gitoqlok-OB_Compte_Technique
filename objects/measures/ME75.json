@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME75",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Tx Chargement",
+    "qDef": "sum(rangesum(TX_FR_ED, TX_FR_EG, TX_FR_EM, TX_FR_EO, TX_FR_EP, TX_FR_EV)*if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))/sum(if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))/100 \n//avg({<B_IMPACT_PM={'O'}>}aggr(rangesum(TX_FR_ED, TX_FR_EG, TX_FR_EM, TX_FR_EO, TX_FR_EP, TX_FR_EV), NUM_CONTRAT, CD_SUPPORT))/100",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Tx Chargement",
+    "description": "",
+    "tags": [
+      "CH40",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "v_Classif_IFRS",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_Classif_IFRS",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "if(\n\t//fonds de rente Milan et GA39_2   \n\tCD_SOUS_TYPE_SUPPORT = 'TGPRODBFR' \tOR CD_PRODUIT_CODA = 'GA392' \n\t// Contrats avec garantie VUT et taux de la garantie > 1\n\tOR (left(if(aggr(nodistinct count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, aggr(nodistinct only({1<TYPOPS={'VU','DC'}>} TYPGDC), NUM_CONTRAT)),3) ='VUT' \n\t\tAND if(aggr(nodistinct count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, aggr(nodistinct only({1<TYPOPS={'VU','DC'}>} TAUTUN), NUM_CONTRAT), 0) >1)\n\t//Contrat GA60_2 avec garantie VUTM \n\tOR (if(aggr(nodistinct count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, aggr(nodistinct only({1<TYPOPS={'VU','DC'}>} TYPGDC), NUM_CONTRAT))='VUTM' \n\t\tAND CD_PRODUIT_CODA = 'GA602')\n\t// Contrats hors précédents avec garantie VU mais pas VUT \n\tOR (if(aggr(nodistinct count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, -1, 0)\n\t\tAND left(if(aggr(nodistinct count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, aggr(nodistinct only({1<TYPOPS={'VU','DC'}>} TYPGDC), NUM_CONTRAT)),3)<>'VUT')\n\t\t\n\t,'IFRS4ASS' \n\t\n\t,if( // Contrats avec garantie non signigficative ou sans garantie mais investissement possible en TG\n\t\tFG_PROPOSE = 'OUI'\t\n\t\t,'IFRS4PB'\t\t\n\t\t, if((CD_TYPE_SUPPORT_1 = 'FG' and MT_PROVISION_CPT>0) \n\t\t\t// si le produit ne permet pas d’investir sur du FG mais qu’il existe une PM FG non nulle + tautun > 1%)\n\t\t\t,if( aggr(nodistinct sum({<D_BILAN={'$(=Date(Max(D_BILAN)))'}, CD_TYPE_SUPPORT_1={'FG'}>}MT_PROVISION_CPT), NUM_CONTRAT) \n\t\t\t\tAND if(aggr(nodistinct count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, aggr(nodistinct only({1<TYPOPS={'VU','DC'}>} TAUTUN), NUM_CONTRAT), 0) >1\n\t\t\t\t, 'IFRS4ASS'\n\t\t\t\t, 'IFRS4PB'\n\t\t\t)\n\t\t\t,'IAS39'\n\t\t)\n\t)\n)",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

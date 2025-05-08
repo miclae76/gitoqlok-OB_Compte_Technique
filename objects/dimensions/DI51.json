@@ -1,0 +1,30 @@
+{
+  "qInfo": {
+    "qId": "DI51",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "D_BILAN"
+    ],
+    "qFieldLabels": [
+      "D_BILAN"
+    ],
+    "title": "D_BILAN"
+  },
+  "qMetaDef": {
+    "title": "D_BILAN",
+    "description": "",
+    "tags": [
+      "CH27",
+      "CH41",
+      "CH53",
+      "CH79",
+      "CH80",
+      "CH83",
+      "CH86",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME54",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MNT_PASSIF",
+    "qDef": "//sum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA'}>}MT_PROVISION) + sum({$*<CD_SOUS_TYPE_SUPPORT={'FAS'}>}MT_PROVISION)\nsum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA*'}>}MT_PROVISION)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MNT_PASSIF",
+    "description": "",
+    "tags": [
+      "CH31",
+      "converter-auto-created"
+    ]
+  }
+}

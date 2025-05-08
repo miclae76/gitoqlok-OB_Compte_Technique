@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI83",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "D_NAI_REFERENCE"
+    ],
+    "qFieldLabels": [
+      "D_NAI_REFERENCE"
+    ],
+    "title": "D_NAI_REFERENCE"
+  },
+  "qMetaDef": {
+    "title": "D_NAI_REFERENCE",
+    "description": "",
+    "tags": [
+      "CH41",
+      "CH83",
+      "converter-auto-created"
+    ]
+  }
+}

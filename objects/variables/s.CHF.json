@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "s.CHF",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.CHF",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_DEV_TIT={'CHF'}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

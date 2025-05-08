@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "DI26",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_PAYS_SOUSC"
+    ],
+    "qFieldLabels": [
+      "Pays BCL"
+    ],
+    "title": "Pays BCL"
+  },
+  "qMetaDef": {
+    "title": "Pays BCL",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH76",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

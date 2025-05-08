@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI139",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_FR_ED"
+    ],
+    "qFieldLabels": [
+      "TX_FR_ED"
+    ],
+    "title": "TX_FR_ED"
+  },
+  "qMetaDef": {
+    "title": "TX_FR_ED",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "ODX_GAME",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "ODX_GAME",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "ODX_GAME",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

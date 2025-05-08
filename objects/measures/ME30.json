@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME30",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ACAV",
+    "qDef": "sum({<CD_FLUX={'ACAV'}>} MT_ACAV_CPT)-sum({<CD_FLUX={'ACAV'}, CD_ISIN={'BCCSLF'}>} MT_ACAV_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "ACAV",
+    "description": "",
+    "tags": [
+      "CH06",
+      "converter-auto-created"
+    ]
+  }
+}

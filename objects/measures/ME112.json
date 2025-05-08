@@ -1,0 +1,32 @@
+{
+  "qInfo": {
+    "qId": "ME112",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "GBP",
+    "qDef": "sum({$*<$(s.GBP), $(s.TG),B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPERATION) + sum({$*<$(s.GBP), $(s.TG)>} MT_PROVISION)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "# ##0,00",
+      "qDec": ",",
+      "qThou": " "
+    },
+    "isCustomFormatted": false,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "GBP",
+    "description": "",
+    "tags": [
+      "CH66",
+      "CH90",
+      "converter-auto-created"
+    ]
+  }
+}

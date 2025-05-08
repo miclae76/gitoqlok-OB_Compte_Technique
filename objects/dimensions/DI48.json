@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI48",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(aggr(count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, aggr(only({1<TYPOPS={'VU','DC'}>} TYPGDC), NUM_CONTRAT))"
+    ],
+    "qFieldLabels": [
+      "Type Garantie"
+    ],
+    "title": "Type Garantie"
+  },
+  "qMetaDef": {
+    "title": "Type Garantie",
+    "description": "",
+    "tags": [
+      "CH23",
+      "CH27",
+      "CH29",
+      "CH30",
+      "CH83",
+      "converter-auto-created"
+    ]
+  }
+}

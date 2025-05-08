@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "DI18",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "PAYS_DIS"
+    ],
+    "qFieldLabels": [
+      "PAYS_DIS"
+    ],
+    "title": "PAYS_DIS"
+  },
+  "qMetaDef": {
+    "title": "PAYS_DIS",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH76",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

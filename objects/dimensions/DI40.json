@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "DI40",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "MOIS"
+    ],
+    "qFieldLabels": [
+      "MOIS"
+    ],
+    "title": "MOIS"
+  },
+  "qMetaDef": {
+    "title": "MOIS",
+    "description": "",
+    "tags": [
+      "CH11",
+      "CH35",
+      "CH61",
+      "CH86",
+      "converter-auto-created"
+    ]
+  }
+}

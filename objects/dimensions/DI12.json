@@ -1,0 +1,45 @@
+{
+  "qInfo": {
+    "qId": "DI12",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_DEV_TIT"
+    ],
+    "qFieldLabels": [
+      "CD_DEV_TIT"
+    ],
+    "title": "CD_DEV_TIT",
+    "coloring": {
+      "colorMapRef": "DI12",
+      "changeHash": "0.8381661543363931",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "CD_DEV_TIT",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH04",
+      "CH05",
+      "CH06",
+      "CH22",
+      "CH33",
+      "CH34",
+      "CH36",
+      "CH76",
+      "CH77",
+      "CH78",
+      "CH80",
+      "CH82",
+      "CH84",
+      "CH86",
+      "CH87",
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

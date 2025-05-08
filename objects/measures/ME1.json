@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "ME1",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Montant Brut Dev Tit",
+    "qDef": "rangesum(\r\nsum({$*<B_IMPACT_PM={N}, NUM_OPE_SUPPORT={\"AJUST_*\"}, CD_SYS_GESTION={'POCUS'}>}MT_OPERATION),\nsum({$*<B_IMPACT_PM={O}, B_FRAIS={'N'}, B_REVAL={'N'}, GROUPE_FLUX_1={'Débit', 'Crédit'}, CD_FLUX=-{'TDZO', 'TRZO'}>}MT_OPERATION)\n-sum({$*<B_IMPACT_PM={O}, B_FRAIS={'N'}, B_REVAL={'N'}, GROUPE_FLUX_1={'Débit', 'Crédit'}, CD_FLUX=-{'TDZO', 'TRZO'}, CD_ISIN={'BCCSLF'}>}MT_OPERATION)\n,-sum({$*<B_IMPACT_PM={O}, B_FRAIS={'N'}, B_REVAL={'N'}, GROUPE_FLUX_1={'Débit', 'Crédit'}, CD_FLUX=-{'TDZO', 'TRZO'}, CD_TYPE_FLUX={'INV'}>}MT_FRAIS)\n,-sum({$*<B_IMPACT_PM={O}, B_FRAIS={'N'}, B_REVAL={'N'}, GROUPE_FLUX_1={'Débit', 'Crédit'}, CD_FLUX=-{'TDZO', 'TRZO'}, CD_TYPE_FLUX={'INV'}, CD_PTF_CHORUS={'BCCSLF'}>}MT_FRAIS)\n,sum({$*<CD_FLUX={\"CSR*\"}>} MT_OPERATION)\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Montant Brut Dev Tit",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

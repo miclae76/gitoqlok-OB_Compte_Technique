@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME158",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "EUR Milan Fds Co",
+    "qDef": "sum({$*<$(s.EUR_RENTE_DB), CD_TYPE_SOUSC={'MILAN'}, $(s.TG), B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPE_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "EUR Milan Fds Co",
+    "description": "",
+    "tags": [
+      "CH91",
+      "CH93",
+      "converter-auto-created"
+    ]
+  }
+}

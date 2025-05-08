@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME125",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Provisions EUR",
+    "qDef": "sum( {<MVT_RETRO=, CD_FLUX=, GROUPE_FLUX_2=,  CD_FLUX={\"PMCLO\"}>} MT_PROVISION_CPT) \n-sum( {<MVT_RETRO=, CD_FLUX=, GROUPE_FLUX_2=, CD_FLUX={\"PMCLO\"}, CD_ISIN={'BCCSLF'}>}MT_PROVISION_CPT) \n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Provisions EUR",
+    "description": "",
+    "tags": [
+      "CH70",
+      "CH74",
+      "converter-auto-created"
+    ]
+  }
+}

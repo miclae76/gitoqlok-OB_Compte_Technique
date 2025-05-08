@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "v_Exclusion_Age_LMEA",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_Exclusion_Age_LMEA",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_PRODUIT=-{\"BCCS*\"}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

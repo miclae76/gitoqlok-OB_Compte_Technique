@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME82",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Age en Nombre",
+    "qDef": "Pick(match(ValueList('LMEP', 'dont Emissions N', 'LMEA'), 'LMEP', 'dont Emissions N', 'LMEA'),\r\n// age moyen LMEP\nAVG(total  {<CD_SYS_GESTION=-{'PAS'}, FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, $(v_Exclusion_Age_LMEP), $(v_Exclusion_Support_LMEP)>} AGE_EXACT),\nAVG(total  {<CD_SYS_GESTION=-{'PAS'}, FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, $(v_Exclusion_Age_LMEP), $(v_Exclusion_Support_LMEP), CONTRAT.D_EFFET={\">=$(=Makedate(Year(Max(D_BILAN))))\"}>} AGE_EXACT),\nAVG(total  {<CD_SYS_GESTION=-{'PAS'}, FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_PRODUIT={'GA50_15', \"GA60_*\"}>+\n<FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_SYS_GESTION={'PAS'},$(v_Exclusion_Age_LMEA) >} AGE_EXACT)\n)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Age en Nombre",
+    "description": "",
+    "tags": [
+      "CH45",
+      "converter-auto-created"
+    ]
+  }
+}

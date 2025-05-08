@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI106",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "MVT_RETRO"
+    ],
+    "qFieldLabels": [
+      "MVT_RETRO"
+    ],
+    "title": "MVT_RETRO"
+  },
+  "qMetaDef": {
+    "title": "MVT_RETRO",
+    "description": "",
+    "tags": [
+      "CH61",
+      "converter-auto-created"
+    ]
+  }
+}

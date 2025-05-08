@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "ME76",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Tx Marge",
+    "qDef": "sum(rangesum(TX_FR_ED-TX_COM_ED, TX_FR_EG-TX_COM_EG, TX_FR_EM-TX_COM_EM, TX_FR_EO-TX_COM_EO, TX_FR_EP-TX_COM_EP, TX_FR_EV-TX_COM_EV)*if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))/sum(if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))/100",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "# ##0,000%",
+      "qDec": ",",
+      "qThou": " "
+    },
+    "isCustomFormatted": false,
+    "numFormatFromTemplate": false,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Tx Marge",
+    "description": "",
+    "tags": [
+      "CH40",
+      "CH63",
+      "CH64",
+      "CH65",
+      "converter-auto-created"
+    ]
+  }
+}

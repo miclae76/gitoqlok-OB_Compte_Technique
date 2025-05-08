@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI72",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_TYPE_DECES_ORIGINE"
+    ],
+    "qFieldLabels": [
+      "CD_TYPE_DECES_ORIGINE"
+    ],
+    "title": "CD_TYPE_DECES_ORIGINE"
+  },
+  "qMetaDef": {
+    "title": "CD_TYPE_DECES_ORIGINE",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

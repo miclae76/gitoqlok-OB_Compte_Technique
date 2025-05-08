@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME78",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "# Contrats",
+    "qDef": "count(DISTINCT NUM_CONTRAT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "# Contrats",
+    "description": "",
+    "tags": [
+      "CH40",
+      "converter-auto-created"
+    ]
+  }
+}

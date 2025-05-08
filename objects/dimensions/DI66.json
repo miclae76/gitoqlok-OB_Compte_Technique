@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI66",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=alt(AGTCONSO, ID_PARTENAIRE)"
+    ],
+    "qFieldLabels": [
+      "AGTCONSO"
+    ],
+    "title": "AGTCONSO"
+  },
+  "qMetaDef": {
+    "title": "AGTCONSO",
+    "description": "",
+    "tags": [
+      "CH35",
+      "converter-auto-created"
+    ]
+  }
+}

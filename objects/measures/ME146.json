@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME146",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Montant Frais EUR",
+    "qDef": "sum({<CD_FLUX={'E*'}>}MT_OPE_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Montant Frais EUR",
+    "description": "",
+    "tags": [
+      "CH86",
+      "converter-auto-created"
+    ]
+  }
+}

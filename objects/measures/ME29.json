@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME29",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM Clôture",
+    "qDef": "sum({<CD_FLUX={'PMCLO'}>}MT_PROVISION_CPT)- sum({<CD_FLUX={'PMCLO'}, CD_ISIN={'BCCSLF'}>}MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "PM Clôture",
+    "description": "",
+    "tags": [
+      "CH06",
+      "converter-auto-created"
+    ]
+  }
+}

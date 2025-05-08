@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME15",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MNT_PASSIF_EUR",
+    "qDef": "sum({<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA'}>}MT_PROVISION_CPT) ",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MNT_PASSIF_EUR",
+    "description": "",
+    "tags": [
+      "CH04",
+      "converter-auto-created"
+    ]
+  }
+}

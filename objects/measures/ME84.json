@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME84",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM EUR - LMEP",
+    "qDef": "// age moyen LMEP\nSUM( {<CD_SYS_GESTION=-{'PAS'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, $(v_Exclusion_Age_LMEP), $(v_Exclusion_Support_LMEP)>} MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "PM EUR - LMEP",
+    "description": "",
+    "tags": [
+      "CH46",
+      "converter-auto-created"
+    ]
+  }
+}

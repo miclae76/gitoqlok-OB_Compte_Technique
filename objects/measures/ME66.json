@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME66",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Mnt Commission EUR",
+    "qDef": "-rangesum(sum({<B_IMPACT_PM={'O'}, B_FRAIS={'O'}>}MT_COM_PAR_CPT), sum({<B_IMPACT_PM={'O'}, B_FRAIS={'O'}>}MT_COM_APP_CPT))\n-rangesum(sum({<B_IMPACT_PM={'N'}>}MT_COM_PAR_CPT), sum({<B_IMPACT_PM={'N'}>}MT_COM_APP_CPT))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Mnt Commission EUR",
+    "description": "",
+    "tags": [
+      "CH35",
+      "converter-auto-created"
+    ]
+  }
+}

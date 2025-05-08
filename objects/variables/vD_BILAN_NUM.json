@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "vD_BILAN_NUM",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vD_BILAN_NUM",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "20180930",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI145",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_FR_EV"
+    ],
+    "qFieldLabels": [
+      "TX_FR_EV"
+    ],
+    "title": "TX_FR_EV"
+  },
+  "qMetaDef": {
+    "title": "TX_FR_EV",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

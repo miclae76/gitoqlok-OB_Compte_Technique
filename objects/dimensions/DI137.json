@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI137",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_FR_EP"
+    ],
+    "qFieldLabels": [
+      "TX_FR_EP"
+    ],
+    "title": "TX_FR_EP"
+  },
+  "qMetaDef": {
+    "title": "TX_FR_EP",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

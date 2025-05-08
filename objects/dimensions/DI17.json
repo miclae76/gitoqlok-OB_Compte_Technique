@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI17",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "GROUPE_FLUX_2_CDG"
+    ],
+    "qFieldLabels": [
+      "GROUPE_FLUX_2_CDG"
+    ],
+    "title": "GROUPE_FLUX_2_CDG"
+  },
+  "qMetaDef": {
+    "title": "GROUPE_FLUX_2_CDG",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

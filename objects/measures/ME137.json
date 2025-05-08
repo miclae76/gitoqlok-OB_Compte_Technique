@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME137",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MT CDG (Euros)",
+    "qDef": "sum(IF(NUMGGL=646 or NUMGGL=688 OR NUMGGL=694,MT_CDG_CPT_VU))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "MT CDG (Euros)",
+    "description": "",
+    "tags": [
+      "CH81",
+      "converter-auto-created"
+    ]
+  }
+}

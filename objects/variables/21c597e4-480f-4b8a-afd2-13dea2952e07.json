@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "21c597e4-480f-4b8a-afd2-13dea2952e07",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_brun_100",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#381A0A",
+  "qIsScriptCreated": true
+}

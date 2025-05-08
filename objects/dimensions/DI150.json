@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI150",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TAUX_UC"
+    ],
+    "qFieldLabels": [
+      "TAUX_UC"
+    ],
+    "title": "TAUX_UC"
+  },
+  "qMetaDef": {
+    "title": "TAUX_UC",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

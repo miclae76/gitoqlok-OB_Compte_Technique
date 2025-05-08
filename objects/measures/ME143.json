@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "ME143",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "%UC",
+    "qDef": "rangesum(\r\n\tsum({<D_BILAN={'$(=Date(Max(D_BILAN)))'}, CD_TYPE_SUPPORT_1={'UC'}>} IF(LEFT(CD_PRODUIT,3)='GA4' or NUM_CONTRAT='ME000708294000',MT_PROVISION_CPT))/sum({<D_BILAN={'$(=Date(Max(D_BILAN)))'}>}IF(LEFT(CD_PRODUIT,3)='GA4' or NUM_CONTRAT='ME000708294000',MT_PROVISION_CPT)),\n    if(CD_SYS_GESTION='POCUS',1)\n)\n/*\nIF(LEFT(CD_PRODUIT,3)='GA4' or NUM_CONTRAT='ME000708294000',sum({<D_BILAN={'$(=Date(Max(D_BILAN)))'}, CD_TYPE_SUPPORT_1={'UC'}>}MT_PROVISION_CPT)/sum({<D_BILAN={'$(=Date(Max(D_BILAN)))'}>}MT_PROVISION_CPT),\nif(CD_SYS_GESTION='POCUS',1,0))*/",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "0,00%",
+      "qDec": ",",
+      "qThou": " "
+    },
+    "isCustomFormatted": false,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "%UC",
+    "description": "",
+    "tags": [
+      "CH83",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI76",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "MAX_D_NAI_SOUSCR"
+    ],
+    "qFieldLabels": [
+      "MAX_D_NAI_SOUSCR"
+    ],
+    "title": "MAX_D_NAI_SOUSCR"
+  },
+  "qMetaDef": {
+    "title": "MAX_D_NAI_SOUSCR",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

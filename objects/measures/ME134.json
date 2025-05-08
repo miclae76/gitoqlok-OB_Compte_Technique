@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME134",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM TG CV€",
+    "qDef": "=sum({<CD_ISIN=-{'BCCSLF'},CD_DEV_TIT=-{'EUR'},CD_TYPE_SUPPORT_1=-{'UC'}>}MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "PM TG CV€",
+    "description": "",
+    "tags": [
+      "CH79",
+      "converter-auto-created"
+    ]
+  }
+}

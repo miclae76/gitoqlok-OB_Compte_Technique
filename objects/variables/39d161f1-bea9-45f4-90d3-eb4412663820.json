@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "39d161f1-bea9-45f4-90d3-eb4412663820",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_bleu_f",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#5179A1",
+  "qIsScriptCreated": true
+}

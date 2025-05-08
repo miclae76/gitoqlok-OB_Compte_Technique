@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME77",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Tx Partenaire",
+    "qDef": "sum(rangesum(TX_COM_ED, TX_COM_EG, TX_COM_EM, TX_COM_EO, TX_COM_EP, TX_COM_EV)*if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))/sum(if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))/100 ",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Tx Partenaire",
+    "description": "",
+    "tags": [
+      "CH40",
+      "converter-auto-created"
+    ]
+  }
+}

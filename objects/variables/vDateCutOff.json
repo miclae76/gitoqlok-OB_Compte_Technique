@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "vDateCutOff",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vDateCutOff",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2018-01-25",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

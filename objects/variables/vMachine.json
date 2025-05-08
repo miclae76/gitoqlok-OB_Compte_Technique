@@ -1,0 +1,18 @@
+{
+  "qInfo": {
+    "qId": "vMachine",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vMachine",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "LMEP-QS01",
+  "tags": [
+    "converter-auto-created"
+  ],
+  "qIsScriptCreated": true
+}

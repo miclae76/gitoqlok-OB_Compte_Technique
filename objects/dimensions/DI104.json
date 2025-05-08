@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI104",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if (YEAR(CONTRAT.D_EFFET)= YEAR(D_BILAN), 'NB', 'STOCK')"
+    ],
+    "qFieldLabels": [
+      " "
+    ],
+    "title": " "
+  },
+  "qMetaDef": {
+    "title": " ",
+    "description": "",
+    "tags": [
+      "CH60",
+      "converter-auto-created"
+    ]
+  }
+}

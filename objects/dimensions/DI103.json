@@ -1,0 +1,33 @@
+{
+  "qInfo": {
+    "qId": "DI103",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if( NUM_OPTION > 1000, dual('Offre spécifique', 999), \n\tif( wildmatch(LB_SUPPORT, '*FIC TEMPO*') > 0, dual('TEMPO', 998),   CD_TYPE_SUPPORT)\n\t)"
+    ],
+    "qFieldLabels": [
+      "CD_TYPE_SUPPORT"
+    ],
+    "qLabelExpression": "='CD_TYPE_SUPPORT'",
+    "qAlias": "CD_TYPE_SUPPORT",
+    "title": "CD_TYPE_SUPPORT",
+    "coloring": {
+      "colorMapRef": "DI103",
+      "changeHash": "0.16028916597477227",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "CD_TYPE_SUPPORT",
+    "description": "",
+    "tags": [
+      "CH60",
+      "CH63",
+      "CH65",
+      "converter-auto-created"
+    ]
+  }
+}

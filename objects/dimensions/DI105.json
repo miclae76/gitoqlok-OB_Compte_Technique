@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI105",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_TYPE_SUPPORT"
+    ],
+    "qFieldLabels": [
+      "CD_TYPE_SUPPORT"
+    ],
+    "title": "CD_TYPE_SUPPORT"
+  },
+  "qMetaDef": {
+    "title": "CD_TYPE_SUPPORT",
+    "description": "",
+    "tags": [
+      "CH61",
+      "CH86",
+      "converter-auto-created"
+    ]
+  }
+}

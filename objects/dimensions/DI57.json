@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI57",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=aggr(only({$*<CD_FLUX=-{'PC*', 'PG*'}>}CD_FLUX), CD_FLUX)"
+    ],
+    "qFieldLabels": [
+      "Type Frais"
+    ],
+    "title": "Type Frais"
+  },
+  "qMetaDef": {
+    "title": "Type Frais",
+    "description": "",
+    "tags": [
+      "CH28",
+      "CH30",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI109",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=Date(MonthStart(D_EFFET), 'YYYY/MM')"
+    ],
+    "qFieldLabels": [
+      "Période"
+    ],
+    "title": "Période"
+  },
+  "qMetaDef": {
+    "title": "Période",
+    "description": "",
+    "tags": [
+      "CH71",
+      "converter-auto-created"
+    ]
+  }
+}

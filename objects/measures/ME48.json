@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME48",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "COM_LME_EUR",
+    "qDef": "rangesum(\n       sum({<B_FRAIS={'O'}>} MT_OPE_CPT)            // frais périodique total    \n       ,sum({<CD_FLUX={'ECAH'}>} MT_OPE_CPT)         // + recup frais sur revalo cpl\n       ,-sum({<B_FRAIS={'O'}>} MT_COM_PAR_CPT)        // - com sur frais per. partenaire\n       ,-sum({<B_FRAIS={'O'}>} MT_COM_APP_CPT)        // - com sur frais per. apporteur\n       ,sum({<B_IMPACT_PM={'N'}>} MT_OPE_CPT)         // + com versement/arbitrage pris dans elts techniques\n       ,-sum({<B_IMPACT_PM={'N'}>} MT_COM_PAR_CPT)    // - com vers/arb partenaires\n       ,-sum({<B_IMPACT_PM={'N'}>} MT_COM_APP_CPT)    // - com vers/arb apporteur\n) \n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "COM_LME_EUR",
+    "description": "",
+    "tags": [
+      "CH28",
+      "converter-auto-created"
+    ]
+  }
+}

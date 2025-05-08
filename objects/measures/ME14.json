@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "ME14",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "VL Nette",
+    "qDef": "avg({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA*'}>}VNI)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "VL Nette",
+    "description": "",
+    "tags": [
+      "CH04",
+      "CH36",
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

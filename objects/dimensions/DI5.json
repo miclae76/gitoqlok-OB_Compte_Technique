@@ -1,0 +1,57 @@
+{
+  "qInfo": {
+    "qId": "DI5",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "NUM_CONTRAT"
+    ],
+    "qFieldLabels": [
+      "NUM_CONTRAT"
+    ],
+    "title": "NUM_CONTRAT",
+    "coloring": {
+      "colorMapRef": "DI5",
+      "changeHash": "0.285605820801038",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "NUM_CONTRAT",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH18",
+      "CH19",
+      "CH20",
+      "CH21",
+      "CH22",
+      "CH27",
+      "CH29",
+      "CH30",
+      "CH33",
+      "CH34",
+      "CH35",
+      "CH40",
+      "CH41",
+      "CH52",
+      "CH53",
+      "CH64",
+      "CH76",
+      "CH77",
+      "CH78",
+      "CH79",
+      "CH80",
+      "CH81",
+      "CH82",
+      "CH83",
+      "CH84",
+      "CH85",
+      "CH87",
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

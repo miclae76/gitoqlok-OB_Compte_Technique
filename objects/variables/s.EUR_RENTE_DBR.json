@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "s.EUR_RENTE_DBR",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.EUR_RENTE_DBR",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_DEV_TIT={'EUR', 'BEF', 'LUF', 'FRF', 'DEM', 'NLG', 'ITL'}, CD_TYPE_SOUSC={'MILAN', 'RENTE ITER'}, CLASSE={'DBR'}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

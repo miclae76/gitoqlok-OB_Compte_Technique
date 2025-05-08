@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME27",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM Ouverture",
+    "qDef": "sum({<CD_FLUX={'PMOUV'}>}MT_PROVISION_CPT)- sum({<CD_FLUX={'PMOUV'}, CD_ISIN={'BCCSLF'}>}MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "PM Ouverture",
+    "description": "",
+    "tags": [
+      "CH06",
+      "converter-auto-created"
+    ]
+  }
+}

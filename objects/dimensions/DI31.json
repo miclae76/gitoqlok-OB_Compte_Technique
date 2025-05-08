@@ -1,0 +1,34 @@
+{
+  "qInfo": {
+    "qId": "DI31",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_ISIN"
+    ],
+    "qFieldLabels": [
+      "CD_ISIN"
+    ],
+    "title": "CD_ISIN",
+    "coloring": {
+      "colorMapRef": "DI31",
+      "changeHash": "0.7463405989187337",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "CD_ISIN",
+    "description": "",
+    "tags": [
+      "CH04",
+      "CH05",
+      "CH06",
+      "CH36",
+      "CH86",
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "DWH_MDW",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "DWH_MDW",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "DWH_MDW",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

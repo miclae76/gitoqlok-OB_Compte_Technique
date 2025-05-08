@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "ME13",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PROVISION FDG",
+    "qDef": "sum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA*'}>} PROVISION_FDG)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "PROVISION FDG",
+    "description": "",
+    "tags": [
+      "CH04",
+      "CH36",
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

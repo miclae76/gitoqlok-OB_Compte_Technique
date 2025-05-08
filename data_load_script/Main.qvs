@@ -1,0 +1,98 @@
+///$tab Main
+SET ThousandSep=' ';
+SET DecimalSep=',';
+SET MoneyThousandSep=' ';
+SET MoneyDecimalSep=',';
+SET MoneyFormat='#.##0,00 €;-#.##0,00 €';
+SET TimeFormat='hh:mm:ss';
+SET DateFormat='DD/MM/YYYY';
+SET TimestampFormat='DD/MM/YYYY hh:mm:ss[.fff]';
+SET FirstWeekDay=0;
+SET BrokenWeeks=0;
+SET ReferenceDay=4;
+SET FirstMonthOfYear=1;
+SET CollationLocale='fr-LU';
+SET CreateSearchIndexOnReload=1;
+//SET MonthNames='janv.;févr.;mars;avr.;mai;juin;juil.;août;sept.;oct.;nov.;déc.';
+SET MonthNames='janv;févr;mars;avr;mai;juin;juil;août;sept;oct;nov;déc';
+SET LongMonthNames='janvier;février;mars;avril;mai;juin;juillet;août;septembre;octobre;novembre;décembre';
+SET DayNames='lun.;mar.;mer.;jeu.;ven.;sam.;dim.';
+SET LongDayNames='lundi;mardi;mercredi;jeudi;vendredi;samedi;dimanche';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+
+
+// Configuration pour le data load
+//$(Include=lib://F_010_Outil_Bilan/config/outil_bilan_config.qvs);
+
+//LMEP Color Palette
+$(Must_Include=[lib://F_800_Tools/Charte_Graphique/Qlik_LMEP_Colors.qvs]);
+
+
+LIB CONNECT TO 'MS_SQL_LMEP-TIMEXT02';
+
+
+TRACE *** Import Fichier Configuration Outil_Bilan_Config.qvs ***
+SET HideSuffix='_';
+
+// Connect to Database OUTIL BILAN 
+LET vMachine = upper(ComputerName());
+TRACE $(vMachine);
+
+LIB CONNECT TO 'MS_SQL_LMEP-TIMEXT02';
+
+SET v.Env = '';		
+//SET v.Env = 'DEV_';  
+
+//On recherche les paramètres pour le run au statut 'à traiter'
+PARAM_EXEC:
+LOAD 
+    "D_BILAN",
+    "CD_ETAT",
+    "D_OUV_BILAN",
+    "D_ETAT",
+    "D_FRAIS_RECETTE";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."PARAM_EXECUTION"
+WHERE CD_ETAT = 'A_TRAITER' AND CD_SYS_GESTION = 'TITAN';
+
+LET v.D_BILAN = date(peek('D_BILAN', 0, 'PARAM_EXEC'), 'YYYY-MM-DD');				
+LET v.D_OUVERTURE_BILAN = date(peek('D_OUV_BILAN', 0, 'PARAM_EXEC'), 'YYYY-MM-DD'); 
+LET V.D_BILAN_VALIDATION = date(peek('D_BILAN', 0, 'PARAM_EXEC'), 'DDMMYYYY'); // Utilisé pour charger de manière autimatique le fichier de PM Validation Actuariat
+
+drop table PARAM_EXEC;
+//
+PARAM_EXEC_D_CUT_OFF:
+LOAD 
+//    "D_BILAN",
+    "CD_SYS_GESTION",	
+    "D_CUT_OFF",
+    "D_CUT_OFF_N_1";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."PARAM_EXECUTION"
+WHERE CD_ETAT = 'A_TRAITER';
+
+// Récup de la dernière date de bilan traitée pour vérfication de son estimée versus Réel
+PARAM_EXEC_TRAITE:
+LOAD 
+    "D_BILAN" AS D_BILAN_DERN;
+SQL SELECT MAX(D_BILAN) AS D_BILAN
+FROM "TX_OB_$(v.Env)ARR".dbo."PARAM_EXECUTION"
+WHERE CD_ETAT = 'TRAITE';
+
+LET v.D_DERNIER_BILAN_TRAITE = date(peek('D_BILAN_DERN', 0, 'PARAM_EXEC_TRAITE'), 'YYYY-MM-DD');
+
+Drop Table PARAM_EXEC_TRAITE;
+
+// Quelques dates en plus pour usage dans queries et UI
+LET v.D_BILAN_N_1 = Date(num(date#('$(v.D_OUVERTURE_BILAN)', 'YYYY-MM-DD'))-1, 'YYYY-MM-DD');		
+LET v.D_BILAN_NUM = PurgeChar('$(v.D_BILAN)', '-');
+LET v.D_ACTIF = num(MonthStart(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')));
+
+LET v.D_DERNIER_BILAN_TRAITE_Fmt = Date(Date#('$(v.D_DERNIER_BILAN_TRAITE)', 'YYYY-MM-DD'));
+LET v.D_OUVERTURE_BILAN_Fmt = Date(Date#('$(v.D_OUVERTURE_BILAN)', 'YYYY-MM-DD'));
+
+
+SET v.Path_Actifs = 'lib://F_010_Outil_Bilan';
+
+LET v.D_FICHIERS_ACTIF = Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD'), 'DDMMYYYY');

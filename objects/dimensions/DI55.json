@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "DI55",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(aggr(count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, aggr(only({1<TYPOPS={'VU','DC'}>} NUMGGL), NUM_CONTRAT))"
+    ],
+    "qFieldLabels": [
+      "NUMGGL"
+    ],
+    "title": "NUMGGL"
+  },
+  "qMetaDef": {
+    "title": "NUMGGL",
+    "description": "",
+    "tags": [
+      "CH27",
+      "CH83",
+      "CH85",
+      "converter-auto-created"
+    ]
+  }
+}

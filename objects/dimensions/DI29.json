@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "DI29",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_TYPE_SUPPORT_3"
+    ],
+    "qFieldLabels": [
+      "Type"
+    ],
+    "title": "Type"
+  },
+  "qMetaDef": {
+    "title": "Type",
+    "description": "",
+    "tags": [
+      "CH04",
+      "CH36",
+      "CH40",
+      "CH94",
+      "converter-auto-created"
+    ]
+  }
+}

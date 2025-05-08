@@ -1,0 +1,35 @@
+{
+  "qInfo": {
+    "qId": "DI39",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_PRODUIT"
+    ],
+    "qFieldLabels": [
+      "CD_PRODUIT"
+    ],
+    "title": "CD_PRODUIT"
+  },
+  "qMetaDef": {
+    "title": "CD_PRODUIT",
+    "description": "",
+    "tags": [
+      "CH11",
+      "CH23",
+      "CH27",
+      "CH28",
+      "CH29",
+      "CH30",
+      "CH35",
+      "CH41",
+      "CH53",
+      "CH78",
+      "CH83",
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+///$tab 41_Souscripteur
+Map_Retraitement_Type_Personne:
+Mapping
+select distinct 
+	r.NUM_CONTRAT, 1 AS RETRAITEMENT
+FROM 
+"TX_OB_$(v.Env)ARR".dbo.ROLES_H r
+INNER JOIN  "TX_OB_ARR".dbo.REF_PERSONNE_H p  
+	ON r.NUM_PERSONNE = p.NUM_PERSONNE and p.D_FIN_VALIDITE = '99991231'
+WHERE  
+     r.CD_ROLE = 1 
+ AND r.NUM_CONTRAT is not null
+ AND r.DATTRM = '99991231'
+group by r.CD_SYS_GESTION, r.NUM_CONTRAT--, p.CD_TYPE_PERSONNE
+having COUNT(distinct CD_TYPE_PERSONNE) = 2;
+
+
+
+SOUSCRIPTEUR:
+LOAD Distinct
+	NUM_CONTRAT, 
+	if(ApplyMap('Map_Retraitement_Type_Personne', NUM_CONTRAT) = 1, 
+		pick(match(CD_SYS_GESTION, 'POCUS', 'TITAN'), 'P', 'P_M'), CD_TYPE_PERSONNE) AS CD_TYPE_PERSONNE
+;
+SQL select distinct 
+	r.CD_SYS_GESTION, r.NUM_CONTRAT, p.CD_TYPE_PERSONNE 
+FROM 
+"TX_OB_$(v.Env)ARR".dbo.ROLES_H r
+INNER JOIN  "TX_OB_$(v.Env)ARR".dbo.REF_PERSONNE_H p  
+	ON r.NUM_PERSONNE = p.NUM_PERSONNE and p.D_FIN_VALIDITE = '99991231'
+WHERE 
+  r.CD_ROLE = 1 
+ AND r.NUM_CONTRAT is not null
+ AND r.DATTRM = '99991231';

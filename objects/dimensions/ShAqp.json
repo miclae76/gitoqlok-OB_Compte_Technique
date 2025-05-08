@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "ShAqp",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_ETAT"
+    ],
+    "qFieldLabels": [
+      "CD_ETAT"
+    ],
+    "title": "CD_ETAT",
+    "coloring": {
+      "changeHash": "0.3829348434834413",
+      "hasValueColors": false
+    }
+  },
+  "qMetaDef": {
+    "title": "CD_ETAT",
+    "description": "",
+    "tags": []
+  }
+}

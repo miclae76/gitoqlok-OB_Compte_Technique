@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI123",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "D_CALCUL"
+    ],
+    "qFieldLabels": [
+      "D_CALCUL"
+    ],
+    "title": "D_CALCUL"
+  },
+  "qMetaDef": {
+    "title": "D_CALCUL",
+    "description": "",
+    "tags": [
+      "CH85",
+      "converter-auto-created"
+    ]
+  }
+}

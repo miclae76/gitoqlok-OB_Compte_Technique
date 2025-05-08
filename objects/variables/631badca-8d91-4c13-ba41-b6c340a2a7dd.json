@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "631badca-8d91-4c13-ba41-b6c340a2a7dd",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_rose_70",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#FEB3E8",
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,23 @@
+{
+  "qInfo": {
+    "qId": "DI2",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "H",
+    "qFieldDefs": [
+      "MARCHE_DIS",
+      "CD_TYPE_SUPPORT"
+    ],
+    "qFieldLabels": [],
+    "title": ">Synthese"
+  },
+  "qMetaDef": {
+    "title": ">Synthese",
+    "description": "",
+    "tags": [
+      "CH74",
+      "converter-auto-created"
+    ]
+  }
+}

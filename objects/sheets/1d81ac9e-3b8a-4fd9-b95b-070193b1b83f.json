@@ -1,0 +1,132 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "1d81ac9e-3b8a-4fd9-b95b-070193b1b83f",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Bouclage OB",
+      "description": ""
+    },
+    "rank": 7,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 30,
+    "rows": 15,
+    "cells": [
+      {
+        "name": "cf",
+        "type": "table",
+        "col": 0,
+        "row": 2,
+        "colspan": 24,
+        "rowspan": 13,
+        "bounds": {
+          "y": 13.333333333333334,
+          "x": 0,
+          "width": 80,
+          "height": 86.66666666666667
+        }
+      },
+      {
+        "name": "ZDzXnAt",
+        "type": "filterpane",
+        "col": 25,
+        "row": 2,
+        "colspan": 5,
+        "rowspan": 6,
+        "bounds": {
+          "y": 13.333333333333334,
+          "x": 83.33333333333334,
+          "width": 16.666666666666664,
+          "height": 40
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "medium",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "cf",
+          "qType": "table"
+        },
+        "qExtendsId": "CH06",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "ZDzXnAt",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "visualization": "filterpane",
+        "version": "0.15.2",
+        "qChildListDef": {
+          "qData": {}
+        }
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "ppvMc",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qLibraryId": "ShAqp",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": []
+            },
+            "title": "CD_ETAT",
+            "visualization": "listbox",
+            "checkboxes": true
+          },
+          "qChildren": []
+        }
+      ]
+    }
+  ]
+}

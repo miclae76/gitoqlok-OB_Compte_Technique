@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI53",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(aggr(count(distinct {1<TYPOPS={'VU','DC'}>}TYPOPS), NUM_CONTRAT)>0, 'OUI', 'NON')"
+    ],
+    "qFieldLabels": [
+      "Garantie?"
+    ],
+    "title": "Garantie?"
+  },
+  "qMetaDef": {
+    "title": "Garantie?",
+    "description": "",
+    "tags": [
+      "CH27",
+      "CH83",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME98",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Tx Marge TG",
+    "qDef": "sum({<CD_TYPE_SUPPORT_1={'FG', 'TG'}>}\n\trangesum(TX_FR_ED-TX_COM_ED, TX_FR_EG-TX_COM_EG, TX_FR_EM-TX_COM_EM, TX_FR_EO-TX_COM_EO, TX_FR_EP-TX_COM_EP, TX_FR_EV-TX_COM_EV)\n\t*if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))\n/sum({<CD_TYPE_SUPPORT_1={'FG', 'TG'}>}if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))/100 ",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Tx Marge TG",
+    "description": "",
+    "tags": [
+      "CH64",
+      "converter-auto-created"
+    ]
+  }
+}

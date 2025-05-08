@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI111",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "SUPPORT.D_DEB_EFF_GARK"
+    ],
+    "qFieldLabels": [
+      "DateffGC"
+    ],
+    "title": "DateffGC"
+  },
+  "qMetaDef": {
+    "title": "DateffGC",
+    "description": "",
+    "tags": [
+      "CH78",
+      "converter-auto-created"
+    ]
+  }
+}

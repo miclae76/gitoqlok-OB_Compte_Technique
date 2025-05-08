@@ -1,0 +1,1750 @@
+///$tab Main
+SET ThousandSep=' ';
+SET DecimalSep=',';
+SET MoneyThousandSep=' ';
+SET MoneyDecimalSep=',';
+SET MoneyFormat='#.##0,00 €;-#.##0,00 €';
+SET TimeFormat='hh:mm:ss';
+SET DateFormat='DD/MM/YYYY';
+SET TimestampFormat='DD/MM/YYYY hh:mm:ss[.fff]';
+SET FirstWeekDay=0;
+SET BrokenWeeks=0;
+SET ReferenceDay=4;
+SET FirstMonthOfYear=1;
+SET CollationLocale='fr-LU';
+SET CreateSearchIndexOnReload=1;
+//SET MonthNames='janv.;févr.;mars;avr.;mai;juin;juil.;août;sept.;oct.;nov.;déc.';
+SET MonthNames='janv;févr;mars;avr;mai;juin;juil;août;sept;oct;nov;déc';
+SET LongMonthNames='janvier;février;mars;avril;mai;juin;juillet;août;septembre;octobre;novembre;décembre';
+SET DayNames='lun.;mar.;mer.;jeu.;ven.;sam.;dim.';
+SET LongDayNames='lundi;mardi;mercredi;jeudi;vendredi;samedi;dimanche';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+
+
+// Configuration pour le data load
+//$(Include=lib://F_010_Outil_Bilan/config/outil_bilan_config.qvs);
+
+//LMEP Color Palette
+$(Must_Include=[lib://F_800_Tools/Charte_Graphique/Qlik_LMEP_Colors.qvs]);
+
+
+LIB CONNECT TO 'MS_SQL_LMEP-TIMEXT02';
+
+
+TRACE *** Import Fichier Configuration Outil_Bilan_Config.qvs ***
+SET HideSuffix='_';
+
+// Connect to Database OUTIL BILAN 
+LET vMachine = upper(ComputerName());
+TRACE $(vMachine);
+
+LIB CONNECT TO 'MS_SQL_LMEP-TIMEXT02';
+
+SET v.Env = '';		
+//SET v.Env = 'DEV_';  
+
+//On recherche les paramètres pour le run au statut 'à traiter'
+PARAM_EXEC:
+LOAD 
+    "D_BILAN",
+    "CD_ETAT",
+    "D_OUV_BILAN",
+    "D_ETAT",
+    "D_FRAIS_RECETTE";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."PARAM_EXECUTION"
+WHERE CD_ETAT = 'A_TRAITER' AND CD_SYS_GESTION = 'TITAN';
+
+LET v.D_BILAN = date(peek('D_BILAN', 0, 'PARAM_EXEC'), 'YYYY-MM-DD');				
+LET v.D_OUVERTURE_BILAN = date(peek('D_OUV_BILAN', 0, 'PARAM_EXEC'), 'YYYY-MM-DD'); 
+LET V.D_BILAN_VALIDATION = date(peek('D_BILAN', 0, 'PARAM_EXEC'), 'DDMMYYYY'); // Utilisé pour charger de manière autimatique le fichier de PM Validation Actuariat
+
+drop table PARAM_EXEC;
+//
+PARAM_EXEC_D_CUT_OFF:
+LOAD 
+//    "D_BILAN",
+    "CD_SYS_GESTION",	
+    "D_CUT_OFF",
+    "D_CUT_OFF_N_1";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."PARAM_EXECUTION"
+WHERE CD_ETAT = 'A_TRAITER';
+
+// Récup de la dernière date de bilan traitée pour vérfication de son estimée versus Réel
+PARAM_EXEC_TRAITE:
+LOAD 
+    "D_BILAN" AS D_BILAN_DERN;
+SQL SELECT MAX(D_BILAN) AS D_BILAN
+FROM "TX_OB_$(v.Env)ARR".dbo."PARAM_EXECUTION"
+WHERE CD_ETAT = 'TRAITE';
+
+LET v.D_DERNIER_BILAN_TRAITE = date(peek('D_BILAN_DERN', 0, 'PARAM_EXEC_TRAITE'), 'YYYY-MM-DD');
+
+Drop Table PARAM_EXEC_TRAITE;
+
+// Quelques dates en plus pour usage dans queries et UI
+LET v.D_BILAN_N_1 = Date(num(date#('$(v.D_OUVERTURE_BILAN)', 'YYYY-MM-DD'))-1, 'YYYY-MM-DD');		
+LET v.D_BILAN_NUM = PurgeChar('$(v.D_BILAN)', '-');
+LET v.D_ACTIF = num(MonthStart(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')));
+
+LET v.D_DERNIER_BILAN_TRAITE_Fmt = Date(Date#('$(v.D_DERNIER_BILAN_TRAITE)', 'YYYY-MM-DD'));
+LET v.D_OUVERTURE_BILAN_Fmt = Date(Date#('$(v.D_OUVERTURE_BILAN)', 'YYYY-MM-DD'));
+
+
+SET v.Path_Actifs = 'lib://F_010_Outil_Bilan';
+
+LET v.D_FICHIERS_ACTIF = Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD'), 'DDMMYYYY');
+
+
+
+
+
+///$tab 5_Corrections Manuelles
+Map_Correction_VL:
+Mapping
+LOAD '20180630'&CD_SUPPORT, num(VNI);
+LOAD * INLINE [
+    CD_SUPPORT, VNI
+    1765, "1137,01"
+    1773, "936,52"
+    1774, "942,14"
+    1787, "1430,46"
+    1790, "10407,15"
+    1805, "1424,45"
+    1809, "1077,3"
+    11003, "0,01"
+    11464, "957,5"
+];
+
+
+Map_MultiClass:
+Mapping
+LOAD [Code Portefeuille cible],
+	 [Code Portefeuille Source] 
+//     Banques,
+//     Libéllé, 
+//     [devise de VNI], 
+//     [Gestion Contrôle Valo], 
+//     Statut, 
+//     [Code Portefeuille cible]
+//     GAME, 
+//     PARTENAIRE
+FROM [lib://F_010_Outil_Bilan/Manual_Files/Table de correspondance Final MultiClass.xlsx]
+(ooxml, embedded labels, table is [1012]);
+
+
+///$tab 10_Flux_Ope_Support
+FLUX_SUPPORT:
+LOAD 
+//	"DW_Id",
+    Date(D_BILAN) AS D_BILAN,
+    "NUM_OPE_SUPPORT",
+    "CD_SYS_GESTION",
+    "CD_SENS",
+    "ID_CONTRAT",
+    "ID_OPTION" AS "ID_OPTION_PROFIL",
+    "ID_SUPPORT",
+    AutoNumber(CD_SYS_GESTION&NUM_CONTRAT&CD_OPTION&CD_SUPPORT) AS CLE_TAUX_,
+    AutoNumber(ID_CONTRAT&ID_OPTION) AS CLE_OPTION_SOUSCRITE_,
+    "NUM_OPERATION",
+    autonumber("CD_SYS_GESTION"&"NUM_OPERATION") AS CLE_OPERATION_,
+    "CD_FLUX",
+    if( CD_FLUX = 'FRCO' 
+    	OR wildmatch(NUM_OPE_SUPPORT, 'R??_ME????????????_'&Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD') , 'YYYYMMDD')&'*')>0, 'NON', 'OUI') AS RETRAITEMENT_GAR_K_EXCLUS,
+    Date("D_EFFET") 		AS D_EFFET,
+    Date("D_COMPTA") 		AS D_COMPTA,
+    Date("D_VALORISATION") 	AS D_VALORISATION,
+    "NB_PART_OPERATION",
+    "NB_PART_COMM_PAR",
+    "NB_PART_COMM_APP",
+    
+    if (ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0) > 0, 
+    	"NB_PART_OPERATION" * ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0),
+    	"MT_OPERATION" )	 AS "MT_OPERATION",
+    	
+//    "MT_OPERATION",
+    "MT_OPE_CPT",
+    "TX_CHANGE",
+    "NB_PART_FLUX_CAP",
+    "MT_FLUX_CAP",
+    "MT_FLUX_CAP_CPT",
+    "MT_COMMISSION_PAR",
+    "MT_COM_PAR_CPT",
+    "MT_COM_APP_CPT",
+    "MT_COMMISSION_APP",
+    "MT_SPREAD_TD",
+    "MT_SPREAD_TR",
+    if(CD_SYS_GESTION = 'POCUS' OR wildmatch(NUM_OPERATION, 'AJUSTEMENT_*') >0 , "MT_OPE_CPT", "MT_BRUT_OPE_CPT") AS MT_BRUT_OPE_CPT,
+    "CD_SUPPORT",
+    "NUM_CONTRAT",
+//    "CD_TYPE_FRAIS",
+//    "CD_TYPE_TAUX",
+    "CD_TYPE_MOUV",
+//    "TX_CHC",
+//    "TX_CHE",
+    "B_FRAIS",
+    "B_IMPACT_PM",
+    "B_REVAL",
+    "B_PREV_SOC",
+//    "CD_DEVISE_CONTRAT",
+    "CD_OPTION",
+    autonumber("CD_SYS_GESTION"&CD_OPTION, 'Option') AS CLE_OPTION;
+//    "D_CURRENT_BILAN",
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type I Hash Key";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."FLUX_OPE_SUPPORT"
+WHERE D_BILAN BETWEEN '$(v.D_OUVERTURE_BILAN)' AND '$(v.D_BILAN)';
+
+// Temporaire pour ramener les frais dans flux ope support depuis DSA
+frais:
+LOAD
+	"CD_SYS_GESTION",  
+    "NUM_OPE_SUPPORT", 
+    "NUM_CONTRAT",
+    "CD_OPTION",
+    "CD_SENS",
+    "CD_SUPPORT",
+	Date("D_EFFET") 		AS D_EFFET,
+    "MT_FRAIS",
+    "MT_FRAIS_CPT"
+;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)DSA".dbo."CALCUL_FLUX_OPE_SUPPORT" 
+WHERE 
+    B_IMPACT_PM = 'O' 
+and B_FRAIS = 'N' 
+and B_REVAL = 'N' 
+and D_BILAN = '$(v.D_BILAN)';
+
+Concatenate(frais)
+LOAD
+	"CD_SYS_GESTION",  
+    "NUM_OPE_SUPPORT", 
+    "NUM_CONTRAT",
+    "CD_OPTION",
+    "CD_SENS",
+    "CD_SUPPORT",
+	Date("D_EFFET") ,		 
+    "MT_FRAIS"		,
+    "MT_FRAIS_CPT"
+;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)DSA".dbo."AJUSTEMENT_MANUEL" where B_PREST = 'O' or B_PRIME = 'O';
+
+
+Concatenate(frais)
+LOAD
+	"CD_SYS_GESTION",  
+    "NUM_OPE_SUPPORT", 
+    "NUM_CONTRAT",
+    "CD_OPTION",
+    "CD_SENS",
+    "CD_SUPPORT",
+	Date("D_EFFET") 		AS D_EFFET,
+    "MT_FRAIS",
+    "MT_FRAIS_CPT"
+;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ODX".dbo."V_PAS_FLUX_OPERATION_SUPPORT" 
+WHERE 
+    B_IMPACT_PM = 'O' 
+and B_FRAIS = 'N' 
+and D_BILAN = '$(v.D_BILAN)';
+
+LEFT JOIN (FLUX_SUPPORT)
+LOAD * Resident frais;
+drop table frais;
+
+DROP FIELD NUM_CONTRAT, CD_SUPPORT FROM FLUX_SUPPORT;
+///$tab 12.1_Autres_Elts_Tech
+Concatenate(FLUX_SUPPORT)
+LOAD 
+//	"DW_Id",
+    Date(D_BILAN) AS D_BILAN,
+    "CD_SYS_GESTION",
+    "NUM_OPE_SUPPORT",
+    "ID_CONTRAT",
+    "ID_OPTION" AS "ID_OPTION_PROFIL",
+     AutoNumber(CD_SYS_GESTION&NUM_CONTRAT&CD_OPTION&CD_SUPPORT) AS CLE_TAUX_,
+     AutoNumber(ID_CONTRAT&ID_OPTION) AS CLE_OPTION_SOUSCRITE_,
+    "ID_SUPPORT",
+    "NUM_OPERATION",
+    autonumber("CD_SYS_GESTION"&"NUM_OPERATION") AS CLE_OPERATION_,
+    "CD_FLUX",
+    'OUI' AS RETRAITEMENT_GAR_K_EXCLUS,
+    Date("D_COMPTA") AS D_COMPTA,
+    "CD_SENS",
+    "MT_OPERATION",
+    "MT_OPE_CPT",
+    "MT_COMMISSION_PAR",
+    "MT_COMMISSION_APP",
+    "MT_COM_PAR_CPT",
+    "MT_COM_APP_CPT",
+//    "NUM_CONTRAT",
+    "CD_OPTION",
+    autonumber("CD_SYS_GESTION"&CD_OPTION, 'Option') AS CLE_OPTION,
+//    "CD_SUPPORT",
+//    "CD_TYPE_MOUV",
+    Date("D_EFFET") AS D_EFFET,
+    "B_IMPACT_PM",
+    'N' AS B_FRAIS,
+    'N' AS B_REVAL,
+    'N' AS B_PREV_SOC,
+    "TX_CHANGE",
+    'R' AS CD_TYPE_MOUV;
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current",
+//    "SCD Type I Hash Key";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."FLUX_AUTRES_ELEMENTS_TECHNIQUES"
+where D_BILAN BETWEEN '$(v.D_OUVERTURE_BILAN)' AND '$(v.D_BILAN)';
+
+///$tab 13_Taux_Divers_Ech
+LOAD 
+//	"DW_Id",
+//    "D_BILAN",
+//    "CD_SYS_GESTION",
+	AutoNumber(CD_SYS_GESTION&NUM_CONTRAT&CD_OPTION&CD_SUPPORT) AS CLE_TAUX_,
+//    "NUM_CONTRAT",
+//    "CD_OPTION",
+//    "CD_SUPPORT",
+//    "CD_PRODUIT",
+//    "CD_TYPE_SUPPORT",
+    "TX_REVAL_MIN",
+    "TX_REVAL_EST",
+    "TX_REVAL_PROB",
+    "TX_REVAL_CPL",
+    "TX_REVAL_SUP",
+    "TX_FR_EG",
+    "TX_COM_EG",
+    "TX_FR_EP",
+    "TX_COM_EP",
+    "TX_FR_ED",
+    "TX_COM_ED",
+    "TX_FR_EM",
+    "TX_COM_EM",
+    "TX_FR_EO",
+    "TX_COM_EO",
+    "TX_FR_EV",
+    "TX_COM_EV",
+    "TX_PS",
+    "TX_RACHAT",
+    "TX_TG_UC",
+    "CD_NIV_REVAL" AS CD_NIV_REVAL_FINAL,
+    "FLAG_CONTRAT_CLOTURE",
+    "TOTAL_REVAL_EST",
+    "TOTAL_REVAL_PROB",
+    "TOTAL_REVAL_CPL",
+    "TOTAL_REVAL_SUP",
+    "TAUX_UC",
+    "TAUX_UC_MOYEN",
+    "TX_COND",
+    "TX_COND_BSP";
+//    "ID_CONTRAT",
+//    "ID_SUPPORT",
+//    "ID_OPTION",
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type I Hash Key",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."TAUX_ECHEANCIER_H"
+where D_BILAN = '$(v.D_BILAN)';
+
+/*
+LOAD 
+//	"DW_Id",
+//    Date(Date#(D_BILAN, 'YYYY-MM-DD')) AS D_BILAN,
+   AutoNumber(ID_SUPPORT&ID_OPTION&ID_CONTRAT) AS CLE_TAUX_,
+//    AutoNumber(ID_CONTRAT&ID_OPTION) AS CLE_OPTION_SOUSCRITE_,
+//    "ID_SUPPORT",
+//    "ID_CONTRAT",
+//    "ID_PRODUIT",
+//    "ID_OPTION",
+//    "NUM_CONTRAT",
+//    "CD_OPTION",
+//    "CD_PRODUIT",
+//    "CD_SUPPORT",
+//    "CD_TYPE_SUPPORT",
+//	  "D_EFFET",
+//    "NUM_ECHEANCE",
+    "TX_REVAL_MIN",
+    "TX_REVAL_EST",
+    "TX_REVAL_PROB",
+    "TX_REVAL_CPL",
+//    "NB_PM_OUV_MIN",
+//    "NB_PART_FLUX",
+//    "COUT_DECES",
+    "TX_FR_EG",
+    "TX_COM_EG",
+    "TX_FR_EP",
+    "TX_COM_EP",
+    "TX_FR_ED",
+    "TX_COM_ED",
+    "TX_FR_EM",
+    "TX_COM_EM",
+    "TX_FR_EO",
+    "TX_COM_EO",
+    "TX_FR_EV",
+    "TX_COM_EV",
+    "ASSIETTE_PS",
+//    "TX_PS",
+//    "NB_PART_PS",
+//    "FLAG_GAR_ACTIVE",
+//    NUMOTS,
+    "CD_NIV_REVAL" 	AS CD_NIV_REVAL_FINAL,
+//    "B_MANDAT_PS_ACTIF",
+//    "CD_TYPE_SUPPORT_2",
+//    "CD_SYS_GESTION",
+//    "IND_GARANTIE_K",
+//    "TX_RACHAT",
+//    "TX_CHE",
+//    "TX_CHC",
+//    "MT_VL_DEV_TIT",
+//    "TAUX_UC",
+    "TX_TG_UC";
+//    "POS_AVT_MVT",
+//    "CD_NIV_REVAL_ORI",
+//    "CD_FISC_SOUSC",
+//    "FLAG_CONTRAT_CLOTURE",
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp";
+SQL SELECT *
+FROM "$(vENV)_ARR".dbo."TAUX_ECHENACI" 
+where D_BILAN = '$(v.D_BILAN)' AND D_EFFET = '$(v.D_BILAN)';
+
+*/
+///$tab 14_ACAV_CHGE
+Concatenate(FLUX_SUPPORT)
+LOAD 
+	//"DW_Id",
+    Date(D_BILAN) AS D_BILAN,
+    "NUM_OPE_SUPPORT",
+    "CD_SYS_GESTION",
+    "CD_SENS",
+    "ID_CONTRAT",
+    "ID_OPTION" AS "ID_OPTION_PROFIL",
+     AutoNumber(ID_CONTRAT&ID_OPTION) AS CLE_OPTION_SOUSCRITE_,
+    "ID_SUPPORT",
+    "NUM_OPERATION",
+    "CD_FLUX",
+    "D_EFFET",
+    "D_COMPTA",
+    "D_VALORISATION",
+    "NB_PART_OPERATION",
+    "MT_OPERATION"		AS MT_ACAV,
+    "MT_OPE_CPT"		AS MT_ACAV_CPT,
+    'N' AS "B_FRAIS",
+    CD_FLUX AS "B_IMPACT_PM",
+    'N' AS "B_REVAL",
+    'N' AS "B_PREV_SOC",
+//    "CD_SUPPORT",
+//    "NUM_CONTRAT",
+//    "CD_TYPE_MOUV",
+	autonumber("CD_SYS_GESTION"&CD_OPTION, 'Option') AS CLE_OPTION,
+    "CD_OPTION";
+    //    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type I Hash Key",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."FLUX_OPE_SUPPORT_ACAV_CHANGE"
+WHERE D_BILAN BETWEEN '$(v.D_OUVERTURE_BILAN)' AND '$(v.D_BILAN)' and D_EFFET >= '$(v.D_OUVERTURE_BILAN)';
+
+///$tab 15_Flux_Primes
+FLUX:
+LOAD
+//	"DW_Id",
+//    "D_BILAN",
+    "NUM_PRIME",
+//    "NUM_PRIME" AS NUM_OPERATION,
+    autonumber("CD_SYS_GESTION"&"NUM_PRIME") AS CLE_OPERATION_,
+//    "CD_SENS",
+//    "ID_PRODUIT",
+//    "ID_CONTRAT",
+//    "D_SAISIE",
+//    "D_VALORISATION",
+//    "D_EFFET",
+//    "D_COMPTA",
+//    "CD_TYPE_PRIME",
+    "CD_DEV_OPERATION",
+    "MT_VERSE",
+    "MT_TAXES",
+    "MT_FRAIS"		AS MT_FRAIS_PRIME,
+    "MT_COM_LMEP",
+    "MT_COM_PAR",
+    "MT_COM_APP",
+    "MT_SPREAD",
+    "MT_NET_INVEST",
+    "MT_VERSE_CPT",
+    "MT_TAXES_CPT",
+    "MT_FRAIS_CPT"	AS MT_FRAIS_CPT_PRIME,
+    "MT_COM_LMEP_CPT",
+//    "MT_COM_PAR_CPT",
+//    "MT_COM_APP_CPT",
+    "MT_NET_INVEST_CPT",
+    "MT_SPREAD_CPT";
+//    "CD_PRODUIT",
+//    "NUM_CONTRAT",
+//    "CD_TYPE_MOUV",
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type I Hash Key",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."FLUX_PRIMES"
+WHERE D_BILAN BETWEEN '$(v.D_OUVERTURE_BILAN)' AND '$(v.D_BILAN)';
+//-------- End Multiple Select Statements ------
+
+
+///$tab 16_Flux_Prestations
+Concatenate(FLUX)
+LOAD 
+//	"DW_Id",
+//    "D_BILAN",
+    "NUM_PRESTATION",
+//    "NUM_PRESTATION" AS NUM_OPERATION,
+    autonumber("CD_SYS_GESTION"&"NUM_PRESTATION") AS CLE_OPERATION_,
+//    "CD_SYS_GESTION",
+//    "CD_SENS",
+//    "ID_PRODUIT",
+//    "ID_CONTRAT",
+//    "CD_TYPE_PREST",
+//    "D_EFFET",
+//    "D_VALORISATION",
+//    "D_SAISIE",
+//    "D_COMPTA",
+    "CD_DEV_OPERATION",
+    "MT_BRUT_PREST",
+    "MT_FRAIS_PREST",
+    "MT_PENALITE",
+    "MT_REDUCTION",
+    "MT_COM_LMEP",
+    "MT_COM_PAR",
+    "MT_COM_APP",
+    "MT_PRELEV_FISC",
+    "MT_AVAN_REMB",
+    "MT_NET_REGLE",
+    "MT_SPREAD",
+    "MT_BRUT_PREST_CPT",
+    "MT_FRAIS_PREST_CPT",
+    "MT_PENALITE_CPT",
+    "MT_REDUCTION_CPT",
+    "MT_COM_LMEP_CPT",
+//    "MT_COM_PAR_CPT",
+//    "MT_COM_APP_CPT",
+    "MT_PRELEV_FISC_CPT",
+    "MT_AVAN_REMB_CPT",
+    "MT_NET_REGLE_CPT",
+    "MT_SPREAD_CPT";
+//    "MT_CSR",
+//    "MT_CSR_CPT";
+//    "NUM_CONTRAT"
+//    "CD_PRODUIT",
+//    "CD_TYPE_MOUV",
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type I Hash Key",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."FLUX_PRESTATIONS"
+WHERE D_BILAN BETWEEN '$(v.D_OUVERTURE_BILAN)' AND '$(v.D_BILAN)';
+
+UNQUALIFY *;
+
+
+// Créer les flux virtuels CSR dans FLUX_OPE_SUPPORT
+map_dev_id_support_virtuel_cash:
+Mapping
+LOAD * INLINE [
+    F1, F2
+    AUD, 99999901
+    CAD, 99999902
+    CHF, 99999903
+    CNY, 99999904
+    EUR, 99999905
+    FRF, 99999906
+    GBP, 99999907
+    HKD, 99999908
+    NOK, 99999909
+    SEK, 99999910
+    SGD, 99999911
+    USD, 99999912
+    ZAR, 99999913
+];
+
+Concatenate(FLUX_SUPPORT)
+LOAD 
+    Date(D_BILAN) AS D_BILAN,
+
+    "CD_SYS_GESTION",
+    "CD_SENS",
+    "ID_CONTRAT",
+   // "ID_SUPPORT",
+   // "NUM_CONTRAT",
+    "CD_TYPE_MOUV",
+    //CD_DEV_OPERATION,
+    
+    ApplyMap('map_dev_id_support_virtuel_cash', CD_DEV_OPERATION) AS ID_SUPPORT,
+    
+    NUM_PRESTATION 			AS "NUM_OPERATION",
+    'CSR'					AS CD_FLUX,
+    'CSR_'&NUM_PRESTATION   AS "NUM_OPE_SUPPORT",
+    Date("D_EFFET") 		AS D_EFFET,
+    Date("D_COMPTA") 		AS D_COMPTA,
+    Date("D_VALORISATION") 	AS D_VALORISATION,
+    
+    "MT_CSR"  			AS MT_OPERATION,
+    "MT_CSR_CPT" 		AS "MT_OPE_CPT",  
+    "MT_CSR"  			AS "MT_FLUX_CAP",
+    "MT_CSR_CPT" 		AS "MT_FLUX_CAP_CPT",
+    "MT_CSR_CPT" 		AS "MT_BRUT_OPE_CPT",
+
+    
+    'N' AS "B_FRAIS",
+    'N' AS "B_IMPACT_PM",  //pas impact PM 
+    'N' AS "B_REVAL",
+    'N' AS "B_PREV_SOC";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."FLUX_PRESTATIONS"
+WHERE D_BILAN BETWEEN '$(v.D_OUVERTURE_BILAN)' AND '$(v.D_BILAN)' AND MT_CSR <> 0;
+
+///$tab 17_Calendrier
+CALENDRIER:
+LOAD
+	distinct
+	D_EFFET,
+	year(D_EFFET)							AS ANNEE,
+	Year(D_EFFET)&num(Month(D_EFFET), '00') AS MOIS,
+	if(Year(D_EFFET)< year(date('$(v.D_BILAN)', 'YYYY-MM-DD')), 'OUI', 'NON') AS MVT_RETRO 
+RESIDENT FLUX_SUPPORT;
+
+///$tab 20_Position_Support
+SET v.D_BILAN_N_1= '2024-12-31';
+
+Concatenate(FLUX_SUPPORT)
+LOAD 
+	if(Date(D_BILAN)=Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')), 'PMCLO', 
+		if(Date(D_BILAN)=Date(Date#('$(v.D_BILAN_N_1)', 'YYYY-MM-DD')) , 'PMOUV')) AS CD_FLUX,
+	'OUI' AS RETRAITEMENT_GAR_K_EXCLUS,
+	*;
+LOAD 
+	//"DW_Id",
+   Date(D_BILAN) AS D_BILAN,
+//    "NUM_CONTRAT",
+//    "CD_SUPPORT",
+   "CD_OPTION",
+    "CD_SYS_GESTION",
+    autonumber("CD_SYS_GESTION"&CD_OPTION, 'Option') AS CLE_OPTION,
+    "NB_PART_PROV",
+    
+    if (ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0) > 0, 
+    	"NB_PART_PROV" * ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0),
+    	"MT_PROVISION" )	 AS "MT_PROVISION",
+    	
+//    "MT_PROVISION" 	AS MT_OPERATION,
+
+    if (ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0) > 0, 
+    	"NB_PART_PROV" * ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0) * MT_PROVISION_CPT/MT_PROVISION,
+    	"MT_PROVISION_CPT" )	 AS "MT_PROVISION_CPT",
+    	
+//    "MT_PROVISION_CPT" AS MT_OPE_CPT,
+//    "MT_PM_MOYEN",
+//    "MT_PM_MOYEN_CPT",
+    "ID_CONTRAT",
+    "ID_OPTION" AS "ID_OPTION_PROFIL",
+    AutoNumber(CD_SYS_GESTION&NUM_CONTRAT&CD_OPTION&CD_SUPPORT) AS CLE_TAUX_,
+     AutoNumber(ID_CONTRAT&ID_OPTION) AS CLE_OPTION_SOUSCRITE_,
+     
+    "ID_SUPPORT",
+    'O' AS B_IMPACT_PM;
+//    "D_EFFET",
+//    "D_CURRENT_BILAN";
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type I Hash Key",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."POSITION_SUPPORT"
+where D_BILAN = '$(v.D_BILAN)' OR D_BILAN = '$(v.D_BILAN_N_1)';
+
+///$tab 30_Ref_Support
+CPT_DEPOSITAIRE:
+LOAD
+    CPTE_DEPOSITAIRE_LIB,
+    PTF_CHORUS,
+    PTF_FEX
+FROM [lib://F_010_Outil_Bilan/Manual_Files/Mapping_Cpte_Banque_NUM_PTF.xlsx]
+(ooxml, embedded labels, table is MAPPING);
+
+MAP_CPTE_BANQ_TO_CHORUS:
+Mapping
+LOAD CPTE_DEPOSITAIRE_LIB, PTF_CHORUS Resident CPT_DEPOSITAIRE;
+
+MAP_CPTE_BANQ_FEX:
+Mapping
+LOAD CPTE_DEPOSITAIRE_LIB, PTF_CHORUS AS FEX Resident CPT_DEPOSITAIRE
+WHERE PTF_FEX = 1;
+
+LIB CONNECT TO 'DWHPROD';
+
+Temp_BANQ_DEP:
+SELECT 
+      [NUM_SUPPORT] 		AS CD_SUPPORT
+      ,[LBL_ACCOUNT_DEP] 	AS DEP_LIB_CPT_BQ
+      ,[NUM_BAN_DEP]    	AS BANDEP  
+FROM [DWH_MDW].[dbo].[SUPPORT];
+
+
+Map_CPTE_DEPOSITAIRE_LIB:
+Mapping
+LOAD 
+	CD_SUPPORT, 
+	DEP_LIB_CPT_BQ AS CPTE_DEPOSITAIRE_LIB
+Resident Temp_BANQ_DEP;
+
+
+Map_PTF_CHORUS_FEXT:
+Mapping
+LOAD 
+	CD_SUPPORT, 
+	applymap('MAP_CPTE_BANQ_TO_CHORUS', DEP_LIB_CPT_BQ) AS PTF_CHORUS
+Resident Temp_BANQ_DEP;
+
+
+
+Map_PTF_CHORUS_FEXT:
+Mapping
+LOAD 
+	CD_SUPPORT, 
+	applymap('MAP_CPTE_BANQ_TO_CHORUS', DEP_LIB_CPT_BQ) AS PTF_CHORUS
+Resident Temp_BANQ_DEP;
+
+Map_PTF_CHORUS_FEX_ONLY:
+Mapping
+LOAD 
+	CD_SUPPORT, 
+	applymap('MAP_CPTE_BANQ_FEX', DEP_LIB_CPT_BQ, null()) AS PTF_CHORUS_FEX_ONLY
+Resident Temp_BANQ_DEP;
+
+Map_FIC_OCP:
+Mapping
+LOAD 
+	// RIGHT(CD_ISIN, 7) AS PTF_KO,
+	// CD_ISIN, 
+	CD_SUPPORT,
+    CD_PTF_CHORUS  AS PTF_FIC_OCP 	 
+FROM
+[lib://F_010_Outil_Bilan/Chorus/Mapping_PTF_FIC_OCP.xlsx]
+(ooxml, embedded labels, table is FIC_OCP);
+
+
+
+DROP Table Temp_BANQ_DEP;
+DROP Table CPT_DEPOSITAIRE;
+
+
+
+QUALIFY IND_GARANTI_K, D_DEB_EFF_GARK, D_FIN_EFF_GARK;
+
+LIB CONNECT TO 'MS_SQL_LMEP-TIMEXT02';
+
+SUPPORT:
+LOAD 
+	"DW_Id" AS ID_SUPPORT,
+//    "D_BILAN",
+//    "ID_SUPPORT",
+    "CD_SYS_GESTION",
+    "CD_SUPPORT",
+//    "LB_SUPPORT",
+    "CD_TYPE_SUPPORT",
+    "CD_CANTON",
+    "CD_PTF_CHORUS",
+    ApplyMap('Map_CPTE_DEPOSITAIRE_LIB', CD_SUPPORT, '*Inconnu') AS CPTE_DEPOSITAIRE_LIB,
+ //   if("CD_SOUS_TYPE_SUPPORT" = 'FE', ApplyMap('Map_PTF_CHORUS_FEXT', CD_SUPPORT, '*Inconnu'), "CD_PTF_CHORUS") AS PTF,
+    ApplyMap('Map_PTF_CHORUS_FEX_ONLY', CD_SUPPORT, '*Inconnu') AS PTF_FEXT,
+    "CD_PLACE_COTATION",
+//    "CD_ISIN",
+    "CD_DEV_TIT",
+    "CD_TYPE_REVAL",
+    "CD_LOB_S2",
+//    "D_DEB_VALIDITE",
+//    "D_FIN_VALIDITE",
+//    "IS_CURRENT",
+    "CD_SOUS_TYPE_SUPPORT",
+    "CD_TYPE_SUPPORT_1",
+    "CD_TYPE_SUPPORT_2",
+    if("CD_SOUS_TYPE_SUPPORT" = 'DE', 'DE',
+    	IF("CD_SOUS_TYPE_SUPPORT" = 'FAS', 'FA',  "CD_TYPE_SUPPORT")) AS CD_TYPE_SUPPORT_3,
+    "D_DEB_EFF_GARK",
+    "D_FIN_EFF_GARK",
+    "IND_GARANTI_K",
+    "CLASSE",
+    "GARANTIE_FG",
+    "OFFRE_FG"
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp";
+WHERE EXISTS(ID_SUPPORT, DW_Id);
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_SUPPORT";
+
+
+
+
+LEFT JOIN (SUPPORT)
+LOAD 
+	*,
+	ApplyMap( 'Map_MultiClass', PTF) 			AS PTF_ANCIEN
+;
+LOAD 
+	CD_SUPPORT, 
+	LB_SUPPORT, 
+	CD_SYS_GESTION, 
+	CD_ISIN,
+	if("CD_SOUS_TYPE_SUPPORT" = 'FE',
+		ApplyMap('Map_PTF_CHORUS_FEXT', CD_SUPPORT, '*Inconnu'), 	ApplyMap('Map_FIC_OCP', CD_SUPPORT, "CD_PTF_CHORUS")) AS PTF,
+	ApplyMap('Map_FIC_OCP', CD_SUPPORT, null()) AS PTF_FIC_OCP
+;
+SQL SELECT 
+	CD_SUPPORT, 
+	LB_SUPPORT, 
+	CD_SYS_GESTION, 
+	CD_PTF_CHORUS,
+	CD_ISIN,
+	CD_SOUS_TYPE_SUPPORT
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_SUPPORT_H" 
+where cd_sys_gestion in ('TITAN', 'PAS', 'POCUS') and IS_CURRENT = 1
+union  
+SELECT 
+	CD_SUPPORT, 
+	LB_SUPPORT, 
+	'GAME' AS CD_SYS_GESTION, 
+	CD_PTF_CHORUS,
+	CD_ISIN,
+	CD_SOUS_TYPE_SUPPORT
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_SUPPORT_H" 
+where cd_sys_gestion in ('TITAN') and IS_CURRENT = 1;// on prend le dernier libéllé et PTF sinon prb rappro ALM
+
+LEFT JOIN (FLUX_SUPPORT) 
+LOAD ID_SUPPORT, CD_ISIN, PTF, PTF_ANCIEN  Resident SUPPORT;
+DROP FIELD CD_SYS_GESTION FROM SUPPORT;
+
+Concatenate(SUPPORT)
+LOAD 
+	F2 				AS ID_SUPPORT,
+	'CASH - '&F1 	AS CD_SUPPORT,
+	'CASH'			AS CD_TYPE_SUPPORT,
+	'CASH'			AS CD_SOUS_TYPE_SUPPORT,
+	'CASH'			AS "CD_TYPE_SUPPORT_1",
+    'CASH'			AS "CD_TYPE_SUPPORT_2",
+	'CASH - '&F1	AS CD_ISIN,
+	F1				AS CD_DEV_TIT
+;
+LOAD * INLINE [
+    F1, F2
+    AUD, 99999901
+    CAD, 99999902
+    CHF, 99999903
+    CNY, 99999904
+    EUR, 99999905
+    FRF, 99999906
+    GBP, 99999907
+    HKD, 99999908
+    NOK, 99999909
+    SEK, 99999910
+    SGD, 99999911
+    USD, 99999912
+    ZAR, 99999913
+];
+
+
+///$tab 40_Position_Contrat
+Map_Etablissement:
+Mapping
+LOAD 
+    "ID_ETABLISSEMENT",
+    "LB_ETABLISSEMENT";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_ETABLISSEMENT_H";
+
+
+Tmp_Contrat_Current:
+LOAD NUM_CONTRAT,
+	 CD_ETAT,
+	 D_ETAT,
+	 CD_ETABL,
+	 Applymap('Map_Etablissement', "ID_ETABLISSEMENT") AS ETABLISSEMENT;
+;
+SQL SELECT * 
+FROM "TX_OB_$(v.Env)ARR".dbo."POSITION_CONTRAT_SOUSCRIT_H" 
+WHERE D_BILAN = '$(v.D_BILAN)'
+;
+
+
+
+QUALIFY D_EFFET, D_TERME, D_SORTIE, ID_DEB_EFF_GARK, D_FIN_EFF_GARK;
+CONTRAT:
+LOAD 
+//	"DW_Id",
+//    "D_BILAN",
+    "ID_CONTRAT",
+//    "CD_SYS_GESTION",
+    "NUM_CONTRAT",
+    "CD_SYS_GESTION" & "NUM_CONTRAT" AS _CLE_AGE,
+    "NUM_CTR_FIRME",
+	IF(year("D_EFFET")<year(D_BILAN), 'STOCK', 'NEW B') AS STOCK_OR_NEWB,
+    Date("D_EFFET")	 AS D_EFFET,
+    Date("D_TERME")	 AS D_TERME,
+    Date("D_SORTIE") AS D_SORTIE,
+//    "CD_ETAT",
+//    "D_ETAT",
+//    "CD_FISC_SOUSC",
+    "CD_PAYS_FISC",				//Pays de résidence fiscale
+    UPPER("CD_TYPE_SOUSC") AS "CD_TYPE_SOUSC",
+    UPPER("CD_PAYS_SOUSC") AS CD_PAYS_SOUSC,			//Pays BCL (fichier xls CDG
+    UPPER("PAYS_CAA") AS PAYS_CAA,					//Pays CAA (fichier xls CDG)
+//    "CD_ETABL",
+    "D_DEB_EFF_GARK",
+    "D_FIN_EFF_GARK",
+    "CD_DEV_CONTRAT",
+    "B_MANDAT_PS_ACTIF",
+//    "CD_PROTOCOLE",
+//    "CD_PRODUIT",
+//    "D_DEB_VALIDITE",
+//    "D_FIN_VALIDITE",
+//    "IS_CURRENT",
+    "ID_PROTOCOLE",
+    "ID_PRODUIT",
+    Applymap('Map_Etablissement', "ID_ETABLISSEMENT") AS ETABLISSEMENT,
+    "ID_PARTENAIRE",
+    "ID_APPORTEUR";
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."POSITION_CONTRAT_SOUSCRIT_H"
+WHERE CD_SYS_GESTION <> 'GAME';
+
+LEFT JOIN (CONTRAT)
+LOAD * Resident Tmp_Contrat_Current;
+DROP Table Tmp_Contrat_Current;
+
+CONTRAT_AGE:
+LOAD 
+	//"DW_Id",
+  //  "D_BILAN",
+  	"CD_SYS_GESTION" & "NUM_CONTRAT" AS _CLE_AGE,
+    //"CD_SYS_GESTION",
+    //"NUM_CONTRAT",
+   // "ANNEE_EMI",
+   // "CD_PRODUIT",
+   // "CD_TYPE_PRODUIT",
+    "CD_TYPE_DECES",
+    CD_TYPE_DECES_TDENOU,
+    "CD_TYPE_DECES_ORIGINE",
+  //  "CD_LBL_TYPE_PRODUIT",
+   // "CD_ETAT",
+    Date("MIN_D_NAI_ASSURE") As MIN_D_NAI_ASSURE,
+    Date("MAX_D_NAI_ASSURE") AS MAX_D_NAI_ASSURE,
+    Date("MIN_D_NAI_SOUSCR") AS MIN_D_NAI_SOUSCR,
+    Date("MAX_D_NAI_SOUSCR") AS MAX_D_NAI_SOUSCR,
+    Date("D_NAI_REFERENCE") AS D_NAI_REFERENCE,
+    Date("D_NAI_REFERENCE_TDENOU") AS D_NAI_REFERENCE_TDENOU,
+    "FLAG_NC",
+    "AGE_EXACT",
+   	AGE_EXACT_TDENOU,
+    "CD_TYPE_DECES_VU",
+    Date("D_NAI_REFERENCE_VU") AS D_NAI_REFERENCE_VU,
+    "FLAG_NC_VU",
+    "AGE_EXACT_VU",
+    "FLAG_INCOHERENCE"; 
+    
+ //   "MT_PROVISION_CPT"
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."V_CONTRATS_CALCUL_AGE" 
+WHERE D_BILAN = '$(v.D_BILAN)';
+
+
+
+///$tab 41_Souscripteur
+Map_Retraitement_Type_Personne:
+Mapping
+select distinct 
+	r.NUM_CONTRAT, 1 AS RETRAITEMENT
+FROM 
+"TX_OB_$(v.Env)ARR".dbo.ROLES_H r
+INNER JOIN  "TX_OB_ARR".dbo.REF_PERSONNE_H p  
+	ON r.NUM_PERSONNE = p.NUM_PERSONNE and p.D_FIN_VALIDITE = '99991231'
+WHERE  
+     r.CD_ROLE = 1 
+ AND r.NUM_CONTRAT is not null
+ AND r.DATTRM = '99991231'
+group by r.CD_SYS_GESTION, r.NUM_CONTRAT--, p.CD_TYPE_PERSONNE
+having COUNT(distinct CD_TYPE_PERSONNE) = 2;
+
+
+
+SOUSCRIPTEUR:
+LOAD Distinct
+	NUM_CONTRAT, 
+	if(ApplyMap('Map_Retraitement_Type_Personne', NUM_CONTRAT) = 1, 
+		pick(match(CD_SYS_GESTION, 'POCUS', 'TITAN'), 'P', 'P_M'), CD_TYPE_PERSONNE) AS CD_TYPE_PERSONNE
+;
+SQL select distinct 
+	r.CD_SYS_GESTION, r.NUM_CONTRAT, p.CD_TYPE_PERSONNE 
+FROM 
+"TX_OB_$(v.Env)ARR".dbo.ROLES_H r
+INNER JOIN  "TX_OB_$(v.Env)ARR".dbo.REF_PERSONNE_H p  
+	ON r.NUM_PERSONNE = p.NUM_PERSONNE and p.D_FIN_VALIDITE = '99991231'
+WHERE 
+  r.CD_ROLE = 1 
+ AND r.NUM_CONTRAT is not null
+ AND r.DATTRM = '99991231';
+///$tab 45_Pos_Option
+OPTION_SOUSCRITE:
+LOAD [NUM_CONTRAT]
+      ,[CD_TYPE_OPTION]
+   //   ,[CD_OPTION] 		AS [NUMOTS]
+  //    ,[CD_SYS_GESTION]
+ //     ,[NUMOTS] AS CD_OPTION_SOUSCRITE
+ 	  ,[CD_SYS_GESTION]& '|' & [NUM_CONTRAT] & '|' & [CD_OPTION] AS %CLE_OPTION_SOUCRITE
+      ,[CD_OPTION] 		AS CD_OPTION_SOUSCRITE
+      ,Date([D_EFFET])		AS OPTION_D_EFFET
+      ,Date([D_FIN_EFFET])	AS OPTION_D_FIN_EFFET
+      ,[TX_CORR_RSQ]
+      ,[TX_FRAIS]
+      ,[TX_COM_LMEP]
+      ,[TX_COM_PAR]
+      ,[TX_COM_APP]
+      ,rangesum( [TX_COM_PAR],[TX_COM_APP]) AS [TX_COM]
+      ,[TYPOPS]
+      ,[TYPMAJ]
+     // ,[NUMPFL]
+ //     , ApplyMap('Map_OPTION_NUMGGL', trim("CD_SYS_GESTION") & '|' & trim("CD_OPTION") ) AS NUMGGL
+      ,[NUMGGL]
+      ,[D_FIN_GAR_VU]
+      ,[FLAG_GAR_ACTIVE]
+//      ,[CD_PRODUIT]
+//      ,[TYPCVA]
+//      ,MT_CSR		AS MT_CSR_VU
+//      ,MT_CDG		AS MT_CDG_VU
+//      ,MT_CSR_CPT	AS MT_CSR_CPT_VU
+//      ,MT_CDG_CPT	AS MT_CDG_CPT_VU
+//      ,Date(D_VALEUR_VU) AS D_VALEUR_VU
+//      ,[CD_DEV_CONTRAT] AS CD_DEV_CONTRAT_VU
+      ,[CD_TYPE_RSQ_VU];
+//      ,[DW_Batch]
+//      ,[DW_SourceCode]
+//      ,[DW_TimeStamp 
+SQL SELECT * FROM "TX_OB_$(v.Env)ARR".[dbo].[POSITION_OPTION_SOUSCRITE_H] 
+  WHERE '$(v.D_BILAN)' between D_DEB_VALIDITE AND D_FIN_VALIDITE 
+  AND '$(v.D_BILAN)' between D_EFFET AND D_FIN_EFFET
+  AND CD_SYS_GESTION <> 'GAME';
+
+
+CSR_CDG:
+LOAD 
+	D_BILAN					AS D_BILAN_VU,
+  	[CD_SYS_GESTION]& '|' & [NUM_CONTRAT] & '|' & [CD_OPTION] AS %CLE_OPTION_SOUCRITE
+  //	,NUMGGL
+    ,MT_CSR					AS MT_CSR_VU
+    ,MT_CDG					AS MT_CDG_VU
+    ,MT_CSR_CPT				AS MT_CSR_CPT_VU
+    ,MT_CDG_CPT				AS MT_CDG_CPT_VU
+    ,Date(D_CALCUL) 		AS D_CALCUL
+    ,[CD_DEV_CONTRAT] 		AS CD_DEV_CONTRAT_VU;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".[dbo]."FLUX_OPE_OPTION" 
+WHERE D_BILAN = '$(v.D_BILAN)' AND CD_NAT_OPERATION = 'CALCUL_VU' ;  
+
+DROP FIELDS CD_SYS_GESTION from OPTION_SOUSCRITE;
+
+// porting IAS/IFRS
+REF_GARANTIE:
+LOAD 
+    TYPGDC,
+    TAUTUN,
+    LIBGAR,
+    NUMGGL;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_GARANTIE";
+///$tab 50_Produit
+Map_LIBFISC:
+Mapping
+LOAD * INLINE [
+    TYPFIS, LIBFIS
+    5, Prestations définies
+    1, Assurance-vie 
+    2, Capitalisation
+    3, Collectif
+    4, Réassurance acceptée
+];
+
+
+
+QUALIFY IND_GARANTI_K;
+PRODUIT:
+LOAD 
+	//"DW_Id",
+    //"D_BILAN",
+ 	"ID_PRODUIT",
+//    "CD_SYS_GESTION",
+    "CD_PRODUIT",
+    PurgeChar(CD_PRODUIT, '_') AS CD_PRODUIT_CODA,
+    subfield(CD_PRODUIT, '_', 1) AS CD_TYPCON,
+    "LB_PRODUIT",
+    "CD_IFRS",
+    "CD_TYPE_PRODUIT",
+    ApplyMap('Map_LIBFISC', CD_TYPE_PRODUIT, '?Unknown') AS LB_FISC,
+     ApplyMap('Map_LIBFISC', CD_TYPE_PRODUIT, '?') AS TYPE_PRODUIT,
+    "CD_NAT_SOUSC",
+    "FG_PROPOSE",
+    "GARANTIE_FG" AS GARANTIE_FG_PRODUIT,
+    "PORTEFEUILLE",
+    "RACHETABLE",
+    "ARBITRABLE",
+    "TRANSFERABLE",
+    "D_FIN_COM",
+    "IND_GARANTI_K";
+//    "D_DEB_VALIDITE",
+//    "D_FIN_VALIDITE",
+//    "IS_CURRENT",
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_PRODUIT_H";
+
+///$tab 60_RTECH
+LEFT JOIN (FLUX_SUPPORT)
+LOAD 
+	ID_CONTRAT,
+	ID_PRODUIT
+Resident CONTRAT;
+
+
+LEFT JOIN (FLUX_SUPPORT)
+LOAD 
+	ID_PRODUIT,
+	TYPE_PRODUIT
+Resident PRODUIT;
+
+LEFT JOIN (FLUX_SUPPORT)
+LOAD 
+	ID_SUPPORT,
+	CD_TYPE_SUPPORT_1
+Resident SUPPORT;
+
+
+
+UNQUALIFY D_EFFET;
+temp_FLUX_SUPPORT:
+NoConcatenate 
+LOAD 
+	*,
+	IF (TYPE_PRODUIT = 'Réassurance acceptée', 'R0100',
+		IF (TYPE_PRODUIT = 'Capitalisation' AND match(CD_TYPE_SUPPORT_1, 'FG', 'TG') > 0, 'R0060', 
+			IF(CD_TYPE_SUPPORT_1 = 'UC' AND TYPE_PRODUIT <> 'Capitalisation', 'R0030', 'R0010')
+		)
+	)	AS CD_RTECH
+	
+Resident FLUX_SUPPORT;
+
+Drop Table FLUX_SUPPORT;
+Rename table temp_FLUX_SUPPORT to FLUX_SUPPORT;
+
+DROP FIELD TYPE_PRODUIT, CD_TYPE_SUPPORT_1, ID_PRODUIT   FROM FLUX_SUPPORT;
+
+CLASSIF_RTECH:
+LOAD * INLINE [
+    CD_RTECH, LABEL_RTECH
+    R0010, "Vie non liée à des fonds d'investissements"
+    R0030, "Assurances liées à des fonds d'investissements"
+    R0060, Opérations de capitalisation
+    R0100, Réassurance acceptée
+];
+///$tab 70_Option
+OPTION:
+LOAD 
+////	"DW_Id",
+////    "D_BILAN",
+//    "ID_OPTION",
+////    "ID_PRODUIT",
+//    "CD_OPTION",
+    autonumber("CD_SYS_GESTION"&CD_OPTION, 'Option') AS CLE_OPTION,
+////    "CD_SYS_GESTION",
+//    "CD_PERIOD_REVAL",
+////    "CD_PRODUIT",
+//    "CD_TAB_MORT",
+//    "CD_TYPE_OPTION",
+////    "D_DEB_VALIDITE",
+////    "D_FIN_VALIDITE",
+////    "IND_ARBITR",
+////    "IND_FAC_OBLIG",
+////    "IND_INDEP_SUBOR",
+////    "IND_PRINC_COMP",
+////    "IND_RACHAT",
+////    "IND_RESIL",
+////    "IND_TRANSFER",
+////    "IS_CURRENT",
+    "LB_OPTION",
+//    "MT_MAX_CSR",
+    "NUM_OPTION";
+//    "TX_CORR_RSQ";
+////    "DW_Batch",
+////    "DW_SourceCode",
+////    "DW_TimeStamp";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_OPTION_H";
+
+// ajout dummy option -1
+Concatenate(OPTION)
+LOAD 
+	autonumber('TITAN'&-1, 'Option') AS CLE_OPTION,
+	'GESTION LIBRE' as LB_OPTION,
+	0 as NUM_OPTION
+	AutoGenerate 1; 
+///$tab 75_Protocole
+/*** Désactivé 20/05/2024 - SUP-24444 ****/
+//
+//PROTOCOLE:
+//LOAD 
+////	"DW_Id",
+////    "D_BILAN",
+//    "ID_PROTOCOLE",
+////    "ID_PRODUIT",
+////    "CD_SYS_GESTION",
+//    "CD_PROTOCOLE",
+//    "LB_PROTOCOLE",
+////    "CD_PRODUIT",
+////    "D_DEB_VALIDITE",
+////    "D_FIN_VALIDITE",
+////    "IS_CURRENT",
+//    "ID_PARTENAIRE",
+//    "ID_APPORTEUR";
+////    "DW_Batch",
+////    "DW_SourceCode",
+////    "DW_TimeStamp";
+//SQL SELECT *
+//FROM "TX_OB_$(v.Env)ARR".dbo."REF_PROTOCOLE_H";
+
+///$tab 76_Garantie
+/* DEPRECATED -  Moved into Tab 45 ***************************/
+/* 
+// Temporaire pour reporting IAS/IFRS
+TEMP_REF_GARANTIE:
+LOAD 
+    TYPGDC,
+    TAUTUN,
+    LIBGAR,
+    NUMGGL;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ODX".dbo."GAME_dbo_REF_GARANTIE";
+*/
+///$tab 80_Clasification
+Map_Tri_Flux_1:
+Mapping
+LOAD * INLINE [
+	GROUPE_FLUX_1, TRI_FLUX_1
+	PM Ouverture, 10
+	Crédit, 20
+	Débit, 30
+	PM Clôture, 40
+];
+
+Map_Tri_Flux_2:
+Mapping
+LOAD * INLINE [
+    GROUPE_FLUX_2, TRI_FLUX_2
+    Versements initiaux, 10
+    Versements complémentaires, 20
+    Versements Partenaires, 30
+    Arbitrages entrants (TR), 40
+    Ajustements positifs, 50
+    PM au 31/12/N-1, 60
+    Rachats partiels et totaux, 70
+    Prélèvements sociaux, 80
+    Sinistre, 90
+    Arbitrages sortants (TD), 100
+    Ajustements sortants, 110
+    PM sans PB, 120
+    Dotation Participation aux bénéfices, 130
+    Intérêts (garantis ou provisoires), 140
+    Bonus taux majorés au 31/12, 150
+    PM au 31/12/N, 160
+    Chargements sur encours, 170
+    Chargements sur PB, 175
+    Coût décès, 180
+    Réductions, 190
+];
+
+
+Map_Type_Flux:
+Mapping
+LOAD 
+	"CD_FLUX",
+    "CD_TYPE_FLUX";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_TYPE_OPERATION"
+WHERE '$(v.D_BILAN)' between D_DEB_VALIDITE AND D_FIN_VALIDITE;
+
+
+
+
+DEBIT_CREDIT:
+LOAD CD_FLUX, 
+     LB_FLUX, 
+     applymap('Map_Type_Flux', CD_FLUX) AS  CD_TYPE_FLUX, 
+     GROUPE_FLUX_2, 
+     GROUPE_FLUX_2_CDG,
+     ApplyMap('Map_Tri_Flux_2', GROUPE_FLUX_2) AS TRI_FLUX_2_,
+     GROUPE_FLUX_1,
+     ApplyMap('Map_Tri_Flux_1', GROUPE_FLUX_1) AS TRI_FLUX_1_
+FROM
+[lib://F_010_Outil_Bilan/Manual_Files/OB_Paramétrage_Métier.xlsx]
+(ooxml, embedded labels, table is Débit_Crédit);
+
+
+
+
+// On associe les PM au classificaitons Débit/Crédit
+Concatenate(DEBIT_CREDIT)
+LOAD *,
+	 ApplyMap('Map_Tri_Flux_2', GROUPE_FLUX_2) AS TRI_FLUX_2_,
+     ApplyMap('Map_Tri_Flux_1', GROUPE_FLUX_1) AS TRI_FLUX_1_
+;
+LOAD 'PMCLO' AS CD_FLUX,
+	 'PM au '&Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')+0) AS GROUPE_FLUX_2,
+	 'PM Clôture' AS GROUPE_FLUX_1
+AutoGenerate 1;
+
+Concatenate(DEBIT_CREDIT)
+LOAD *,
+	 ApplyMap('Map_Tri_Flux_2', GROUPE_FLUX_2) AS TRI_FLUX_2_,
+     ApplyMap('Map_Tri_Flux_1', GROUPE_FLUX_1) AS TRI_FLUX_1_
+;
+LOAD 'PMOUV' AS CD_FLUX,
+	 'PM au '&Date(Date#('$(v.D_OUVERTURE_BILAN)', 'YYYY-MM-DD')-1) AS GROUPE_FLUX_2,
+	 'PM Ouverture' AS GROUPE_FLUX_1
+AutoGenerate 1;
+
+
+
+
+///$tab 90_Agents
+AGENT:
+LOAD distinct
+	 [Code Agent] AS ID_PARTENAIRE, 
+     [Nom Agent] AS NOM_PARTENAIRE, 
+     [Code Partenaire] AS AGTCONSO, 
+     [Nom Partenaire] AS NOM_AGTCONSO,
+     //Reclassif_Italie, 
+     [Pays de distribution] AS PAYS_DIS, 
+     if(Reclassif_Italie= 'OUI', 'Italie', [Marché de distribution FV]) As MARCHE_DIS 
+     //Capitalize([Actif ou NON]) AS STATUT_AGTCONSO
+     //[Pôle RM]
+     //roupe, 
+     //[Objectif collecte], 
+     //[Objectif tx UC]
+FROM
+[lib://F_010_Outil_Bilan/Manual_Files/FV_Liste_Partenaires.xlsx]
+(ooxml, embedded labels, table is Sheet1)
+where len(trim([Code Agent]))>0;
+///$tab 91_Chgt_Marge
+GRP_CHGT_MARGE:
+LOAD * 
+	WHERE  '$(v.D_BILAN)' >= VALID_FROM AND '$(v.D_BILAN)' <= VALID_TO;
+LOAD CD_FLUX, 
+     GROUPE_FRAIS_1, 
+     GROUPE_MARGE_1, 
+     date(VALID_FROM, 'YYYY-MM-DD') 	AS VALID_FROM, 
+     date(VALID_TO, 'YYYY-MM-DD')		AS VALID_TO
+FROM
+[lib://F_010_Outil_Bilan/Manual_Files/OB_Paramétrage_Métier.xlsx]
+(ooxml, embedded labels, table is Chargements_Marges);
+
+
+
+///$tab 100_Actifs
+// Taux de Change nécessaire pour convetir Trésorie Actif en Dev PTF, on laisse la table dispo dans le modèle pour pour afficher les taux utilisés.
+TX_CHANGE:
+LOAD
+    "D_BILAN",
+    "CD_DEVISE",
+    "TX_CHANGE";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."V_HELPER_TABLE_CHANGE" where D_BILAN = '$(v.D_BILAN)';
+
+Map_CHGE:
+Mapping LOAD CD_DEVISE, TX_CHANGE Resident TX_CHANGE;
+
+
+Map_ISIN:
+//Mapping LOAD RecNo() AS A, RecNo() AS B AutoGenerate 1;
+Mapping
+LOAD DISTINCT 
+	CD_PTF_CHORUS,
+	CD_ISIN
+RESIDENT SUPPORT;
+
+
+PTF_CLASSIFICATION:
+LOAD *
+WHERE TYPE_ACTIF <> 'FP';
+LOAD
+     [Code Chorus] AS PTF_RECHERCHE,
+     [Code Chorus] AS PTF,
+     'EUR' AS DEVISE_PTF,
+     [DEV VNI] AS DEVISE_VNI,
+     [CODE ETS],
+     replace(LOT, 'T2GA', '') AS TYPE_ACTIF
+FROM [lib://F_010_Outil_Bilan/Manual_Files/Code Etablissement.xlsx]
+(ooxml, embedded labels, table is Sheet1);
+
+
+
+// Créer les mappings pour usage plus loin
+Map_PTF_DEV:
+Mapping Load PTF, DEVISE_PTF Resident PTF_CLASSIFICATION;
+
+Map_PTF_TYPE_ACTIF:
+Mapping Load PTF, TYPE_ACTIF Resident PTF_CLASSIFICATION;
+
+
+ACTIF:
+LOAD * WHERE TYPE_ACTIF <> 'UC';
+LOAD FileName()													AS PTF_DATASOURCE,
+	 ApplyMap('Map_PTF_TYPE_ACTIF', Portefeuille, '???' )	  	AS TYPE_ACTIF,
+	 ApplyMap('Map_PTF_DEV', Portefeuille, '???' )	  			AS DEVISE_PTF,
+	 Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')) 					AS D_BILAN,
+	 Portefeuille							  					AS PTF, 
+	 ApplyMap( 'Map_MultiClass', Portefeuille) 					AS PTF_ANCIEN,
+	 Portefeuille							  					AS PTF_AVNI,		// pour recherche ensuite les PTF dans AINI/AEST qui ne sont pas dans AVNI
+	 ApplyMap('Map_ISIN', Portefeuille) 	  					AS CD_ISIN,
+	 [Date VNI]								  					AS D_VNI,
+     [Valeur boursiere (dev vni)]						  		AS VAL_BOURSIERE, 
+     [Valeur boursiere (dev réf)]						  		AS VAL_BOURSIERE_EUR, 
+  //   [Autres éléments d actifs (dev vni)]						AS AUTRES_ELTS_ACTIFS, 
+     [Actif net (dev vni)]							  			AS VAL_ACTIF_NET, 
+     [Tresorerie (dev vni)]								  		AS TRESORERIE, 
+     [Tresorerie (dev réf)]								  		AS TRESORERIE_EUR, 
+     [VL nette (dev VNI)]							  			AS VNI,
+     [Provision F.D.G. (dev vni)]							AS PROVISION_FDG, 	
+     [Nb Parts]					  						AS NB_PARTS,
+     [CE devise VNI]											AS DEVISE_VNI,
+     [Actif net (dev réf)]										AS VAL_ACTIF_NET_EUR
+FROM
+//[Chorus\AVNI_30062019.xlsx]
+//(ooxml, embedded labels, table is AVNI1HISNC_7_2775)
+[lib://F_010_Outil_Bilan/Chorus/AVNI_$(v.D_FICHIERS_ACTIF).xlsx]
+(ooxml, embedded labels, table is AVNI) //_$(v.D_FICHIERS_ACTIF))
+WHERE exists (PTF_RECHERCHE, Portefeuille);
+
+
+
+
+
+
+//FROM
+//[$(v.Path_Actifs)\AVNI_28022019.xlsx]
+//[$(v.Path_Actifs)\CHORUS_LMEP_GAME_AVNI_VALOEUR_20190329_20181229.out]
+//(txt, codepage is 1252, embedded labels, delimiter is ';', msq)
+//$(v.Path_Actifs)\AVNI_ELARGIE__30092018.xlsx
+//[.\Manual_Files\*Actif VNI*$(v.D_BILAN_NUM).xlsx]
+//[.\Manual_Files\*Actif VNI*20180630.xlsx]
+//(ooxml, embedded labels, table is [AVNI_213])
+
+
+INNER JOIN (ACTIF)
+LOAD 
+	PTF,
+	CD_ISIN,
+	Date(Max(D_VNI)) AS D_VNI
+Resident ACTIF
+GROUP BY PTF, CD_ISIN;
+	 
+
+
+
+
+
+	
+
+Concatenate(ACTIF)
+LOAD 
+	 Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')) 					AS D_BILAN,
+	 FileName()													AS PTF_DATASOURCE,
+	 [DT VALO]													AS D_VNI, 
+     PTF														AS PTF, 
+     ApplyMap( 'Map_MultiClass', PTF) 							AS PTF_ANCIEN,
+     ApplyMap('Map_PTF_TYPE_ACTIF', PTF, '???' )	  			AS TYPE_ACTIF,
+     ApplyMap('Map_PTF_DEV', PTF, '???')						AS DEVISE_PTF,
+//     [LB LG PTF], 
+//     [TYPE PTF], 
+//     [DEV PTF], 
+//     [MODE EXPRESSION], 
+     COURS														AS VNI,  
+     [QTE EN STOCK]												AS NB_PARTS, 
+     rangesum([VB EN DEV COT], [INTERETS COURUS DEV COT])		AS VAL_BOURSIERE_DEV_COT,  
+     rangesum([VB EN DEV REFERENCE] , [INTERETS COURUS DEV REF])	AS VAL_BOURSIERE, 
+     rangesum([VB EN DEV REFERENCE] , [INTERETS COURUS DEV REF])	AS VAL_ACTIF_NET,
+     rangesum([VB EN DEV REFERENCE] , [INTERETS COURUS DEV REF])	AS VAL_ACTIF_NET_EUR,
+     if(ApplyMap('Map_PTF_TYPE_ACTIF', PTF, '???' )<> 'UC', ApplyMap('Map_ISIN', PTF), [CODE VALEUR]) 	  					AS CD_ISIN,
+     [CODE VALEUR]																							
+//     [DEV COT], 
+//     [LB LG VAL], 
+//     [VB CP INCLUS DEV REF], 
+//     [VB CP INCLUS DEV COT]
+
+//FROM
+//$(v.Path_Actifs)\AINI_$(v.D_FICHIERS_ACTIF).out
+//(txt, codepage is 1252, embedded labels, delimiter is ';', msq)
+;
+	LOAD
+		[DT VALO], 
+	PTF, 
+	[LB LG PTF], 
+    [LB LG GRP PTF], 
+    [DEV PTF], 
+    [TYPES VAL/INSTR], 
+    [MODE EXPRESSION], 
+	REPLACE(COURS,'.', ',' ) AS      COURS, 
+    [DATE COURS COURS CHOISI/VAL], 
+	REPLACE([QTE EN STOCK],'.', ',' ) AS      [QTE EN STOCK], 
+	REPLACE([VB EN DEV COT],'.', ',' ) AS      [VB EN DEV COT], 
+	REPLACE([PRIX DE REVIENT DEV COT],'.', ',' ) AS      [PRIX DE REVIENT DEV COT], 
+	REPLACE([INTERETS COURUS DEV COT],'.', ',' ) AS      [INTERETS COURUS DEV COT], 
+	REPLACE([INDEM COURUES EN DEV COT],'.', ',' ) AS      [INDEM COURUES EN DEV COT], 
+	REPLACE([VB EN DEV REFERENCE],'.', ',' ) AS      [VB EN DEV REFERENCE], 
+	REPLACE([PRIX DE REVIENT DEV REF],'.', ',' ) AS      [PRIX DE REVIENT DEV REF], 
+	REPLACE([INTERETS COURUS DEV REF],'.', ',' ) AS      [INTERETS COURUS DEV REF], 
+	REPLACE([INDEM COURUES EN DEV REF],'.', ',' ) AS      [INDEM COURUES EN DEV REF], 
+    [COMPTE DANS LE PLAN], 
+    [ATTR V], 
+    [CODE VALEUR], 
+    [PLACE COT], 
+    [DEV COT], 
+    EMETTEUR, 
+    [LB LG VAL], 
+    [LB CRT INSTR], 
+    [LB LG SOC./EMET], 
+    [LB CRT PAYS], 
+	REPLACE([SURC COURUE COT],'.', ',' ) AS      [SURC COURUE COT], 
+	REPLACE([DEC COURUE COT],'.', ',' ) AS      [DEC COURUE COT], 
+	REPLACE([SURC COURUE REF],'.', ',' ) AS      [SURC COURUE REF], 
+	REPLACE([DEC COURUE REF],'.', ',' ) AS      [DEC COURUE REF], 
+	REPLACE([+/- VALUE POT COT],'.', ',' ) AS      [+/- VALUE POT COT], 
+	REPLACE([+/- VALUES POT REF],'.', ',' ) AS      [+/- VALUES POT REF], 
+	REPLACE([PMV CHG EN DEV COT],'.', ',' ) AS      [PMV CHG EN DEV COT], 
+	REPLACE([PMV CHG EN DEV REF],'.', ',' ) AS      [PMV CHG EN DEV REF], 
+	REPLACE([PX REVT ACTUALISE DEV COT],'.', ',' ) AS      [PX REVT ACTUALISE DEV COT], 
+	REPLACE([PX REVT ACTUALISE DEV REF],'.', ',' ) AS      [PX REVT ACTUALISE DEV REF], 
+	REPLACE([QTE AC],'.', ',' ) AS      [QTE AC], 
+	REPLACE([VB AC COT],'.', ',' ) AS      [VB AC COT], 
+	REPLACE([VB VD COT],'.', ',' ) AS      [VB VD COT], 
+	REPLACE([PX REVT POS ACH DEV COT],'.', ',' ) AS      [PX REVT POS ACH DEV COT], 
+	REPLACE([PX REVT POS ACH DEV REF],'.', ',' ) AS      [PX REVT POS ACH DEV REF], 
+	REPLACE([VB AC REF],'.', ',' ) AS      [VB AC REF], 
+	REPLACE([VB VD REF],'.', ',' ) AS      [VB VD REF], 
+	REPLACE([PX REVT UNIT DEV COT],'.', ',' ) AS      [PX REVT UNIT DEV COT], 
+	REPLACE([PX REVT UNIT DEV REF],'.', ',' ) AS      [PX REVT UNIT DEV REF], 
+	REPLACE([S/D COURUE+PRIM DEV COT],'.', ',' ) AS      [S/D COURUE+PRIM DEV COT], 
+	REPLACE([S/D COURUE+PRIM DEV REF],'.', ',' ) AS      [S/D COURUE+PRIM DEV REF], 
+	REPLACE([VB CP EXCLUS DEV REF],'.', ',' ) AS      [VB CP EXCLUS DEV REF], 
+	REPLACE([VB CP INCLUS DEV REF],'.', ',' ) AS      [VB CP INCLUS DEV REF], 
+	REPLACE([VB CP EXCLUS DEV COT],'.', ',' ) AS      [VB CP EXCLUS DEV COT], 
+	REPLACE([VB CP INCLUS DEV COT],'.', ',' ) AS      [VB CP INCLUS DEV COT]
+FROM
+	[lib://F_010_Outil_Bilan/Chorus/AINI_$(v.D_FICHIERS_ACTIF).csv]
+(txt, codepage is 28591, embedded labels, delimiter is ';', msq)
+WHERE 
+		NOT EXISTS (PTF_AVNI, PTF) 
+	AND 	EXISTS (PTF_RECHERCHE, PTF);		// PTF pas dans AVNI mais bien dans la liste des PTF de Classification Chorus
+
+
+Concatenate(ACTIF)
+LOAD 
+	Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')) 					AS D_BILAN,
+	FileName()													AS PTF_DATASOURCE,
+	PTF															AS PTF,
+	ApplyMap( 'Map_MultiClass', PTF) 							AS PTF_ANCIEN,
+	ApplyMap('Map_ISIN', PTF)									AS CD_ISIN,
+	DEVISE_PTF,
+	Date 														AS D_VNI,
+	ApplyMap('Map_PTF_TYPE_ACTIF', PTF, '???' )	  				AS TYPE_ACTIF,
+	[MT_CASH_DEV_COT]											AS TRESORIE_DEV_COT,
+	[MT_CASH_DEV_PTF]											AS TRESORERIE,
+	[MT_CASH_DEV_PTF]											AS [VAL_ACTIF_NET],
+	[MT_CASH_DEV_PTF]											AS [VAL_ACTIF_NET_EUR]
+//	if ([DEVISE_PTF] = [DEV COT], 	[MT_CASH_DEV_COT], 
+//		[MT_CASH_DEV_COT] * Applymap('Map_CHGE',[DEVISE_PTF],1) / Applymap('Map_CHGE',[DEV COT],1))	AS [TRESORERIE],
+//	if ([DEVISE_PTF] = [DEV COT], 	[MT_CASH_DEV_COT], 
+//		[MT_CASH_DEV_COT] * Applymap('Map_CHGE',[DEVISE_PTF],1) / Applymap('Map_CHGE',[DEV COT],1))	AS [VAL_ACTIF_NET]
+WHERE
+		 [MT_CASH_DEV_COT] <> 0
+AND	NOT EXISTS (PTF_AVNI, PTF) AND EXISTS (PTF_RECHERCHE, PTF) 	;
+LOAD 
+	FileBaseName() 								as [NOM_FICHIER],
+	trim(@1)									as [PTF],
+	ApplyMap('Map_PTF_DEV', trim(@1), '???')	AS DEVISE_PTF,	 
+	date(date#(@2,'DD/MM/YYYY'))				as [Date], 
+	//@3, 
+	//@4										as [Banque dépositaire], 
+	trim(@5)									as [DEV COT], 
+	sum(@6)										as [MT_CASH_DEV_COT],
+	sum(@7)										as [MT_CASH_DEV_PTF]			
+	//@7, 
+	//@8
+FROM 
+[lib://F_010_Outil_Bilan/Chorus/AEST_$(v.D_FICHIERS_ACTIF).out]
+(txt, codepage is 1252, no labels, delimiter is ';', msq) 
+GROUP BY @1,@2,@5;
+
+DROP Table PTF_CLASSIFICATION;
+DROP TABLE TX_CHANGE;
+
+
+
+///$tab 110_COM_Evenement
+CD_EVENEMENTS_FLUX:
+//Mapping
+LOAD * INLINE [
+CD_FLUX,CD_EVENEMENT
+FEAO,FE
+FIAO,FI
+FTAO,FT
+FAAO,FA
+EGAH,EG
+EGCH,EG
+EGEH,EG
+EMAH,EG
+EMCH,EG
+EMEH,EG
+EPAH,EG
+EPCH,EG
+EPEH,EG
+EDAH,EG
+EDCH,EG
+EDEH,EG
+EOAH,EG
+EOCH,EG
+EOEH,EG
+EVAH,EG
+EVCH,EG
+EVEH,EG
+IPAO,UX
+];
+///$tab EXIT
+DROP FIELD CD_ISIN, PTF, PTF_ANCIEN FROM SUPPORT; 
+
+EXIT SCRIPT;
+///$tab 100_Actif(OLD)
+Map_ISIN:
+Mapping
+LOAD DISTINCT
+	CD_PTF_CHORUS,
+	CD_ISIN
+RESIDENT SUPPORT;
+
+DROP FIELD CD_ISIN, PTF FROM SUPPORT;  // to avoid loop
+
+ACTIF:
+LOAD 'FI'									  AS TYPE_ACTIF,
+	 Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')) AS D_BILAN,
+	 Portefeuille							  AS PTF, 
+	 ApplyMap('Map_ISIN', Portefeuille) 	  AS CD_ISIN,
+	 [Date VNI]								  AS D_VNI,
+     [Valeur boursiere]						  AS VAL_BOURSIERE, 
+     [Autres elements d actifs], 
+     [Actif net]							  AS VAL_ACTIF_NET, 
+     Tresorerie								  AS TRESORERIE, 
+     V.N.I.									  AS VNI, 
+    [Provision F.D.G.], 	
+    [Nb Parts]								  AS NB_PARTS
+FROM
+Manual_Files\AVNI_ELARGIE__30092018.xlsx
+//[.\Manual_Files\*Actif VNI*$(v.D_BILAN_NUM).xlsx]
+//[.\Manual_Files\*Actif VNI*20180630.xlsx]
+(ooxml, embedded labels, table is [AVNI_30092018]);
+
+Concatenate (ACTIF)
+LOAD 
+	 if(match([Type PTF] , 'UC', 'FEX')>0,'FEX', 'FI')			AS TYPE_ACTIF,
+	 
+	 Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')) 		AS D_BILAN,
+     PTF						AS PTF, 
+     [Code Valeur]      		AS CD_ISIN,
+     Quantité					AS NB_PARTS, 
+     if(match([Type PTF] , 'UC', 'FEX') >0, [Valeur EUR])				AS VAL_BOURSIERE, 
+     
+     [Valeur EUR]				AS VALEUR_EUR_BASE_ACTIF,
+	 [Cash/Titre/SWAP],
+//     [Intérêts Courus EUR], 
+     [Devise COT]				AS DEV_COT, 
+     [Cours Valeur]				AS VNI, 
+//     [Mode Expression], 
+     [VB EN DEV COT]			AS MT_DEV_COT, 
+//     [PRIX DE REVIENT DEV COT], 
+//     [INTERETS COURUS DEV COT], 
+     [VB EN DEV REFERENCE]		AS MT_DEV_PTF, 
+     [Libellé Valeur]			AS LIBELLE_FEX,
+     [Banque Dépositaire]		AS DEPOSITAIRE_FEX,
+     [Actif]					AS PTF_ACTIF
+FROM
+//[\\lmep-fs1\common\Actifs LMEP\Base_Actif\3_Qvd\3_Outil_Bilan\OB_Base_Actif.qvd]
+[.\Manual_Files\OB_Base_Actif.qvd]
+(qvd)
+WHERE 
+	Entité = 'LMEP'
+AND Outil = 'CHORUS'
+AND match([Type PTF] , 'UC', 'FEX', 'FID', 'FIC', 'FAS', 'DE') > 0
+//AND Actif = 'O'
+AND Period = $(v.D_ACTIF)
+AND ([Cash/Titre/SWAP] = 'TITRES' OR [Cash/Titre/SWAP] = 'CASH') ;
+
+
+
+///$tab Check Parallèle run

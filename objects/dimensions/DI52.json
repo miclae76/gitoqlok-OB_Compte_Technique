@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI52",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_DEV_CONTRAT"
+    ],
+    "qFieldLabels": [
+      "DevContrat"
+    ],
+    "title": "DevContrat"
+  },
+  "qMetaDef": {
+    "title": "DevContrat",
+    "description": "",
+    "tags": [
+      "CH27",
+      "CH53",
+      "CH81",
+      "CH83",
+      "CH84",
+      "converter-auto-created"
+    ]
+  }
+}

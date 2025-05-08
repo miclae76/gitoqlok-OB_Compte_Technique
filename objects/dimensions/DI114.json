@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI114",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TAUX_UC_MOYEN"
+    ],
+    "qFieldLabels": [
+      "Part UC"
+    ],
+    "title": "Part UC"
+  },
+  "qMetaDef": {
+    "title": "Part UC",
+    "description": "",
+    "tags": [
+      "CH78",
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

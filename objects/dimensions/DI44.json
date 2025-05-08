@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "DI44",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(CD_SYS_GESTION='POCUS' , if(wildmatch(CD_PRODUIT, '*PC*'), 'DE', 'FI') ,  CD_SOUS_TYPE_SUPPORT )"
+    ],
+    "qFieldLabels": [
+      "CODTTI"
+    ],
+    "title": "CODTTI"
+  },
+  "qMetaDef": {
+    "title": "CODTTI",
+    "description": "",
+    "tags": [
+      "CH22",
+      "CH76",
+      "CH77",
+      "converter-auto-created"
+    ]
+  }
+}

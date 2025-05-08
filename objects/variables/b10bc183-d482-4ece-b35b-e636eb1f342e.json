@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "b10bc183-d482-4ece-b35b-e636eb1f342e",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_jaune_70",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#FEF4A1",
+  "qIsScriptCreated": true
+}

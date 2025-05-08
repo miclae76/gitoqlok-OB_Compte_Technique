@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "vENV",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vENV",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "TX_OB_DEV",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

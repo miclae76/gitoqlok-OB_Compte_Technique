@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI134",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_REVAL_SUP"
+    ],
+    "qFieldLabels": [
+      "TX_REVAL_SUP"
+    ],
+    "title": "TX_REVAL_SUP"
+  },
+  "qMetaDef": {
+    "title": "TX_REVAL_SUP",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

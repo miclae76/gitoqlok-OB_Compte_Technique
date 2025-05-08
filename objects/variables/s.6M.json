@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "s.6M",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.6M",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_SOUS_TYPE_SUPPORT={'TGFREB6M'}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

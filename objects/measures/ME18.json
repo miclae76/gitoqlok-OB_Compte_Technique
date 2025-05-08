@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME18",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "QTE_PASSIF",
+    "qDef": "sum({<CD_TYPE_SUPPORT_3={'FE'}>}NB_PART_PROV)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "QTE_PASSIF",
+    "description": "",
+    "tags": [
+      "CH05",
+      "converter-auto-created"
+    ]
+  }
+}

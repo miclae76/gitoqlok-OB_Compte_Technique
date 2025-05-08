@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "DI21",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "LB_FISC"
+    ],
+    "qFieldLabels": [
+      "LBFISC"
+    ],
+    "title": "LBFISC"
+  },
+  "qMetaDef": {
+    "title": "LBFISC",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH41",
+      "CH76",
+      "CH77",
+      "CH81",
+      "CH82",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

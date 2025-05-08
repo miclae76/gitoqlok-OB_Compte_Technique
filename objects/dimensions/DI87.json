@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "DI87",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(FLAG_NC = 1, 'NC' , class(AGE_EXACT, 5))"
+    ],
+    "qFieldLabels": [
+      "AGE EXACT"
+    ],
+    "title": "AGE EXACT"
+  },
+  "qMetaDef": {
+    "title": "AGE EXACT",
+    "description": "",
+    "tags": [
+      "CH46",
+      "CH47",
+      "CH48",
+      "CH49",
+      "CH50",
+      "CH51",
+      "converter-auto-created"
+    ]
+  }
+}

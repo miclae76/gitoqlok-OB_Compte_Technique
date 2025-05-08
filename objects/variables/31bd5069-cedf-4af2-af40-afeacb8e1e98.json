@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "31bd5069-cedf-4af2-af40-afeacb8e1e98",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_jaune_30",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#FFFBE3",
+  "qIsScriptCreated": true
+}

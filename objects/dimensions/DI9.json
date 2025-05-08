@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "DI9",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=''"
+    ],
+    "qFieldLabels": [
+      "PAYS_SOUSCRIPTEUR"
+    ],
+    "title": "PAYS_SOUSCRIPTEUR"
+  },
+  "qMetaDef": {
+    "title": "PAYS_SOUSCRIPTEUR",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH22",
+      "CH76",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

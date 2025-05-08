@@ -1,0 +1,407 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "d85aaf04-be03-4f68-8a4e-85bb7002b5c7",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Provisions additionnelles",
+      "description": ""
+    },
+    "rank": 3,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 30,
+    "rows": 15,
+    "cells": [
+      {
+        "name": "HYJPcZ",
+        "type": "filterpane",
+        "col": 0,
+        "row": 0,
+        "colspan": 4,
+        "rowspan": 2,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 13.333333333333334,
+          "height": 13.333333333333334
+        }
+      },
+      {
+        "name": "psjep",
+        "type": "filterpane",
+        "col": 0,
+        "row": 2,
+        "colspan": 6,
+        "rowspan": 1,
+        "bounds": {
+          "y": 13.333333333333334,
+          "x": 0,
+          "width": 20,
+          "height": 6.666666666666667
+        }
+      },
+      {
+        "name": "PaDpqw",
+        "type": "sn-tabbed-container",
+        "col": 0,
+        "row": 3,
+        "colspan": 30,
+        "rowspan": 12,
+        "bounds": {
+          "y": 20,
+          "x": 0,
+          "width": 100,
+          "height": 80
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 15,
+    "gridResolution": "medium",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "HYJPcZ",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "visualization": "filterpane",
+        "version": "0.15.2",
+        "qChildListDef": {
+          "qData": {}
+        },
+        "appId": "30f308c5-0906-4eb0-9e53-debbf36349ec"
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "20bb25f5-2097-4449-88dc-6ecdb180bc29",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qLibraryId": "DI51",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": []
+            },
+            "title": "D_BILAN",
+            "visualization": "listbox"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "psjep",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "visualization": "filterpane",
+        "version": "0.19.2",
+        "qChildListDef": {
+          "qData": {}
+        },
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "theme",
+            "header": {
+              "fontFamily": "Roboto, sans-serif",
+              "fontSize": "14px"
+            },
+            "content": {
+              "fontSize": "15px",
+              "useContrastColor": true,
+              "fontStyle": {
+                "bold": true,
+                "italic": false,
+                "underline": false,
+                "normal": true
+              }
+            },
+            "background": {
+              "color": {
+                "index": 0,
+                "color": "none",
+                "alpha": 1
+              }
+            }
+          },
+          {
+            "key": "selections"
+          }
+        ]
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "bd9a25c8-0f9e-4678-b6ed-9b5fddb28f63",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qLibraryId": "DI69",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByAscii": -1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": false,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                }
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": []
+            },
+            "title": "CD_SYS_GESTION",
+            "visualization": "listbox",
+            "showTitle": false,
+            "autoConfirm": true,
+            "layoutOptions": {
+              "dataLayout": "grid",
+              "layoutOrder": "column",
+              "maxVisibleRows": {
+                "auto": true
+              },
+              "dense": false
+            },
+            "checkboxes": true
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "PaDpqw",
+          "qType": "sn-tabbed-container"
+        },
+        "qMetaDef": {},
+        "objects": [
+          {
+            "childRefId": "puppmJdT",
+            "label": "Provision FR au UK",
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "psJwEvzW",
+            "label": "Provision RM - Global",
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "UKKprEC",
+            "label": "Provision RM - Par support",
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "BBTjuSJ",
+            "label": "Provision OCP - PM",
+            "condition": {
+              "qValueExpression": {}
+            }
+          }
+        ],
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": true,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "showTabs": true,
+        "useDropdown": false,
+        "useScrollButton": true,
+        "showIcons": true,
+        "orientation": "top",
+        "defaultTabId": "",
+        "visualization": "sn-tabbed-container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "childRefId": "/childRefId",
+            "showCondition": "/showCondition"
+          }
+        },
+        "components": [
+          {
+            "key": "tabs",
+            "background": {
+              "unselected": {
+                "color": {
+                  "index": -1,
+                  "color": "#f0e8e6",
+                  "alpha": 1
+                }
+              },
+              "selected": {
+                "color": {
+                  "index": -1,
+                  "color": "#49efff",
+                  "alpha": 1
+                }
+              }
+            },
+            "label": {
+              "fontFamily": "Roboto, sans-serif"
+            },
+            "indicator": {
+              "selected": {
+                "color": {
+                  "index": -1,
+                  "color": "#277f87",
+                  "alpha": 1
+                }
+              }
+            },
+            "width": {
+              "value": [
+                19,
+                20
+              ]
+            }
+          },
+          {
+            "key": "general",
+            "title": {
+              "main": {
+                "fontFamily": "Roboto, sans-serif"
+              },
+              "subTitle": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          }
+        ],
+        "fontsUsed": []
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "c8fac7a4-255a-47e5-9ad8-2659a1e2c69f",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH82",
+            "qMetaDef": {},
+            "childRefId": "BBTjuSJ"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "8deea458-aae5-42f1-b4ad-06e82a589e11",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH84",
+            "qMetaDef": {},
+            "childRefId": "UKKprEC"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "69d0277c-4231-4077-a917-7fd9041406af",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH81",
+            "qMetaDef": {},
+            "childRefId": "puppmJdT"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "1ea028c6-a606-4d93-9fe0-05b1914c07a8",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH83",
+            "qMetaDef": {},
+            "childRefId": "psJwEvzW"
+          },
+          "qChildren": []
+        }
+      ]
+    }
+  ]
+}

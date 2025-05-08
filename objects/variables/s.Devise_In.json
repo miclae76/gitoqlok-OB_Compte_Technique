@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "s.Devise_In",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.Devise_In",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_DEV_TIT={'EUR', 'BEF', 'LUF', 'FRF', 'DEM', 'NLG', 'ITL'}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

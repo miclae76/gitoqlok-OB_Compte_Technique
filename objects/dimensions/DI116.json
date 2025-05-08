@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "DI116",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "LB_PRODUIT"
+    ],
+    "qFieldLabels": [
+      "LB_PRODUIT"
+    ],
+    "title": "LB_PRODUIT"
+  },
+  "qMetaDef": {
+    "title": "LB_PRODUIT",
+    "description": "",
+    "tags": [
+      "CH79",
+      "CH80",
+      "CH81",
+      "CH82",
+      "CH83",
+      "CH85",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME91",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MT CDG (Dev Contrat)",
+    "qDef": "sum(MT_CDG_VU)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MT CDG (Dev Contrat)",
+    "description": "",
+    "tags": [
+      "CH52",
+      "converter-auto-created"
+    ]
+  }
+}

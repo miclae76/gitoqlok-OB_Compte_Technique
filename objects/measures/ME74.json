@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "ME74",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM EUR",
+    "qDef": "sum({<CD_FLUX={'PMCLO'}>} MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "PM EUR",
+    "description": "",
+    "tags": [
+      "CH40",
+      "CH63",
+      "CH64",
+      "converter-auto-created"
+    ]
+  }
+}

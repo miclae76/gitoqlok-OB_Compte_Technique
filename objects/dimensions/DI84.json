@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI84",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(FLAG_NC = 1, 'NC' , AGE_EXACT)"
+    ],
+    "qFieldLabels": [
+      "AGE EXACT"
+    ],
+    "title": "AGE EXACT"
+  },
+  "qMetaDef": {
+    "title": "AGE EXACT",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

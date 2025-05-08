@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME32",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Bouclage",
+    "qDef": "[PM Clôture] - ([PM Ouverture]+Flux+ACAV+[IMPACT CHANGE])",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Bouclage",
+    "description": "",
+    "tags": [
+      "CH06",
+      "converter-auto-created"
+    ]
+  }
+}

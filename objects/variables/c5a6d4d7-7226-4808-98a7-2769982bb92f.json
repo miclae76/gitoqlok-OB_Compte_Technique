@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "c5a6d4d7-7226-4808-98a7-2769982bb92f",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_kpi_vert",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#00AA55",
+  "qIsScriptCreated": true
+}

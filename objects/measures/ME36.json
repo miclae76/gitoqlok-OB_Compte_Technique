@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME36",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Pays CAA Manquants",
+    "qDef": "NullCount(PAYS_CAA)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Pays CAA Manquants",
+    "description": "",
+    "tags": [
+      "CH18",
+      "CH20",
+      "converter-auto-created"
+    ]
+  }
+}

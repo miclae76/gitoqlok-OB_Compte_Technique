@@ -1,0 +1,12 @@
+///$tab 91_Chgt_Marge
+GRP_CHGT_MARGE:
+LOAD * 
+	WHERE  '$(v.D_BILAN)' >= VALID_FROM AND '$(v.D_BILAN)' <= VALID_TO;
+LOAD CD_FLUX, 
+     GROUPE_FRAIS_1, 
+     GROUPE_MARGE_1, 
+     date(VALID_FROM, 'YYYY-MM-DD') 	AS VALID_FROM, 
+     date(VALID_TO, 'YYYY-MM-DD')		AS VALID_TO
+FROM
+[lib://F_010_Outil_Bilan/Manual_Files/OB_Paramétrage_Métier.xlsx]
+(ooxml, embedded labels, table is Chargements_Marges);

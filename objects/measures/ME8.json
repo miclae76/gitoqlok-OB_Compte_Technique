@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME8",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALM Montant Devise Titre",
+    "qDef": "=[Actif net] - [MONTANT]",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "ALM Montant Devise Titre",
+    "description": "",
+    "tags": [
+      "CH04",
+      "converter-auto-created"
+    ]
+  }
+}

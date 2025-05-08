@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "s.EUR_IND",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.EUR_IND",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_DEV_TIT={'EUR', 'BEF', 'LUF', 'FRF', 'DEM', 'NLG', 'ITL'}, CD_TYPE_SOUSC={'INDIVIDUEL'}, CD_PRODUIT-={'GA50*'},  CLASSE=-{'3A', 'EUROTHEM', 'EUROACTIFSELECTIONLUX', 'EUROESSENTIELLUX'}, CD_SOUS_TYPE_SUPPORT-={'TGFREB6M', 'TGPRO?2324T*', 'TGPRO?2425T*'} ",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

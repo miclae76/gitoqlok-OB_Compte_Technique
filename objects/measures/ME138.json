@@ -1,0 +1,32 @@
+{
+  "qInfo": {
+    "qId": "ME138",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "='PM (Euros) au '&date(max({1}D_BILAN))",
+    "qDef": "{<D_BILAN={'$(=date(max({1}D_BILAN)))'}>} sum(IF(NUMGGL=646 or NUMGGL=688 OR NUMGGL=694,MT_PROVISION_CPT))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='PM (Euros) au '&date(max({1}D_BILAN))",
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "# ##0,00",
+      "qDec": ",",
+      "qThou": " "
+    },
+    "isCustomFormatted": false,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "='PM (Euros) au '&date(max({1}D_BILAN))",
+    "description": "",
+    "tags": [
+      "CH81",
+      "converter-auto-created"
+    ]
+  }
+}

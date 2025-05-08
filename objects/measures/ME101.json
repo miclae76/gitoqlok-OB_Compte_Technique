@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME101",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "CA EUR New B",
+    "qDef": "sum({<CD_FLUX={\"V*\"}, STOCK_OR_NEWB={\"NEW*\"}>-<CD_FLUX={\"VG*\"}, STOCK_OR_NEWB={\"NEW*\"}> } MT_OPE_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "CA EUR New B",
+    "description": "",
+    "tags": [
+      "CH64",
+      "converter-auto-created"
+    ]
+  }
+}

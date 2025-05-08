@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME139",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Nb.Parts",
+    "qDef": "sum({$*<CD_SYS_GESTION={'TITAN', 'PAS'}>}NB_PART_PROV)+sum({$*<CD_SYS_GESTION={'POCUS'}, CD_ETAT={'EN COURS'}>}NB_PART_PROV) -sum({$*<CD_ISIN={'BCCSLF'}>} NB_PART_PROV)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Nb.Parts",
+    "description": "",
+    "tags": [
+      "CH82",
+      "converter-auto-created"
+    ]
+  }
+}

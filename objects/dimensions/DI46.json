@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "DI46",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_ETAT"
+    ],
+    "qFieldLabels": [
+      "LIBSIC"
+    ],
+    "title": "LIBSIC"
+  },
+  "qMetaDef": {
+    "title": "LIBSIC",
+    "description": "",
+    "tags": [
+      "CH22",
+      "CH76",
+      "CH77",
+      "CH78",
+      "CH79",
+      "CH80",
+      "converter-auto-created"
+    ]
+  }
+}

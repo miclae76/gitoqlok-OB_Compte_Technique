@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI65",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(TX_REVAL_MIN > if(CD_NIV_REVAL_FINAL= 'C', TX_REVAL_CPL, TX_REVAL_PROB), 'OUI', 'NON')"
+    ],
+    "qFieldLabels": [
+      "TG min > TG Final"
+    ],
+    "title": "TG min > TG Final"
+  },
+  "qMetaDef": {
+    "title": "TG min > TG Final",
+    "description": "",
+    "tags": [
+      "CH34",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME115",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "EUROTHEM",
+    "qDef": "sum({$*<$(s.EUROTHEM),B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPE_CPT) + sum({$*<$(s.EUROTHEM)>} MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "EUROTHEM",
+    "description": "",
+    "tags": [
+      "CH66",
+      "CH90",
+      "converter-auto-created"
+    ]
+  }
+}

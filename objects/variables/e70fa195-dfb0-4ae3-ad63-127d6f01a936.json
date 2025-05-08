@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "e70fa195-dfb0-4ae3-ad63-127d6f01a936",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_orange_70",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#FFAA55",
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME16",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MNT_ACTIF_EUR",
+    "qDef": "Sum({<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA'}>}VAL_ACTIF_NET_EUR)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MNT_ACTIF_EUR",
+    "description": "",
+    "tags": [
+      "CH04",
+      "converter-auto-created"
+    ]
+  }
+}

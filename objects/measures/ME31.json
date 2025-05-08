@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME31",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "IMPACT CHANGE",
+    "qDef": "sum({<CD_FLUX={'CHGE'} >} MT_ACAV_CPT)-sum({<CD_FLUX={'CHGE'} , CD_ISIN={'BCCSLF'}>} MT_ACAV_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "IMPACT CHANGE",
+    "description": "",
+    "tags": [
+      "CH06",
+      "converter-auto-created"
+    ]
+  }
+}

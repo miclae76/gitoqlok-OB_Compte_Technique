@@ -1,0 +1,18 @@
+{
+  "qInfo": {
+    "qId": "v.D_OUVERTURE_BILAN",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v.D_OUVERTURE_BILAN",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2025-01-01",
+  "tags": [
+    "converter-auto-created"
+  ],
+  "qIsScriptCreated": true
+}

@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "DWH_DSA",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "DWH_DSA",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "DWH_DSA",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

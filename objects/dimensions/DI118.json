@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI118",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=TX_FR_EG+TX_FR_EP+TX_FR_EM+TX_FR_EV+TX_FR_ED+TX_FR_EO"
+    ],
+    "qFieldLabels": [
+      "TxFraisGlob"
+    ],
+    "title": "TxFraisGlob"
+  },
+  "qMetaDef": {
+    "title": "TxFraisGlob",
+    "description": "",
+    "tags": [
+      "CH80",
+      "converter-auto-created"
+    ]
+  }
+}

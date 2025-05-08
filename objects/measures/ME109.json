@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME109",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "EUROESSENTIELLUX",
+    "qDef": "sum({$*<$(s.EUROESSENTIELLUX),B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPE_CPT) + sum({$*<$(s.EUROESSENTIELLUX)>} MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "EUROESSENTIELLUX",
+    "description": "",
+    "tags": [
+      "CH66",
+      "converter-auto-created"
+    ]
+  }
+}

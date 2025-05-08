@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "DI25",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_SOUS_TYPE_SUPPORT"
+    ],
+    "qFieldLabels": [
+      "CODTTI"
+    ],
+    "title": "CODTTI"
+  },
+  "qMetaDef": {
+    "title": "CODTTI",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH05",
+      "CH78",
+      "CH80",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

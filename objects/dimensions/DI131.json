@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI131",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=IF((CD_FLUX='PCLH' AND D_EFFET=MAX(TOTAL D_BILAN) and RETRAITEMENT_GAR_K_EXCLUS='OUI'),'Bonus', \nIF((CD_FLUX='FRCO' OR (GROUPE_FLUX_2='Dotation Participation aux bénéfices' AND RETRAITEMENT_GAR_K_EXCLUS='OUI')),'Dotation Participation aux bénéfices', \nIF((GROUPE_FLUX_2='Chargements sur PB' OR (GROUPE_FLUX_2='Dotation Participation aux bénéfices' AND RETRAITEMENT_GAR_K_EXCLUS='NON')),'Chargements sur PB',\nIF((GROUPE_FLUX_2='Intérêts (garantis ou provisoires)' OR GROUPE_FLUX_2 like 'Chargements*'),GROUPE_FLUX_2, null()))))\n"
+    ],
+    "qFieldLabels": [
+      "GROUPE_FLUX_2"
+    ],
+    "title": "GROUPE_FLUX_2"
+  },
+  "qMetaDef": {
+    "title": "GROUPE_FLUX_2",
+    "description": "",
+    "tags": [
+      "CH91",
+      "converter-auto-created"
+    ]
+  }
+}

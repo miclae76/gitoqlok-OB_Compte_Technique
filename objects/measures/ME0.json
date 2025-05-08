@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME0",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Montant EUR",
+    "qDef": "sum( MT_OPE_CPT) \n+sum( MT_PROVISION_CPT) \n-sum( {<CD_ISIN={'BCCSLF'}>}MT_OPE_CPT) \n-sum( {<CD_ISIN={'BCCSLF'}>}MT_PROVISION_CPT) \n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Montant EUR",
+    "description": "",
+    "tags": [
+      "CH02",
+      "CH75",
+      "converter-auto-created"
+    ]
+  }
+}

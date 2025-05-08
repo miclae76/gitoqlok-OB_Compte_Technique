@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME44",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Mt Prov EUR Net ss Spread - FG",
+    "qDef": "sum({<D_BILAN={'$(=Date(Max(D_BILAN)))'}, CD_TYPE_SUPPORT_1={'FG'}>}MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Mt Prov EUR Net ss Spread - FG",
+    "description": "",
+    "tags": [
+      "CH27",
+      "CH53",
+      "converter-auto-created"
+    ]
+  }
+}

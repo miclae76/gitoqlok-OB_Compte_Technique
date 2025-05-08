@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "ME94",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "='PM (Euros) au '&date(max({1}D_BILAN))",
+    "qDef": "sum({<D_BILAN={'$(=date(max({1}D_BILAN)))'}>}MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qLabelExpression": "='PM (Euros) au '&date(max({1}D_BILAN))",
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "='PM (Euros) au '&date(max({1}D_BILAN))",
+    "description": "",
+    "tags": [
+      "CH52",
+      "CH85",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "qInfo": {
+    "qId": "ME96",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Marge EUR",
+    "qDef": "-(sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>} MT_OPE_CPT) \r\n- rangesum(sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>}MT_COM_PAR_CPT), sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>}MT_COM_APP_CPT)) )\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Marge EUR",
+    "description": "",
+    "tags": [
+      "CH61",
+      "CH63",
+      "CH64",
+      "converter-auto-created"
+    ]
+  }
+}

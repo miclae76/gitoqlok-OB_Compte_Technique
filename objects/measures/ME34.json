@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME34",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Commission EUR",
+    "qDef": "rangesum(sum({<GROUPE_FRAIS_1={\"*\"}>}MT_COM_PAR_CPT), sum({<GROUPE_FRAIS_1={\"*\"}>}MT_COM_APP_CPT))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Commission EUR",
+    "description": "",
+    "tags": [
+      "CH11",
+      "converter-auto-created"
+    ]
+  }
+}

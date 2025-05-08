@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI68",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(isnull(PTF_FIC_OCP),PTF)"
+    ],
+    "qFieldLabels": [
+      "PTF"
+    ],
+    "title": "PTF"
+  },
+  "qMetaDef": {
+    "title": "PTF",
+    "description": "",
+    "tags": [
+      "CH36",
+      "converter-auto-created"
+    ]
+  }
+}

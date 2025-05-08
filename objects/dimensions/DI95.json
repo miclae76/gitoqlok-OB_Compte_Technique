@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI95",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_DEV_CONTRAT_VU"
+    ],
+    "qFieldLabels": [
+      "Devise Contrat"
+    ],
+    "title": "Devise Contrat"
+  },
+  "qMetaDef": {
+    "title": "Devise Contrat",
+    "description": "",
+    "tags": [
+      "CH52",
+      "converter-auto-created"
+    ]
+  }
+}

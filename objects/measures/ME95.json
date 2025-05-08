@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME95",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Tx Marge",
+    "qDef": "\n\nsum({<NOM_AGTCONSO={\"=rank(-(sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>} MT_OPE_CPT) \n- rangesum(sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>}MT_COM_PAR_CPT), sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>}MT_COM_APP_CPT)) ))\n<10\"}>}\n\trangesum(TX_FR_ED-TX_COM_ED, TX_FR_EG-TX_COM_EG, TX_FR_EM-TX_COM_EM, TX_FR_EO-TX_COM_EO, TX_FR_EP-TX_COM_EP, TX_FR_EV-TX_COM_EV)\n\t*if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))\n/sum({<NOM_AGTCONSO={\"=rank(-(sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>} MT_OPE_CPT) \n- rangesum(sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>}MT_COM_PAR_CPT), sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>}MT_COM_APP_CPT)) ))\n<10\"}>}\nif(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))/100 ",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Tx Marge",
+    "description": "",
+    "tags": [
+      "CH60",
+      "converter-auto-created"
+    ]
+  }
+}

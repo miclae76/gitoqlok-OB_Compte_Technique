@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "DI61",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_REVAL_PROB"
+    ],
+    "qFieldLabels": [
+      "TX_REVAL_PROB"
+    ],
+    "title": "TX_REVAL_PROB"
+  },
+  "qMetaDef": {
+    "title": "TX_REVAL_PROB",
+    "description": "",
+    "tags": [
+      "CH33",
+      "CH34",
+      "CH78",
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI71",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_TYPE_DECES"
+    ],
+    "qFieldLabels": [
+      "CD_TYPE_DECES"
+    ],
+    "title": "CD_TYPE_DECES"
+  },
+  "qMetaDef": {
+    "title": "CD_TYPE_DECES",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

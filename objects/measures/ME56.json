@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME56",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "dont Cash ",
+    "qDef": "sum({<TYPE_ACTIF={'FID', 'FIC', 'FAS'}>} TRESORERIE)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "dont Cash ",
+    "description": "",
+    "tags": [
+      "CH31",
+      "converter-auto-created"
+    ]
+  }
+}

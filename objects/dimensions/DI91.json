@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI91",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "NUMGGL"
+    ],
+    "qFieldLabels": [
+      "NUM_GARANTIE"
+    ],
+    "title": "NUM_GARANTIE"
+  },
+  "qMetaDef": {
+    "title": "NUM_GARANTIE",
+    "description": "",
+    "tags": [
+      "CH52",
+      "CH81",
+      "converter-auto-created"
+    ]
+  }
+}

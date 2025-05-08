@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME37",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Pays BCL Manquants",
+    "qDef": "NullCount(CD_PAYS_SOUSC)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Pays BCL Manquants",
+    "description": "",
+    "tags": [
+      "CH19",
+      "CH21",
+      "converter-auto-created"
+    ]
+  }
+}

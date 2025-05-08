@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME50",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MT_NET_EUR",
+    "qDef": "rangesum(\n\tsum({$*<CD_FLUX=-{'PG*','PC*'}, B_FRAIS={'N'}, B_IMPACT_PM={'O'}, MVT_RETRO={'OUI'}>} MT_OPE_CPT),\n\t-sum({$*<CD_FLUX=-{'PG*', 'PC*'}, B_FRAIS={'N'}, B_IMPACT_PM={'O'}, CD_TYPE_FLUX={'DES'}, MVT_RETRO={'OUI'}>}MT_FRAIS_CPT)\n)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MT_NET_EUR",
+    "description": "",
+    "tags": [
+      "CH29",
+      "converter-auto-created"
+    ]
+  }
+}

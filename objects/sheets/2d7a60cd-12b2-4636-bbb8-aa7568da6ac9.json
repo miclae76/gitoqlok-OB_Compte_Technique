@@ -1,0 +1,452 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "2d7a60cd-12b2-4636-bbb8-aa7568da6ac9",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Compte Technique dynamique",
+      "description": ""
+    },
+    "rank": 0.5,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 30,
+    "rows": 15,
+    "cells": [
+      {
+        "name": "mxHCJvG",
+        "type": "qlik-variable-input",
+        "col": 0,
+        "row": 2,
+        "colspan": 9,
+        "rowspan": 1,
+        "bounds": {
+          "y": 13.333333333333334,
+          "x": 0,
+          "width": 30,
+          "height": 6.666666666666667
+        }
+      },
+      {
+        "name": "HAYgp",
+        "type": "filterpane",
+        "col": 0,
+        "row": 1,
+        "colspan": 6,
+        "rowspan": 1,
+        "bounds": {
+          "y": 6.666666666666667,
+          "x": 0,
+          "width": 20,
+          "height": 6.666666666666667
+        }
+      },
+      {
+        "name": "nDWJrxW",
+        "type": "sn-tabbed-container",
+        "col": 0,
+        "row": 3,
+        "colspan": 30,
+        "rowspan": 10,
+        "bounds": {
+          "y": 20,
+          "x": 0,
+          "width": 100,
+          "height": 66.66666666666666
+        }
+      }
+    ],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 15,
+    "gridResolution": "medium",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "mxHCJvG",
+          "qType": "qlik-variable-input"
+        },
+        "qMetaDef": {},
+        "showTitles": true,
+        "title": "Sélectionner l'axe pour les colonnes",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": true,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "variableName": "v_Dimension_CT",
+        "render": "s",
+        "buttonMode": "rowfill",
+        "updateondrag": false,
+        "valueType": "x",
+        "dynamicvalues": "",
+        "alternatives": [
+          {
+            "value": "CD_DEV_TIT",
+            "label": "CD_DEV_TIT",
+            "cId": "GXmpDj"
+          },
+          {
+            "value": "CD_PRODUIT",
+            "label": "CD_PRODUIT",
+            "cId": "CmJdnGg"
+          },
+          {
+            "value": "CD_PAYS_SOUSCR",
+            "label": "CD_PAYS_SOUCR",
+            "cId": "vLZQupW"
+          },
+          {
+            "value": "CD_DEV_CONTRAT",
+            "label": "CD_DEV_CONTRAT",
+            "cId": "YkNXZds"
+          },
+          {
+            "value": "CD_TYPE_SUPPORT",
+            "label": "CD_TYPE_SUPPORT",
+            "cId": "Qvrkb"
+          },
+          {
+            "value": "CD_TYPE_SUPPORT_1",
+            "label": "CD_TYPE_SUPPORT_1",
+            "cId": "JPtkPx"
+          },
+          {
+            "value": "CD_TYPE_SUPPORT_2",
+            "label": "CD_TYPE_SUPPORT_2",
+            "cId": "wDmS"
+          },
+          {
+            "value": "CD_TYPE_SUPPORT_3",
+            "label": "CD_TYPE_SUPPORT_3",
+            "cId": "Kjcs"
+          },
+          {
+            "value": "CD_SOUS_TYPE_SUPPORT",
+            "label": "CD_SOUS_TYPE_SUPPORT",
+            "cId": "AwtG"
+          },
+          {
+            "value": "PAYS_CAA",
+            "label": "PAYS_CAA",
+            "cId": "eBVVS"
+          },
+          {
+            "value": "CD_TYPE_SOUSC",
+            "label": "CD_TYPE_SOUSC",
+            "cId": "BzkYB"
+          },
+          {
+            "value": "CD_PAYS_FISC",
+            "label": "CD_PAYS_FISC",
+            "cId": "JWcrMB"
+          },
+          {
+            "value": "CD_CANTON",
+            "label": "CD_CANTON",
+            "cId": "pJJvPP"
+          }
+        ],
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "rangelabel": false,
+        "visualization": "qlik-variable-input",
+        "variableValue": {
+          "qStringExpression": {
+            "qExpr": "=\"v_Dimension_CT\""
+          }
+        },
+        "style": "qlik",
+        "version": "6.24.0",
+        "extensionMeta": {
+          "translationKey": "",
+          "icon": "control",
+          "iconChar": "puzzle",
+          "isLibraryItem": true,
+          "visible": true,
+          "name": "Variable input",
+          "description": "A control that assigns a value to a variable.\nVersion: 6.24.0",
+          "template": "qlik-variable-input",
+          "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
+          "isThirdParty": true,
+          "type": "visualization",
+          "version": "6.24.0",
+          "preview": "preview.png",
+          "keywords": "qlik-sense, visualization",
+          "author": "Erik Wetterberg upper88.com",
+          "homepage": "https://github.com/erikwett/qsVariable",
+          "license": "MIT",
+          "repository": "",
+          "dependencies": {
+            "qlik-sense": ">=5.5.x"
+          },
+          "contributors": [
+            "Brett Farley contextbi.com"
+          ],
+          "bundle": {
+            "id": "qlik-dashboard-bundle",
+            "name": "Qlik Dashboard bundle",
+            "description": "This is a set of supported objects that will facilitate dashboard creation in Qlik Sense. These can be used in addition to the objects found under \"Charts\".\n\nFor limitations and support conditions, see the documentation."
+          },
+          "installer": "QlikExtensionBundler",
+          "previewIconURL": "https://lmep-qs01/extensions/qlik-variable-input/preview.png"
+        }
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "HAYgp",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "visualization": "filterpane",
+        "version": "0.19.2",
+        "qChildListDef": {
+          "qData": {}
+        },
+        "components": [
+          {
+            "key": "general",
+            "title": {
+              "main": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          },
+          {
+            "key": "theme",
+            "header": {
+              "fontFamily": "Roboto, sans-serif",
+              "fontSize": "14px"
+            },
+            "content": {
+              "fontSize": "15px",
+              "useContrastColor": true,
+              "fontStyle": {
+                "bold": true,
+                "italic": false,
+                "underline": false,
+                "normal": true
+              }
+            },
+            "background": {
+              "color": {
+                "index": 0,
+                "color": "none",
+                "alpha": 1
+              }
+            }
+          },
+          {
+            "key": "selections"
+          }
+        ]
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "a69fb955-0f0a-4bd3-9e48-6baf2bc9e9a3",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qLibraryId": "DI69",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByAscii": -1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": false,
+                "textAlign": {
+                  "auto": true,
+                  "align": "left"
+                }
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": []
+            },
+            "title": "CD_SYS_GESTION",
+            "visualization": "listbox",
+            "showTitle": false,
+            "autoConfirm": true,
+            "layoutOptions": {
+              "dataLayout": "grid",
+              "layoutOrder": "column",
+              "maxVisibleRows": {
+                "auto": true
+              },
+              "dense": false
+            },
+            "checkboxes": true
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "nDWJrxW",
+          "qType": "sn-tabbed-container"
+        },
+        "qMetaDef": {},
+        "objects": [
+          {
+            "childRefId": "pQEuSGuk",
+            "label": {
+              "qStringExpression": {
+                "qExpr": "='Compte Technique EUR par '&'$(v_Dimension_CT)'"
+              }
+            },
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "pSvPNrjX",
+            "label": {
+              "qStringExpression": {
+                "qExpr": "'Compte Technique Devise Titre par '&'$(v_Dimension_CT)'&' au '&'$(v.D_BILAN)'"
+              }
+            },
+            "condition": {
+              "qValueExpression": {}
+            }
+          }
+        ],
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": true,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "showTabs": true,
+        "useDropdown": false,
+        "useScrollButton": true,
+        "showIcons": true,
+        "orientation": "top",
+        "defaultTabId": "pQEuSGuk",
+        "visualization": "sn-tabbed-container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "childRefId": "/childRefId",
+            "showCondition": "/showCondition"
+          }
+        },
+        "components": [
+          {
+            "key": "tabs",
+            "background": {
+              "unselected": {
+                "color": {
+                  "index": -1,
+                  "color": "#f0e8e6",
+                  "alpha": 1
+                }
+              },
+              "selected": {
+                "color": {
+                  "index": -1,
+                  "color": "#49efff",
+                  "alpha": 1
+                }
+              }
+            },
+            "label": {
+              "fontFamily": "Roboto, sans-serif"
+            },
+            "indicator": {
+              "selected": {
+                "color": {
+                  "index": -1,
+                  "color": "#277f87",
+                  "alpha": 1
+                }
+              }
+            },
+            "width": {
+              "value": [
+                50,
+                50
+              ]
+            }
+          },
+          {
+            "key": "general",
+            "title": {
+              "main": {
+                "fontFamily": "Roboto, sans-serif"
+              },
+              "subTitle": {
+                "fontFamily": "Roboto, sans-serif"
+              }
+            }
+          }
+        ],
+        "fontsUsed": []
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "deb8b594-09ab-4074-98cf-4ffd163b30eb",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH02",
+            "qMetaDef": {},
+            "childRefId": "pQEuSGuk"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "e868fbf9-1167-4328-a801-9d4213b1f462",
+              "qType": "childObject"
+            },
+            "qExtendsId": "432389f5-e291-4c86-bc63-d1ed93709124",
+            "qMetaDef": {},
+            "childRefId": "pSvPNrjX"
+          },
+          "qChildren": []
+        }
+      ]
+    }
+  ]
+}

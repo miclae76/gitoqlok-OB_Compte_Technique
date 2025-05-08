@@ -1,0 +1,9 @@
+///$tab 17_Calendrier
+CALENDRIER:
+LOAD
+	distinct
+	D_EFFET,
+	year(D_EFFET)							AS ANNEE,
+	Year(D_EFFET)&num(Month(D_EFFET), '00') AS MOIS,
+	if(Year(D_EFFET)< year(date('$(v.D_BILAN)', 'YYYY-MM-DD')), 'OUI', 'NON') AS MVT_RETRO 
+RESIDENT FLUX_SUPPORT;

@@ -1,0 +1,48 @@
+///$tab 60_RTECH
+LEFT JOIN (FLUX_SUPPORT)
+LOAD 
+	ID_CONTRAT,
+	ID_PRODUIT
+Resident CONTRAT;
+
+
+LEFT JOIN (FLUX_SUPPORT)
+LOAD 
+	ID_PRODUIT,
+	TYPE_PRODUIT
+Resident PRODUIT;
+
+LEFT JOIN (FLUX_SUPPORT)
+LOAD 
+	ID_SUPPORT,
+	CD_TYPE_SUPPORT_1
+Resident SUPPORT;
+
+
+
+UNQUALIFY D_EFFET;
+temp_FLUX_SUPPORT:
+NoConcatenate 
+LOAD 
+	*,
+	IF (TYPE_PRODUIT = 'Réassurance acceptée', 'R0100',
+		IF (TYPE_PRODUIT = 'Capitalisation' AND match(CD_TYPE_SUPPORT_1, 'FG', 'TG') > 0, 'R0060', 
+			IF(CD_TYPE_SUPPORT_1 = 'UC' AND TYPE_PRODUIT <> 'Capitalisation', 'R0030', 'R0010')
+		)
+	)	AS CD_RTECH
+	
+Resident FLUX_SUPPORT;
+
+Drop Table FLUX_SUPPORT;
+Rename table temp_FLUX_SUPPORT to FLUX_SUPPORT;
+
+DROP FIELD TYPE_PRODUIT, CD_TYPE_SUPPORT_1, ID_PRODUIT   FROM FLUX_SUPPORT;
+
+CLASSIF_RTECH:
+LOAD * INLINE [
+    CD_RTECH, LABEL_RTECH
+    R0010, "Vie non liée à des fonds d'investissements"
+    R0030, "Assurances liées à des fonds d'investissements"
+    R0060, Opérations de capitalisation
+    R0100, Réassurance acceptée
+];

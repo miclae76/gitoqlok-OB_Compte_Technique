@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "DI47",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_PAYS_FISC"
+    ],
+    "qFieldLabels": [
+      "PAYFISC"
+    ],
+    "title": "PAYFISC"
+  },
+  "qMetaDef": {
+    "title": "PAYFISC",
+    "description": "",
+    "tags": [
+      "CH22",
+      "CH78",
+      "CH79",
+      "CH80",
+      "converter-auto-created"
+    ]
+  }
+}

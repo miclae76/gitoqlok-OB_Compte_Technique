@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME61",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Montant Brut RT+DC sur TG",
+    "qDef": "sum( {<GROUPE_FLUX_2_CDG={'Rachats totaux', 'Sinistre'}, $(v.Select_RT_DC)>} MT_OPERATION)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Montant Brut RT+DC sur TG",
+    "description": "",
+    "tags": [
+      "CH33",
+      "converter-auto-created"
+    ]
+  }
+}

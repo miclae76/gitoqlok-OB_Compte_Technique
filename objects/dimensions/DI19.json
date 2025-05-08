@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI19",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(isnull(CD_DEV_OPERATION), CD_DEV_TIT, CD_DEV_OPERATION)"
+    ],
+    "qFieldLabels": [
+      "DEV_OPE"
+    ],
+    "title": "DEV_OPE"
+  },
+  "qMetaDef": {
+    "title": "DEV_OPE",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "s.EUR_COL",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.EUR_COL",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_DEV_TIT={'EUR', 'BEF', 'LUF', 'FRF', 'DEM', 'NLG', 'ITL'}, CD_TYPE_SOUSC={'COLLECTIF'}, CLASSE-={'FC'}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

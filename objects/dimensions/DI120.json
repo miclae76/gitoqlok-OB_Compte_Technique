@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI120",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(FLAG_NC = 1, 'NC' , floor(AGE_EXACT))"
+    ],
+    "qFieldLabels": [
+      "AgeAssure"
+    ],
+    "title": "AgeAssure"
+  },
+  "qMetaDef": {
+    "title": "AgeAssure",
+    "description": "",
+    "tags": [
+      "CH83",
+      "converter-auto-created"
+    ]
+  }
+}

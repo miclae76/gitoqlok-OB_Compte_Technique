@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME144",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM  Dev_Titre",
+    "qDef": "rangesum(sum({<D_BILAN={'$(=Date(Max(D_BILAN)))'}>} IF(LEFT(CD_PRODUIT,3)='GA4' or NUM_CONTRAT='ME000708294000', MT_PROVISION)), sum({$*<CD_SYS_GESTION={'POCUS'}, CD_ETAT={'EN COURS'}>}MT_PROVISION))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "PM  Dev_Titre",
+    "description": "",
+    "tags": [
+      "CH84",
+      "converter-auto-created"
+    ]
+  }
+}

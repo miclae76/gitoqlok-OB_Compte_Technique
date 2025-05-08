@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI125",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=aggr(Min({<D_BILAN={'$(=date(Max(D_BILAN)))'}>}CONTRAT.D_SORTIE), NUM_CONTRAT)"
+    ],
+    "qFieldLabels": [
+      "Date sortie"
+    ],
+    "title": "Date sortie"
+  },
+  "qMetaDef": {
+    "title": "Date sortie",
+    "description": "",
+    "tags": [
+      "CH85",
+      "converter-auto-created"
+    ]
+  }
+}

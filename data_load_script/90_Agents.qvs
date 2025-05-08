@@ -1,0 +1,19 @@
+///$tab 90_Agents
+AGENT:
+LOAD distinct
+	 [Code Agent] AS ID_PARTENAIRE, 
+     [Nom Agent] AS NOM_PARTENAIRE, 
+     [Code Partenaire] AS AGTCONSO, 
+     [Nom Partenaire] AS NOM_AGTCONSO,
+     //Reclassif_Italie, 
+     [Pays de distribution] AS PAYS_DIS, 
+     if(Reclassif_Italie= 'OUI', 'Italie', [Marché de distribution FV]) As MARCHE_DIS 
+     //Capitalize([Actif ou NON]) AS STATUT_AGTCONSO
+     //[Pôle RM]
+     //roupe, 
+     //[Objectif collecte], 
+     //[Objectif tx UC]
+FROM
+[lib://F_010_Outil_Bilan/Manual_Files/FV_Liste_Partenaires.xlsx]
+(ooxml, embedded labels, table is Sheet1)
+where len(trim([Code Agent]))>0;

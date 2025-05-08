@@ -1,0 +1,13 @@
+///$tab 76_Garantie
+/* DEPRECATED -  Moved into Tab 45 ***************************/
+/* 
+// Temporaire pour reporting IAS/IFRS
+TEMP_REF_GARANTIE:
+LOAD 
+    TYPGDC,
+    TAUTUN,
+    LIBGAR,
+    NUMGGL;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ODX".dbo."GAME_dbo_REF_GARANTIE";
+*/

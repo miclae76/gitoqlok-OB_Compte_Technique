@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "be57a981-15d3-404c-a8b3-7ca1dda6cc3a",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_rose_30",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#FEE9F8",
+  "qIsScriptCreated": true
+}

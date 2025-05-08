@@ -1,0 +1,66 @@
+[
+  {
+    "id": "084e561c-235b-4cfe-8831-9f2f908b76ed",
+    "createdDate": "2025-04-23T13:22:41.507Z",
+    "modifiedDate": "2025-04-23T13:22:41.507Z",
+    "modifiedByUserName": "AGILOS\\mla",
+    "customProperties": [],
+    "owner": {
+      "id": "9fef08c8-b389-4020-b1d7-345774221a63",
+      "userId": "mla",
+      "userDirectory": "AGILOS",
+      "userDirectoryConnectorName": "AGILOS",
+      "name": "Michael Laenen",
+      "privileges": null
+    },
+    "name": "LMEP-QS-THEME",
+    "tags": [],
+    "whiteList": {
+      "id": "0106f312-d616-4a72-84a1-12d57bf25aef",
+      "libraryType": 3,
+      "privileges": null
+    },
+    "references": [
+      {
+        "id": "40b0b760-1bef-4cef-99ed-6a7051d1f458",
+        "dataLocation": "%StaticContentRoot%\\Extensions\\LMEP-QS-THEME\\theme.css",
+        "logicalPath": "/extensions/LMEP-QS-THEME/theme.css",
+        "externalPath": "/extensions/LMEP-QS-THEME/theme.css",
+        "serveOptions": 0,
+        "privileges": null
+      },
+      {
+        "id": "ecae9f99-3d90-4c9b-bfa2-6027561feebb",
+        "dataLocation": "%StaticContentRoot%\\Extensions\\LMEP-QS-THEME\\LMEP-QS-THEME.qext",
+        "logicalPath": "/extensions/LMEP-QS-THEME/LMEP-QS-THEME.qext",
+        "externalPath": "/extensions/LMEP-QS-THEME/LMEP-QS-THEME.qext",
+        "serveOptions": 0,
+        "privileges": null
+      },
+      {
+        "id": "f2b0c561-8528-491e-a0bc-f7bb631e44e6",
+        "dataLocation": "%StaticContentRoot%\\Extensions\\LMEP-QS-THEME\\theme.json",
+        "logicalPath": "/extensions/LMEP-QS-THEME/theme.json",
+        "externalPath": "/extensions/LMEP-QS-THEME/theme.json",
+        "serveOptions": 0,
+        "privileges": null
+      }
+    ],
+    "privileges": null,
+    "schemaPath": "Extension",
+    "files": [
+      {
+        "path": "theme.css",
+        "content": "#sheet-title.sheet-grid { \r\n\tcolor: #ffffff;\r\n\tpadding-bottom: 5px;\r\n\tfont-family: Roboto, sans serif;\r\n}\r\n\r\n.sheet-title-container {\r\n\tbackground:#FFFFFF !important; \r\n\tbackground:-moz-linear-gradient(left, #381A0A 0%, #FFFFFF 100%)!important; \r\n\tbackground:-webkit-linear-gradient(left, #381A0A 0%, #FFFFFF 100%)!important; \r\n\tbackground: -o-linear-gradient(left, #381A0A 0%, #FFFFFF 100%)!important; \r\n\tbackground:-ms-linear-gradient(left, #381A0A 0%, #FFFFFF 100%)!important;  \r\n\tbackground:linear-gradient(to right, #381A0A 0%, #FFFFFF 100%)!important; \r\n\tborder-bottom: 1px solid rgba(0,0,0,0.1)!important; \r\n}\r\n\r\n.sheet-title-text {\r\n\tbackground-image: url(\"/content/Default/Logo_LMEP_New.png\");\r\n\tbackground-position: right;\r\n\tbackground-repeat: no-repeat;\r\n\tbackground-size: contain;\r\n}\r\n\r\n#sheet-title > div > div > button.MuiButtonBase-root.MuiButton-root.MuiButton-text.MuiButton-textInherit {\r\n\tcolor: #381A0A !important;\r\n}\r\n\r\n.qv-object-kpi{\r\n\tborder: 2px solid gray !important;\r\n\tborder-radius: 10px;\r\n}\r\n\r\n.sheet-title-container {\r\n\tposition: fixed !important;\r\n\ttop: 89px;\r\n\tleft: 0;\r\n\twidth: 100%;\r\n\theight: 80px;\r\n\tz-index: 999 !important;\r\n}\r\n\r\n.qv-panel {\r\n\tposition: fixed !important;\r\n\ttop: 129px;\r\n\tleft: 0;\r\n\theight: Calc(100vh - 129px);\r\n}\r\n\r\n.app-details-content {\r\n\tz-index: 2000 !important;\r\n\tbackground-color: inherit;\r\n}\r\n\r\n\r\n"
+      },
+      {
+        "path": "LMEP-QS-THEME.qext",
+        "content": "{\n  \"name\": \"LMEP-QS-THEME\",\n  \"type\": \"theme\",\n  \"description\": \"Qlik Sense Thème pour LMEP\",\n  \"version\": \"1.0\",\n  \"author\": \"Michael Laenen\"\n}"
+      },
+      {
+        "path": "theme.json",
+        "content": "{\n  \"_inherit\": true,\n  \"_cards\": false,\n  \"color\": \"#2A2A2A\",\n  \"backgroundColor\": \"#FFFFFF\",\n  \"fontSize\": \"13px\",\n  \"customStyles\": [\n    {\n      \"cssRef\": \"theme.css\",\n      \"classRef\": \"theme\"\n    }\n  ],\n  \"fontFamily\": \"Roboto, sans-serif\",\n  \"sheet\": {\n    \"title\": {\n      \"private\": {\n        \"titleBackgroundColor\": \"#C4CFDA\",\n        \"titleBackgroundGradientColor\": \"#C4CFDA\"\n      },\n      \"approved\": {\n        \"titleBackgroundColor\": [\n          \"#54565A\",\n          \"#009845\"\n        ],\n        \"titleBackgroundGradientColor\": \"#54565A\"\n      },\n      \"published\": {\n        \"titleBackgroundGradientColor\": \"#009845\"\n      }\n    }\n  },\n  \"object\": {\n    \"title\": {\n      \"main\": {\n        \"color\": \"#381A0A\",\n        \"fontSize\": \"16px\",\n        \"fontFamily\": \"Roboto, sans-serif\"\n      },\n      \"subTitle\": {\n        \"color\": \"#2A2A2A\",\n        \"fontSize\": \"13px\",\n        \"fontFamily\": \"Roboto, sans-serif\"\n      },\n      \"footer\": {\n        \"color\": \"#2A2A2A\",\n        \"fontSize\": \"13px\",\n        \"fontFamily\": \"Roboto, sans-serif\",\n        \"backgroundColor\": \"#FFFFFF\"\n      }\n    },\n    \"label\": {\n      \"name\": {\n        \"color\": \"#2A2A2A\",\n        \"fontSize\": \"13px\",\n        \"fontFamily\": \"Roboto, sans-serif\"\n      },\n      \"value\": {\n        \"color\": \"#2A2A2A\",\n        \"fontSize\": \"13px\",\n        \"fontFamily\": \"Roboto, sans-serif\"\n      }\n    },\n    \"axis\": {\n      \"title\": {\n        \"fontSize\": \"13px\",\n        \"fontFamily\": \"Roboto, sans-serif\",\n        \"color\": \"#2A2A2A\"\n      },\n      \"label\": {\n        \"name\": {\n          \"color\": \"#2A2A2A\",\n          \"fontSize\": \"13px\",\n          \"fontFamily\": \"Roboto, sans-serif\"\n        }\n      }\n    },\n    \"line\": {\n      \"major\": {\n        \"color\": \"#DDDDDD\"\n      },\n      \"minor\": {\n        \"color\": \"#DDDDDD\"\n      }\n    },\n    \"grid\": {\n      \"line\": {\n        \"highContrast\": {\n          \"color\": \"#DDDDDD\"\n        },\n        \"major\": {\n          \"color\": \"#DDDDDD\"\n        },\n        \"minor\": {\n          \"color\": \"#DDDDDD\"\n        }\n      }\n    },\n    \"legend\": {\n      \"title\": {\n        \"color\": \"#381A0A\",\n        \"fontSize\": \"13px\",\n        \"fontFamily\": \"Roboto, sans-serif\"\n      },\n      \"label\": {\n        \"color\": \"#2A2A2A\",\n        \"fontSize\": \"13px\",\n        \"fontFamily\": \"Roboto, sans-serif\"\n      }\n    }\n  },\n  \"dataColors\": {\n    \"primaryColor\": \"#736054\",\n    \"othersColor\": \"#AAAAAA\",\n    \"errorColor\": \"#E7004C\",\n    \"nullColor\": \"#E3E3E3\"\n  },\n  \"palettes\": {\n    \"data\": [\n      {\n        \"name\": \"LMEP\",\n        \"translation\": \"LMEP\",\n        \"propertyValue\": \"data-palette-1\",\n        \"type\": \"row\",\n        \"scale\": [\n          \"#736054\",\n          \"#C2BAB5\",\n          \"#49EFFF\",\n          \"#AAFFAA\",\n          \"#FEB3E8\",\n          \"#FEF4A1\",\n          \"#FFAA55\",\n          \"#FFAAAA\",\n          \"#DB6261\",\n          \"#AA8EC6\",\n          \"#8EAAC6\",\n          \"#5179A1\"\n        ]\n      }\n    ],\n    \"ui\": [\n      {\n        \"name\": \"LMEP_ColorPicker\",\n        \"colors\": [\n          \"#736054\",\n          \"#9A8B83\",\n          \"#C2BAB5\",\n          \"#D7D0CE\",\n          \"#49EFFF\",\n          \"#B1F8FF\",\n          \"#AAFFAA\",\n          \"#BFFFE0\",\n          \"#FEB3E8\",\n          \"#FEE9F8\",\n          \"#FEF4A1\",\n          \"#FFFBE3\",\n          \"#FFAA55\",\n          \"#FFD5AA\",\n          \"#AA8EC6\",\n          \"#D5C6E3\",\n          \"#FFAAAA\",\n          \"#E7004C\",\n          \"#498AFF\",\n          \"#00AA55\"\n        ]\n      }\n    ]\n  },\n  \"scales\": [\n    {\n      \"name\": \"BRUN\",\n      \"translation\": \"Brun\",\n      \"propertyValue\": \"sg_1\",\n      \"type\": \"gradient\",\n      \"scale\": [\n        \"#381A0A\",\n        \"#E8E2E3\"\n      ]\n    },\n    {\n      \"name\": \"BLEU_F\",\n      \"translation\": \"Bleu foncé\",\n      \"propertyValue\": \"sg_2\",\n      \"type\": \"gradient\",\n      \"scale\": [\n        \"#0052FF\",\n        \"#E4EDFF\"\n      ]\n    },\n    {\n      \"name\": \"VERT\",\n      \"translation\": \"Vert\",\n      \"propertyValue\": \"sg_3\",\n      \"type\": \"gradient\",\n      \"scale\": [\n        \"#29FF9B\",\n        \"#E9FFF5\"\n      ]\n    },\n    {\n      \"name\": \"JAUNE\",\n      \"translation\": \"Jaune\",\n      \"propertyValue\": \"sg_4\",\n      \"type\": \"gradient\",\n      \"scale\": [\n        \"#FFF078\",\n        \"#FFFEF1\"\n      ]\n    },\n    {\n      \"name\": \"ROSE\",\n      \"translation\": \"Rose\",\n      \"propertyValue\": \"sg_5\",\n      \"type\": \"gradient\",\n      \"scale\": [\n        \"#FF91DE\",\n        \"#FFF4FB\"\n      ]\n    },\n    {\n      \"name\": \"BLEU_C\",\n      \"translation\": \"Bleu clair\",\n      \"propertyValue\": \"sg_6\",\n      \"type\": \"gradient\",\n      \"scale\": [\n        \"#00E8FF\",\n        \"#E4FDFF\"\n      ]\n    }\n  ]\n}"
+      }
+    ]
+  }
+]

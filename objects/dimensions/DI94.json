@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI94",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "OPTION_D_FIN_EFFET"
+    ],
+    "qFieldLabels": [
+      "D_FIN_EFFET"
+    ],
+    "title": "D_FIN_EFFET"
+  },
+  "qMetaDef": {
+    "title": "D_FIN_EFFET",
+    "description": "",
+    "tags": [
+      "CH52",
+      "converter-auto-created"
+    ]
+  }
+}

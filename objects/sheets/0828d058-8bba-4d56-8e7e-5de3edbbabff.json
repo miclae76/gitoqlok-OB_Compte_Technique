@@ -1,0 +1,30 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "0828d058-8bba-4d56-8e7e-5de3edbbabff",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Calcul VU",
+      "description": ""
+    },
+    "rank": 9,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [],
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "customRowBase": 12,
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    }
+  },
+  "qChildren": []
+}

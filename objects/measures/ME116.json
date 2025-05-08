@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME116",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "FC",
+    "qDef": "sum({$*<$(s.CLUB),B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPE_CPT) + sum({$*<$(s.CLUB)>} MT_PROVISION_CPT) ",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "FC",
+    "description": "",
+    "tags": [
+      "CH66",
+      "CH90",
+      "converter-auto-created"
+    ]
+  }
+}

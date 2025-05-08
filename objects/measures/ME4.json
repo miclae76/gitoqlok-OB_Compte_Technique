@@ -1,0 +1,28 @@
+{
+  "qInfo": {
+    "qId": "ME4",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Ecart CV Brut-Net",
+    "qDef": "[CV€ Brute]-[CV€ Net]",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Ecart CV Brut-Net",
+    "description": "",
+    "tags": [
+      "CH03",
+      "CH87",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI143",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "TX_FR_EO"
+    ],
+    "qFieldLabels": [
+      "TX_FR_EO"
+    ],
+    "title": "TX_FR_EO"
+  },
+  "qMetaDef": {
+    "title": "TX_FR_EO",
+    "description": "",
+    "tags": [
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

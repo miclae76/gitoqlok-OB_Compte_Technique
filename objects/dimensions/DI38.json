@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI38",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "GROUPE_MARGE_1"
+    ],
+    "qFieldLabels": [
+      "GROUPE_MARGE_1"
+    ],
+    "title": "GROUPE_MARGE_1"
+  },
+  "qMetaDef": {
+    "title": "GROUPE_MARGE_1",
+    "description": "",
+    "tags": [
+      "CH11",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME73",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "?",
+    "qDef": "sum( MT_OPERATION) \n+sum( MT_PROVISION) \n-sum( {<CD_ISIN={'BCCSLF'}>}MT_OPERATION) \n-sum( {<CD_ISIN={'BCCSLF'}>}MT_PROVISION) ",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "?",
+    "description": "",
+    "tags": [
+      "CH38",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI75",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "MIN_D_NAI_SOUSCR"
+    ],
+    "qFieldLabels": [
+      "MIN_D_NAI_SOUSCR"
+    ],
+    "title": "MIN_D_NAI_SOUSCR"
+  },
+  "qMetaDef": {
+    "title": "MIN_D_NAI_SOUSCR",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "ME149",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "EUR hors Rente Iter et Milan",
+    "qDef": "sum({$*<$(s.TG), CD_DEV_TIT={'EUR'}, CLASSE-={'EUROTHEM','FC'}, CD_TYPE_SOUSC-={'MILAN','RENTE ITER'}, B_IMPACT_PM={'O'}, CD_FLUX=-{'TDZO', 'TRZO','KRCH'}>} MT_OPE_CPT) + sum({<$(s.TG) , CD_DEV_TIT={'EUR'}, CLASSE-={'EUROTHEM','FC'}, CD_TYPE_SOUSC-={'MILAN','RENTE ITER'}>} MT_PROVISION_CPT)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "# ##0,00",
+      "qDec": ",",
+      "qThou": " "
+    },
+    "isCustomFormatted": false,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "EUR hors Rente Iter et Milan",
+    "description": "",
+    "tags": [
+      "CH90",
+      "converter-auto-created"
+    ]
+  }
+}

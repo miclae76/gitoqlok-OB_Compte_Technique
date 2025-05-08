@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI112",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "SUPPORT.D_FIN_EFF_GARK"
+    ],
+    "qFieldLabels": [
+      "DattrmGC"
+    ],
+    "title": "DattrmGC"
+  },
+  "qMetaDef": {
+    "title": "DattrmGC",
+    "description": "",
+    "tags": [
+      "CH78",
+      "converter-auto-created"
+    ]
+  }
+}

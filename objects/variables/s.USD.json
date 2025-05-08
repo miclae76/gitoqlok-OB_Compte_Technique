@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "s.USD",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.USD",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_DEV_TIT={'USD'}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

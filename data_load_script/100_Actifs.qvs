@@ -1,0 +1,237 @@
+///$tab 100_Actifs
+// Taux de Change nécessaire pour convetir Trésorie Actif en Dev PTF, on laisse la table dispo dans le modèle pour pour afficher les taux utilisés.
+TX_CHANGE:
+LOAD
+    "D_BILAN",
+    "CD_DEVISE",
+    "TX_CHANGE";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."V_HELPER_TABLE_CHANGE" where D_BILAN = '$(v.D_BILAN)';
+
+Map_CHGE:
+Mapping LOAD CD_DEVISE, TX_CHANGE Resident TX_CHANGE;
+
+
+Map_ISIN:
+//Mapping LOAD RecNo() AS A, RecNo() AS B AutoGenerate 1;
+Mapping
+LOAD DISTINCT 
+	CD_PTF_CHORUS,
+	CD_ISIN
+RESIDENT SUPPORT;
+
+
+PTF_CLASSIFICATION:
+LOAD *
+WHERE TYPE_ACTIF <> 'FP';
+LOAD
+     [Code Chorus] AS PTF_RECHERCHE,
+     [Code Chorus] AS PTF,
+     'EUR' AS DEVISE_PTF,
+     [DEV VNI] AS DEVISE_VNI,
+     [CODE ETS],
+     replace(LOT, 'T2GA', '') AS TYPE_ACTIF
+FROM [lib://F_010_Outil_Bilan/Manual_Files/Code Etablissement.xlsx]
+(ooxml, embedded labels, table is Sheet1);
+
+
+
+// Créer les mappings pour usage plus loin
+Map_PTF_DEV:
+Mapping Load PTF, DEVISE_PTF Resident PTF_CLASSIFICATION;
+
+Map_PTF_TYPE_ACTIF:
+Mapping Load PTF, TYPE_ACTIF Resident PTF_CLASSIFICATION;
+
+
+ACTIF:
+LOAD * WHERE TYPE_ACTIF <> 'UC';
+LOAD FileName()													AS PTF_DATASOURCE,
+	 ApplyMap('Map_PTF_TYPE_ACTIF', Portefeuille, '???' )	  	AS TYPE_ACTIF,
+	 ApplyMap('Map_PTF_DEV', Portefeuille, '???' )	  			AS DEVISE_PTF,
+	 Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')) 					AS D_BILAN,
+	 Portefeuille							  					AS PTF, 
+	 ApplyMap( 'Map_MultiClass', Portefeuille) 					AS PTF_ANCIEN,
+	 Portefeuille							  					AS PTF_AVNI,		// pour recherche ensuite les PTF dans AINI/AEST qui ne sont pas dans AVNI
+	 ApplyMap('Map_ISIN', Portefeuille) 	  					AS CD_ISIN,
+	 [Date VNI]								  					AS D_VNI,
+     [Valeur boursiere (dev vni)]						  		AS VAL_BOURSIERE, 
+     [Valeur boursiere (dev réf)]						  		AS VAL_BOURSIERE_EUR, 
+  //   [Autres éléments d actifs (dev vni)]						AS AUTRES_ELTS_ACTIFS, 
+     [Actif net (dev vni)]							  			AS VAL_ACTIF_NET, 
+     [Tresorerie (dev vni)]								  		AS TRESORERIE, 
+     [Tresorerie (dev réf)]								  		AS TRESORERIE_EUR, 
+     [VL nette (dev VNI)]							  			AS VNI,
+     [Provision F.D.G. (dev vni)]							AS PROVISION_FDG, 	
+     [Nb Parts]					  						AS NB_PARTS,
+     [CE devise VNI]											AS DEVISE_VNI,
+     [Actif net (dev réf)]										AS VAL_ACTIF_NET_EUR
+FROM
+//[Chorus\AVNI_30062019.xlsx]
+//(ooxml, embedded labels, table is AVNI1HISNC_7_2775)
+[lib://F_010_Outil_Bilan/Chorus/AVNI_$(v.D_FICHIERS_ACTIF).xlsx]
+(ooxml, embedded labels, table is AVNI) //_$(v.D_FICHIERS_ACTIF))
+WHERE exists (PTF_RECHERCHE, Portefeuille);
+
+
+
+
+
+
+//FROM
+//[$(v.Path_Actifs)\AVNI_28022019.xlsx]
+//[$(v.Path_Actifs)\CHORUS_LMEP_GAME_AVNI_VALOEUR_20190329_20181229.out]
+//(txt, codepage is 1252, embedded labels, delimiter is ';', msq)
+//$(v.Path_Actifs)\AVNI_ELARGIE__30092018.xlsx
+//[.\Manual_Files\*Actif VNI*$(v.D_BILAN_NUM).xlsx]
+//[.\Manual_Files\*Actif VNI*20180630.xlsx]
+//(ooxml, embedded labels, table is [AVNI_213])
+
+
+INNER JOIN (ACTIF)
+LOAD 
+	PTF,
+	CD_ISIN,
+	Date(Max(D_VNI)) AS D_VNI
+Resident ACTIF
+GROUP BY PTF, CD_ISIN;
+	 
+
+
+
+
+
+	
+
+Concatenate(ACTIF)
+LOAD 
+	 Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')) 					AS D_BILAN,
+	 FileName()													AS PTF_DATASOURCE,
+	 [DT VALO]													AS D_VNI, 
+     PTF														AS PTF, 
+     ApplyMap( 'Map_MultiClass', PTF) 							AS PTF_ANCIEN,
+     ApplyMap('Map_PTF_TYPE_ACTIF', PTF, '???' )	  			AS TYPE_ACTIF,
+     ApplyMap('Map_PTF_DEV', PTF, '???')						AS DEVISE_PTF,
+//     [LB LG PTF], 
+//     [TYPE PTF], 
+//     [DEV PTF], 
+//     [MODE EXPRESSION], 
+     COURS														AS VNI,  
+     [QTE EN STOCK]												AS NB_PARTS, 
+     rangesum([VB EN DEV COT], [INTERETS COURUS DEV COT])		AS VAL_BOURSIERE_DEV_COT,  
+     rangesum([VB EN DEV REFERENCE] , [INTERETS COURUS DEV REF])	AS VAL_BOURSIERE, 
+     rangesum([VB EN DEV REFERENCE] , [INTERETS COURUS DEV REF])	AS VAL_ACTIF_NET,
+     rangesum([VB EN DEV REFERENCE] , [INTERETS COURUS DEV REF])	AS VAL_ACTIF_NET_EUR,
+     if(ApplyMap('Map_PTF_TYPE_ACTIF', PTF, '???' )<> 'UC', ApplyMap('Map_ISIN', PTF), [CODE VALEUR]) 	  					AS CD_ISIN,
+     [CODE VALEUR]																							
+//     [DEV COT], 
+//     [LB LG VAL], 
+//     [VB CP INCLUS DEV REF], 
+//     [VB CP INCLUS DEV COT]
+
+//FROM
+//$(v.Path_Actifs)\AINI_$(v.D_FICHIERS_ACTIF).out
+//(txt, codepage is 1252, embedded labels, delimiter is ';', msq)
+;
+	LOAD
+		[DT VALO], 
+	PTF, 
+	[LB LG PTF], 
+    [LB LG GRP PTF], 
+    [DEV PTF], 
+    [TYPES VAL/INSTR], 
+    [MODE EXPRESSION], 
+	REPLACE(COURS,'.', ',' ) AS      COURS, 
+    [DATE COURS COURS CHOISI/VAL], 
+	REPLACE([QTE EN STOCK],'.', ',' ) AS      [QTE EN STOCK], 
+	REPLACE([VB EN DEV COT],'.', ',' ) AS      [VB EN DEV COT], 
+	REPLACE([PRIX DE REVIENT DEV COT],'.', ',' ) AS      [PRIX DE REVIENT DEV COT], 
+	REPLACE([INTERETS COURUS DEV COT],'.', ',' ) AS      [INTERETS COURUS DEV COT], 
+	REPLACE([INDEM COURUES EN DEV COT],'.', ',' ) AS      [INDEM COURUES EN DEV COT], 
+	REPLACE([VB EN DEV REFERENCE],'.', ',' ) AS      [VB EN DEV REFERENCE], 
+	REPLACE([PRIX DE REVIENT DEV REF],'.', ',' ) AS      [PRIX DE REVIENT DEV REF], 
+	REPLACE([INTERETS COURUS DEV REF],'.', ',' ) AS      [INTERETS COURUS DEV REF], 
+	REPLACE([INDEM COURUES EN DEV REF],'.', ',' ) AS      [INDEM COURUES EN DEV REF], 
+    [COMPTE DANS LE PLAN], 
+    [ATTR V], 
+    [CODE VALEUR], 
+    [PLACE COT], 
+    [DEV COT], 
+    EMETTEUR, 
+    [LB LG VAL], 
+    [LB CRT INSTR], 
+    [LB LG SOC./EMET], 
+    [LB CRT PAYS], 
+	REPLACE([SURC COURUE COT],'.', ',' ) AS      [SURC COURUE COT], 
+	REPLACE([DEC COURUE COT],'.', ',' ) AS      [DEC COURUE COT], 
+	REPLACE([SURC COURUE REF],'.', ',' ) AS      [SURC COURUE REF], 
+	REPLACE([DEC COURUE REF],'.', ',' ) AS      [DEC COURUE REF], 
+	REPLACE([+/- VALUE POT COT],'.', ',' ) AS      [+/- VALUE POT COT], 
+	REPLACE([+/- VALUES POT REF],'.', ',' ) AS      [+/- VALUES POT REF], 
+	REPLACE([PMV CHG EN DEV COT],'.', ',' ) AS      [PMV CHG EN DEV COT], 
+	REPLACE([PMV CHG EN DEV REF],'.', ',' ) AS      [PMV CHG EN DEV REF], 
+	REPLACE([PX REVT ACTUALISE DEV COT],'.', ',' ) AS      [PX REVT ACTUALISE DEV COT], 
+	REPLACE([PX REVT ACTUALISE DEV REF],'.', ',' ) AS      [PX REVT ACTUALISE DEV REF], 
+	REPLACE([QTE AC],'.', ',' ) AS      [QTE AC], 
+	REPLACE([VB AC COT],'.', ',' ) AS      [VB AC COT], 
+	REPLACE([VB VD COT],'.', ',' ) AS      [VB VD COT], 
+	REPLACE([PX REVT POS ACH DEV COT],'.', ',' ) AS      [PX REVT POS ACH DEV COT], 
+	REPLACE([PX REVT POS ACH DEV REF],'.', ',' ) AS      [PX REVT POS ACH DEV REF], 
+	REPLACE([VB AC REF],'.', ',' ) AS      [VB AC REF], 
+	REPLACE([VB VD REF],'.', ',' ) AS      [VB VD REF], 
+	REPLACE([PX REVT UNIT DEV COT],'.', ',' ) AS      [PX REVT UNIT DEV COT], 
+	REPLACE([PX REVT UNIT DEV REF],'.', ',' ) AS      [PX REVT UNIT DEV REF], 
+	REPLACE([S/D COURUE+PRIM DEV COT],'.', ',' ) AS      [S/D COURUE+PRIM DEV COT], 
+	REPLACE([S/D COURUE+PRIM DEV REF],'.', ',' ) AS      [S/D COURUE+PRIM DEV REF], 
+	REPLACE([VB CP EXCLUS DEV REF],'.', ',' ) AS      [VB CP EXCLUS DEV REF], 
+	REPLACE([VB CP INCLUS DEV REF],'.', ',' ) AS      [VB CP INCLUS DEV REF], 
+	REPLACE([VB CP EXCLUS DEV COT],'.', ',' ) AS      [VB CP EXCLUS DEV COT], 
+	REPLACE([VB CP INCLUS DEV COT],'.', ',' ) AS      [VB CP INCLUS DEV COT]
+FROM
+	[lib://F_010_Outil_Bilan/Chorus/AINI_$(v.D_FICHIERS_ACTIF).csv]
+(txt, codepage is 28591, embedded labels, delimiter is ';', msq)
+WHERE 
+		NOT EXISTS (PTF_AVNI, PTF) 
+	AND 	EXISTS (PTF_RECHERCHE, PTF);		// PTF pas dans AVNI mais bien dans la liste des PTF de Classification Chorus
+
+
+Concatenate(ACTIF)
+LOAD 
+	Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')) 					AS D_BILAN,
+	FileName()													AS PTF_DATASOURCE,
+	PTF															AS PTF,
+	ApplyMap( 'Map_MultiClass', PTF) 							AS PTF_ANCIEN,
+	ApplyMap('Map_ISIN', PTF)									AS CD_ISIN,
+	DEVISE_PTF,
+	Date 														AS D_VNI,
+	ApplyMap('Map_PTF_TYPE_ACTIF', PTF, '???' )	  				AS TYPE_ACTIF,
+	[MT_CASH_DEV_COT]											AS TRESORIE_DEV_COT,
+	[MT_CASH_DEV_PTF]											AS TRESORERIE,
+	[MT_CASH_DEV_PTF]											AS [VAL_ACTIF_NET],
+	[MT_CASH_DEV_PTF]											AS [VAL_ACTIF_NET_EUR]
+//	if ([DEVISE_PTF] = [DEV COT], 	[MT_CASH_DEV_COT], 
+//		[MT_CASH_DEV_COT] * Applymap('Map_CHGE',[DEVISE_PTF],1) / Applymap('Map_CHGE',[DEV COT],1))	AS [TRESORERIE],
+//	if ([DEVISE_PTF] = [DEV COT], 	[MT_CASH_DEV_COT], 
+//		[MT_CASH_DEV_COT] * Applymap('Map_CHGE',[DEVISE_PTF],1) / Applymap('Map_CHGE',[DEV COT],1))	AS [VAL_ACTIF_NET]
+WHERE
+		 [MT_CASH_DEV_COT] <> 0
+AND	NOT EXISTS (PTF_AVNI, PTF) AND EXISTS (PTF_RECHERCHE, PTF) 	;
+LOAD 
+	FileBaseName() 								as [NOM_FICHIER],
+	trim(@1)									as [PTF],
+	ApplyMap('Map_PTF_DEV', trim(@1), '???')	AS DEVISE_PTF,	 
+	date(date#(@2,'DD/MM/YYYY'))				as [Date], 
+	//@3, 
+	//@4										as [Banque dépositaire], 
+	trim(@5)									as [DEV COT], 
+	sum(@6)										as [MT_CASH_DEV_COT],
+	sum(@7)										as [MT_CASH_DEV_PTF]			
+	//@7, 
+	//@8
+FROM 
+[lib://F_010_Outil_Bilan/Chorus/AEST_$(v.D_FICHIERS_ACTIF).out]
+(txt, codepage is 1252, no labels, delimiter is ';', msq) 
+GROUP BY @1,@2,@5;
+
+DROP Table PTF_CLASSIFICATION;
+DROP TABLE TX_CHANGE;

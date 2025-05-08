@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI42",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "ETABLISSEMENT"
+    ],
+    "qFieldLabels": [
+      "ETABLISSEMENT"
+    ],
+    "title": "ETABLISSEMENT"
+  },
+  "qMetaDef": {
+    "title": "ETABLISSEMENT",
+    "description": "",
+    "tags": [
+      "CH11",
+      "converter-auto-created"
+    ]
+  }
+}

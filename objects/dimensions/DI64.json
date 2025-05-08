@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "DI64",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_NIV_REVAL_FINAL"
+    ],
+    "qFieldLabels": [
+      "CD_NIV_REVAL_FINAL"
+    ],
+    "title": "CD_NIV_REVAL_FINAL"
+  },
+  "qMetaDef": {
+    "title": "CD_NIV_REVAL_FINAL",
+    "description": "",
+    "tags": [
+      "CH34",
+      "CH78",
+      "TB01",
+      "converter-auto-created"
+    ]
+  }
+}

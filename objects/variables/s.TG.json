@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "s.TG",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.TG",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "CD_TYPE_SUPPORT_1={'FG'}",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "QvdSource",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "QvdSource",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "\\\\LMEP-QVPUB\\QVDs SOURCE\\QVDs Others",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

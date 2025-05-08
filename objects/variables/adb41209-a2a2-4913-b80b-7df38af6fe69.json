@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "adb41209-a2a2-4913-b80b-7df38af6fe69",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_rouge_pale",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#FFAAAA",
+  "qIsScriptCreated": true
+}

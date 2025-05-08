@@ -1,0 +1,18 @@
+{
+  "qInfo": {
+    "qId": "V.D_BILAN_VALIDATION",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "V.D_BILAN_VALIDATION",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "31032025",
+  "tags": [
+    "converter-auto-created"
+  ],
+  "qIsScriptCreated": true
+}

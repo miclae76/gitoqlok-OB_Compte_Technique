@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME97",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Taille moy EUR",
+    "qDef": "=sum({<CD_FLUX={'PMCLO'}>} MT_PROVISION_CPT) / count(DISTINCT NUM_CONTRAT) ",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Taille moy EUR",
+    "description": "",
+    "tags": [
+      "CH63",
+      "CH64",
+      "converter-auto-created"
+    ]
+  }
+}

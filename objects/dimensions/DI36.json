@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI36",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CPTE_DEPOSITAIRE_LIB"
+    ],
+    "qFieldLabels": [
+      "CPTE_DEPOSITAIRE_LIB"
+    ],
+    "title": "CPTE_DEPOSITAIRE_LIB"
+  },
+  "qMetaDef": {
+    "title": "CPTE_DEPOSITAIRE_LIB",
+    "description": "",
+    "tags": [
+      "CH05",
+      "converter-auto-created"
+    ]
+  }
+}

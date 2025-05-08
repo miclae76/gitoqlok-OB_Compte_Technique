@@ -1,0 +1,23 @@
+///$tab 75_Protocole
+/*** Désactivé 20/05/2024 - SUP-24444 ****/
+//
+//PROTOCOLE:
+//LOAD 
+////	"DW_Id",
+////    "D_BILAN",
+//    "ID_PROTOCOLE",
+////    "ID_PRODUIT",
+////    "CD_SYS_GESTION",
+//    "CD_PROTOCOLE",
+//    "LB_PROTOCOLE",
+////    "CD_PRODUIT",
+////    "D_DEB_VALIDITE",
+////    "D_FIN_VALIDITE",
+////    "IS_CURRENT",
+//    "ID_PARTENAIRE",
+//    "ID_APPORTEUR";
+////    "DW_Batch",
+////    "DW_SourceCode",
+////    "DW_TimeStamp";
+//SQL SELECT *
+//FROM "TX_OB_$(v.Env)ARR".dbo."REF_PROTOCOLE_H";

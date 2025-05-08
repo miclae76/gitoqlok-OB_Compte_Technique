@@ -1,0 +1,131 @@
+///$tab 10_Flux_Ope_Support
+FLUX_SUPPORT:
+LOAD 
+//	"DW_Id",
+    Date(D_BILAN) AS D_BILAN,
+    "NUM_OPE_SUPPORT",
+    "CD_SYS_GESTION",
+    "CD_SENS",
+    "ID_CONTRAT",
+    "ID_OPTION" AS "ID_OPTION_PROFIL",
+    "ID_SUPPORT",
+    AutoNumber(CD_SYS_GESTION&NUM_CONTRAT&CD_OPTION&CD_SUPPORT) AS CLE_TAUX_,
+    AutoNumber(ID_CONTRAT&ID_OPTION) AS CLE_OPTION_SOUSCRITE_,
+    "NUM_OPERATION",
+    autonumber("CD_SYS_GESTION"&"NUM_OPERATION") AS CLE_OPERATION_,
+    "CD_FLUX",
+    if( CD_FLUX = 'FRCO' 
+    	OR wildmatch(NUM_OPE_SUPPORT, 'R??_ME????????????_'&Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD') , 'YYYYMMDD')&'*')>0, 'NON', 'OUI') AS RETRAITEMENT_GAR_K_EXCLUS,
+    Date("D_EFFET") 		AS D_EFFET,
+    Date("D_COMPTA") 		AS D_COMPTA,
+    Date("D_VALORISATION") 	AS D_VALORISATION,
+    "NB_PART_OPERATION",
+    "NB_PART_COMM_PAR",
+    "NB_PART_COMM_APP",
+    
+    if (ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0) > 0, 
+    	"NB_PART_OPERATION" * ApplyMap('Map_Correction_VL', Date(D_BILAN, 'YYYYMMDD')&"CD_SUPPORT", 0),
+    	"MT_OPERATION" )	 AS "MT_OPERATION",
+    	
+//    "MT_OPERATION",
+    "MT_OPE_CPT",
+    "TX_CHANGE",
+    "NB_PART_FLUX_CAP",
+    "MT_FLUX_CAP",
+    "MT_FLUX_CAP_CPT",
+    "MT_COMMISSION_PAR",
+    "MT_COM_PAR_CPT",
+    "MT_COM_APP_CPT",
+    "MT_COMMISSION_APP",
+    "MT_SPREAD_TD",
+    "MT_SPREAD_TR",
+    if(CD_SYS_GESTION = 'POCUS' OR wildmatch(NUM_OPERATION, 'AJUSTEMENT_*') >0 , "MT_OPE_CPT", "MT_BRUT_OPE_CPT") AS MT_BRUT_OPE_CPT,
+    "CD_SUPPORT",
+    "NUM_CONTRAT",
+//    "CD_TYPE_FRAIS",
+//    "CD_TYPE_TAUX",
+    "CD_TYPE_MOUV",
+//    "TX_CHC",
+//    "TX_CHE",
+    "B_FRAIS",
+    "B_IMPACT_PM",
+    "B_REVAL",
+    "B_PREV_SOC",
+//    "CD_DEVISE_CONTRAT",
+    "CD_OPTION",
+    autonumber("CD_SYS_GESTION"&CD_OPTION, 'Option') AS CLE_OPTION;
+//    "D_CURRENT_BILAN",
+//    "DW_Batch",
+//    "DW_SourceCode",
+//    "DW_TimeStamp",
+//    "SCD Type II Hash Key",
+//    "SCD From DateTime",
+//    "SCD To DateTime",
+//    "SCD Is Current",
+//    "SCD Surrogate Hash Key",
+//    "SCD Type I Hash Key";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."FLUX_OPE_SUPPORT"
+WHERE D_BILAN BETWEEN '$(v.D_OUVERTURE_BILAN)' AND '$(v.D_BILAN)';
+
+// Temporaire pour ramener les frais dans flux ope support depuis DSA
+frais:
+LOAD
+	"CD_SYS_GESTION",  
+    "NUM_OPE_SUPPORT", 
+    "NUM_CONTRAT",
+    "CD_OPTION",
+    "CD_SENS",
+    "CD_SUPPORT",
+	Date("D_EFFET") 		AS D_EFFET,
+    "MT_FRAIS",
+    "MT_FRAIS_CPT"
+;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)DSA".dbo."CALCUL_FLUX_OPE_SUPPORT" 
+WHERE 
+    B_IMPACT_PM = 'O' 
+and B_FRAIS = 'N' 
+and B_REVAL = 'N' 
+and D_BILAN = '$(v.D_BILAN)';
+
+Concatenate(frais)
+LOAD
+	"CD_SYS_GESTION",  
+    "NUM_OPE_SUPPORT", 
+    "NUM_CONTRAT",
+    "CD_OPTION",
+    "CD_SENS",
+    "CD_SUPPORT",
+	Date("D_EFFET") ,		 
+    "MT_FRAIS"		,
+    "MT_FRAIS_CPT"
+;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)DSA".dbo."AJUSTEMENT_MANUEL" where B_PREST = 'O' or B_PRIME = 'O';
+
+
+Concatenate(frais)
+LOAD
+	"CD_SYS_GESTION",  
+    "NUM_OPE_SUPPORT", 
+    "NUM_CONTRAT",
+    "CD_OPTION",
+    "CD_SENS",
+    "CD_SUPPORT",
+	Date("D_EFFET") 		AS D_EFFET,
+    "MT_FRAIS",
+    "MT_FRAIS_CPT"
+;
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ODX".dbo."V_PAS_FLUX_OPERATION_SUPPORT" 
+WHERE 
+    B_IMPACT_PM = 'O' 
+and B_FRAIS = 'N' 
+and D_BILAN = '$(v.D_BILAN)';
+
+LEFT JOIN (FLUX_SUPPORT)
+LOAD * Resident frais;
+drop table frais;
+
+DROP FIELD NUM_CONTRAT, CD_SUPPORT FROM FLUX_SUPPORT;

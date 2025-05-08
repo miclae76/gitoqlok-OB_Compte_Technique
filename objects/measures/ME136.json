@@ -1,0 +1,31 @@
+{
+  "qInfo": {
+    "qId": "ME136",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MT CSR (Euros)",
+    "qDef": "sum(IF(NUMGGL=646 or NUMGGL=688 OR NUMGGL=694,MT_CSR_CPT_VU))",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "F",
+      "qnDec": 2,
+      "qUseThou": 0,
+      "qFmt": "# ##0,00",
+      "qDec": ",",
+      "qThou": " "
+    },
+    "isCustomFormatted": false,
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "MT CSR (Euros)",
+    "description": "",
+    "tags": [
+      "CH81",
+      "converter-auto-created"
+    ]
+  }
+}

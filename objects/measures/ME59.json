@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME59",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Revalo PROBABLE",
+    "qDef": "sum({<$(v.Select_RT_DC)>} TOTAL_REVAL_PROB)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Revalo PROBABLE",
+    "description": "",
+    "tags": [
+      "CH33",
+      "converter-auto-created"
+    ]
+  }
+}

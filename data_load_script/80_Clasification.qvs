@@ -1,0 +1,86 @@
+///$tab 80_Clasification
+Map_Tri_Flux_1:
+Mapping
+LOAD * INLINE [
+	GROUPE_FLUX_1, TRI_FLUX_1
+	PM Ouverture, 10
+	Crédit, 20
+	Débit, 30
+	PM Clôture, 40
+];
+
+Map_Tri_Flux_2:
+Mapping
+LOAD * INLINE [
+    GROUPE_FLUX_2, TRI_FLUX_2
+    Versements initiaux, 10
+    Versements complémentaires, 20
+    Versements Partenaires, 30
+    Arbitrages entrants (TR), 40
+    Ajustements positifs, 50
+    PM au 31/12/N-1, 60
+    Rachats partiels et totaux, 70
+    Prélèvements sociaux, 80
+    Sinistre, 90
+    Arbitrages sortants (TD), 100
+    Ajustements sortants, 110
+    PM sans PB, 120
+    Dotation Participation aux bénéfices, 130
+    Intérêts (garantis ou provisoires), 140
+    Bonus taux majorés au 31/12, 150
+    PM au 31/12/N, 160
+    Chargements sur encours, 170
+    Chargements sur PB, 175
+    Coût décès, 180
+    Réductions, 190
+];
+
+
+Map_Type_Flux:
+Mapping
+LOAD 
+	"CD_FLUX",
+    "CD_TYPE_FLUX";
+SQL SELECT *
+FROM "TX_OB_$(v.Env)ARR".dbo."REF_TYPE_OPERATION"
+WHERE '$(v.D_BILAN)' between D_DEB_VALIDITE AND D_FIN_VALIDITE;
+
+
+
+
+DEBIT_CREDIT:
+LOAD CD_FLUX, 
+     LB_FLUX, 
+     applymap('Map_Type_Flux', CD_FLUX) AS  CD_TYPE_FLUX, 
+     GROUPE_FLUX_2, 
+     GROUPE_FLUX_2_CDG,
+     ApplyMap('Map_Tri_Flux_2', GROUPE_FLUX_2) AS TRI_FLUX_2_,
+     GROUPE_FLUX_1,
+     ApplyMap('Map_Tri_Flux_1', GROUPE_FLUX_1) AS TRI_FLUX_1_
+FROM
+[lib://F_010_Outil_Bilan/Manual_Files/OB_Paramétrage_Métier.xlsx]
+(ooxml, embedded labels, table is Débit_Crédit);
+
+
+
+
+// On associe les PM au classificaitons Débit/Crédit
+Concatenate(DEBIT_CREDIT)
+LOAD *,
+	 ApplyMap('Map_Tri_Flux_2', GROUPE_FLUX_2) AS TRI_FLUX_2_,
+     ApplyMap('Map_Tri_Flux_1', GROUPE_FLUX_1) AS TRI_FLUX_1_
+;
+LOAD 'PMCLO' AS CD_FLUX,
+	 'PM au '&Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')+0) AS GROUPE_FLUX_2,
+	 'PM Clôture' AS GROUPE_FLUX_1
+AutoGenerate 1;
+
+Concatenate(DEBIT_CREDIT)
+LOAD *,
+	 ApplyMap('Map_Tri_Flux_2', GROUPE_FLUX_2) AS TRI_FLUX_2_,
+     ApplyMap('Map_Tri_Flux_1', GROUPE_FLUX_1) AS TRI_FLUX_1_
+;
+LOAD 'PMOUV' AS CD_FLUX,
+	 'PM au '&Date(Date#('$(v.D_OUVERTURE_BILAN)', 'YYYY-MM-DD')-1) AS GROUPE_FLUX_2,
+	 'PM Ouverture' AS GROUPE_FLUX_1
+AutoGenerate 1;

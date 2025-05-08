@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI101",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "FG_PROPOSE"
+    ],
+    "qFieldLabels": [
+      "FG_PROPOSE"
+    ],
+    "title": "FG_PROPOSE"
+  },
+  "qMetaDef": {
+    "title": "FG_PROPOSE",
+    "description": "",
+    "tags": [
+      "CH53",
+      "converter-auto-created"
+    ]
+  }
+}

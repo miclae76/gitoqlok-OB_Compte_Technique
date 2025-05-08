@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI77",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "CD_TYPE_DECES_TDENOU"
+    ],
+    "qFieldLabels": [
+      "CD_TYPE_DECES_TDENOU"
+    ],
+    "title": "CD_TYPE_DECES_TDENOU"
+  },
+  "qMetaDef": {
+    "title": "CD_TYPE_DECES_TDENOU",
+    "description": "",
+    "tags": [
+      "CH41",
+      "converter-auto-created"
+    ]
+  }
+}

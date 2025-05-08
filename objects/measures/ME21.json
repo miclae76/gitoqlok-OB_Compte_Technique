@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME21",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "MNT_PASSIF",
+    "qDef": "sum({<CD_TYPE_SUPPORT_3={'FE'}>}MT_PROVISION) ",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "MNT_PASSIF",
+    "description": "",
+    "tags": [
+      "CH05",
+      "converter-auto-created"
+    ]
+  }
+}

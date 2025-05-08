@@ -1,0 +1,63 @@
+///$tab 100_Actif(OLD)
+Map_ISIN:
+Mapping
+LOAD DISTINCT
+	CD_PTF_CHORUS,
+	CD_ISIN
+RESIDENT SUPPORT;
+
+DROP FIELD CD_ISIN, PTF FROM SUPPORT;  // to avoid loop
+
+ACTIF:
+LOAD 'FI'									  AS TYPE_ACTIF,
+	 Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')) AS D_BILAN,
+	 Portefeuille							  AS PTF, 
+	 ApplyMap('Map_ISIN', Portefeuille) 	  AS CD_ISIN,
+	 [Date VNI]								  AS D_VNI,
+     [Valeur boursiere]						  AS VAL_BOURSIERE, 
+     [Autres elements d actifs], 
+     [Actif net]							  AS VAL_ACTIF_NET, 
+     Tresorerie								  AS TRESORERIE, 
+     V.N.I.									  AS VNI, 
+    [Provision F.D.G.], 	
+    [Nb Parts]								  AS NB_PARTS
+FROM
+Manual_Files\AVNI_ELARGIE__30092018.xlsx
+//[.\Manual_Files\*Actif VNI*$(v.D_BILAN_NUM).xlsx]
+//[.\Manual_Files\*Actif VNI*20180630.xlsx]
+(ooxml, embedded labels, table is [AVNI_30092018]);
+
+Concatenate (ACTIF)
+LOAD 
+	 if(match([Type PTF] , 'UC', 'FEX')>0,'FEX', 'FI')			AS TYPE_ACTIF,
+	 
+	 Date(Date#('$(v.D_BILAN)', 'YYYY-MM-DD')) 		AS D_BILAN,
+     PTF						AS PTF, 
+     [Code Valeur]      		AS CD_ISIN,
+     Quantité					AS NB_PARTS, 
+     if(match([Type PTF] , 'UC', 'FEX') >0, [Valeur EUR])				AS VAL_BOURSIERE, 
+     
+     [Valeur EUR]				AS VALEUR_EUR_BASE_ACTIF,
+	 [Cash/Titre/SWAP],
+//     [Intérêts Courus EUR], 
+     [Devise COT]				AS DEV_COT, 
+     [Cours Valeur]				AS VNI, 
+//     [Mode Expression], 
+     [VB EN DEV COT]			AS MT_DEV_COT, 
+//     [PRIX DE REVIENT DEV COT], 
+//     [INTERETS COURUS DEV COT], 
+     [VB EN DEV REFERENCE]		AS MT_DEV_PTF, 
+     [Libellé Valeur]			AS LIBELLE_FEX,
+     [Banque Dépositaire]		AS DEPOSITAIRE_FEX,
+     [Actif]					AS PTF_ACTIF
+FROM
+//[\\lmep-fs1\common\Actifs LMEP\Base_Actif\3_Qvd\3_Outil_Bilan\OB_Base_Actif.qvd]
+[.\Manual_Files\OB_Base_Actif.qvd]
+(qvd)
+WHERE 
+	Entité = 'LMEP'
+AND Outil = 'CHORUS'
+AND match([Type PTF] , 'UC', 'FEX', 'FID', 'FIC', 'FAS', 'DE') > 0
+//AND Actif = 'O'
+AND Period = $(v.D_ACTIF)
+AND ([Cash/Titre/SWAP] = 'TITRES' OR [Cash/Titre/SWAP] = 'CASH') ;

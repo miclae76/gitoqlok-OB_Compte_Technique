@@ -1,0 +1,16 @@
+{
+  "qInfo": {
+    "qId": "s.TEMPO",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "s.TEMPO",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": [
+    "converter-auto-created"
+  ]
+}

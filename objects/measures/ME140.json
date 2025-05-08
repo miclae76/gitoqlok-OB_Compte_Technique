@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME140",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "PM  Dev Titre",
+    "qDef": "sum({$*<CD_SYS_GESTION={'TITAN', 'PAS'}>}MT_PROVISION)+sum({$*<CD_SYS_GESTION={'POCUS'}, CD_ETAT={'EN COURS'}>}MT_PROVISION) -sum({$*<CD_ISIN={'BCCSLF'}>} MT_PROVISION)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "PM  Dev Titre",
+    "description": "",
+    "tags": [
+      "CH82",
+      "converter-auto-created"
+    ]
+  }
+}

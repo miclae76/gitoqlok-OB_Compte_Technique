@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "ME83",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Age en Montant",
+    "qDef": "Pick(match(ValueList('LMEP', 'dont Emissions N', 'LMEA'), 'LMEP', 'dont Emissions N', 'LMEA'),\r\n// age moyen LMEP pondéré par PM\n\nsum(TOTAL   {<CD_SYS_GESTION=-{'PAS'}, FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, $(v_Exclusion_Age_LMEP), $(v_Exclusion_Support_LMEP)>} aggr(sum({<CD_SYS_GESTION=-{'PAS'}, FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, $(v_Exclusion_Age_LMEP), $(v_Exclusion_Support_LMEP)>}MT_PROVISION_CPT)*AGE_EXACT, NUM_CONTRAT))\n/sum(TOTAL   {<CD_SYS_GESTION=-{'PAS'}, FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, $(v_Exclusion_Age_LMEP), $(v_Exclusion_Support_LMEP)>} MT_PROVISION_CPT), \n\nsum(TOTAL   {<CD_SYS_GESTION=-{'PAS'}, FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, $(v_Exclusion_Age_LMEP), $(v_Exclusion_Support_LMEP), CONTRAT.D_EFFET={\">=$(=Makedate(Year(Max(D_BILAN))))\"}>} aggr(sum({<FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, $(v_Exclusion_Age_LMEP), $(v_Exclusion_Support_LMEP) ,CONTRAT.D_EFFET={\">=$(=Makedate(Year(Max(D_BILAN))))\"}>}MT_PROVISION_CPT)*AGE_EXACT, NUM_CONTRAT))\n/sum(TOTAL   {<CD_SYS_GESTION=-{'PAS'}, FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, $(v_Exclusion_Age_LMEP), $(v_Exclusion_Support_LMEP), CONTRAT.D_EFFET={\">=$(=Makedate(Year(Max(D_BILAN))))\"}>} MT_PROVISION_CPT),\n\nsum(TOTAL   {<CD_SYS_GESTION=-{'PAS'}, FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_PRODUIT={'GA50_15', \"GA60_*\"} >+\n<FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_SYS_GESTION={'PAS'}, $(v_Exclusion_Age_LMEA)>}  aggr(sum({<CD_SYS_GESTION=-{'PAS'}, FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_PRODUIT={'GA50_15', \"GA60_*\"}>+\n<FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_SYS_GESTION={'PAS'}, $(v_Exclusion_Age_LMEA)>} MT_PROVISION_CPT)*AGE_EXACT, NUM_CONTRAT))\n/sum(TOTAL   {<CD_SYS_GESTION=-{'PAS'}, FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_PRODUIT={'GA50_15', \"GA60_*\"}>+\n<FLAG_NC={'0'}, NUM_CONTRAT={\"=sum(MT_PROVISION)>0\"}, CD_SYS_GESTION={'PAS'}, $(v_Exclusion_Age_LMEA)>}  MT_PROVISION_CPT)\n\n)\n",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    },
+    "coloring": {}
+  },
+  "qMetaDef": {
+    "title": "Age en Montant",
+    "description": "",
+    "tags": [
+      "CH45",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "qInfo": {
+    "qId": "v.D_CUTOFF",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v.D_CUTOFF",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "2020-09-30",
+  "tags": [
+    "converter-auto-created"
+  ]
+}

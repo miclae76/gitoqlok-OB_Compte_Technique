@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME71",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Exercice N-1",
+    "qDef": "only({1}D_CUT_OFF_N_1)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Exercice N-1",
+    "description": "",
+    "tags": [
+      "CH37",
+      "converter-auto-created"
+    ]
+  }
+}

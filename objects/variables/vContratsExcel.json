@@ -1,0 +1,16 @@
+{
+  "qInfo": {
+    "qId": "vContratsExcel",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "vContratsExcel",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "tags": [
+    "converter-auto-created"
+  ]
+}

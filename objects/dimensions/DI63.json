@@ -1,0 +1,24 @@
+{
+  "qInfo": {
+    "qId": "DI63",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=if(TX_REVAL_MIN>0, TX_REVAL_MIN)"
+    ],
+    "qFieldLabels": [
+      "TX_REVAL_MIN (>0)"
+    ],
+    "title": "TX_REVAL_MIN (>0)"
+  },
+  "qMetaDef": {
+    "title": "TX_REVAL_MIN (>0)",
+    "description": "",
+    "tags": [
+      "CH34",
+      "converter-auto-created"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "qInfo": {
+    "qId": "DI92",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "LIBGAR"
+    ],
+    "qFieldLabels": [
+      "NOM_GARANTIE"
+    ],
+    "title": "NOM_GARANTIE"
+  },
+  "qMetaDef": {
+    "title": "NOM_GARANTIE",
+    "description": "",
+    "tags": [
+      "CH52",
+      "CH81",
+      "converter-auto-created"
+    ]
+  }
+}

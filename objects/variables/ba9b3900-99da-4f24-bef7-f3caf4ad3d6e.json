@@ -1,0 +1,15 @@
+{
+  "qInfo": {
+    "qId": "ba9b3900-99da-4f24-bef7-f3caf4ad3d6e",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "c_cyan_30",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "#B1F8FF",
+  "qIsScriptCreated": true
+}

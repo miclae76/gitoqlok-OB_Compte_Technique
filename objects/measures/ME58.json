@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME58",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "Revalo ESTIME",
+    "qDef": "sum({<$(v.Select_RT_DC)>} TOTAL_REVAL_EST)",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "Revalo ESTIME",
+    "description": "",
+    "tags": [
+      "CH33",
+      "converter-auto-created"
+    ]
+  }
+}

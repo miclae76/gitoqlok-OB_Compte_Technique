@@ -1,0 +1,26 @@
+{
+  "qInfo": {
+    "qId": "ME7",
+    "qType": "measure"
+  },
+  "qMeasure": {
+    "qLabel": "ALM parts",
+    "qDef": "=[Nbre de part] - [UC]",
+    "qGrouping": "N",
+    "qExpressions": [],
+    "qActiveExpression": 0,
+    "qNumFormat": {
+      "qType": "U",
+      "qnDec": 10,
+      "qUseThou": 0
+    }
+  },
+  "qMetaDef": {
+    "title": "ALM parts",
+    "description": "",
+    "tags": [
+      "CH04",
+      "converter-auto-created"
+    ]
+  }
+}
