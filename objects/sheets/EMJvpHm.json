@@ -1,0 +1,398 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "EMJvpHm",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Synthèse",
+      "description": ""
+    },
+    "creationDate": "2025-05-08T11:59:35.543Z",
+    "rank": 11,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 30,
+    "rows": 15,
+    "cells": [
+      {
+        "name": "ghtMC",
+        "type": "pivot-table",
+        "col": 0,
+        "row": 2,
+        "colspan": 10,
+        "rowspan": 3,
+        "bounds": {
+          "y": 13.333333333333334,
+          "x": 0,
+          "width": 33.33333333333333,
+          "height": 20
+        }
+      },
+      {
+        "name": "jJxLKa",
+        "type": "pivot-table",
+        "col": 10,
+        "row": 2,
+        "colspan": 10,
+        "rowspan": 3,
+        "bounds": {
+          "y": 13.333333333333334,
+          "x": 33.33333333333333,
+          "width": 33.33333333333333,
+          "height": 20
+        }
+      },
+      {
+        "name": "bXrXdpQ",
+        "type": "pivot-table",
+        "col": 20,
+        "row": 2,
+        "colspan": 10,
+        "rowspan": 3,
+        "bounds": {
+          "y": 13.333333333333334,
+          "x": 66.66666666666666,
+          "width": 33.33333333333333,
+          "height": 20
+        }
+      },
+      {
+        "name": "WPBJpb",
+        "type": "pivot-table",
+        "col": 0,
+        "row": 10,
+        "colspan": 20,
+        "rowspan": 5,
+        "bounds": {
+          "y": 66.66666666666666,
+          "x": 0,
+          "width": 66.66666666666666,
+          "height": 33.33333333333333
+        }
+      },
+      {
+        "name": "CmTgts",
+        "type": "barchart",
+        "col": 0,
+        "row": 5,
+        "colspan": 20,
+        "rowspan": 5,
+        "bounds": {
+          "y": 33.33333333333333,
+          "x": 0,
+          "width": 66.66666666666666,
+          "height": 33.33333333333333
+        }
+      },
+      {
+        "name": "mFvbb",
+        "type": "piechart",
+        "col": 20,
+        "row": 5,
+        "colspan": 10,
+        "rowspan": 5,
+        "bounds": {
+          "y": 33.33333333333333,
+          "x": 66.66666666666666,
+          "width": 33.33333333333333,
+          "height": 33.33333333333333
+        }
+      },
+      {
+        "name": "NGRqJL",
+        "type": "filterpane",
+        "col": 10,
+        "row": 0,
+        "colspan": 20,
+        "rowspan": 2,
+        "bounds": {
+          "y": 0,
+          "x": 33.33333333333333,
+          "width": 66.66666666666666,
+          "height": 13.333333333333334
+        }
+      },
+      {
+        "name": "kzfVapN",
+        "type": "pivot-table",
+        "col": 20,
+        "row": 10,
+        "colspan": 10,
+        "rowspan": 5,
+        "bounds": {
+          "y": 66.66666666666666,
+          "x": 66.66666666666666,
+          "width": 33.33333333333333,
+          "height": 33.33333333333333
+        }
+      }
+    ],
+    "customRowBase": 12,
+    "gridResolution": "medium",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "gridMode": "edit",
+    "labelExpression": {
+      "qStringExpression": {
+        "qExpr": "'Synthèse au '&Date(Max({1}D_BILAN))"
+      }
+    }
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "ghtMC",
+          "qType": "pivot-table"
+        },
+        "qExtendsId": "CH67",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "jJxLKa",
+          "qType": "pivot-table"
+        },
+        "qExtendsId": "CH68",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "bXrXdpQ",
+          "qType": "pivot-table"
+        },
+        "qExtendsId": "CH72",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "WPBJpb",
+          "qType": "pivot-table"
+        },
+        "qExtendsId": "CH70",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "CmTgts",
+          "qType": "barchart"
+        },
+        "qExtendsId": "CH71",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "mFvbb",
+          "qType": "piechart"
+        },
+        "qExtendsId": "CH74",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "NGRqJL",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "visualization": "filterpane",
+        "version": "0.19.2",
+        "qChildListDef": {
+          "qData": {}
+        }
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "92fe441e-bdc3-427d-9f46-26ebfcd1069a",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qLibraryId": "DI105",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "WYFYbP"
+              },
+              "qFrequencyMode": "V",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": [],
+              "showTitles": true,
+              "title": "",
+              "subtitle": "",
+              "footnote": "",
+              "disableNavMenu": false,
+              "showDetails": true,
+              "showDetailsExpression": false,
+              "qOtherTotalSpec": {}
+            },
+            "showTitles": true,
+            "title": "CD_TYPE_SUPPORT",
+            "subtitle": "",
+            "footnote": "",
+            "disableNavMenu": false,
+            "showDetails": true,
+            "showDetailsExpression": false,
+            "visualization": "listbox",
+            "checkboxes": true,
+            "layoutOptions": {
+              "dataLayout": "grid",
+              "layoutOrder": "row"
+            },
+            "histogram": false,
+            "frequencyMax": null
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "EACNgBZ",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qLibraryId": "DI106",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": []
+            },
+            "title": "MVT_RETRO",
+            "visualization": "listbox",
+            "checkboxes": true
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "379ecb34-b91b-432a-9a4a-1b037ee557af",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qLibraryId": "DI39",
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [],
+                "qFieldLabels": [],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true,
+                "cId": "BFRymqP"
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": [],
+              "showTitles": true,
+              "title": "",
+              "subtitle": "",
+              "footnote": "",
+              "disableNavMenu": false,
+              "showDetails": true,
+              "showDetailsExpression": false,
+              "qOtherTotalSpec": {}
+            },
+            "showTitles": true,
+            "title": "CD_PRODUIT",
+            "subtitle": "",
+            "footnote": "",
+            "disableNavMenu": false,
+            "showDetails": true,
+            "showDetailsExpression": false,
+            "visualization": "listbox",
+            "checkboxes": true
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "kzfVapN",
+          "qType": "pivot-table"
+        },
+        "qExtendsId": "01f88e3c-7b29-4083-af8f-6db6e14bb2d8",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    }
+  ]
+}

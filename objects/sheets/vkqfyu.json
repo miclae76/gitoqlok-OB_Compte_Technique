@@ -1,0 +1,136 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "vkqfyu",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Coûts TG élevés",
+      "description": ""
+    },
+    "creationDate": "2025-05-08T13:39:12.802Z",
+    "rank": 12,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 30,
+    "rows": 15,
+    "cells": [
+      {
+        "name": "jXRMp",
+        "type": "table",
+        "col": 0,
+        "row": 2,
+        "colspan": 30,
+        "rowspan": 11,
+        "bounds": {
+          "y": 13.333333333333334,
+          "x": 0,
+          "width": 100,
+          "height": 73.33333333333333
+        }
+      },
+      {
+        "name": "PgXjCT",
+        "type": "filterpane",
+        "col": 0,
+        "row": 0,
+        "colspan": 4,
+        "rowspan": 2,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 13.333333333333334,
+          "height": 13.333333333333334
+        }
+      }
+    ],
+    "customRowBase": 15,
+    "gridResolution": "medium",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "jXRMp",
+          "qType": "table"
+        },
+        "qExtendsId": "CH34",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "PgXjCT",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "visualization": "filterpane",
+        "version": "0.19.2",
+        "qChildListDef": {
+          "qData": {}
+        }
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "hNJTWJ",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "FLAG_CONTRAT_CLOTURE"
+                ],
+                "qFieldLabels": [
+                  "FLAG_CONTRAT_CLOTURE"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": []
+            },
+            "title": "FLAG_CONTRAT_CLOTURE",
+            "visualization": "listbox",
+            "checkboxes": true
+          },
+          "qChildren": []
+        }
+      ]
+    }
+  ]
+}

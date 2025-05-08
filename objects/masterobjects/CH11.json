@@ -372,10 +372,11 @@
           }
         },
         {
-          "qLibraryId": "ME35",
           "qDef": {
+            "qLabel": "Marge EUR",
             "qTags": [],
             "qGrouping": "N",
+            "qDef": "Column(1)-Column(2)",
             "qNumFormat": {
               "qType": "F",
               "qnDec": 2,

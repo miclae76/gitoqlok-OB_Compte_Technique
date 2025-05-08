@@ -19,14 +19,14 @@
         "name": "CMCmTm",
         "type": "sn-tabbed-container",
         "col": 0,
-        "row": 7,
+        "row": 8,
         "colspan": 30,
-        "rowspan": 8,
+        "rowspan": 7,
         "bounds": {
-          "y": 46.666666666666664,
+          "y": 53.333333333333336,
           "x": 0,
           "width": 100,
-          "height": 53.333333333333336
+          "height": 46.666666666666664
         }
       },
       {
@@ -35,12 +35,12 @@
         "col": 0,
         "row": 3,
         "colspan": 15,
-        "rowspan": 4,
+        "rowspan": 5,
         "bounds": {
           "y": 20,
           "x": 0,
           "width": 50,
-          "height": 26.666666666666668
+          "height": 33.33333333333333
         }
       },
       {
@@ -49,12 +49,12 @@
         "col": 15,
         "row": 3,
         "colspan": 15,
-        "rowspan": 4,
+        "rowspan": 5,
         "bounds": {
           "y": 20,
           "x": 50,
           "width": 50,
-          "height": 26.666666666666668
+          "height": 33.33333333333333
         }
       }
     ],
@@ -90,7 +90,14 @@
             }
           },
           {
-            "childRefId": "QYPWmkB",
+            "childRefId": "pwNwEBtL",
+            "label": "Taux Globaux - Chargement Gestion",
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "ppJQjddp",
             "label": "Marges de gestion par mois",
             "condition": {
               "qValueExpression": {}
@@ -104,8 +111,8 @@
             }
           },
           {
-            "childRefId": "sznvnTV",
-            "label": "Taux Globaux - Chargement Gestion",
+            "childRefId": "jspsZrc",
+            "label": "Top 10 - Marges de gestion par partenaires",
             "condition": {
               "qValueExpression": {}
             }
@@ -190,18 +197,6 @@
         {
           "qProperty": {
             "qInfo": {
-              "qId": "1fb8434b-8ea5-48c8-a314-0261ec3c925d",
-              "qType": "childObject"
-            },
-            "qExtendsId": "CH40",
-            "qMetaDef": {},
-            "childRefId": "sznvnTV"
-          },
-          "qChildren": []
-        },
-        {
-          "qProperty": {
-            "qInfo": {
               "qId": "54c84fea-ad5e-4b78-858a-fe8a33bbe77f",
               "qType": "childObject"
             },
@@ -226,12 +221,36 @@
         {
           "qProperty": {
             "qInfo": {
-              "qId": "1b3f18f4-bdca-4360-afa4-44d6e6aa6926",
+              "qId": "51e2b672-7140-43e8-845e-a59f7f7d3a95",
               "qType": "childObject"
             },
-            "qExtendsId": "CH61",
+            "qExtendsId": "0195df39-b1e8-4df3-81d1-705b8c233365",
             "qMetaDef": {},
-            "childRefId": "QYPWmkB"
+            "childRefId": "ppJQjddp"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "6716fcd8-6577-46bf-bdff-6240c436754c",
+              "qType": "childObject"
+            },
+            "qExtendsId": "70fd82cf-e12d-4cec-aa7b-39b926cc8e18",
+            "qMetaDef": {},
+            "childRefId": "jspsZrc"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "0ca18cd9-b197-4ce9-ad88-f5232d32c963",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH40",
+            "qMetaDef": {},
+            "childRefId": "pwNwEBtL"
           },
           "qChildren": []
         }

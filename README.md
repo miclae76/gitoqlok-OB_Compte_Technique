@@ -15,10 +15,14 @@ Contrôles PM|
 PM par âge|
 Chargements et Marge|
 Contrôles Mouvements|
+Synthèse|
 Compte Technique TG|
 Commissions|
 Provisions additionnelles|
 Contrôles ALM|
+Gain PB  sur RT/DC|
+Taux Echéancier|
+Coûts TG élevés|
 
 
 

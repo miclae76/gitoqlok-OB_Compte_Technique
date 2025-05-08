@@ -1,48 +1,67 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "CH67",
+      "qId": "70fd82cf-e12d-4cec-aa7b-39b926cc8e18",
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "Primes",
+      "title": "Top 10 - Marges Partenaires",
       "description": "",
-      "tags": [
-        "converter-auto-created"
-      ]
+      "tags": []
     },
     "visualization": "sn-pivot-table",
     "showTitles": true,
-    "title": "Primes",
+    "title": "Top 10 - Marges de gestion par partenaires",
     "subtitle": "",
     "footnote": "",
     "qHyperCubeDef": {
       "qDimensions": [
         {
-          "qLibraryId": "DI108",
+          "qLibraryId": "bAY",
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [],
-            "qFieldLabels": [
-              ""
-            ],
+            "qFieldLabels": [],
             "qSortCriterias": [
               {
-                "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
-                "qExpression": {}
+                "qSortByExpression": -1,
+                "qExpression": {
+                  "qv": "[Marge EUR]"
+                }
               }
             ],
             "qNumberPresentations": [],
             "qActiveField": 0,
-            "autoSort": true,
-            "cId": "CH67_d0",
+            "autoSort": false,
+            "cId": "PyfME",
             "othersLabel": "Others",
+            "labelTextAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "representation": {
+              "type": "text",
+              "urlPosition": "dimension",
+              "urlLabel": "",
+              "linkUrl": "",
+              "imageSetting": "label",
+              "imageLabel": "",
+              "imageUrl": "",
+              "imageSize": "fitHeight",
+              "imagePosition": "topCenter"
+            },
             "columnWidth": {
-              "type": "pixels",
-              "pixels": 100
+              "type": "auto",
+              "pixels": 200,
+              "percentage": 20
             }
           },
+          "qNullSuppression": true,
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
             "qOtherCounted": {
@@ -58,9 +77,11 @@
             "qTotalMode": "TOTAL_EXPR",
             "qReferencedExpression": {}
           },
-          "qOtherLabel": {},
+          "qOtherLabel": {
+            "qv": "Others"
+          },
           "qTotalLabel": {
-            "qv": "Totals"
+            "qv": "Total"
           },
           "qCalcCond": {},
           "qAttributeExpressions": [],
@@ -68,21 +89,19 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          },
-          "title": "MARCHE_DIS",
-          "othersLabel": "Others"
+          }
         },
         {
+          "qLibraryId": "DI103",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [
-              "CD_TYPE_SUPPORT_1"
-            ],
+            "qFieldDefs": [],
             "qFieldLabels": [
               ""
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -90,9 +109,8 @@
             ],
             "qNumberPresentations": [],
             "qActiveField": 0,
-            "qLabelExpression": "=' '",
             "autoSort": true,
-            "cId": "CH67_d1",
+            "cId": "CH65_d0",
             "othersLabel": "Others"
           },
           "qOtherTotalSpec": {
@@ -107,13 +125,11 @@
             "qForceBadValueKeeping": true,
             "qApplyEvenWhenPossiblyWrongResult": true,
             "qOtherSortMode": "OTHER_SORT_DESCENDING",
-            "qTotalMode": "TOTAL_EXPR",
+            "qTotalMode": "TOTAL_OFF",
             "qReferencedExpression": {}
           },
           "qOtherLabel": {},
-          "qTotalLabel": {
-            "qv": "Totals"
-          },
+          "qTotalLabel": {},
           "qCalcCond": {},
           "qAttributeExpressions": [],
           "qAttributeDimensions": [],
@@ -121,13 +137,67 @@
             "qCond": {},
             "qMsg": {}
           },
-          "title": "TYPSUP",
+          "title": "CD_TYPE_SUPPORT",
+          "othersLabel": "Others"
+        },
+        {
+          "qLibraryId": "DI107",
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [],
+            "qFieldLabels": [],
+            "qSortCriterias": [
+              {
+                "qSortByAscii": -1,
+                "qSortByLoadOrder": 1,
+                "qExpression": {}
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "autoSort": false,
+            "cId": "nBeMmDV",
+            "othersLabel": "Others"
+          },
+          "qOtherTotalSpec": {
+            "qOtherMode": "OTHER_OFF",
+            "qOtherCounted": {
+              "qv": "10"
+            },
+            "qOtherLimit": {
+              "qv": "0"
+            },
+            "qOtherLimitMode": "OTHER_GE_LIMIT",
+            "qForceBadValueKeeping": true,
+            "qApplyEvenWhenPossiblyWrongResult": true,
+            "qOtherSortMode": "OTHER_SORT_DESCENDING",
+            "qTotalMode": "TOTAL_OFF",
+            "qReferencedExpression": {}
+          },
+          "qOtherLabel": {
+            "qv": "Others"
+          },
+          "qTotalLabel": {},
+          "qCalcCond": {},
+          "qAttributeExpressions": [
+            {
+              "qExpression": "if(STOCK_OR_NEWB='STOCK', '$(c_brun_70)', '$(c_orange_70)')",
+              "qAttribute": true,
+              "id": "cellForegroundColor"
+            }
+          ],
+          "qAttributeDimensions": [],
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "title": "STOCK_OR_NEWB",
           "othersLabel": "Others"
         }
       ],
       "qMeasures": [
         {
-          "qLibraryId": "ME121",
+          "qLibraryId": "ME76",
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
@@ -135,7 +205,7 @@
               "qType": "F",
               "qnDec": 2,
               "qUseThou": 0,
-              "qFmt": "# ##0,00",
+              "qFmt": "0,000%",
               "qDec": ",",
               "qThou": " "
             },
@@ -143,13 +213,17 @@
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "CH67_m0",
-            "numFormatFromTemplate": true,
+            "cId": "CH65_m0",
+            "numFormatFromTemplate": false,
             "series": {
               "type": "line",
               "axis": 0
             },
-            "isCustomFormatted": false
+            "isCustomFormatted": false,
+            "textAlign": {
+              "auto": false,
+              "align": "center"
+            }
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -182,13 +256,15 @@
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
           },
-          "title": "Montant Prime EUR"
+          "title": "Tx Marge"
         }
       ],
       "qInterColumnSortOrder": [
         0,
-        1
+        1,
+        2
       ],
+      "qSuppressZero": true,
       "qSuppressMissing": true,
       "qInitialDataFetch": [
         {
@@ -204,13 +280,18 @@
       "qNoOfLeftDims": 1,
       "qAlwaysFullyExpanded": true,
       "qMaxStackedCells": 5000,
+      "qShowTotalsAbove": true,
       "qCalcCond": {},
       "qTitle": {},
       "qCalcCondition": {
         "qCond": {},
         "qMsg": {}
       },
-      "qColumnOrder": [],
+      "qColumnOrder": [
+        0,
+        1,
+        2
+      ],
       "qExpansionState": [],
       "qDynamicScript": [],
       "customErrorMessage": {
@@ -239,32 +320,50 @@
         }
       }
     },
+    "components": [
+      {
+        "key": "general"
+      },
+      {
+        "key": "bar"
+      },
+      {
+        "key": "axis"
+      },
+      {
+        "key": "label",
+        "label": {
+          "value": {
+            "fontSize": "12px"
+          }
+        }
+      },
+      {
+        "key": "legend"
+      },
+      {
+        "key": "theme",
+        "measureValues": {
+          "fontStyle": []
+        },
+        "dimensionValues": {
+          "fontStyle": [
+            "bold"
+          ]
+        },
+        "measureLabels": {
+          "fontStyle": [
+            "bold"
+          ]
+        }
+      }
+    ],
     "search": {
       "sorting": "auto"
     },
     "disableNavMenu": false,
     "showDetails": true,
     "showDetailsExpression": false,
-    "components": [
-      {
-        "key": "general"
-      },
-      {
-        "key": "theme",
-        "dimensionValues": {
-          "fontStyle": [
-            "bold"
-          ]
-        },
-        "measureValues": {
-          "fontColor": {
-            "index": -1,
-            "color": "#404040",
-            "alpha": 1
-          }
-        }
-      }
-    ],
     "nullValueRepresentation": {
       "text": "-"
     },
@@ -294,14 +393,77 @@
     },
     "qLayoutExclude": {
       "disabled": {
-        "qExtendsId": ""
+        "qExtendsId": "",
+        "refLine": {
+          "refLines": []
+        },
+        "barGrouping": {
+          "grouping": "grouped"
+        },
+        "orientation": "vertical",
+        "gridLine": {
+          "auto": true,
+          "spacing": 2
+        },
+        "dataPoint": {
+          "showLabels": true
+        },
+        "color": {
+          "auto": true,
+          "mode": "primary",
+          "singleColor": 3,
+          "persistent": true,
+          "expressionIsColor": true,
+          "expressionLabel": "",
+          "measureScheme": "sg",
+          "reverseScheme": false,
+          "dimensionScheme": "12",
+          "autoMinMax": true,
+          "measureMin": 0,
+          "measureMax": 10,
+          "dimensionId": "",
+          "paletteColor": {
+            "index": -1,
+            "color": "#c2bab5"
+          },
+          "useDimColVal": true,
+          "useMeasureGradient": false,
+          "altLabel": "ME76",
+          "byMeasureDef": {
+            "label": "ME76",
+            "key": "ME76",
+            "type": "libraryItem"
+          },
+          "byDimDef": {
+            "label": "STOCK_OR_NEWB",
+            "key": "DI107",
+            "type": "libraryItem"
+          }
+        },
+        "legend": {
+          "show": true,
+          "dock": "auto",
+          "showTitle": false
+        },
+        "dimensionAxis": {
+          "show": "labels",
+          "label": "horizontal",
+          "dock": "near",
+          "axisDisplayMode": "auto",
+          "continuousAuto": false
+        },
+        "measureAxis": {
+          "show": "all",
+          "dock": "near",
+          "spacing": 1,
+          "autoMinMax": true
+        },
+        "hash": 0.07519423736099773,
+        "scrollbar": "none"
       },
       "quarantine": {
         "conditionalShowHide": {
           "measures": {},
-          "dimensions": {}
-        },
-        "totalMode": {
           "dimensions": {}
         },
         "interColSortOrder": [
@@ -310,7 +472,8 @@
           2
         ]
       }
-    }
+    },
+    "masterVersion": 0.96
   },
   "qChildren": []
 }

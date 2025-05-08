@@ -1,0 +1,59 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "vkkV",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Taux Echéancier",
+      "description": ""
+    },
+    "creationDate": "2025-05-08T11:58:56.138Z",
+    "rank": 9.5,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [
+      {
+        "name": "ceKJjXu",
+        "type": "table",
+        "col": 0,
+        "row": 2,
+        "colspan": 24,
+        "rowspan": 10,
+        "bounds": {
+          "y": 16.666666666666664,
+          "x": 0,
+          "width": 100,
+          "height": 83.33333333333334
+        }
+      }
+    ],
+    "customRowBase": 12,
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    },
+    "gridMode": "edit"
+  },
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "ceKJjXu",
+          "qType": "table"
+        },
+        "qExtendsId": "TB01",
+        "qMetaDef": {}
+      },
+      "qChildren": []
+    }
+  ]
+}

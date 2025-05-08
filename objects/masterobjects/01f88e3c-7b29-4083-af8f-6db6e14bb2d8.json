@@ -1,25 +1,147 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "CH67",
+      "qId": "01f88e3c-7b29-4083-af8f-6db6e14bb2d8",
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "Primes",
+      "title": "Compte Technique EUR",
       "description": "",
-      "tags": [
-        "converter-auto-created"
-      ]
+      "tags": []
     },
     "visualization": "sn-pivot-table",
     "showTitles": true,
-    "title": "Primes",
+    "title": {
+      "qStringExpression": {
+        "qExpr": "='Compte Technique EUR - '&date(Max(D_BILAN))"
+      }
+    },
     "subtitle": "",
     "footnote": "",
     "qHyperCubeDef": {
       "qDimensions": [
         {
-          "qLibraryId": "DI108",
+          "qLibraryId": "DI3",
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [],
+            "qFieldLabels": [
+              ""
+            ],
+            "qSortCriterias": [
+              {
+                "qSortByLoadOrder": 1,
+                "qSortByExpression": 1,
+                "qExpression": {
+                  "qv": "TRI_FLUX_1_"
+                }
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "autoSort": false,
+            "cId": "CH75_d0",
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "pixels",
+              "pixels": 120
+            }
+          },
+          "qOtherTotalSpec": {
+            "qOtherMode": "OTHER_OFF",
+            "qOtherCounted": {
+              "qv": "10"
+            },
+            "qOtherLimit": {
+              "qv": "0"
+            },
+            "qOtherLimitMode": "OTHER_GE_LIMIT",
+            "qForceBadValueKeeping": true,
+            "qApplyEvenWhenPossiblyWrongResult": true,
+            "qOtherSortMode": "OTHER_SORT_DESCENDING",
+            "qTotalMode": "TOTAL_OFF",
+            "qReferencedExpression": {}
+          },
+          "qOtherLabel": {},
+          "qTotalLabel": {},
+          "qCalcCond": {},
+          "qAttributeExpressions": [
+            {
+              "qExpression": "$(c.ColorCT)",
+              "qAttribute": true,
+              "id": "cellBackgroundColor"
+            }
+          ],
+          "qAttributeDimensions": [],
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "title": "GROUPE_FLUX_1",
+          "othersLabel": "Others"
+        },
+        {
+          "qLibraryId": "DI4",
+          "qDef": {
+            "qGrouping": "N",
+            "qFieldDefs": [],
+            "qFieldLabels": [
+              ""
+            ],
+            "qSortCriterias": [
+              {
+                "qSortByLoadOrder": 1,
+                "qSortByExpression": 1,
+                "qExpression": {
+                  "qv": "TRI_FLUX_2_"
+                }
+              }
+            ],
+            "qNumberPresentations": [],
+            "qActiveField": 0,
+            "autoSort": false,
+            "cId": "CH75_d1",
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "pixels",
+              "pixels": 250
+            }
+          },
+          "qOtherTotalSpec": {
+            "qOtherMode": "OTHER_OFF",
+            "qOtherCounted": {
+              "qv": "10"
+            },
+            "qOtherLimit": {
+              "qv": "0"
+            },
+            "qOtherLimitMode": "OTHER_GE_LIMIT",
+            "qForceBadValueKeeping": true,
+            "qApplyEvenWhenPossiblyWrongResult": true,
+            "qOtherSortMode": "OTHER_SORT_DESCENDING",
+            "qTotalMode": "TOTAL_OFF",
+            "qReferencedExpression": {}
+          },
+          "qOtherLabel": {},
+          "qTotalLabel": {},
+          "qCalcCond": {},
+          "qAttributeExpressions": [
+            {
+              "qExpression": "$(c.ColorCT)",
+              "qAttribute": true,
+              "id": "cellBackgroundColor"
+            }
+          ],
+          "qAttributeDimensions": [],
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "title": "GROUPE_FLUX_2",
+          "othersLabel": "Others"
+        },
+        {
+          "qLibraryId": "DI41",
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [],
@@ -36,63 +158,7 @@
             "qNumberPresentations": [],
             "qActiveField": 0,
             "autoSort": true,
-            "cId": "CH67_d0",
-            "othersLabel": "Others",
-            "columnWidth": {
-              "type": "pixels",
-              "pixels": 100
-            }
-          },
-          "qOtherTotalSpec": {
-            "qOtherMode": "OTHER_OFF",
-            "qOtherCounted": {
-              "qv": "10"
-            },
-            "qOtherLimit": {
-              "qv": "0"
-            },
-            "qOtherLimitMode": "OTHER_GE_LIMIT",
-            "qForceBadValueKeeping": true,
-            "qApplyEvenWhenPossiblyWrongResult": true,
-            "qOtherSortMode": "OTHER_SORT_DESCENDING",
-            "qTotalMode": "TOTAL_EXPR",
-            "qReferencedExpression": {}
-          },
-          "qOtherLabel": {},
-          "qTotalLabel": {
-            "qv": "Totals"
-          },
-          "qCalcCond": {},
-          "qAttributeExpressions": [],
-          "qAttributeDimensions": [],
-          "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
-          },
-          "title": "MARCHE_DIS",
-          "othersLabel": "Others"
-        },
-        {
-          "qDef": {
-            "qGrouping": "N",
-            "qFieldDefs": [
-              "CD_TYPE_SUPPORT_1"
-            ],
-            "qFieldLabels": [
-              ""
-            ],
-            "qSortCriterias": [
-              {
-                "qSortByAscii": 1,
-                "qSortByLoadOrder": 1,
-                "qExpression": {}
-              }
-            ],
-            "qNumberPresentations": [],
-            "qActiveField": 0,
-            "qLabelExpression": "=' '",
-            "autoSort": true,
-            "cId": "CH67_d1",
+            "cId": "CH75_d2",
             "othersLabel": "Others"
           },
           "qOtherTotalSpec": {
@@ -107,27 +173,31 @@
             "qForceBadValueKeeping": true,
             "qApplyEvenWhenPossiblyWrongResult": true,
             "qOtherSortMode": "OTHER_SORT_DESCENDING",
-            "qTotalMode": "TOTAL_EXPR",
+            "qTotalMode": "TOTAL_OFF",
             "qReferencedExpression": {}
           },
           "qOtherLabel": {},
-          "qTotalLabel": {
-            "qv": "Totals"
-          },
+          "qTotalLabel": {},
           "qCalcCond": {},
-          "qAttributeExpressions": [],
+          "qAttributeExpressions": [
+            {
+              "qExpression": "$(c.ColorCT)",
+              "qAttribute": true,
+              "id": "cellBackgroundColor"
+            }
+          ],
           "qAttributeDimensions": [],
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
           },
-          "title": "TYPSUP",
+          "title": "CD_FLUX",
           "othersLabel": "Others"
         }
       ],
       "qMeasures": [
         {
-          "qLibraryId": "ME121",
+          "qLibraryId": "ME0",
           "qDef": {
             "qTags": [],
             "qGrouping": "N",
@@ -143,7 +213,7 @@
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "CH67_m0",
+            "cId": "CH75_m0",
             "numFormatFromTemplate": true,
             "series": {
               "type": "line",
@@ -156,7 +226,13 @@
             "qSortByLoadOrder": 1,
             "qExpression": {}
           },
-          "qAttributeExpressions": [],
+          "qAttributeExpressions": [
+            {
+              "qExpression": "$(c.ColorCT)",
+              "qAttribute": true,
+              "id": "cellBackgroundColor"
+            }
+          ],
           "qAttributeDimensions": [],
           "qCalcCond": {},
           "qCalcCondition": {
@@ -182,13 +258,15 @@
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
           },
-          "title": "Montant Prime EUR"
+          "title": "Montant EUR"
         }
       ],
       "qInterColumnSortOrder": [
         0,
-        1
+        1,
+        2
       ],
+      "qSuppressZero": true,
       "qSuppressMissing": true,
       "qInitialDataFetch": [
         {
@@ -201,20 +279,58 @@
       "qReductionMode": "N",
       "qMode": "P",
       "qPseudoDimPos": -1,
-      "qNoOfLeftDims": 1,
-      "qAlwaysFullyExpanded": true,
+      "qNoOfLeftDims": -1,
       "qMaxStackedCells": 5000,
-      "qCalcCond": {},
+      "qShowTotalsAbove": true,
+      "qCalcCond": {
+        "qv": "GetSelectedCount(MVT_RETRO)=0"
+      },
       "qTitle": {},
       "qCalcCondition": {
-        "qCond": {},
-        "qMsg": {}
+        "qCond": {
+          "qv": "GetSelectedCount(MVT_RETRO)=0"
+        },
+        "qMsg": {
+          "qv": "Enlever les sélection sur MTV_RETRO"
+        }
       },
       "qColumnOrder": [],
-      "qExpansionState": [],
+      "qExpansionState": [
+        {
+          "qPos": {
+            "qDimName": "GROUPE_FLUX_1",
+            "qElemNo": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "qElemValues": [
+              "BETDqWJpdAA=",
+              "BENyw6lkaXQA",
+              "BFBNIENsw7R0dXJlAA==",
+              "BFBNIE91dmVydHVyZQA="
+            ]
+          }
+        },
+        {
+          "qPos": {
+            "qDimName": "GROUPE_FLUX_2",
+            "qElemNo": [],
+            "qElemValues": []
+          }
+        },
+        {
+          "qPos": {
+            "qDimName": "CD_FLUX",
+            "qElemNo": [],
+            "qElemValues": []
+          }
+        }
+      ],
       "qDynamicScript": [],
       "customErrorMessage": {
-        "calcCond": ""
+        "calcCond": "Enlever les sélection sur MTV_RETRO"
       },
       "qLayoutExclude": {
         "qHyperCubeDef": {
@@ -251,12 +367,17 @@
       },
       {
         "key": "theme",
-        "dimensionValues": {
+        "measureValues": {
+          "fontColor": {
+            "index": -1,
+            "color": "#404040",
+            "alpha": 1
+          }
+        },
+        "measureLabels": {
           "fontStyle": [
             "bold"
-          ]
-        },
-        "measureValues": {
+          ],
           "fontColor": {
             "index": -1,
             "color": "#404040",
@@ -307,10 +428,12 @@
         "interColSortOrder": [
           0,
           1,
-          2
+          2,
+          3
         ]
       }
-    }
+    },
+    "masterVersion": 0.96
   },
   "qChildren": []
 }

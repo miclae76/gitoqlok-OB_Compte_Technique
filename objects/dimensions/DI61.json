@@ -6,12 +6,18 @@
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "TX_REVAL_PROB"
+      "=num(TX_REVAL_PROB, '0,00000000')"
     ],
     "qFieldLabels": [
       "TX_REVAL_PROB"
     ],
-    "title": "TX_REVAL_PROB"
+    "qAlias": "TX_REVAL_PROB",
+    "title": "TX_REVAL_PROB",
+    "coloring": {
+      "colorMapRef": "DI61",
+      "changeHash": "0.4189080324181049",
+      "hasValueColors": false
+    }
   },
   "qMetaDef": {
     "title": "TX_REVAL_PROB",

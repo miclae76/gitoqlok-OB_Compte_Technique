@@ -1,33 +1,33 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "CH75",
+      "qId": "e0103b9b-fd34-4c3f-9acd-d7c82d7702e3",
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "='Compte Technique EUR - '&date(Max(D_BILAN))",
+      "title": "Marges Trellis",
       "description": "",
-      "tags": [
-        "converter-auto-created"
-      ]
+      "tags": []
     },
-    "visualization": "pivot-table",
+    "visualization": "barchart",
     "showTitles": true,
-    "title": "='Compte Technique EUR - '&date(Max(D_BILAN))",
+    "title": "Marges de gestion par type support (hors marge à zéro)",
     "subtitle": "",
     "footnote": "",
     "qHyperCubeDef": {
       "qDimensions": [
         {
-          "qLibraryId": "DI3",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [],
+            "qFieldDefs": [
+              "=if( NUM_OPTION > 1000, dual('Offre spécifique', 999), \r\n\tif( wildmatch(LB_SUPPORT, '*FIC TEMPO*') > 0, dual('TEMPO', 998),   CD_TYPE_SUPPORT)\n\t)"
+            ],
             "qFieldLabels": [
-              ""
+              "CD_TYPE_SUPPORT"
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -35,10 +35,13 @@
             ],
             "qNumberPresentations": [],
             "qActiveField": 0,
+            "qLabelExpression": "='CD_TYPE_SUPPORT'",
+            "qAlias": "CD_TYPE_SUPPORT",
             "autoSort": true,
-            "cId": "CH75_d0",
+            "cId": "CH65_d0",
             "othersLabel": "Others"
           },
+          "qNullSuppression": true,
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
             "qOtherCounted": {
@@ -65,24 +68,22 @@
           }
         },
         {
-          "qLibraryId": "DI4",
+          "qLibraryId": "DI107",
           "qDef": {
             "qGrouping": "N",
             "qFieldDefs": [],
-            "qFieldLabels": [
-              ""
-            ],
+            "qFieldLabels": [],
             "qSortCriterias": [
               {
-                "qSortByAscii": 1,
+                "qSortByAscii": -1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
               }
             ],
             "qNumberPresentations": [],
             "qActiveField": 0,
-            "autoSort": true,
-            "cId": "CH75_d1",
+            "autoSort": false,
+            "cId": "nBeMmDV",
             "othersLabel": "Others"
           },
           "qOtherTotalSpec": {
@@ -100,53 +101,9 @@
             "qTotalMode": "TOTAL_OFF",
             "qReferencedExpression": {}
           },
-          "qOtherLabel": {},
-          "qTotalLabel": {},
-          "qCalcCond": {},
-          "qAttributeExpressions": [],
-          "qAttributeDimensions": [],
-          "qCalcCondition": {
-            "qCond": {},
-            "qMsg": {}
-          }
-        },
-        {
-          "qLibraryId": "DI41",
-          "qDef": {
-            "qGrouping": "N",
-            "qFieldDefs": [],
-            "qFieldLabels": [
-              ""
-            ],
-            "qSortCriterias": [
-              {
-                "qSortByAscii": 1,
-                "qSortByLoadOrder": 1,
-                "qExpression": {}
-              }
-            ],
-            "qNumberPresentations": [],
-            "qActiveField": 0,
-            "autoSort": true,
-            "cId": "CH75_d2",
-            "othersLabel": "Others"
+          "qOtherLabel": {
+            "qv": "Others"
           },
-          "qOtherTotalSpec": {
-            "qOtherMode": "OTHER_OFF",
-            "qOtherCounted": {
-              "qv": "10"
-            },
-            "qOtherLimit": {
-              "qv": "0"
-            },
-            "qOtherLimitMode": "OTHER_GE_LIMIT",
-            "qForceBadValueKeeping": true,
-            "qApplyEvenWhenPossiblyWrongResult": true,
-            "qOtherSortMode": "OTHER_SORT_DESCENDING",
-            "qTotalMode": "TOTAL_OFF",
-            "qReferencedExpression": {}
-          },
-          "qOtherLabel": {},
           "qTotalLabel": {},
           "qCalcCond": {},
           "qAttributeExpressions": [],
@@ -159,25 +116,30 @@
       ],
       "qMeasures": [
         {
-          "qLibraryId": "ME0",
           "qDef": {
+            "qLabel": "Tx Marge",
             "qTags": [],
             "qGrouping": "N",
+            "qDef": "{<CD_TYPE_SUPPORT-={'CASH', 'FG', 'UC'}>}(sum(rangesum(TX_FR_ED-TX_COM_ED, TX_FR_EG-TX_COM_EG, TX_FR_EM-TX_COM_EM, TX_FR_EO-TX_COM_EO, TX_FR_EP-TX_COM_EP, TX_FR_EV-TX_COM_EV)*if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))\r\n/sum(if(CD_FLUX=('PMCLO'), MT_PROVISION_CPT))/100)",
             "qNumFormat": {
-              "qType": "U",
-              "qnDec": 10,
-              "qUseThou": 0
+              "qType": "F",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qFmt": "0,000%",
+              "qDec": ",",
+              "qThou": " "
             },
             "qAccumulate": 0,
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "CH75_m0",
-            "numFormatFromTemplate": true,
+            "cId": "CH65_m0",
+            "numFormatFromTemplate": false,
             "series": {
               "type": "line",
               "axis": 0
-            }
+            },
+            "isCustomFormatted": false
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -217,6 +179,7 @@
         1,
         2
       ],
+      "qSuppressZero": true,
       "qSuppressMissing": true,
       "qInitialDataFetch": [
         {
@@ -227,25 +190,141 @@
         }
       ],
       "qReductionMode": "N",
-      "qMode": "P",
+      "qMode": "S",
       "qPseudoDimPos": -1,
       "qNoOfLeftDims": -1,
       "qAlwaysFullyExpanded": true,
       "qMaxStackedCells": 5000,
-      "qShowTotalsAbove": true,
       "qCalcCond": {},
       "qTitle": {},
       "qCalcCondition": {
         "qCond": {},
         "qMsg": {}
       },
-      "qColumnOrder": [],
+      "qColumnOrder": [
+        0,
+        1,
+        2
+      ],
       "qExpansionState": [],
       "qDynamicScript": [],
       "customErrorMessage": {
         "calcCond": ""
+      },
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": []
+        }
       }
-    }
+    },
+    "refLine": {
+      "refLines": []
+    },
+    "barGrouping": {
+      "grouping": "grouped"
+    },
+    "orientation": "vertical",
+    "gridLine": {
+      "auto": true,
+      "spacing": 2
+    },
+    "dataPoint": {
+      "showLabels": true
+    },
+    "color": {
+      "auto": true,
+      "mode": "primary",
+      "singleColor": 3,
+      "persistent": true,
+      "expressionIsColor": true,
+      "expressionLabel": "",
+      "measureScheme": "sg",
+      "reverseScheme": false,
+      "dimensionScheme": "12",
+      "autoMinMax": true,
+      "measureMin": 0,
+      "measureMax": 10,
+      "dimensionId": "",
+      "paletteColor": {
+        "index": -1,
+        "color": "#c2bab5"
+      },
+      "useDimColVal": true,
+      "useMeasureGradient": false,
+      "altLabel": "ME76",
+      "byMeasureDef": {
+        "label": "ME76",
+        "key": "ME76",
+        "type": "libraryItem"
+      },
+      "byDimDef": {
+        "label": "STOCK_OR_NEWB",
+        "key": "DI107",
+        "type": "libraryItem"
+      }
+    },
+    "legend": {
+      "show": true,
+      "dock": "auto",
+      "showTitle": false
+    },
+    "dimensionAxis": {
+      "show": "labels",
+      "label": "horizontal",
+      "dock": "near",
+      "axisDisplayMode": "max",
+      "continuousAuto": false
+    },
+    "measureAxis": {
+      "show": "all",
+      "dock": "near",
+      "spacing": 1,
+      "autoMinMax": false,
+      "minMax": "min",
+      "max": 0
+    },
+    "hash": 0.07519423736099773,
+    "scrollbar": "none",
+    "components": [
+      {
+        "key": "general"
+      },
+      {
+        "key": "bar"
+      },
+      {
+        "key": "axis"
+      },
+      {
+        "key": "label",
+        "label": {
+          "value": {
+            "fontSize": "12px"
+          }
+        }
+      },
+      {
+        "key": "legend"
+      }
+    ],
+    "masterVersion": 0.96
   },
   "qChildren": []
 }

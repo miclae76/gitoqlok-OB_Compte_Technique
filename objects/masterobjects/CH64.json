@@ -28,11 +28,10 @@
             ],
             "qSortCriterias": [
               {
-                "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qSortByExpression": -1,
                 "qExpression": {
-                  "qv": "-(sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>} MT_OPE_CPT)   - rangesum(sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>}MT_COM_PAR_CPT), sum({<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>}MT_COM_APP_CPT)) )"
+                  "qv": "[Marge EUR]"
                 }
               }
             ],
@@ -316,11 +315,28 @@
             "qActiveExpression": 0,
             "qExpressions": [],
             "autoSort": true,
-            "cId": "CH64_m3",
+            "cId": "VHsZm",
             "numFormatFromTemplate": true,
-            "series": {
-              "type": "line",
-              "axis": 0
+            "labelTextAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
+            "representation": {
+              "type": "text",
+              "imageSetting": "label",
+              "imageLabel": "",
+              "imageUrl": "",
+              "imageSize": "fitHeight",
+              "imagePosition": "topCenter"
+            },
+            "columnWidth": {
+              "type": "auto",
+              "pixels": 200,
+              "percentage": 20
             },
             "isCustomFormatted": false
           },
@@ -354,8 +370,7 @@
             },
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
-          },
-          "title": "Marge EUR"
+          }
         },
         {
           "qLibraryId": "ME74",
@@ -655,7 +670,12 @@
         "measureLabels": {
           "fontStyle": [
             "bold"
-          ]
+          ],
+          "fontColor": {
+            "index": -1,
+            "color": "#404040",
+            "alpha": 1
+          }
         },
         "measureValues": {
           "fontColor": {

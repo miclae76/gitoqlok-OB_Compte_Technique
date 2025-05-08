@@ -13,6 +13,12 @@
       "qType": "U",
       "qnDec": 10,
       "qUseThou": 0
+    },
+    "coloring": {
+      "baseColor": {
+        "color": "#ffaaaa",
+        "index": 17
+      }
     }
   },
   "qMetaDef": {

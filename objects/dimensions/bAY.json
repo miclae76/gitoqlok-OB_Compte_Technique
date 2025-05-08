@@ -1,0 +1,27 @@
+{
+  "qInfo": {
+    "qId": "bAY",
+    "qType": "dimension"
+  },
+  "qDim": {
+    "qGrouping": "N",
+    "qFieldDefs": [
+      "=aggr(only({<AGTCONSO={\"=rank( {<GROUPE_FRAIS_1={'Chargements de gestion', 'Chargements sur PB'}>} sum(rangesum(-MT_OPE_CPT, -MT_COM_PAR_CPT, -MT_COM_APP_CPT)) )<=10\"}>} NOM_AGTCONSO), NOM_AGTCONSO)"
+    ],
+    "qFieldLabels": [
+      "TOP 10 - NOM_AGTCONSO"
+    ],
+    "qAlias": "TOP 10 - NOM_AGTCONSO",
+    "title": "TOP 10 - NOM_AGTCONSO",
+    "coloring": {
+      "changeHash": "0.06966317398021726",
+      "hasValueColors": false,
+      "colorMapRef": "bAY"
+    }
+  },
+  "qMetaDef": {
+    "title": "TOP 10 - NOM_AGTCONSO",
+    "description": "",
+    "tags": []
+  }
+}

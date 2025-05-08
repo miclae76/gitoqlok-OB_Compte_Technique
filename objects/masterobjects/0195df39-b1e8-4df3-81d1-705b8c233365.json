@@ -1,15 +1,13 @@
 {
   "qProperty": {
     "qInfo": {
-      "qId": "CH61",
+      "qId": "0195df39-b1e8-4df3-81d1-705b8c233365",
       "qType": "masterobject"
     },
     "qMetaDef": {
       "title": "Marges de gestion par mois",
       "description": "",
-      "tags": [
-        "converter-auto-created"
-      ]
+      "tags": []
     },
     "visualization": "sn-pivot-table",
     "showTitles": true,
@@ -257,7 +255,33 @@
         "qMsg": {}
       },
       "qColumnOrder": [],
-      "qExpansionState": [],
+      "qExpansionState": [
+        {
+          "qPos": {
+            "qDimName": "CD_TYPE_SUPPORT",
+            "qElemNo": [],
+            "qElemValues": []
+          }
+        },
+        {
+          "qPos": {
+            "qDimName": "MVT_RETRO",
+            "qElemNo": [
+              1
+            ],
+            "qElemValues": [
+              "BE5PTgA="
+            ]
+          }
+        },
+        {
+          "qPos": {
+            "qDimName": "MOIS",
+            "qElemNo": [],
+            "qElemValues": []
+          }
+        }
+      ],
       "qDynamicScript": [],
       "customErrorMessage": {
         "calcCond": ""
@@ -357,7 +381,8 @@
           3
         ]
       }
-    }
+    },
+    "masterVersion": 0.96
   },
   "qChildren": []
 }

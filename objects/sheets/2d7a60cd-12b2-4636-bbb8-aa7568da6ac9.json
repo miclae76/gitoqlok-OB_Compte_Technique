@@ -56,6 +56,20 @@
           "width": 100,
           "height": 66.66666666666666
         }
+      },
+      {
+        "name": "PdFyBp",
+        "type": "filterpane",
+        "col": 22,
+        "row": 0,
+        "colspan": 8,
+        "rowspan": 3,
+        "bounds": {
+          "y": 0,
+          "x": 73.33333333333333,
+          "width": 26.666666666666668,
+          "height": 20
+        }
       }
     ],
     "qChildListDef": {
@@ -443,6 +457,73 @@
             "qExtendsId": "432389f5-e291-4c86-bc63-d1ed93709124",
             "qMetaDef": {},
             "childRefId": "pSvPNrjX"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "PdFyBp",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "visualization": "filterpane",
+        "version": "0.19.2",
+        "qChildListDef": {
+          "qData": {}
+        }
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "BjJTrV",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "CD_DEV_TIT"
+                ],
+                "qFieldLabels": [
+                  "CD_DEV_TIT"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": []
+            },
+            "title": "CD_DEV_TIT",
+            "visualization": "listbox",
+            "checkboxes": true,
+            "layoutOptions": {
+              "dataLayout": "grid",
+              "layoutOrder": "column"
+            }
           },
           "qChildren": []
         }

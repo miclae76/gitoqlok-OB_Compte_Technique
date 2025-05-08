@@ -6,12 +6,18 @@
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "=if(TX_REVAL_MIN>0, TX_REVAL_MIN)"
+      "=num(if(TX_REVAL_MIN>0, TX_REVAL_MIN), '0,00000000')"
     ],
     "qFieldLabels": [
       "TX_REVAL_MIN (>0)"
     ],
-    "title": "TX_REVAL_MIN (>0)"
+    "qAlias": "TX_REVAL_MIN (>0)",
+    "title": "TX_REVAL_MIN (>0)",
+    "coloring": {
+      "colorMapRef": "DI63",
+      "changeHash": "0.3451381915301732",
+      "hasValueColors": false
+    }
   },
   "qMetaDef": {
     "title": "TX_REVAL_MIN (>0)",

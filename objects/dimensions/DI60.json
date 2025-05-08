@@ -6,12 +6,18 @@
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "TX_REVAL_EST"
+      "=num(TX_REVAL_EST, '0,00000000')"
     ],
     "qFieldLabels": [
       "TX_REVAL_EST"
     ],
-    "title": "TX_REVAL_EST"
+    "qAlias": "TX_REVAL_EST",
+    "title": "TX_REVAL_EST",
+    "coloring": {
+      "colorMapRef": "DI60",
+      "changeHash": "0.6222535196099549",
+      "hasValueColors": false
+    }
   },
   "qMetaDef": {
     "title": "TX_REVAL_EST",

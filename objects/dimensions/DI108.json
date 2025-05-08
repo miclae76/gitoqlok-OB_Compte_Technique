@@ -22,5 +22,61 @@
       "CH72",
       "converter-auto-created"
     ]
+  },
+  "_ColorMapModel": {
+    "qInfo": {
+      "qId": "ColorMapModel_DI108",
+      "qType": "ColorMap"
+    },
+    "qMeta": {
+      "title": "",
+      "description": "",
+      "createdDate": "2025-05-08T12:33:28.536Z",
+      "modifiedDate": "2025-05-08T12:33:28.536Z",
+      "published": false,
+      "publishTime": "1753-01-01T00:00:00.000Z",
+      "approved": false,
+      "qSize": -1,
+      "sourceObject": "",
+      "draftObject": ""
+    },
+    "colorMap": {
+      "colors": [
+        {
+          "value": "France",
+          "baseColor": {
+            "color": "#9a8b83",
+            "index": 2
+          }
+        },
+        {
+          "value": "International",
+          "baseColor": {
+            "color": "#ffd5aa",
+            "index": 14
+          }
+        },
+        {
+          "value": "Italie",
+          "baseColor": {
+            "color": "#fef4a1",
+            "index": 11
+          }
+        },
+        {
+          "value": "Pension",
+          "baseColor": {
+            "color": "#b1f8ff",
+            "index": 6
+          }
+        }
+      ],
+      "nul": null,
+      "oth": null,
+      "pal": null,
+      "single": null,
+      "usePal": true,
+      "autoFill": true
+    }
   }
 }

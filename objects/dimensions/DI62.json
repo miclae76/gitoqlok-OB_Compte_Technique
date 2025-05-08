@@ -6,12 +6,18 @@
   "qDim": {
     "qGrouping": "N",
     "qFieldDefs": [
-      "TX_REVAL_CPL"
+      "=num(TX_REVAL_CPL, '0,00000000')"
     ],
     "qFieldLabels": [
       "TX_REVAL_CPL"
     ],
-    "title": "TX_REVAL_CPL"
+    "qAlias": "TX_REVAL_CPL",
+    "title": "TX_REVAL_CPL",
+    "coloring": {
+      "colorMapRef": "DI62",
+      "changeHash": "0.7309691484803242",
+      "hasValueColors": false
+    }
   },
   "qMetaDef": {
     "title": "TX_REVAL_CPL",
