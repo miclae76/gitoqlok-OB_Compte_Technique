@@ -11,7 +11,7 @@
         "converter-auto-created"
       ]
     },
-    "visualization": "table",
+    "visualization": "sn-table",
     "showTitles": true,
     "title": "Estimation CSR/CDG",
     "subtitle": "",
@@ -28,6 +28,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -37,7 +38,11 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d0",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "pixels",
+              "pixels": 75
+            }
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -62,7 +67,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "Type Garantie",
+          "othersLabel": "Others"
         },
         {
           "qLibraryId": "DI122",
@@ -74,6 +81,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -83,7 +91,10 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d1",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "fitToContent"
+            }
           },
           "qNullSuppression": true,
           "qOtherTotalSpec": {
@@ -109,7 +120,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "D_BILAN",
+          "othersLabel": "Others"
         },
         {
           "qLibraryId": "DI123",
@@ -121,6 +134,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -130,7 +144,10 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d2",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "fitToContent"
+            }
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -155,7 +172,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "D_CALCUL",
+          "othersLabel": "Others"
         },
         {
           "qLibraryId": "DI5",
@@ -167,6 +186,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -176,7 +196,10 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d3",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "fitToContent"
+            }
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -201,7 +224,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "NUM_CONTRAT",
+          "othersLabel": "Others"
         },
         {
           "qLibraryId": "DI7",
@@ -213,6 +238,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -222,7 +248,10 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d4",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "fitToContent"
+            }
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -247,7 +276,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "DATEMI",
+          "othersLabel": "Others"
         },
         {
           "qLibraryId": "DI22",
@@ -259,6 +290,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -268,7 +300,10 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d5",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "fitToContent"
+            }
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -293,7 +328,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "TypeContrat",
+          "othersLabel": "Others"
         },
         {
           "qLibraryId": "DI14",
@@ -305,6 +342,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -314,7 +352,10 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d6",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "fitToContent"
+            }
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -339,7 +380,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "CDE_PRDT",
+          "othersLabel": "Others"
         },
         {
           "qLibraryId": "DI116",
@@ -351,6 +394,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -360,7 +404,10 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d7",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "pixels"
+            }
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -385,7 +432,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "LB_PRODUIT",
+          "othersLabel": "Others"
         },
         {
           "qLibraryId": "DI55",
@@ -397,6 +446,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -406,7 +456,10 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d8",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "fitToContent"
+            }
           },
           "qNullSuppression": true,
           "qOtherTotalSpec": {
@@ -432,7 +485,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "NUMGGL",
+          "othersLabel": "Others"
         },
         {
           "qLibraryId": "DI54",
@@ -444,6 +499,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -453,7 +509,10 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d9",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "pixels"
+            }
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -478,7 +537,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "Libellé Garantie",
+          "othersLabel": "Others"
         },
         {
           "qLibraryId": "DI124",
@@ -490,6 +551,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -499,7 +561,10 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d10",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "fitToContent"
+            }
           },
           "qNullSuppression": true,
           "qOtherTotalSpec": {
@@ -525,7 +590,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "Age",
+          "othersLabel": "Others"
         },
         {
           "qLibraryId": "DI125",
@@ -537,6 +604,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -546,7 +614,10 @@
             "qActiveField": 0,
             "autoSort": true,
             "cId": "CH85_d11",
-            "othersLabel": "Others"
+            "othersLabel": "Others",
+            "columnWidth": {
+              "type": "fitToContent"
+            }
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -571,7 +642,9 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          }
+          },
+          "title": "Date sortie",
+          "othersLabel": "Others"
         }
       ],
       "qMeasures": [
@@ -581,9 +654,12 @@
             "qTags": [],
             "qGrouping": "N",
             "qNumFormat": {
-              "qType": "U",
-              "qnDec": 10,
-              "qUseThou": 0
+              "qType": "F",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qFmt": "# ##0,00",
+              "qDec": ",",
+              "qThou": " "
             },
             "qAccumulate": 0,
             "qActiveExpression": 0,
@@ -594,7 +670,11 @@
             "series": {
               "type": "line",
               "axis": 0
-            }
+            },
+            "columnWidth": {
+              "type": "fitToContent"
+            },
+            "isCustomFormatted": false
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -626,7 +706,8 @@
             },
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
-          }
+          },
+          "title": "MT CSR (Euros)"
         },
         {
           "qLibraryId": "ME93",
@@ -634,9 +715,12 @@
             "qTags": [],
             "qGrouping": "N",
             "qNumFormat": {
-              "qType": "U",
-              "qnDec": 10,
-              "qUseThou": 0
+              "qType": "F",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qFmt": "# ##0,00",
+              "qDec": ",",
+              "qThou": " "
             },
             "qAccumulate": 0,
             "qActiveExpression": 0,
@@ -647,7 +731,11 @@
             "series": {
               "type": "line",
               "axis": 0
-            }
+            },
+            "columnWidth": {
+              "type": "fitToContent"
+            },
+            "isCustomFormatted": false
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -679,7 +767,8 @@
             },
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
-          }
+          },
+          "title": "MT CDG (Euros)"
         },
         {
           "qLibraryId": "ME94",
@@ -687,9 +776,12 @@
             "qTags": [],
             "qGrouping": "N",
             "qNumFormat": {
-              "qType": "U",
-              "qnDec": 10,
-              "qUseThou": 0
+              "qType": "F",
+              "qnDec": 2,
+              "qUseThou": 0,
+              "qFmt": "# ##0,00",
+              "qDec": ",",
+              "qThou": " "
             },
             "qAccumulate": 0,
             "qActiveExpression": 0,
@@ -700,7 +792,11 @@
             "series": {
               "type": "line",
               "axis": 0
-            }
+            },
+            "columnWidth": {
+              "type": "fitToContent"
+            },
+            "isCustomFormatted": false
           },
           "qSortBy": {
             "qSortByNumeric": -1,
@@ -732,7 +828,8 @@
             },
             "qMaxNumberPoints": -1,
             "qAttributeExpressions": []
-          }
+          },
+          "title": "='PM (Euros) au '&date(max({1}D_BILAN))"
         }
       ],
       "qInterColumnSortOrder": [
@@ -753,7 +850,14 @@
         14
       ],
       "qSuppressMissing": true,
-      "qInitialDataFetch": [],
+      "qInitialDataFetch": [
+        {
+          "qLeft": 0,
+          "qTop": 0,
+          "qWidth": 50,
+          "qHeight": 100
+        }
+      ],
       "qReductionMode": "N",
       "qMode": "S",
       "qPseudoDimPos": -1,
@@ -766,7 +870,23 @@
         "qCond": {},
         "qMsg": {}
       },
-      "qColumnOrder": [],
+      "qColumnOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
       "qExpansionState": [],
       "qDynamicScript": [],
       "customErrorMessage": {
@@ -805,12 +925,238 @@
         -1,
         -1,
         -1
-      ]
+      ],
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": []
+        }
+      }
     },
     "totals": {
       "show": true,
       "position": "noTotals",
       "label": "Totals"
+    },
+    "disableNavMenu": false,
+    "showDetails": true,
+    "showDetailsExpression": false,
+    "components": [
+      {
+        "key": "general"
+      },
+      {
+        "key": "theme",
+        "header": {
+          "fontSize": "12px"
+        },
+        "dimensionValues": {
+          "fontSize": "12px"
+        },
+        "totalValues": {
+          "fontSize": "12px"
+        },
+        "content": {
+          "hoverEffect": true,
+          "rowHeight": 1
+        }
+      }
+    ],
+    "usePagination": false,
+    "enableChartExploration": true,
+    "chartExploration": {
+      "menuVisibility": "minimized"
+    },
+    "version": "\"3.10.5\"",
+    "extensionMeta": {
+      "translationKey": "",
+      "icon": "table",
+      "iconChar": "puzzle",
+      "isLibraryItem": true,
+      "visible": true,
+      "IconDefinition": {},
+      "name": "Straight table",
+      "description": "Display several measure values for each dimension value. Show the totals for each measure. Sort columns and rows alphabetically or numerically. Change sorting during analysis. Chart exploration allows for adding and removing columns in analysis.",
+      "template": "sn-table",
+      "iconPath": "M14.5,9 L13,9 L13,3.3 C13,3.1 12.9,3 12.7,3 L8,3 L8,1.5 C8,0.7 7.3,0 6.5,0 C5.7,0 5,0.7 5,1.5 L5,3 L0.3,3 C0.1,3 0,3.1 0,3.3 L0,9 L1.5,9 C2.3,9 3,9.7 3,10.5 C3,11.3 2.3,12 1.5,12 L0,12 L0,15.7 C0,15.9 0.1,16 0.3,16 L5,16 L5,14.5 C5,13.7 5.7,13 6.5,13 C7.3,13 8,13.7 8,14.5 L8,16 L12.7,16 C12.9,16 13,15.9 13,15.7 L13,12 L14.5,12 C15.3,12 16,11.3 16,10.5 C16,9.7 15.3,9 14.5,9 Z",
+      "isThirdParty": true,
+      "version": "3.10.5",
+      "author": "QlikTech International AB",
+      "type": "visualization",
+      "supernova": true,
+      "bundle": {
+        "id": "qlik-visualization-bundle",
+        "name": "Qlik Visualization bundle",
+        "description": "This is a set of supported objects that expands the visualization capabilities of Qlik Sense. These can be used in addition to the objects found under 'Charts'. For support conditions and limitations, see the documentation."
+      },
+      "installer": "QlikExtensionBundler"
+    },
+    "qLayoutExclude": {
+      "disabled": {
+        "qExtendsId": ""
+      },
+      "quarantine": {
+        "straightTableColumnWidths": {
+          "qHyperCubeDef.columnWidths": [
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1
+          ]
+        },
+        "conditionalShowHide": {
+          "measures": {},
+          "dimensions": {}
+        },
+        "miniChartDef": {
+          "measures": {
+            "CH85_m0": {
+              "qDef": "",
+              "qLibraryId": "",
+              "qSortBy": {
+                "qSortByState": 0,
+                "qSortByFrequency": 0,
+                "qSortByNumeric": 0,
+                "qSortByAscii": 0,
+                "qSortByLoadOrder": 0,
+                "qSortByExpression": 0,
+                "qExpression": {
+                  "qv": ""
+                },
+                "qSortByGreyness": 0
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": ""
+                },
+                "qOtherLimit": {
+                  "qv": ""
+                },
+                "qOtherLimitMode": "OTHER_GT_LIMIT",
+                "qSuppressOther": false,
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qGlobalOtherGrouping": false,
+                "qOtherCollapseInnerDimensions": false,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {
+                  "qv": ""
+                }
+              },
+              "qMaxNumberPoints": -1,
+              "qAttributeExpressions": [],
+              "qNullSuppression": false
+            },
+            "CH85_m1": {
+              "qDef": "",
+              "qLibraryId": "",
+              "qSortBy": {
+                "qSortByState": 0,
+                "qSortByFrequency": 0,
+                "qSortByNumeric": 0,
+                "qSortByAscii": 0,
+                "qSortByLoadOrder": 0,
+                "qSortByExpression": 0,
+                "qExpression": {
+                  "qv": ""
+                },
+                "qSortByGreyness": 0
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": ""
+                },
+                "qOtherLimit": {
+                  "qv": ""
+                },
+                "qOtherLimitMode": "OTHER_GT_LIMIT",
+                "qSuppressOther": false,
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qGlobalOtherGrouping": false,
+                "qOtherCollapseInnerDimensions": false,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {
+                  "qv": ""
+                }
+              },
+              "qMaxNumberPoints": -1,
+              "qAttributeExpressions": [],
+              "qNullSuppression": false
+            },
+            "CH85_m2": {
+              "qDef": "",
+              "qLibraryId": "",
+              "qSortBy": {
+                "qSortByState": 0,
+                "qSortByFrequency": 0,
+                "qSortByNumeric": 0,
+                "qSortByAscii": 0,
+                "qSortByLoadOrder": 0,
+                "qSortByExpression": 0,
+                "qExpression": {
+                  "qv": ""
+                },
+                "qSortByGreyness": 0
+              },
+              "qOtherTotalSpec": {
+                "qOtherMode": "OTHER_OFF",
+                "qOtherCounted": {
+                  "qv": ""
+                },
+                "qOtherLimit": {
+                  "qv": ""
+                },
+                "qOtherLimitMode": "OTHER_GT_LIMIT",
+                "qSuppressOther": false,
+                "qForceBadValueKeeping": true,
+                "qApplyEvenWhenPossiblyWrongResult": true,
+                "qGlobalOtherGrouping": false,
+                "qOtherCollapseInnerDimensions": false,
+                "qOtherSortMode": "OTHER_SORT_DESCENDING",
+                "qTotalMode": "TOTAL_OFF",
+                "qReferencedExpression": {
+                  "qv": ""
+                }
+              },
+              "qMaxNumberPoints": -1,
+              "qAttributeExpressions": [],
+              "qNullSuppression": false
+            }
+          }
+        }
+      }
     }
   },
   "qChildren": []

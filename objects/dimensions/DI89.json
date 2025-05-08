@@ -9,12 +9,18 @@
       "=D_CALCUL"
     ],
     "qFieldLabels": [
-      "=D_CALCUL"
+      "D_CALCUL"
     ],
-    "title": "=D_CALCUL"
+    "qAlias": "D_CALCUL",
+    "title": "D_CALCUL",
+    "coloring": {
+      "colorMapRef": "DI89",
+      "changeHash": "0.9722425068370988",
+      "hasValueColors": false
+    }
   },
   "qMetaDef": {
-    "title": "=D_CALCUL",
+    "title": "D_CALCUL",
     "description": "",
     "tags": [
       "CH52",

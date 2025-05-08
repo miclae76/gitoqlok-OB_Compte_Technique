@@ -15,7 +15,7 @@
     "showTitles": true,
     "title": {
       "qStringExpression": {
-        "qExpr": "='Bouclage OB par '&'XXX'"
+        "qExpr": "'Bouclage OB par '&'$(v_DimBouclage)'"
       }
     },
     "subtitle": "",
@@ -23,10 +23,11 @@
     "qHyperCubeDef": {
       "qDimensions": [
         {
-          "qLibraryId": "DI1",
           "qDef": {
             "qGrouping": "N",
-            "qFieldDefs": [],
+            "qFieldDefs": [
+              "$(v_DimBouclage)"
+            ],
             "qFieldLabels": [
               ""
             ],
@@ -40,12 +41,30 @@
             ],
             "qNumberPresentations": [],
             "qActiveField": 0,
-            "autoSort": true,
-            "cId": "CH06_d0",
+            "qLabelExpression": "='$(v_DimBouclage)'",
             "othersLabel": "Others",
+            "autoSort": true,
+            "textAlign": {
+              "auto": true,
+              "align": "left"
+            },
             "columnWidth": {
-              "type": "fitToContent"
-            }
+              "type": "auto",
+              "pixels": 200,
+              "percentage": 20
+            },
+            "representation": {
+              "type": "text",
+              "urlPosition": "dimension",
+              "urlLabel": "",
+              "linkUrl": "",
+              "imageSetting": "label",
+              "imageLabel": "",
+              "imageUrl": "",
+              "imageSize": "fitHeight",
+              "imagePosition": "topCenter"
+            },
+            "cId": "dGaPHnG"
           },
           "qOtherTotalSpec": {
             "qOtherMode": "OTHER_OFF",
@@ -62,7 +81,9 @@
             "qTotalMode": "TOTAL_OFF",
             "qReferencedExpression": {}
           },
-          "qOtherLabel": {},
+          "qOtherLabel": {
+            "qv": "Others"
+          },
           "qTotalLabel": {},
           "qCalcCond": {},
           "qAttributeExpressions": [],
@@ -70,9 +91,7 @@
           "qCalcCondition": {
             "qCond": {},
             "qMsg": {}
-          },
-          "title": "@Dim_Bouclage",
-          "othersLabel": "Others"
+          }
         },
         {
           "qLibraryId": "DI31",
@@ -715,9 +734,32 @@
     "disableNavMenu": false,
     "showDetails": true,
     "showDetailsExpression": false,
-    "components": [],
+    "components": [
+      {
+        "key": "general"
+      },
+      {
+        "key": "theme",
+        "header": {
+          "fontSize": "12px"
+        },
+        "dimensionValues": {
+          "fontSize": "12px"
+        },
+        "measureValues": {
+          "fontSize": "12px"
+        },
+        "totalValues": {
+          "fontSize": "12px"
+        },
+        "content": {
+          "hoverEffect": true,
+          "rowHeight": 1
+        }
+      }
+    ],
     "usePagination": false,
-    "enableChartExploration": false,
+    "enableChartExploration": true,
     "chartExploration": {
       "menuVisibility": "auto"
     },

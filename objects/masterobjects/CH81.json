@@ -40,7 +40,8 @@
             "cId": "CH81_d0",
             "othersLabel": "Others",
             "columnWidth": {
-              "type": "fitToContent"
+              "type": "pixels",
+              "pixels": 80
             }
           },
           "qOtherTotalSpec": {
@@ -198,7 +199,8 @@
             "cId": "CH81_d3",
             "othersLabel": "Others",
             "columnWidth": {
-              "type": "auto"
+              "type": "pixels",
+              "pixels": 150
             }
           },
           "qOtherTotalSpec": {
@@ -406,7 +408,7 @@
             "cId": "CH81_d7",
             "othersLabel": "Others",
             "columnWidth": {
-              "type": "fitToContent"
+              "type": "pixels"
             }
           },
           "qOtherTotalSpec": {
@@ -458,7 +460,8 @@
             "cId": "CH81_d8",
             "othersLabel": "Others",
             "columnWidth": {
-              "type": "fitToContent"
+              "type": "pixels",
+              "pixels": 100
             }
           },
           "qNullSuppression": true,
@@ -667,7 +670,8 @@
             "cId": "CH81_d12",
             "othersLabel": "Others",
             "columnWidth": {
-              "type": "fitToContent"
+              "type": "pixels",
+              "pixels": 120
             }
           },
           "qOtherTotalSpec": {
@@ -845,7 +849,8 @@
               "axis": 0
             },
             "columnWidth": {
-              "type": "fitToContent"
+              "type": "fitToContent",
+              "pixels": 150
             },
             "isCustomFormatted": false
           },
@@ -1008,12 +1013,35 @@
     "totals": {
       "show": true,
       "position": "noTotals",
-      "label": "Totals"
+      "label": "Total"
     },
     "disableNavMenu": false,
     "showDetails": true,
     "showDetailsExpression": false,
-    "components": [],
+    "components": [
+      {
+        "key": "general"
+      },
+      {
+        "key": "theme",
+        "content": {
+          "rowHeight": 1,
+          "hoverEffect": true
+        },
+        "header": {
+          "fontSize": "12px"
+        },
+        "dimensionValues": {
+          "fontSize": "12px"
+        },
+        "measureValues": {
+          "fontSize": "12px"
+        },
+        "totalValues": {
+          "fontSize": "12px"
+        }
+      }
+    ],
     "usePagination": false,
     "enableChartExploration": true,
     "chartExploration": {

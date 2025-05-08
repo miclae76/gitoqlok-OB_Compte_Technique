@@ -964,7 +964,26 @@
     "disableNavMenu": false,
     "showDetails": true,
     "showDetailsExpression": false,
-    "components": [],
+    "components": [
+      {
+        "key": "general"
+      },
+      {
+        "key": "theme",
+        "header": {
+          "fontSize": "12px"
+        },
+        "dimensionValues": {
+          "fontSize": "12px"
+        },
+        "measureValues": {
+          "fontSize": "12px"
+        },
+        "totalValues": {
+          "fontSize": "12px"
+        }
+      }
+    ],
     "usePagination": false,
     "enableChartExploration": false,
     "chartExploration": {

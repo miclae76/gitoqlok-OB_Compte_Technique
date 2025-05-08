@@ -1291,6 +1291,15 @@
         "key": "theme",
         "content": {
           "hoverEffect": true
+        },
+        "header": {
+          "fontSize": "12px"
+        },
+        "dimensionValues": {
+          "fontSize": "12px"
+        },
+        "measureValues": {
+          "fontSize": "12px"
         }
       }
     ],

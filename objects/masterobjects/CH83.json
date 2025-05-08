@@ -92,7 +92,7 @@
             "cId": "CH83_d1",
             "othersLabel": "Others",
             "columnWidth": {
-              "type": "auto"
+              "type": "fitToContent"
             }
           },
           "qOtherTotalSpec": {
@@ -301,7 +301,7 @@
             "cId": "CH83_d5",
             "othersLabel": "Others",
             "columnWidth": {
-              "type": "fitToContent"
+              "type": "pixels"
             }
           },
           "qOtherTotalSpec": {
@@ -457,7 +457,7 @@
             "cId": "CH83_d8",
             "othersLabel": "Others",
             "columnWidth": {
-              "type": "fitToContent"
+              "type": "pixels"
             }
           },
           "qOtherTotalSpec": {
@@ -947,7 +947,26 @@
     "disableNavMenu": false,
     "showDetails": true,
     "showDetailsExpression": false,
-    "components": [],
+    "components": [
+      {
+        "key": "general"
+      },
+      {
+        "key": "theme",
+        "header": {
+          "fontSize": "12px"
+        },
+        "dimensionValues": {
+          "fontSize": "12px"
+        },
+        "measureValues": {
+          "fontSize": "12px"
+        },
+        "content": {
+          "hoverEffect": true
+        }
+      }
+    ],
     "usePagination": false,
     "enableChartExploration": false,
     "chartExploration": {

@@ -1,0 +1,16 @@
+{
+  "qInfo": {
+    "qId": "eb7bb7e3-5f22-48b6-b883-60eeea69a42b",
+    "qType": "variable"
+  },
+  "qMetaDef": {},
+  "qName": "v_DimBouclage",
+  "qComment": "Dimension cycle pour Bouclage",
+  "qNumberPresentation": {
+    "qType": "U",
+    "qnDec": 10,
+    "qUseThou": 0
+  },
+  "qDefinition": "NUM_CONTRAT",
+  "tags": []
+}
