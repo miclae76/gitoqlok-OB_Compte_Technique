@@ -5,7 +5,7 @@
       "qType": "masterobject"
     },
     "qMetaDef": {
-      "title": "='ALM - '&'T'&ceil(Month(D_BILAN)/3)&' ' &year(D_BILAN)&  ' - FIC mono-support'",
+      "title": "ALM - FIC mono-support",
       "description": "",
       "tags": [
         "converter-auto-created"
@@ -13,7 +13,11 @@
     },
     "visualization": "table",
     "showTitles": true,
-    "title": "='ALM - '&'T'&ceil(Month(D_BILAN)/3)&' ' &year(D_BILAN)&  ' - FIC mono-support'",
+    "title": {
+      "qStringExpression": {
+        "qExpr": "='ALM - '&'T'&ceil(Month(D_BILAN)/3)&' ' &year(D_BILAN)&  ' - FIC mono-support'\r\n"
+      }
+    },
     "subtitle": "",
     "footnote": "",
     "qHyperCubeDef": {
@@ -28,6 +32,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -74,6 +79,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -121,6 +127,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -167,6 +174,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -213,6 +221,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -259,6 +268,7 @@
             ],
             "qSortCriterias": [
               {
+                "qSortByNumeric": 1,
                 "qSortByAscii": 1,
                 "qSortByLoadOrder": 1,
                 "qExpression": {}
@@ -968,7 +978,26 @@
         "qCond": {},
         "qMsg": {}
       },
-      "qColumnOrder": [],
+      "qColumnOrder": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
       "qExpansionState": [],
       "qDynamicScript": [],
       "customErrorMessage": {
@@ -1013,12 +1042,39 @@
         -1,
         -1,
         -1
-      ]
+      ],
+      "qLayoutExclude": {
+        "qHyperCubeDef": {
+          "qDimensions": [],
+          "qMeasures": [],
+          "qInterColumnSortOrder": [],
+          "qInitialDataFetch": [],
+          "qReductionMode": "N",
+          "qMode": "S",
+          "qPseudoDimPos": -1,
+          "qNoOfLeftDims": -1,
+          "qMaxStackedCells": 5000,
+          "qCalcCond": {},
+          "qTitle": {},
+          "qCalcCondition": {
+            "qCond": {},
+            "qMsg": {}
+          },
+          "qColumnOrder": [],
+          "qExpansionState": [],
+          "qDynamicScript": []
+        }
+      }
     },
     "totals": {
       "show": true,
       "position": "noTotals",
       "label": "Totals"
+    },
+    "labelExpression": {
+      "qStringExpression": {
+        "qExpr": "='ALM - '&'T'&ceil(Month(D_BILAN)/3)&' ' &year(D_BILAN)&  ' - FIC mono-support'"
+      }
     }
   },
   "qChildren": []

@@ -5,7 +5,7 @@
   },
   "qMeasure": {
     "qLabel": "MONTANT",
-    "qDef": "sum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA'}>}MT_PROVISION)\n\n",
+    "qDef": "sum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA'}>}MT_PROVISION)\r\n\n",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
@@ -13,7 +13,8 @@
       "qType": "U",
       "qnDec": 10,
       "qUseThou": 0
-    }
+    },
+    "coloring": {}
   },
   "qMetaDef": {
     "title": "MONTANT",

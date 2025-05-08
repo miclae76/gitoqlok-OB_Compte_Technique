@@ -14,7 +14,36 @@
     },
     "columns": 24,
     "rows": 12,
-    "cells": [],
+    "cells": [
+      {
+        "name": "eNPgz",
+        "type": "sn-tabbed-container",
+        "col": 0,
+        "row": 2,
+        "colspan": 24,
+        "rowspan": 10,
+        "bounds": {
+          "y": 16.666666666666664,
+          "x": 0,
+          "width": 100,
+          "height": 83.33333333333334
+        }
+      },
+      {
+        "name": "KJquG",
+        "type": "filterpane",
+        "col": 0,
+        "row": 0,
+        "colspan": 12,
+        "rowspan": 2,
+        "bounds": {
+          "y": 0,
+          "x": 0,
+          "width": 50,
+          "height": 16.666666666666664
+        }
+      }
+    ],
     "qChildListDef": {
       "qData": {
         "title": "/title"
@@ -24,7 +53,174 @@
     "gridResolution": "small",
     "layoutOptions": {
       "mobileLayout": "LIST"
-    }
+    },
+    "gridMode": "edit"
   },
-  "qChildren": []
+  "qChildren": [
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "eNPgz",
+          "qType": "sn-tabbed-container"
+        },
+        "qMetaDef": {},
+        "objects": [
+          {
+            "childRefId": "rEsPpyP",
+            "label": "ALM - Supports FEXT",
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "pPcwCEDc",
+            "label": {
+              "qStringExpression": {
+                "qExpr": "='ALM - '&'T'&ceil(Month(D_BILAN)/3)&' ' &year(D_BILAN)&  ' - Supports FIC/FID/FAS'\r\n"
+              }
+            },
+            "condition": {
+              "qValueExpression": {}
+            }
+          },
+          {
+            "childRefId": "pvvRLvTq",
+            "label": {
+              "qStringExpression": {
+                "qExpr": "='ALM - '&'T'&ceil(Month(D_BILAN)/3)&' ' &year(D_BILAN)&  ' - FIC mono-support'\r\n"
+              }
+            },
+            "condition": {
+              "qValueExpression": {}
+            }
+          }
+        ],
+        "showTitles": true,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": true,
+        "showDetails": false,
+        "showDetailsExpression": false,
+        "showTabs": true,
+        "useDropdown": false,
+        "useScrollButton": true,
+        "showIcons": false,
+        "orientation": "top",
+        "defaultTabId": "",
+        "visualization": "sn-tabbed-container",
+        "qChildListDef": {
+          "qData": {
+            "visualization": "/visualization",
+            "qExtendsId": "/qExtendsId",
+            "title": "/title",
+            "childRefId": "/childRefId",
+            "showCondition": "/showCondition"
+          }
+        },
+        "components": [],
+        "fontsUsed": []
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "603d5239-2227-4616-9389-6163fe09ec57",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH94",
+            "qMetaDef": {},
+            "childRefId": "pvvRLvTq"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "ff5fc936-c616-4b84-97fc-862d47bafd13",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH04",
+            "qMetaDef": {},
+            "childRefId": "pPcwCEDc"
+          },
+          "qChildren": []
+        },
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "c30b7120-6fd6-4b3f-b886-ffd467c500dc",
+              "qType": "childObject"
+            },
+            "qExtendsId": "CH05",
+            "qMetaDef": {},
+            "childRefId": "rEsPpyP"
+          },
+          "qChildren": []
+        }
+      ]
+    },
+    {
+      "qProperty": {
+        "qInfo": {
+          "qId": "KJquG",
+          "qType": "filterpane"
+        },
+        "qMetaDef": {},
+        "showTitles": false,
+        "title": "",
+        "subtitle": "",
+        "footnote": "",
+        "disableNavMenu": false,
+        "showDetails": true,
+        "showDetailsExpression": false,
+        "visualization": "filterpane",
+        "version": "0.19.2",
+        "qChildListDef": {
+          "qData": {}
+        }
+      },
+      "qChildren": [
+        {
+          "qProperty": {
+            "qInfo": {
+              "qId": "FUMme",
+              "qType": "listbox"
+            },
+            "qMetaDef": {},
+            "qListObjectDef": {
+              "qDef": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                  "D_BILAN"
+                ],
+                "qFieldLabels": [
+                  "D_BILAN"
+                ],
+                "qSortCriterias": [
+                  {
+                    "qSortByState": 1,
+                    "qSortByNumeric": 1,
+                    "qSortByAscii": 1,
+                    "qSortByLoadOrder": 1,
+                    "qExpression": {}
+                  }
+                ],
+                "qNumberPresentations": [],
+                "qActiveField": 0,
+                "autoSort": true
+              },
+              "qFrequencyMode": "N",
+              "qShowAlternatives": true,
+              "qInitialDataFetch": [],
+              "qExpressions": []
+            },
+            "title": "D_BILAN",
+            "visualization": "listbox"
+          },
+          "qChildren": []
+        }
+      ]
+    }
+  ]
 }

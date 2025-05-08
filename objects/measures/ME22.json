@@ -4,19 +4,21 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "MNT_ACTIF",
+    "qLabel": "MNT_ACTIF_FE",
     "qDef": "Sum({<TYPE_ACTIF={'UC'}>} VAL_BOURSIERE_DEV_COT)",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
+    "qLabelExpression": "='MNT_ACTIF'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 10,
       "qUseThou": 0
-    }
+    },
+    "coloring": {}
   },
   "qMetaDef": {
-    "title": "MNT_ACTIF",
+    "title": "MNT_ACTIF_FE",
     "description": "",
     "tags": [
       "CH05",

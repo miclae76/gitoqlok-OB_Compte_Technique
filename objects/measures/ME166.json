@@ -4,7 +4,7 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "QTE_ACTIF",
+    "qLabel": "QTE_ACTIF_OCP",
     "qDef": "sum({$*<PTF_FIC_OCP={\"*\"}>} NB_PARTS)\n",
     "qGrouping": "N",
     "qExpressions": [],
@@ -13,10 +13,11 @@
       "qType": "U",
       "qnDec": 10,
       "qUseThou": 0
-    }
+    },
+    "coloring": {}
   },
   "qMetaDef": {
-    "title": "QTE_ACTIF",
+    "title": "QTE_ACTIF_OCP",
     "description": "",
     "tags": [
       "CH94",

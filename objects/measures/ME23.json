@@ -5,7 +5,7 @@
   },
   "qMeasure": {
     "qLabel": "ALM en DEV_TITRE",
-    "qDef": "MNT_ACTIF - MNT_PASSIF",
+    "qDef": "MNT_ACTIF_FE - MNT_PASSIF_FE",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
@@ -13,7 +13,8 @@
       "qType": "U",
       "qnDec": 10,
       "qUseThou": 0
-    }
+    },
+    "coloring": {}
   },
   "qMetaDef": {
     "title": "ALM en DEV_TITRE",

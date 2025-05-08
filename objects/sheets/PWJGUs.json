@@ -1,0 +1,31 @@
+{
+  "qProperty": {
+    "qInfo": {
+      "qId": "PWJGUs",
+      "qType": "sheet"
+    },
+    "qMetaDef": {
+      "title": "Frais Admin",
+      "description": ""
+    },
+    "creationDate": "2025-05-08T15:42:43.847Z",
+    "rank": 13,
+    "thumbnail": {
+      "qStaticContentUrlDef": {}
+    },
+    "columns": 24,
+    "rows": 12,
+    "cells": [],
+    "customRowBase": 12,
+    "gridResolution": "small",
+    "layoutOptions": {
+      "mobileLayout": "LIST"
+    },
+    "qChildListDef": {
+      "qData": {
+        "title": "/title"
+      }
+    }
+  },
+  "qChildren": []
+}

@@ -4,19 +4,21 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "MNT_PASSIF en EUR",
+    "qLabel": "MNT_PASSIF_FE en EUR",
     "qDef": "sum({<CD_TYPE_SUPPORT_3={'FE'}>}MT_PROVISION_CPT) ",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
+    "qLabelExpression": "='MNT_PASSIF en EUR'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 10,
       "qUseThou": 0
-    }
+    },
+    "coloring": {}
   },
   "qMetaDef": {
-    "title": "MNT_PASSIF en EUR",
+    "title": "MNT_PASSIF_FE en EUR",
     "description": "",
     "tags": [
       "CH05",

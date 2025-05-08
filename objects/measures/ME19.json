@@ -4,19 +4,21 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "QTE_ACTIF",
+    "qLabel": "QTE_ACTIF_FE",
     "qDef": "sum({<TYPE_ACTIF={'UC'}>}NB_PARTS)",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
+    "qLabelExpression": "='QTE_ACTIF'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 10,
       "qUseThou": 0
-    }
+    },
+    "coloring": {}
   },
   "qMetaDef": {
-    "title": "QTE_ACTIF",
+    "title": "QTE_ACTIF_FE",
     "description": "",
     "tags": [
       "CH05",

@@ -5,7 +5,7 @@
   },
   "qMeasure": {
     "qLabel": "QTE_PASSIF",
-    "qDef": "//sum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', FA'}>}NB_PART_PROV)+sum({$*<CD_SOUS_TYPE_SUPPORT={'FAS'}>}NB_PART_PROV)\nsum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA*'}>}NB_PART_PROV)\n\n//IF(CD_TYPE_SUPPORT_3 = 'FA', sum({$*<CD_SOUS_TYPE_SUPPORT={\"FA*\"}>}NB_PART_PROV),sum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI'}>}NB_PART_PROV))",
+    "qDef": "//sum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', FA'}>}NB_PART_PROV)+sum({$*<CD_SOUS_TYPE_SUPPORT={'FAS'}>}NB_PART_PROV)\r\nsum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI', 'FA*'}>}NB_PART_PROV)\n\n//IF(CD_TYPE_SUPPORT_3 = 'FA', sum({$*<CD_SOUS_TYPE_SUPPORT={\"FA*\"}>}NB_PART_PROV),sum({$*<CD_TYPE_SUPPORT_3={'DE', 'FI'}>}NB_PART_PROV))",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
@@ -13,7 +13,8 @@
       "qType": "U",
       "qnDec": 10,
       "qUseThou": 0
-    }
+    },
+    "coloring": {}
   },
   "qMetaDef": {
     "title": "QTE_PASSIF",

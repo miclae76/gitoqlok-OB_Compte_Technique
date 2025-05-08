@@ -4,19 +4,21 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "QTE_PASSIF",
+    "qLabel": "QTE_PASSIF_FE",
     "qDef": "sum({<CD_TYPE_SUPPORT_3={'FE'}>}NB_PART_PROV)",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
+    "qLabelExpression": "='QTE_PASSIF'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 10,
       "qUseThou": 0
-    }
+    },
+    "coloring": {}
   },
   "qMetaDef": {
-    "title": "QTE_PASSIF",
+    "title": "QTE_PASSIF_FE",
     "description": "",
     "tags": [
       "CH05",

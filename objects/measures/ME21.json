@@ -4,19 +4,21 @@
     "qType": "measure"
   },
   "qMeasure": {
-    "qLabel": "MNT_PASSIF",
+    "qLabel": "MNT_PASSIF_FE",
     "qDef": "sum({<CD_TYPE_SUPPORT_3={'FE'}>}MT_PROVISION) ",
     "qGrouping": "N",
     "qExpressions": [],
     "qActiveExpression": 0,
+    "qLabelExpression": "='MNT_PASSIF'",
     "qNumFormat": {
       "qType": "U",
       "qnDec": 10,
       "qUseThou": 0
-    }
+    },
+    "coloring": {}
   },
   "qMetaDef": {
-    "title": "MNT_PASSIF",
+    "title": "MNT_PASSIF_FE",
     "description": "",
     "tags": [
       "CH05",
