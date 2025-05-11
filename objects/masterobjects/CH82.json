@@ -981,6 +981,9 @@
         },
         "totalValues": {
           "fontSize": "12px"
+        },
+        "content": {
+          "rowHeight": 1
         }
       }
     ],
